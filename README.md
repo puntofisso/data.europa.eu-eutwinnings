@@ -1,6 +1,7 @@
 # data.europa.eu-eutwinnings
 Porting EU Twinnings to data.europa.eu.  
 *The documentation below relates to the old version and is not current*.  
+
 This project was originally created for the EU Datathon 2020 as a MVP, currently online at [eu-twinnings.site](http://eu-twinnings.site). The project collects data from Eurostat and calculates a similarity matrix between all the NUTS3 regions of Europe. For more information on NUTS3 and to explore the database, see the [Eurostat](https://ec.europa.eu/eurostat/data/database) website. This README explains how to regenerate the data and set up the website.
 
 The NUTS area are roughly as follows:
@@ -14,18 +15,20 @@ The maps were generated using the QGIS Atlas function. The shapefiles can be fou
 
 ![Image](https://github.com/puntofisso/EUTwinnings/blob/master/2.png)
 
-# Related information
+## Related information
 Using Eurostat data with D3 [http://geoexamples.blogspot.com/2013/10/using-eurostats-data-with-d3js.html]
 
-# Understanding EU Twinnings
+## Understanding EU Twinnings
 The goal of this app is to bring Eurostat data to a wider, non-specialist audience.
 It does so by calculating similarity matrices of Eurostat statistics between NUTS3 regions, allowing the user to find which area is the "twin" of their area, i.e. the area with the most similar statistic. The app also shows similarity maps, and allows the user to deep dive into the similarities, exploring the statistical values in a user-friendly, playful way.
 Ultimately, the user is also able to choose a different area or pair of areas, and compare the similarities between them, as well as selecting one or more statistics and display what areas are most similar considering the statistics selected.
 
-# How to create the data
-Most scripts are in the `data_wrangling` directory.
+# 1 - Data download
 
-## Basic data
+Data download and creation scripts are in the `data_wrangling` directory.
+
+## Basic data required
+**TODO NUTS file, extract structure, maps NUTS2016-2021**
 This is the data required to start everything else, such as the list of NUTS regions and the relationships between them. It would normally only needed to be run once.
 1. Once you've downloaded the shapefile, use QGIS to create a single layer with all the NUTS and their level. This is because the shapefile has separate layers for each NUTS level. Then extract attribute table as a spreadsheet (in this case, I called it `nuts0123.csv`).
 2. Run `parseAndLinkNUTS.sh` to create `nutsrelations.psv`
@@ -73,7 +76,7 @@ CREATE TABLE similarity (
 );
 ```
 
-# How to install on a server
+# 2 - How to install on a server
 Ideally, transfer sqlite to mysql, or (even better!) turn this into a nosql key/value store.
 Use the `createMySql.sql` together with a DB `.dump` from sqlite - you will need to remove the `CREATE` statements.
 Other issues you might encounted:
