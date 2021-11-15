@@ -1,8 +1,7 @@
 # data.europa.eu-eutwinnings
-Porting EU Twinnings to data.europa.eu
-
-# General
-This project was created for the EU Datathon 2020. It is an MVP, currently online at [eu-twinnings.site](http://eu-twinnings.site). The project collects data from Eurostat and calculates a similarity matrix between all the NUTS3 regions of Europe. For more information on NUTS3 and to explore the database, see the [Eurostat](https://ec.europa.eu/eurostat/data/database) website. This README explains how to regenerate the data and set up the website.
+Porting EU Twinnings to data.europa.eu.  
+*The documentation below relates to the old version and is not current*.  
+This project was originally created for the EU Datathon 2020 as a MVP, currently online at [eu-twinnings.site](http://eu-twinnings.site). The project collects data from Eurostat and calculates a similarity matrix between all the NUTS3 regions of Europe. For more information on NUTS3 and to explore the database, see the [Eurostat](https://ec.europa.eu/eurostat/data/database) website. This README explains how to regenerate the data and set up the website.
 
 The NUTS area are roughly as follows:
 
@@ -83,4 +82,3 @@ Other issues you might encounted:
 - check default data is not `0`, or run `UPDATE nuts SET name='' WHERE CODE IN ('UKN10','UKN11','UKN12','UKN13','UKN14','UKN15','UKN16')`
 
 The web site is all contained in the `web` folder. It's basic bootstrap together with the template [Material Kit](https://www.creative-tim.com/product/material-kit) by Creative Tim (see credits.php and LICENSE.md).
-
