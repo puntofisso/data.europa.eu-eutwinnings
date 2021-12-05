@@ -4,9 +4,16 @@ rm -f nuts.db
 
 sqlite3 -batch nuts.db "create table nuts (code text PRIMARY KEY, level text, name text, nuts0 text, nuts1 text, nuts2 text, pop3 real, pop2 real, pop1 real, pop0 real, density real, fertility real, popchange real, womenratio real, gdppps real, gva real);"
 
+sqlite3 -batch nuts.db "create table nutsNORM (code text PRIMARY KEY, level text, name text, nuts0 text, nuts1 text, nuts2 text, pop3 real, pop2 real, pop1 real, pop0 real, density real, fertility real, popchange real, womenratio real, gdppps real, gva real);"
+
 sqlite3 -batch nuts.db <<EOF
 .separator "|"
 .import basicdata.tsv nuts
+EOF
+
+sqlite3 -batch nuts.db <<EOF
+.separator "|"
+.import basicdataNORM.tsv nutsNORM
 EOF
 
 sqlite3 -batch nuts.db<<EOF
