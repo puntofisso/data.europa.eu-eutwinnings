@@ -10,4 +10,4 @@ rm -f basicdata.tsv
 rm -f basicdataNORM.tsv
 python createcsv.py # generates basicdata.tsv and basicdataNORM.tsv
 ./createdb.sh # generates nuts.db and imports basic data (not similarity)- 1'30'' up to here
-#python similarity-db.py # populates nuts.db with similarity data
+python similarity-db-new.py # populates nuts.db with similarity data
