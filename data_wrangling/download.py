@@ -70,29 +70,6 @@ def initData():
     getDataSet('nama_10r_3gva','precision=1&currency=MIO_EUR&time=2017&nace_r2=TOTAL','gva2017basicprices_nuts3')
 
 
-    #getDataSet('demo_r_mlifexp', 'precision=1&sex=T&time=2018&unit=YR&age=Y_LT1','lifeexpectancy2018') # NUTS1 NUTS2
-    #getDataSet('lfst_r_lfe2emprt', 'precision=1&sex=T&unit=PC&time=2019&age=Y_GE15', 'employment2019') # NUTS1 [NUTS2]
-    #getDataSet('lfst_r_lfu3rt', 'precision=1&sex=T&unit=PC&time=2019&age=Y_GE15','unemployment2019') # NUTS1 NUTS2
-    # 03.10 this no longer works
-    #getDataSet('edat_lfse_12', 'precision=1&sex=T&unit=PC&isced11=ED5-8&time=2019&age=Y30-34','tertiaryeducation2019') # NUTS1 NUTS2
-    #getDataSet('isoc_r_iuse_i', 'precision=1&unit=PC_IND_IU3&indic_is=I_IDAY&time=2019', 'internetusers2019') # NUTS1 NUTS2
-    #getDataSet('isoc_r_broad_h', 'precision=1&unit=PC_HH_IACC&time=2019', 'broadbandhouseholds2019') # NUTS1 NUTS2
-    # 01.08 this no longer works
-    #getDataSet('nama_10r_2gdp', 'precision=1&unit=PPS_HAB_EU&time=2018', 'gdpPps2018') # NUTS1 NUTS2
-    #getDataSet('rd_e_gerdreg', 'precision=1&sectperf=TOTAL&unit=PC_GDP&time=2017', 'RDexpenditure2017') # NUTS1 NUTS2
-    #getDataSet('tour_occ_nin2', 'c_resid=TOTAL&precision=1&unit=NR&time=2019&nace_r2=I551', 'nigthsTourism2019') # NUTS1 NUTS2
-    #getDataSet('tran_r_vehst','precision=1&vehicle=CAR&unit=P_THAB&time=2018','passengerCars2018') # NUTS1 NUTS2
-    #getDataSet('tran_r_acci', 'precision=1&unit=P_MHAB&victim=KIL&time=2018', 'accidents2018') # NUTS1 [NUTS2]
-
-    ## NUTS 3
-
-
-
-    #getDataSet('demo_r_pjanind3','indic_de=MEDAGEPOP&precision=1&unit=YR&time=2019','medianage2019_nuts3')
-    # 01.08 this no longer works
-
-
-
     # to file, do this to get proper JSON
     app_json = json.dumps(globaldict, indent=4)
     globaldictfile = open("globaldict.json", "w")

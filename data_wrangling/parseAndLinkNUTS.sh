@@ -50,4 +50,4 @@ do
 
 
   echo "$code|$name|$level|$nuts0|$nuts1|$nuts2|$nuts3"
-done < nuts0123-qgis-export-as.csv > nutsrelations.psv
+done < nuts0123.csv > nutsrelations.psv
