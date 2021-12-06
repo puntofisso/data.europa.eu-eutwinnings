@@ -50,12 +50,12 @@ def similarity(code1, code2, fieldlist):
     # print("Similarity: " + str(result))
     return result
 
-def generateallsimilarities(fieldlist):
+def generateallsimilarities():
     global conn, cur
+    global fieldlist3, fieldlist2, fieldlist1, fieldlist0
     conWRITE = sqlite3.connect('nuts.db')
     conWRITE.isolation_level = None
     curWRITE = conWRITE.cursor()
-
 
     # General Idea
     # Loop over nutsrelations
@@ -64,20 +64,69 @@ def generateallsimilarities(fieldlist):
     #     if level = 3, second loop through level = 3
     # For now, do only level 3, as similarity is only defined for level 3
 
-    # TODO this select does (code1,code2) and (code2,code1), which results in key error as the PK is no-ordcer if inserting without replacing
-    #      in other words, you need to only do each pairwise (code1, code2) (code2, code1) once
+
+
+    # NUTS 3
     all_nuts3_query = cur.execute("SELECT r1.code as code1, r2.code as code2 FROM relations r1 JOIN relations r2 WHERE r1.level == 3 AND r2.level == 3 AND r1.code < r2.code ORDER BY r1.code, r2.code")
     all_nuts3 = cur.fetchall()
-
-
     curWRITE.execute("begin")
     try:
         for nuts in all_nuts3:
             code1 = nuts['code1']
             code2 = nuts['code2']
-            # simresult = similarity(code1, code2, fieldlist)
-            simresult = 1
-            # print(nuts['code1'] + " " + nuts['code2'] + " >>>>> " + str(simresult))
+            simresult = similarity(code1, code2, fieldlist3)
+
+            # Insert similarity into DB
+            curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code1, code2, simresult))
+            conWRITE.commit()
+    except sqlite3.Error:
+        print("failed insert!")
+        c.execute("rollback")
+
+    # NUTS 2
+    all_nuts2_query = cur.execute("SELECT r1.code as code1, r2.code as code2 FROM relations r1 JOIN relations r2 WHERE r1.level == 2 AND r2.level == 2 AND r1.code < r2.code ORDER BY r1.code, r2.code")
+    all_nuts2 = cur.fetchall()
+    curWRITE.execute("begin")
+    try:
+        for nuts in all_nuts2:
+            code1 = nuts['code1']
+            code2 = nuts['code2']
+            simresult = similarity(code1, code2, fieldlist2)
+
+            # Insert similarity into DB
+            curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code1, code2, simresult))
+            conWRITE.commit()
+    except sqlite3.Error:
+        print("failed insert!")
+        c.execute("rollback")
+
+    # NUTS 1
+    all_nuts1_query = cur.execute("SELECT r1.code as code1, r2.code as code2 FROM relations r1 JOIN relations r2 WHERE r1.level == 1 AND r2.level == 1 AND r1.code < r2.code ORDER BY r1.code, r2.code")
+    all_nuts1 = cur.fetchall()
+    curWRITE.execute("begin")
+    try:
+        for nuts in all_nuts2:
+            code1 = nuts['code1']
+            code2 = nuts['code2']
+            simresult = similarity(code1, code2, fieldlist1)
+
+            # Insert similarity into DB
+            curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code1, code2, simresult))
+            conWRITE.commit()
+    except sqlite3.Error:
+        print("failed insert!")
+        c.execute("rollback")
+
+    # NUTS 0
+    all_nuts0_query = cur.execute("SELECT r1.code as code1, r2.code as code2 FROM relations r1 JOIN relations r2 WHERE r1.level == 0 AND r2.level == 0 AND r1.code < r2.code ORDER BY r1.code, r2.code")
+    all_nuts0 = cur.fetchall()
+    curWRITE.execute("begin")
+    try:
+        for nuts in all_nuts2:
+            code1 = nuts['code1']
+            code2 = nuts['code2']
+            simresult = similarity(code1, code2, fieldlist0)
+
             # Insert similarity into DB
             curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code1, code2, simresult))
             conWRITE.commit()
@@ -99,11 +148,16 @@ conCALCSIM = sqlite3.connect('nuts.db')
 conCALCSIM.row_factory = sqlite3.Row
 curCALCSIM = conCALCSIM.cursor()
 
-fieldlist = ['pop3','pop0','density','fertility','popchange','womenratio','gdppps','gva']
-generateallsimilarities(fieldlist)
-
-#similarity('BG343','DE255',fieldlist)
-
+# Field list for similarity formula
+fieldlist3 = ['pop3','pop0','density','fertility','popchange','womenratio','gdppps','gva']
+fieldlist2 = ['pop0','density','fertility']
+fieldlist1 = ['pop0','density','fertility']
+fieldlist0 = ['pop0','density']
+generateallsimilarities()
+#print(similarity('BG343','DE255',fieldlist3))
+#print(similarity('BG34','DE25',fieldlist2))
+#print(similarity('BG3','DE2',fieldlist1))
+#print(similarity('BG','DE',fieldlist0))
 
 curCALCSIM.close()
 conCALCSIM.close()
