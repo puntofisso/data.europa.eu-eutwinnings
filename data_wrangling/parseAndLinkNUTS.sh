@@ -1,6 +1,6 @@
 #!/bin/bash
 #"LEVEL"|"NUTS_ID"|"CNTR_CODE"|"NUTS_NAME"|"MOUNT_TYPE"|"URBN_TYPE"|"COAST_TYPE"|"FID"
-rm -f nutsrelations.psv
+year=$1
 while read line
 do
 
@@ -50,4 +50,4 @@ do
 
 
   echo "$code|$name|$level|$nuts0|$nuts1|$nuts2|$nuts3"
-done < nuts0123.csv > nutsrelations.psv
+done < nuts0123-$year.csv > nutsrelations-$year.psv

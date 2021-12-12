@@ -57,8 +57,6 @@ def getDataSet(table, filter, prefix):
 
 def initData():
     global globaldict
-    # TODO interesting data on split 2/3 here: https://ec.europa.eu/eurostat/cache/metadata/en/demo_r_gind3_esms.htm
-    # [] means "presented only in"
 
     getDataSet('demo_r_pjanaggr3', 'precision=1&sex=T&unit=NR&time=2019&age=TOTAL', 'population2019_nuts3')
     getDataSet('demo_r_d2jan','time=2019&precision=1&sex=T&unit=NR&age=TOTAL','population2019')

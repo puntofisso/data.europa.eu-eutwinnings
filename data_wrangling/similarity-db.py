@@ -16,30 +16,62 @@ def similarity(code1, code2, fieldlist):
 
     global curCALCSIM, conCALCSIM
 
-    # Get the data for the two NUTS entities
+    # Create array for cosine distance
+    arr1 = []
+    arr2 = []
+
+    # Get the data for the two NUTS entities 2021
     line1 = curCALCSIM.execute("SELECT * FROM nutsNORM WHERE code == :codeinput", {"codeinput": code1})
     row1 = curCALCSIM.fetchone()
     line2 = curCALCSIM.execute("SELECT * FROM nutsNORM WHERE code == :codeinput", {"codeinput": code2})
     row2 = curCALCSIM.fetchone()
 
-    # Create array for cosine distance
-    arr1 = []
-    arr2 = []
+    # check if you need mapped values
+    # TODO this is the simple version with 1-2-1 mapping
+    with open('nutsmap.json') as json_file:
+        mapNuts = json.load(json_file)
+
+    try:
+        code1_mapped = mapNuts[code1]
+    except Exception:
+        code1_mapped = 'NONE'
+
+    try:
+        code2_mapped = mapNuts[code2]
+    except Exception:
+        code2_mapped = 'NONE'
+
+    # print("Mapped " + code1 + " to " + code1_mapped)
+    # print("Mapped " + code2 + " to " + code2_mapped)
+
+    line1_mapped = curCALCSIM.execute("SELECT * FROM nutsNORM2016 WHERE code == :codeinput", {"codeinput": code1_mapped})
+    row1_mapped = curCALCSIM.fetchone()
+    line2_mapped = curCALCSIM.execute("SELECT * FROM nutsNORM2016 WHERE code == :codeinput", {"codeinput": code2_mapped})
+    row2_mapped = curCALCSIM.fetchone()
+
     for feature in fieldlist:
             try:
                 val1=float(row1[feature])
             except Exception:
-                val1= float(1)
+                # check map
+                try:
+                    val1=float(row1_mapped[feature])
+                except Exception:
+                    # print("Exception for " + code1 + " in " + feature)
+                    val1 = float(0.1)
+
             try:
                 val2=float(row2[feature])
             except Exception:
-                val2= float(1)
-
-            # print(feature + " | " + str(val1) + " | " + str(val2))
+                # check map
+                try:
+                    val2=float(row2_mapped[feature])
+                except Exception:
+                    # print("Exception for " + code2 + " in " + feature)
+                    val2 = float(0.1)
 
             arr1.append(val1)
             arr2.append(val2)
-
 
     # Calculate cosine distance
     # with SCIPY
@@ -63,8 +95,6 @@ def generateallsimilarities():
     #     if level = 2, second loop through level = 2
     #     if level = 3, second loop through level = 3
     # For now, do only level 3, as similarity is only defined for level 3
-
-
 
     # NUTS 3
     all_nuts3_query = cur.execute("SELECT r1.code as code1, r2.code as code2 FROM relations r1 JOIN relations r2 WHERE r1.level == 3 AND r2.level == 3 AND r1.code < r2.code ORDER BY r1.code, r2.code")
@@ -153,8 +183,10 @@ fieldlist3 = ['pop3','pop0','density','fertility','popchange','womenratio','gdpp
 fieldlist2 = ['pop0','density','fertility']
 fieldlist1 = ['pop0','density','fertility']
 fieldlist0 = ['pop0','density']
+
 generateallsimilarities()
-#print(similarity('BG343','DE255',fieldlist3))
+# TODO to check new areas -> start with this
+#print(similarity('BE32B','HR064',fieldlist3))
 #print(similarity('BG34','DE25',fieldlist2))
 #print(similarity('BG3','DE2',fieldlist1))
 #print(similarity('BG','DE',fieldlist0))

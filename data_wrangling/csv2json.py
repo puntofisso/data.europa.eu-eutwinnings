@@ -1,8 +1,11 @@
 import csv
 import json
+import sys
 
+year = sys.argv[1]
+filename = "nuts0123-" + str(year) + ".csv"
 globallist = []
-with open('nuts0123.csv', mode="r", encoding="utf-8") as csv_file:
+with open(filename, mode="r", encoding="utf-8") as csv_file:
 
     csv_reader = csv.DictReader(csv_file, delimiter=';', quotechar='"', fieldnames=['code','level','country','label','nuts0','nuts1','nuts2','nuts3'])
 

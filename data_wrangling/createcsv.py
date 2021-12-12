@@ -1,13 +1,11 @@
 import urllib.request, json
 import time
 import csv
-
+import sys
 
 from scipy import spatial
 from numpy import dot
 from numpy.linalg import norm
-
-
 
 import pandas as pd
 import numpy as np
@@ -16,15 +14,17 @@ from sklearn import preprocessing
 import logger
 
 # creates csv from globaldictionary and list of nuts
-def createCSV():
+def createCSV(year):
 
-    csvfile = open("basicdata.tsv", "w")
+    filename="basicdata-" + str(year) + ".tsv"
+    csvfile = open(filename, "w")
 
     global globaldict
     #thisline=f'code|level|name|nuts0|nuts1|nuts2|pop3|pop2|pop1|pop0|density|fertility|popchange|womenratio|gdppps|gva|medianage\n'
     thisline=f'code|level|name|nuts0|nuts1|nuts2|pop3|pop2|pop1|pop0|density|fertility|popchange|womenratio|gdppps|gva\n'
     csvfile.write(thisline)
-    fileHandle = open('nutsrelations.psv', 'r')
+    relationsfilename = "nutsrelations-" + str(year) + ".psv"
+    fileHandle = open(relationsfilename, 'r')
 
     for line in fileHandle:
 
@@ -46,7 +46,6 @@ def createCSV():
                     dictionary0 = globaldict[code]
                 except Exception:
                     dictionary0 = dict()
-
 
                 # data about this nuts
                 pop3 = -1
@@ -90,7 +89,6 @@ def createCSV():
 
 
                 thisline = f'{code}|{level}|"{name}"|{nuts0}|{nuts1}|{nuts2}|{pop3}|{pop2}|{pop1}|{pop0}|{density}|{fertility}|{popchange}|{womenratio}|{gdppps}|{gva}\n'
-
 
             except Exception:
                 thisline = f'{code}|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR\n'
@@ -330,9 +328,10 @@ def createCSV():
     csvfile.close()
 
 
-def fixData():
+def fixData(year):
     # data fixes
-    df = pd.read_csv('basicdata.tsv', sep='|', header='infer')
+    filename = "basicdata-" + str(year) + ".tsv"
+    df = pd.read_csv(filename, sep='|', header='infer')
     # df = df.replace('N/A',np.NaN)
     # df = df.replace('NONE',np.NaN)
     df['gdppps'] = pd.to_numeric(df['gdppps'], errors='coerce')
@@ -354,7 +353,7 @@ def fixData():
     # pop3|pop2|pop1|pop0|density|fertility|popchange|womenratio|gdppps|gva|medianage
 
     # Save non-normalised data
-    df.to_csv('basicdata.tsv', sep='|', index=False)
+    df.to_csv(filename, sep='|', index=False)
 
 
     #for columnname in ['pop3','pop2','pop1', 'pop0', 'density', 'fertility', 'popchange', 'womenratio', 'gdppps', 'gva', 'medianage']:
@@ -366,10 +365,13 @@ def fixData():
         df[columnname] = x_scaled
 
     # Save normalised data
-    df.to_csv('basicdataNORM.tsv', sep='|', index=False)
+    normfilename = "basicdataNORM-" + str(year) + ".tsv"
+    df.to_csv(normfilename, sep='|', index=False)
 
     #x.to_csv('test.csv')
 
+
+year = sys.argv[1]
 with open("globaldict.json", "r") as read_file: globaldict = json.load(read_file)
-createCSV()
-fixData()
+createCSV(year)
+fixData(year)
