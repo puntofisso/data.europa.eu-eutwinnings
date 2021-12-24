@@ -42,10 +42,14 @@ $data = $stm->fetchAll();
 
 foreach ($data as $row) {
   $ret['name'] = $row['name'];
+  $ret['level'] = $row['level'];
   $ret['nuts0'] = $row['nuts0'];
   $ret['nuts1'] = $row['nuts1'];
   $ret['nuts2'] = $row['nuts2'];
   $ret['population'] = $row['pop3'];
+  $ret['population0'] = $row['pop0'];
+  $ret['population1'] = $row['pop1'];
+  $ret['population2'] = $row['pop2'];
   $ret['density'] = $row['density'];
   $ret['fertility'] = $row['fertility'];
   $ret['popchange'] = $row['popchange'];
@@ -100,12 +104,14 @@ $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name
 $res = $stm->execute(array($code));
 $ret['similarity_all_bottom'] = array();
 $data = $stm->fetchAll();
+$index=0;
 foreach ($data as $row) {
   $code2 = $row['code'];
-  $ret['similarity_all_bottom'][$code2] = array();
-  $ret['similarity_all_bottom'][$code2]['name'] = $row['name'];
-  $ret['similarity_all_bottom'][$code2]['country'] = $row['country'];
-  $ret['similarity_all_bottom'][$code2]['similarity'] = $row['similarity'];
+  $ret['similarity_all_bottom'][$index]['code'] = $code2;
+  $ret['similarity_all_bottom'][$index]['name'] = $row['name'];
+  $ret['similarity_all_bottom'][$index]['country'] = $row['country'];
+  $ret['similarity_all_bottom'][$index]['similarity'] = $row['similarity'];
+  $index++;
 }
 
 
@@ -115,12 +121,14 @@ $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name
 $res = $stm->execute(array($code));
 $ret['similarity_same_country_top'] = array();
 $data = $stm->fetchAll();
+$index=0;
 foreach ($data as $row) {
   $code2 = $row['code'];
-  $ret['similarity_same_country_top'][$code2] = array();
-  $ret['similarity_same_country_top'][$code2]['name'] = $row['name'];
-  $ret['similarity_same_country_top'][$code2]['country'] = $row['country'];
-  $ret['similarity_same_country_top'][$code2]['similarity'] = $row['similarity'];
+  $ret['similarity_same_country_top'][$index]['code'] = $code2;
+  $ret['similarity_same_country_top'][$index]['name'] = $row['name'];
+  $ret['similarity_same_country_top'][$index]['country'] = $row['country'];
+  $ret['similarity_same_country_top'][$index]['similarity'] = $row['similarity'];
+  $index++;
 }
 
 // Least similar
@@ -128,12 +136,14 @@ $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name
 $res = $stm->execute(array($code));
 $ret['similarity_same_country_bottom'] = array();
 $data = $stm->fetchAll();
+$index=0;
 foreach ($data as $row) {
   $code2 = $row['code'];
-  $ret['similarity_same_country_bottom'][$code2] = array();
-  $ret['similarity_same_country_bottom'][$code2]['name'] = $row['name'];
-  $ret['similarity_same_country_bottom'][$code2]['country'] = $row['country'];
-  $ret['similarity_same_country_bottom'][$code2]['similarity'] = $row['similarity'];
+  $ret['similarity_same_country_bottom'][$index]['code'] = $code2;
+  $ret['similarity_same_country_bottom'][$index]['name'] = $row['name'];
+  $ret['similarity_same_country_bottom'][$index]['country'] = $row['country'];
+  $ret['similarity_same_country_bottom'][$index]['similarity'] = $row['similarity'];
+  $index++;
 }
 
 // Different country similarity
@@ -142,12 +152,14 @@ $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name
 $res = $stm->execute(array($code));
 $ret['similarity_diff_country_top'] = array();
 $data = $stm->fetchAll();
+$index=0;
 foreach ($data as $row) {
   $code2 = $row['code'];
-  $ret['similarity_diff_country_top'][$code2] = array();
-  $ret['similarity_diff_country_top'][$code2]['name'] = $row['name'];
-  $ret['similarity_diff_country_top'][$code2]['country'] = $row['country'];
-  $ret['similarity_diff_country_top'][$code2]['similarity'] = $row['similarity'];
+  $ret['similarity_diff_country_top'][$index]['code'] = $code2;
+  $ret['similarity_diff_country_top'][$index]['name'] = $row['name'];
+  $ret['similarity_diff_country_top'][$index]['country'] = $row['country'];
+  $ret['similarity_diff_country_top'][$index]['similarity'] = $row['similarity'];
+  $index++;
 }
 
 // Least similar
@@ -155,12 +167,14 @@ $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name
 $res = $stm->execute(array($code));
 $ret['similarity_diff_country_bottom'] = array();
 $data = $stm->fetchAll();
+$index=0;
 foreach ($data as $row) {
   $code2 = $row['code'];
-  $ret['similarity_diff_country_bottom'][$code2] = array();
-  $ret['similarity_diff_country_bottom'][$code2]['name'] = $row['name'];
-  $ret['similarity_diff_country_bottom'][$code2]['country'] = $row['country'];
-  $ret['similarity_diff_country_bottom'][$code2]['similarity'] = $row['similarity'];
+  $ret['similarity_diff_country_bottom'][$index]['code'] = $code2;
+  $ret['similarity_diff_country_bottom'][$index]['name'] = $row['name'];
+  $ret['similarity_diff_country_bottom'][$index]['country'] = $row['country'];
+  $ret['similarity_diff_country_bottom'][$index]['similarity'] = $row['similarity'];
+  $index++;
 }
 
 // Higher GDP PPS similarity
@@ -169,13 +183,15 @@ $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name
 $res = $stm->execute(array($code));
 $ret['similarity_higher_gdppps_top'] = array();
 $data = $stm->fetchAll();
+$index=0;
 foreach ($data as $row) {
   $code2 = $row['code'];
-  $ret['similarity_higher_gdppps_top'][$code2] = array();
-  $ret['similarity_higher_gdppps_top'][$code2]['name'] = $row['name'];
-  $ret['similarity_higher_gdppps_top'][$code2]['country'] = $row['country'];
-  $ret['similarity_higher_gdppps_top'][$code2]['gdppps2'] = $row['gdppps2'];
-  $ret['similarity_higher_gdppps_top'][$code2]['similarity'] = $row['similarity'];
+  $ret['similarity_higher_gdppps_top'][$index]['code'] = $code2;
+  $ret['similarity_higher_gdppps_top'][$index]['name'] = $row['name'];
+  $ret['similarity_higher_gdppps_top'][$index]['country'] = $row['country'];
+  $ret['similarity_higher_gdppps_top'][$index]['gdppps2'] = $row['gdppps2'];
+  $ret['similarity_higher_gdppps_top'][$index]['similarity'] = $row['similarity'];
+  $index++;
 }
 
 // Least similar
@@ -183,13 +199,15 @@ $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name
 $res = $stm->execute(array($code));
 $ret['similarity_higher_gdppps_bottom'] = array();
 $data = $stm->fetchAll();
+$index=0;
 foreach ($data as $row) {
   $code2 = $row['code'];
-  $ret['similarity_higher_gdppps_bottom'][$code2] = array();
-  $ret['similarity_higher_gdppps_bottom'][$code2]['name'] = $row['name'];
-  $ret['similarity_higher_gdppps_bottom'][$code2]['country'] = $row['country'];
-  $ret['similarity_higher_gdppps_bottom'][$code2]['gdppps2'] = $row['gdppps2'];
-  $ret['similarity_higher_gdppps_bottom'][$code2]['similarity'] = $row['similarity'];
+  $ret['similarity_higher_gdppps_bottom'][$index]['code'] = $code2;
+  $ret['similarity_higher_gdppps_bottom'][$index]['name'] = $row['name'];
+  $ret['similarity_higher_gdppps_bottom'][$index]['country'] = $row['country'];
+  $ret['similarity_higher_gdppps_bottom'][$index]['gdppps2'] = $row['gdppps2'];
+  $ret['similarity_higher_gdppps_bottom'][$index]['similarity'] = $row['similarity'];
+  $index++;
 }
 
 // Higher GVA similarity
@@ -198,13 +216,15 @@ $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name
 $res = $stm->execute(array($code));
 $ret['similarity_higher_gva_top'] = array();
 $data = $stm->fetchAll();
+$index=0;
 foreach ($data as $row) {
   $code2 = $row['code'];
-  $ret['similarity_higher_gva_top'][$code2] = array();
-  $ret['similarity_higher_gva_top'][$code2]['name'] = $row['name'];
-  $ret['similarity_higher_gva_top'][$code2]['country'] = $row['country'];
-  $ret['similarity_higher_gva_top'][$code2]['gva2'] = $row['gva2'];
-  $ret['similarity_higher_gva_top'][$code2]['similarity'] = $row['similarity'];
+  $ret['similarity_higher_gva_top'][$index]['code'] = $code2;
+  $ret['similarity_higher_gva_top'][$index]['name'] = $row['name'];
+  $ret['similarity_higher_gva_top'][$index]['country'] = $row['country'];
+  $ret['similarity_higher_gva_top'][$index]['gva2'] = $row['gva2'];
+  $ret['similarity_higher_gva_top'][$index]['similarity'] = $row['similarity'];
+  $index++;
 }
 
 // Least similar
@@ -212,13 +232,15 @@ $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name
 $res = $stm->execute(array($code));
 $ret['similarity_higher_gva_bottom'] = array();
 $data = $stm->fetchAll();
+$index=0;
 foreach ($data as $row) {
   $code2 = $row['code'];
-  $ret['similarity_higher_gva_bottom'][$code2] = array();
-  $ret['similarity_higher_gva_bottom'][$code2]['name'] = $row['name'];
-  $ret['similarity_higher_gva_bottom'][$code2]['country'] = $row['country'];
-  $ret['similarity_higher_gva_bottom'][$code2]['gva2'] = $row['gva2'];
-  $ret['similarity_higher_gva_bottom'][$code2]['similarity'] = $row['similarity'];
+  $ret['similarity_higher_gva_bottom'][$index]['code'] = $code2;
+  $ret['similarity_higher_gva_bottom'][$index]['name'] = $row['name'];
+  $ret['similarity_higher_gva_bottom'][$index]['country'] = $row['country'];
+  $ret['similarity_higher_gva_bottom'][$index]['gva2'] = $row['gva2'];
+  $ret['similarity_higher_gva_bottom'][$index]['similarity'] = $row['similarity'];
+  $index++;
 }
 
 echo json_encode($ret, true);
