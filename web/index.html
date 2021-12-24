@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+  <title>EU Twinnings</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/jquery-ui.min.css" rel="stylesheet">
+
+
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/rough.js"></script>
+
+</head>
+<body>
+<div class="container">
+
+  <div class="container">
+    <form>
+      <div class="mb-3">
+        <label for="inputRegion" class="form-label">Enter a NUTS area name</label>
+        <input type="text" class="form-control" id="inputRegion" aria-describedby="emailHelp" placeholder="Start typing...">
+      </div>
+
+    </form>
+  </div>
+  <!-- TODO -->
+  <!-- General information and QGIS png -->
+
+  <!-- General Similarity -->
+  <div class="container" id="similarity_all">
+    <div class="container" id="similarity_all_top">
+      <div id="all_top_0"><span id="text_all_top_0"></span><svg id="svg_all_top_0"></svg></div>
+      <div id="all_top_1"><span id="text_all_top_1"></span><svg id="svg_all_top_1"></svg></div>
+      <div id="all_top_2"><span id="text_all_top_2"></span><svg id="svg_all_top_2"></svg></div>
+    </div>
+    <div class="container" id="similarity_all_bottom">
+      <div id="all_bottom_0"></div>
+      <div id="all_bottom_1"></div>
+      <div id="all_bottom_2"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+/**
+  * Initialise the autocomplete function with the nuts.json file
+  */
+$(document).ready( function() {
+  // get json, and set it as global variable
+  $.getJSON("data/nuts-autocomplete.json", function(data){
+    window.nuts = data;
+  }).fail(function(){
+    console.log("An error has occurred.");
+  }).done(function() {
+    setup_autocomplete();
+  });
+});
+
+// Autocomplete setup
+function setup_autocomplete() {
+  var nuts = window.nuts
+
+  // in order to make search easier, we translate the letters with diacritics
+  // e.g. you can search for "Gottingen" instead of "Göttingen"
+  var accentMap = {
+    "á": "a",
+    "ö": "o",
+    "á": "a",
+    "ü": "u",
+    "ø": "o"
+  };
+  var normalize = function( term ) {
+    var ret = "";
+    for ( var i = 0; i < term.length; i++ ) {
+      ret += accentMap[ term.charAt(i) ] || term.charAt(i);
+    }
+    return ret;
+  };
+
+  // if you click inside the input field, empty it
+  $('#inputRegion').click(function() {
+    $(this).val('');
+  });
+
+  // set up autocomplete
+  $("#inputRegion").autocomplete({
+    minLength: 3,
+    width: 300,
+    max: 10,
+    source: function( request, response ) {
+
+    var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i") , results = [];
+
+    /* Make sure each entry is only in the suggestions list once: */
+    $.each(nuts, function (i, value) {
+        if (matcher.test(value.label) && $.inArray(value.label, results) < 0) {
+            // note: the below code isn't very well documented
+            // label and value need to be the value of the label
+            obj = { 'label': value.label, 'code': value.code }
+            results.push(obj);
+        }
+    });
+    response(results);
+  },
+  select: function (event, ui) {
+    // TODO
+    // 1. unhide the container with charts
+    // 2. fill in charts
+
+    // get json, and set it as global variable
+    emptyData();
+    $.getJSON("getdata.php?code="+ui.item.code, function(data){
+        window.similarity = data;
+        fillData();
+    }).fail(function(){
+        alert("Sorry, an error has occurred. Please try again later.");
+    });
+  }});
+}
+
+function fillData()
+{
+
+  const svg_all_top_0 = document.getElementById('svg_all_top_0');
+  similarity_all_top_0 =  window.similarity["similarity_all_top"][0]['similarity'];
+  drawSVG(svg_all_top_0, similarity_all_top_0);
+  $('#text_all_top_0').html(JSON.stringify(window.similarity["similarity_all_top"][0]));
+
+  const svg_all_top_1 = document.getElementById('svg_all_top_1');
+  similarity_all_top_1 =  window.similarity["similarity_all_top"][1]['similarity'];
+  drawSVG(svg_all_top_1, similarity_all_top_1);
+  $('#text_all_top_1').html(JSON.stringify(window.similarity["similarity_all_top"][1]));
+
+  const svg_all_top_2 = document.getElementById('svg_all_top_2');
+  similarity_all_top_2 =  window.similarity["similarity_all_top"][2]['similarity'];
+  drawSVG(svg_all_top_2, similarity_all_top_2);
+  $('#text_all_top_2').html(JSON.stringify(window.similarity["similarity_all_top"][2]));
+
+
+}
+
+
+
+function emptyData()
+{
+  $('#svg_all_top_0').html("");
+  $('#svg_all_top_1').html("");
+  $('#svg_all_top_2').html("");
+  $('#text_all_top_0').html("");
+  $('#text_all_top_1').html("");
+  $('#text_all_top_2').html("");
+}
+
+function drawSVG(svgElement, similarity) {
+  deg = 360*similarity;
+  const rc = rough.svg(svgElement);
+
+  fill = 'black';
+  if (similarity > 0.9) {
+    fill = 'green';
+  } else if (similarity > 0.4) {
+    fill = 'yellow';
+  } else if (similarity < 0.4) {
+    fill = 'red';
+  }
+
+  startX = 30;
+  startY = 100;
+  radius = 30;
+  centreX = startX + radius;
+  centreY = startY ;
+
+  if (deg < 360)
+  {
+    start = "M " + startX + " " + startY;
+    flags = "";
+    if (deg < 180) {
+      flags = " 0 0 1 ";
+    } else if (deg < 360) {
+      flags = " 0 1 1 ";
+    } else flags = " 0 0 0 ";
+
+    radAngle = deg * Math.PI/180;
+    xCircle = centreX - radius*Math.cos(radAngle);
+    yCircle = centreY - radius*Math.sin(radAngle);
+    path = start + " " + "A " + radius + " " + radius + flags + xCircle + " " + yCircle + " L " + (startX+radius) + " " + startY + " Z";
+    svgElement.appendChild(rc.path(path, { fill: fill}));
+  } else {
+    circle = rc.circle(startX, startY, radius*2, { fill: fill });
+    svgElement.appendChild(circle);
+  }
+  }
+</script>
+
+</body>
+</html>
