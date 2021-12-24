@@ -37,6 +37,8 @@
       </div>
 
       <div class="row">
+        <div class="col-3"><img class="img-fluid" src="#" id="qgis_image"/></div>
+
         <div class="col-3">
           <span id="span_nuts3" class="badge bg-primary emptiable"></span>
           <!--span id="span_nuts2" class="badge bg-primary emptiable"></span><br/>
@@ -53,8 +55,11 @@
           <span id="span_pop3" class="badge bg-warning emptiable"></span>
           <span id="span_pop0" class="badge bg-warning emptiable"></span>
           </div>
-          <div class="col-9">&nbsp;</div>
+
+        <div class="col-6">&nbsp;</div>
+
       </div>
+
     </div>
 
     <!-- General Similarity -->
@@ -295,6 +300,10 @@ function fillData()
   $('#span_pop3').html('Population ' + window.similarity['population']);
   $('#span_pop0').html('Population NUTS0 ' + window.similarity['population0']);
 
+  // Image
+  filename = 'images/' + window.similarity['code'] + ".png";
+  // filename = 'images/0placeholder.png';
+  $('#qgis_image').attr("src",filename);
 
   // Overall similarity - Most
   drawSVG(document.getElementById('svg_all_top_0'), window.similarity["similarity_all_top"][0]['similarity']);
