@@ -10,3 +10,12 @@ ul.ui-autocomplete  {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175) !important;
   background-clip: padding-box !important;
 }
+
+
+span.general_info {
+  padding-left: 10px !important;
+}
+
+/* div.similaritytop3 {
+  height: 3em !important;
+} */

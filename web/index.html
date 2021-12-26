@@ -6,7 +6,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/jquery-ui.min.css" rel="stylesheet">
 
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 
   <script src="js/external/jquery/jquery.js"></script>
   <script src="js/jquery-ui.min.js"></script>
@@ -20,8 +20,8 @@
   <div class="container">
     <form>
       <div class="mb-3">
-        <label for="inputRegion" class="form-label">Enter a NUTS area name</label>
-        <input type="text" class="form-control" id="inputRegion" aria-describedby="emailHelp" placeholder="Start typing...">
+        <!--label for="inputRegion" class="form-label">Enter a NUTS area name</label-->
+        <input type="text" class="form-control" id="inputRegion" aria-describedby="emailHelp" placeholder="Start typing a NUTS area name...">
       </div>
 
     </form>
@@ -37,26 +37,24 @@
       </div>
 
       <div class="row">
-        <div class="col-3"><img class="img-fluid" src="#" id="qgis_image"/></div>
+        <div class="col-6"><img class="img-fluid" src="#" id="qgis_image"/></div>
 
-        <div class="col-3">
-          <span id="span_nuts3" class="badge bg-primary emptiable"></span>
-          <!--span id="span_nuts2" class="badge bg-primary emptiable"></span><br/>
-          <span id="span_nuts1" class="badge bg-primary emptiable"></span><br/-->
-          <span id="span_nuts0" class="badge bg-primary emptiable"></span>
-          <span id="span_density" class="badge bg-secondary emptiable"></span>
-          <span id="span_popchange" class="badge bg-secondary emptiable"></span>
-          <span id="span_womenratio" class="badge bg-secondary emptiable"></span>
-          <span id="span_fertility" class="badge bg-secondary emptiable"></span>
-          <span id="span_gdppps" class="badge bg-danger emptiable"></span>
-          <span id="span_gva" class="badge bg-danger emptiable"></span>
-
-
-          <span id="span_pop3" class="badge bg-warning emptiable"></span>
-          <span id="span_pop0" class="badge bg-warning emptiable"></span>
+        <div class="col-6">
+            <span class="badge bg-primary">Code</span><span id="span_nuts3" class="general_info emptiable"></span><br>
+            <!--span id="span_nuts2" class="badge bg-primary emptiable"></span><br/>
+            <span id="span_nuts1" class="badge bg-primary emptiable"></span><br/-->
+            <span class="badge bg-primary">NUTS 0</span><span id="span_nuts0" class="general_info emptiable"></span><br>
+            <span class="badge bg-secondary">Density</span><span id="span_density" class="general_info emptiable"></span><br>
+            <span class="badge bg-secondary">Population change</span><span id="span_popchange" class="general_info emptiable"></span><br>
+            <span class="badge bg-secondary">Women:Men</span><span id="span_womenratio" class="general_info emptiable"></span><br>
+            <span class="badge bg-secondary">Fertility</span><span id="span_fertility" class="general_info emptiable"></span><br>
+            <span class="badge bg-danger">GDP PPS</span><span id="span_gdppps" class="general_info emptiable"></span><br>
+            <span class="badge bg-danger">GVA</span><span id="span_gva" class="general_info emptiable"></span><br>
+            <span class="badge bg-warning">Population</span><span id="span_pop3" class="general_info emptiable"></span><br>
+            <span class="badge bg-warning">Population of NUTS0</span><span id="span_pop0" class="general_info emptiable"></span><br>
           </div>
 
-        <div class="col-6">&nbsp;</div>
+
 
       </div>
 
@@ -69,7 +67,7 @@
 
         <h4>Most similar</h4>
 
-        <div id="all_top_0" class="row">
+        <div id="all_top_0" class="row similaritytop3">
             <div class="col">
               <span id="text_all_top_0" class="emptyable"></span>
             </div>
@@ -78,7 +76,7 @@
             </div>
         </div>
 
-        <div id="all_top_1" class="row">
+        <div id="all_top_1" class="row similaritytop3">
           <div class="col">
             <span id="text_all_top_1" class="emptyable"></span>
           </div>
@@ -87,7 +85,7 @@
           </div>
         </div>
 
-        <div id="all_top_2" class="row">
+        <div id="all_top_2" class="row similaritytop3">
           <div class="col">
             <span id="text_all_top_2" class="emptyable"></span>
           </div>
@@ -101,7 +99,7 @@
       <div class="col" id="similarity_all_bottom">
         <h4>Least similar</h4>
 
-        <div id="all_bottom_0" class="row">
+        <div id="all_bottom_0" class="row similaritytop3">
           <div class="col">
             <span id="text_all_bottom_0" class="emptyable"></span>
           </div>
@@ -110,7 +108,7 @@
           </div>
         </div>
 
-        <div id="all_bottom_1" class="row">
+        <div id="all_bottom_1" class="row similaritytop3">
           <div class="col">
             <span id="text_all_bottom_1" class="emptyable"></span>
           </div>
@@ -119,7 +117,7 @@
           </div>
         </div>
 
-        <div id="all_bottom_2" class="row">
+        <div id="all_bottom_2" class="row similaritytop3">
           <div class="col">
             <span id="text_all_bottom_2" class="emptyable"></span>
           </div>
@@ -139,7 +137,7 @@
       <div class="col" id="similarity_diff_country_top">
         <h4>Most similar</h4>
 
-        <div id="diff_country_top_0" class="row">
+        <div id="diff_country_top_0" class="row similaritytop3">
           <div class="col">
             <span id="text_diff_country_top_0" class="emptyable"></span>
           </div>
@@ -148,7 +146,7 @@
           </div>
         </div>
 
-        <div id="diff_country_top_1" class="row">
+        <div id="diff_country_top_1" class="row similaritytop3">
           <div class="col">
             <span id="text_diff_country_top_1" class="emptyable"></span>
           </div>
@@ -157,7 +155,7 @@
           </div>
         </div>
 
-        <div id="diff_country_top_2" class="row">
+        <div id="diff_country_top_2" class="row similaritytop3">
           <div class="col">
             <span id="text_diff_country_top_2" class="emptyable"></span>
           </div>
@@ -171,7 +169,7 @@
       <div class="col" id="similarity_diff_country_bottom">
         <h4>Least similar</h4>
 
-        <div id="diff_country_bottom_0" class="row">
+        <div id="diff_country_bottom_0" class="row similaritytop3">
           <div class="col">
             <span id="text_diff_country_bottom_0" class="emptyable"></span>
           </div>
@@ -180,7 +178,7 @@
           </div>
         </div>
 
-        <div id="diff_country_bottom_1" class="row">
+        <div id="diff_country_bottom_1" class="row similaritytop3">
           <div class="col">
             <span id="text_diff_country_bottom_1" class="emptyable"></span>
           </div>
@@ -189,12 +187,219 @@
           </div>
         </div>
 
-        <div id="diff_country_bottom_2" class="row">
+        <div id="diff_country_bottom_2" class="row similaritytop3">
           <div class="col">
             <span id="text_diff_country_bottom_2" class="emptyable"></span>
           </div>
           <div class="col">
             <svg id="svg_diff_country_bottom_2" class="emptyable"></svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Same country similarity -->
+    <div class="row" id="similarity_same_country">
+      <h3>In the same country</h3>
+
+      <div class="col" id="similarity_same_country_top">
+        <h4>Most similar</h4>
+
+        <div id="same_country_top_0" class="row similaritytop3">
+          <div class="col">
+            <span id="text_same_country_top_0" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_same_country_top_0" class="emptyable"></svg>
+          </div>
+        </div>
+
+        <div id="same_country_top_1" class="row similaritytop3">
+          <div class="col">
+            <span id="text_same_country_top_1" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_same_country_top_1" class="emptyable"></svg>
+          </div>
+        </div>
+
+        <div id="same_country_top_2" class="row similaritytop3">
+          <div class="col">
+            <span id="text_same_country_top_2" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_same_country_top_2" class="emptyable"></svg>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col" id="similarity_same_country_bottom">
+        <h4>Least similar</h4>
+
+        <div id="same_country_bottom_0" class="row similaritytop3">
+          <div class="col">
+            <span id="text_same_country_bottom_0" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_same_country_bottom_0" class="emptyable"></svg>
+          </div>
+        </div>
+
+        <div id="same_country_bottom_1" class="row similaritytop3">
+          <div class="col">
+            <span id="text_same_country_bottom_1" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_same_country_bottom_1" class="emptyable"></svg>
+          </div>
+        </div>
+
+        <div id="same_country_bottom_2" class="row similaritytop3">
+          <div class="col">
+            <span id="text_same_country_bottom_2" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_same_country_bottom_2" class="emptyable"></svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Higher GVA similarity -->
+    <div class="row" id="similarity_higher_gdppps">
+      <h3>Areas with higher GDPPPS</h3>
+
+      <div class="col" id="similarity_higher_gdppps_top">
+        <h4>Most similar</h4>
+
+        <div id="higher_gdppps_top_0" class="row similaritytop3">
+          <div class="col">
+            <span id="text_higher_gdppps_top_0" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_higher_gdppps_top_0" class="emptyable"></svg>
+          </div>
+        </div>
+
+        <div id="higher_gdppps_top_1" class="row similaritytop3">
+          <div class="col">
+            <span id="text_higher_gdppps_top_1" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_higher_gdppps_top_1" class="emptyable"></svg>
+          </div>
+        </div>
+
+        <div id="higher_gdppps_top_2" class="row similaritytop3">
+          <div class="col">
+            <span id="text_higher_gdppps_top_2" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_higher_gdppps_top_2" class="emptyable"></svg>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col" id="similarity_higher_gdppps_bottom">
+        <h4>Least similar</h4>
+
+        <div id="higher_gdppps_bottom_0" class="row similaritytop3">
+          <div class="col">
+            <span id="text_higher_gdppps_bottom_0" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_higher_gdppps_bottom_0" class="emptyable"></svg>
+          </div>
+        </div>
+
+        <div id="higher_gdppps_bottom_1" class="row similaritytop3">
+          <div class="col">
+            <span id="text_higher_gdppps_bottom_1" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_higher_gdppps_bottom_1" class="emptyable"></svg>
+          </div>
+        </div>
+
+        <div id="higher_gdppps_bottom_2" class="row similaritytop3">
+          <div class="col">
+            <span id="text_higher_gdppps_bottom_2" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_higher_gdppps_bottom_2" class="emptyable"></svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Higher GVA similarity -->
+    <div class="row" id="similarity_higher_gva">
+      <h3>Areas with higher GVA</h3>
+
+      <div class="col" id="similarity_higher_gva_top">
+        <h4>Most similar</h4>
+
+        <div id="higher_gva_top_0" class="row similaritytop3">
+          <div class="col">
+            <span id="text_higher_gva_top_0" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_higher_gva_top_0" class="emptyable"></svg>
+          </div>
+        </div>
+
+        <div id="higher_gva_top_1" class="row similaritytop3">
+          <div class="col">
+            <span id="text_higher_gva_top_1" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_higher_gva_top_1" class="emptyable"></svg>
+          </div>
+        </div>
+
+        <div id="higher_gva_top_2" class="row similaritytop3">
+          <div class="col">
+            <span id="text_higher_gva_top_2" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_higher_gva_top_2" class="emptyable"></svg>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col" id="similarity_higher_gva_bottom">
+        <h4>Least similar</h4>
+
+        <div id="higher_gva_bottom_0" class="row similaritytop3">
+          <div class="col">
+            <span id="text_higher_gva_bottom_0" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_higher_gva_bottom_0" class="emptyable"></svg>
+          </div>
+        </div>
+
+        <div id="higher_gva_bottom_1" class="row similaritytop3">
+          <div class="col">
+            <span id="text_higher_gva_bottom_1" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_higher_gva_bottom_1" class="emptyable"></svg>
+          </div>
+        </div>
+
+        <div id="higher_gva_bottom_2" class="row similaritytop3">
+          <div class="col">
+            <span id="text_higher_gva_bottom_2" class="emptyable"></span>
+          </div>
+          <div class="col">
+            <svg id="svg_higher_gva_bottom_2" class="emptyable"></svg>
           </div>
         </div>
 
@@ -270,15 +475,20 @@ function setup_autocomplete() {
   },
   select: function (event, ui) {
     // get json, and set it as global variable
-    $('#all_data').hide();
-    emptyData();
-    $.getJSON("getdata.php?code="+ui.item.code, function(data){
-        window.similarity = data;
-        fillData();
-    }).fail(function(){
-        alert("Sorry, an error has occurred. Please try again later.");
-    });
-  }});
+    selectedNUTS(ui.item.code);
+  }
+});
+}
+
+function selectedNUTS(code) {
+  $('#all_data').hide();
+  emptyData();
+  $.getJSON("getdata.php?code="+code, function(data){
+      window.similarity = data;
+      fillData();
+  }).fail(function(){
+      alert("Sorry, an error has occurred. Please try again later.");
+  });
 }
 
 function fillData()
@@ -286,56 +496,41 @@ function fillData()
 
   // General information
   $('#nametitle').html(window.similarity['name']);
-  $('#span_nuts3').html('Code ' + window.similarity['code'] + " (NUTS level " + window.similarity['level'] + ")");
-  $('#span_nuts0').html('Country ' + window.similarity['nuts0']);
+  $('#span_nuts3').html(window.similarity['code']);
+  $('#span_nuts0').html(window.similarity['nuts0']);
   // TODO this will depend on level!
   // $('#span_nuts1').html('NUTS1' + window.similarity['nuts1']);
   // $('#span_nuts2').html('NUTS2' + window.similarity['nuts2']);
-  $('#span_density').html('Density ' + window.similarity['density']);
-  $('#span_fertility').html('Fertility ' + window.similarity['fertility']);
-  $('#span_popchange').html('Population change' + window.similarity['popchange']);
-  $('#span_womenratio').html('Women:Men ' + window.similarity['womenratio']);
-  $('#span_gdppps').html('GDP per person ' + window.similarity['gdppps']);
-  $('#span_gva').html('GVA ' + window.similarity['gva']);
-  $('#span_pop3').html('Population ' + window.similarity['population']);
-  $('#span_pop0').html('Population NUTS0 ' + window.similarity['population0']);
+  $('#span_density').html(window.similarity['density']);
+  $('#span_fertility').html(window.similarity['fertility']);
+  $('#span_popchange').html(window.similarity['popchange']);
+  $('#span_womenratio').html(window.similarity['womenratio']);
+  $('#span_gdppps').html(window.similarity['gdppps']);
+  $('#span_gva').html(window.similarity['gva']);
+  $('#span_pop3').html(window.similarity['population']);
+  $('#span_pop0').html(window.similarity['population0']);
 
   // Image
   filename = 'images/' + window.similarity['code'] + ".png";
   // filename = 'images/0placeholder.png';
   $('#qgis_image').attr("src",filename);
 
-  // Overall similarity - Most
-  drawSVG(document.getElementById('svg_all_top_0'), window.similarity["similarity_all_top"][0]['similarity']);
-  $('#text_all_top_0').html(window.similarity["similarity_all_top"][0]['name'] + " " + (100*window.similarity["similarity_all_top"][0]['similarity']).toFixed(2) + "%");
-  drawSVG(document.getElementById('svg_all_top_1'), window.similarity["similarity_all_top"][1]['similarity']);
-  $('#text_all_top_1').html(window.similarity["similarity_all_top"][1]['name'] + " " + (100*window.similarity["similarity_all_top"][1]['similarity']).toFixed(2) + "%");
-  drawSVG(document.getElementById('svg_all_top_2'), window.similarity["similarity_all_top"][2]['similarity']);
-  $('#text_all_top_2').html(window.similarity["similarity_all_top"][2]['name'] + " " + (100*window.similarity["similarity_all_top"][2]['similarity']).toFixed(2) + "%");
-  // Overall similarity - Least
-  drawSVG(document.getElementById('svg_all_bottom_0'), window.similarity["similarity_all_bottom"][0]['similarity']);
-  $('#text_all_bottom_0').html(window.similarity["similarity_all_bottom"][0]['name'] + " " + (100*window.similarity["similarity_all_bottom"][0]['similarity']).toFixed(2) + "%");
-  drawSVG(document.getElementById('svg_all_bottom_1'), window.similarity["similarity_all_bottom"][1]['similarity']);
-  $('#text_all_bottom_1').html(window.similarity["similarity_all_bottom"][1]['name'] + " " + (100*window.similarity["similarity_all_bottom"][1]['similarity']).toFixed(2) + "%");
-  drawSVG(document.getElementById('svg_all_bottom_2'), window.similarity["similarity_all_bottom"][2]['similarity']);
-  $('#text_all_bottom_2').html(window.similarity["similarity_all_bottom"][2]['name'] + " " + (100*window.similarity["similarity_all_bottom"][2]['similarity']).toFixed(2) + "%");
+  var similarities = ['all_top', 'all_bottom', 'diff_country_top', 'diff_country_bottom', 'same_country_top', 'same_country_bottom', 'higher_gdppps_top', 'higher_gdppps_bottom','higher_gva_top', 'higher_gva_bottom'];
+  for (var i = 0; i < similarities.length; i++) {
 
+    itemtype = similarities[i];
 
-  // Different country similarity - Most
-  drawSVG(document.getElementById('svg_diff_country_top_0'), window.similarity["similarity_diff_country_top"][0]['similarity']);
-  $('#text_diff_country_top_0').html(window.similarity["similarity_diff_country_top"][0]['name'] + " " + (100*window.similarity["similarity_diff_country_top"][0]['similarity']).toFixed(2) + "%");
-  drawSVG(document.getElementById('svg_diff_country_top_1'), window.similarity["similarity_diff_country_top"][1]['similarity']);
-  $('#text_diff_country_top_1').html(window.similarity["similarity_diff_country_top"][1]['name'] + " " + (100*window.similarity["similarity_diff_country_top"][1]['similarity']).toFixed(2) + "%");
-  drawSVG(document.getElementById('svg_diff_country_top_2'), window.similarity["similarity_diff_country_top"][2]['similarity']);
-  $('#text_diff_country_top_2').html(window.similarity["similarity_diff_country_top"][2]['name'] + " " + (100*window.similarity["similarity_diff_country_top"][2]['similarity']).toFixed(2) + "%");
-  // Different country similarity - Least
-  drawSVG(document.getElementById('svg_diff_country_bottom_0'), window.similarity["similarity_diff_country_bottom"][0]['similarity']);
-  $('#text_diff_country_bottom_0').html(window.similarity["similarity_diff_country_bottom"][0]['name'] + " " + (100*window.similarity["similarity_diff_country_bottom"][0]['similarity']).toFixed(2) + "%");
-  drawSVG(document.getElementById('svg_diff_country_bottom_1'), window.similarity["similarity_diff_country_bottom"][1]['similarity']);
-  $('#text_diff_country_bottom_1').html(window.similarity["similarity_diff_country_bottom"][1]['name'] + " " + (100*window.similarity["similarity_diff_country_bottom"][1]['similarity']).toFixed(2) + "%");
-  drawSVG(document.getElementById('svg_diff_country_bottom_2'), window.similarity["similarity_diff_country_bottom"][2]['similarity']);
-  $('#text_diff_country_bottom_2').html(window.similarity["similarity_diff_country_bottom"][2]['name'] + " " + (100*window.similarity["similarity_diff_country_bottom"][2]['similarity']).toFixed(2) + "%");
+    for (itemindex in [0,1,2]) {
 
+      svgitem = 'svg_'+itemtype+"_"+itemindex;
+      textitem = '#text_'+itemtype+"_"+itemindex;
+      similarityitemname = 'similarity_'+itemtype;
+      similarityobject = window.similarity[similarityitemname][itemindex];
+
+      drawSVG(document.getElementById(svgitem), similarityobject['similarity']);
+      $(textitem).html(similarityobject['name'] + " " + (100*similarityobject['similarity']).toFixed(2) + "%");
+    }
+  }
 
 
 
@@ -346,13 +541,7 @@ function fillData()
 
 function emptyData()
 {
-  $('.emptiable').html("");
-//   $('#svg_all_top_0').html("");
-//   $('#svg_all_top_1').html("");
-//   $('#svg_all_top_2').html("");
-//   $('#text_all_top_0').html("");
-//   $('#text_all_top_1').html("");
-//   $('#text_all_top_2').html("");
+  $('.emptyable').empty();
 }
 
 function drawSVG(svgElement, similarity) {
@@ -369,8 +558,8 @@ function drawSVG(svgElement, similarity) {
   }
 
   startX = 30;
-  startY = 100;
-  radius = 30;
+  startY = 30;
+  radius = 20;
   centreX = startX + radius;
   centreY = startY ;
 
