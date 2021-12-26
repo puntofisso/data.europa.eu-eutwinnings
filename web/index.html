@@ -534,7 +534,7 @@ function fillData()
 
 
       drawChart(document.getElementById(chartitem), similarityobject['similarity']);
-      $(textitem).html(similarityobject['name'] + " " + (100*similarityobject['similarity']).toFixed(2) + "%");
+      $(textitem).html(similarityobject['name'] + "<br/>" + (100*similarityobject['similarity']).toFixed(2) + "%");
     }
   }
 

@@ -16,6 +16,6 @@ span.general_info {
   padding-left: 10px !important;
 }
 
-/* div.similaritytop3 {
-  height: 3em !important;
-} */
+div.similaritytop3 > div {
+  margin: auto;
+}
