@@ -421,6 +421,11 @@
 $(document).ready( function() {
 
   $('#all_data').hide();
+  $( "span" ).click(function( eventObject ) {
+      eventObject.preventDefault();
+      code = $(this)[0].children[0].attributes['data-code'].value;
+      navigateToNUTS(code);
+  });
 
   // get json, and set it as global variable
   $.getJSON("data/nuts-autocomplete.json", function(data){
@@ -479,12 +484,12 @@ function setup_autocomplete() {
   },
   select: function (event, ui) {
     // get json, and set it as global variable
-    selectedNUTS(ui.item.code);
+    navigateToNUTS(ui.item.code);
   }
 });
 }
 
-function selectedNUTS(code) {
+function navigateToNUTS(code) {
   $('#all_data').hide();
   emptyData();
   $.getJSON("getdata.php?code="+code, function(data){
@@ -531,10 +536,10 @@ function fillData()
       textitem = '#text_'+itemtype+"_"+itemindex;
       similarityitemname = 'similarity_'+itemtype;
       similarityobject = window.similarity[similarityitemname][itemindex];
-
+      targetcode = window.similarity[similarityitemname][itemindex]['code'];
 
       drawChart(document.getElementById(chartitem), similarityobject['similarity']);
-      $(textitem).html(similarityobject['name'] + "<br/>" + (100*similarityobject['similarity']).toFixed(2) + "%");
+      $(textitem).html("<a class='linktonuts' data-code='" + targetcode + "' href='#'>" + similarityobject['name'] +" </a>" + "<br/>" + (100*similarityobject['similarity']).toFixed(2) + "%");
     }
   }
 
@@ -548,11 +553,72 @@ function fillData()
 function emptyData()
 {
   $('.emptyable').empty();
+
+$('#chart_all_top_0').remove();
+$('#chart_all_top_1').remove();
+$('#chart_all_top_2').remove();
+$('#chart_all_bottom_0').remove();
+$('#chart_all_bottom_1').remove();
+$('#chart_all_bottom_2').remove();
+$('#chart_diff_country_top_0').remove();
+$('#chart_diff_country_top_1').remove();
+$('#chart_diff_country_top_2').remove();
+$('#chart_diff_country_bottom_0').remove();
+$('#chart_diff_country_bottom_1').remove();
+$('#chart_diff_country_bottom_2').remove();
+$('#chart_same_country_top_0').remove();
+$('#chart_same_country_top_1').remove();
+$('#chart_same_country_top_2').remove();
+$('#chart_same_country_bottom_0').remove();
+$('#chart_same_country_bottom_1').remove();
+$('#chart_same_country_bottom_2').remove();
+$('#chart_higher_gdppps_top_0').remove();
+$('#chart_higher_gdppps_top_1').remove();
+$('#chart_higher_gdppps_top_2').remove();
+$('#chart_higher_gdppps_bottom_0').remove();
+$('#chart_higher_gdppps_bottom_1').remove();
+$('#chart_higher_gdppps_bottom_2').remove();
+$('#chart_higher_gva_top_0').remove();
+$('#chart_higher_gva_top_1').remove();
+$('#chart_higher_gva_top_2').remove();
+$('#chart_higher_gva_bottom_0').remove();
+$('#chart_higher_gva_bottom_1').remove();
+$('#chart_higher_gva_bottom_2').remove();
+
+$('#all_top_0 > div.col-2').append('<canvas id="chart_all_top_0" style="width:100%;"></canvas>');
+$('#all_top_1 > div.col-2').append('<canvas id="chart_all_top_1" style="width:100%;"></canvas>');
+$('#all_top_2 > div.col-2').append('<canvas id="chart_all_top_2" style="width:100%;"></canvas>');
+$('#all_bottom_0 > div.col-2').append('<canvas id="chart_all_bottom_0" style="width:100%;"></canvas>');
+$('#all_bottom_1 > div.col-2').append('<canvas id="chart_all_bottom_1" style="width:100%;"></canvas>');
+$('#all_bottom_2 > div.col-2').append('<canvas id="chart_all_bottom_2" style="width:100%;"></canvas>');
+$('#diff_country_top_0 > div.col-2').append('<canvas id="chart_diff_country_top_0" style="width:100%;"></canvas>');
+$('#diff_country_top_1 > div.col-2').append('<canvas id="chart_diff_country_top_1" style="width:100%;"></canvas>');
+$('#diff_country_top_2 > div.col-2').append('<canvas id="chart_diff_country_top_2" style="width:100%;"></canvas>');
+$('#diff_country_bottom_0 > div.col-2').append('<canvas id="chart_diff_country_bottom_0" style="width:100%;"></canvas>');
+$('#diff_country_bottom_1 > div.col-2').append('<canvas id="chart_diff_country_bottom_1" style="width:100%;"></canvas>');
+$('#diff_country_bottom_2 > div.col-2').append('<canvas id="chart_diff_country_bottom_2" style="width:100%;"></canvas>');
+$('#same_country_top_0 > div.col-2').append('<canvas id="chart_same_country_top_0" style="width:100%;"></canvas>');
+$('#same_country_top_1 > div.col-2').append('<canvas id="chart_same_country_top_1" style="width:100%;"></canvas>');
+$('#same_country_top_2 > div.col-2').append('<canvas id="chart_same_country_top_2" style="width:100%;"></canvas>');
+$('#same_country_bottom_0 > div.col-2').append('<canvas id="chart_same_country_bottom_0" style="width:100%;"></canvas>');
+$('#same_country_bottom_1 > div.col-2').append('<canvas id="chart_same_country_bottom_1" style="width:100%;"></canvas>');
+$('#same_country_bottom_2 > div.col-2').append('<canvas id="chart_same_country_bottom_2" style="width:100%;"></canvas>');
+$('#higher_gdppps_top_0 > div.col-2').append('<canvas id="chart_higher_gdppps_top_0" style="width:100%;"></canvas>');
+$('#higher_gdppps_top_1 > div.col-2').append('<canvas id="chart_higher_gdppps_top_1" style="width:100%;"></canvas>');
+$('#higher_gdppps_top_2 > div.col-2').append('<canvas id="chart_higher_gdppps_top_2" style="width:100%;"></canvas>');
+$('#higher_gdppps_bottom_0 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_0" style="width:100%;"></canvas>');
+$('#higher_gdppps_bottom_1 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_1" style="width:100%;"></canvas>');
+$('#higher_gdppps_bottom_2 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_2" style="width:100%;"></canvas>');
+$('#higher_gva_top_0 > div.col-2').append('<canvas id="chart_higher_gva_top_0" style="width:100%;"></canvas>');
+$('#higher_gva_top_1 > div.col-2').append('<canvas id="chart_higher_gva_top_1" style="width:100%;"></canvas>');
+$('#higher_gva_top_2 > div.col-2').append('<canvas id="chart_higher_gva_top_2" style="width:100%;"></canvas>');
+$('#higher_gva_bottom_0 > div.col-2').append('<canvas id="chart_higher_gva_bottom_0" style="width:100%;"></canvas>');
+$('#higher_gva_bottom_1 > div.col-2').append('<canvas id="chart_higher_gva_bottom_1" style="width:100%;"></canvas>');
+$('#higher_gva_bottom_2 > div.col-2').append('<canvas id="chart_higher_gva_bottom_2" style="width:100%;"></canvas>');
+
 }
 
 function drawChart(canvasElement, similarity) {
-
-
   reciprocal = 1-similarity;
 
   fill = 'rgba(0, 0, 0, 1)'; // black
@@ -590,7 +656,7 @@ function drawChart(canvasElement, similarity) {
                 display: false
               },
             }
-        },
+        ,
       plugins: {
         legend: {
                 display: false
@@ -600,8 +666,10 @@ function drawChart(canvasElement, similarity) {
               }
             }
           }
+        }
       );
 }
+
 //
 // function drawSVG(svgElement, similarity) {
 //   deg = 360*similarity;
