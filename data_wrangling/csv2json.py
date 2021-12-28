@@ -16,6 +16,7 @@ with open(filename, mode="r", encoding="utf-8") as csv_file:
         x=dict()
         x['label'] = row['label']
         x['code'] = row['code']
+        x['country'] = row['country']
         globallist.append(x)
 
 print(json.dumps(globallist))

@@ -12,30 +12,30 @@ sqlite3 -batch nuts.db "create table relations2016(code text PRIMARY KEY, name t
 # Populate
 sqlite3 -batch nuts.db <<EOF
 .separator "|"
-.import basicdata-2021.tsv nuts
+.import --skip 1 basicdata-2021.tsv nuts
 EOF
 
 sqlite3 -batch nuts.db <<EOF
 .separator "|"
-.import basicdataNORM-2021.tsv nutsNORM
+.import --skip 1 basicdataNORM-2021.tsv nutsNORM
 EOF
 
 sqlite3 -batch nuts.db <<EOF
 .separator "|"
-.import basicdata-2016.tsv nuts2016
+.import --skip 1 basicdata-2016.tsv nuts2016
 EOF
 
 sqlite3 -batch nuts.db <<EOF
 .separator "|"
-.import basicdataNORM-2016.tsv nutsNORM2016
+.import --skip 1 basicdataNORM-2016.tsv nutsNORM2016
 EOF
 
 sqlite3 -batch nuts.db<<EOF
 .separator "|"
-.import nutsrelations-2021.psv relations
+.import --skip 1 nutsrelations-2021.psv relations
 EOF
 
 sqlite3 -batch nuts.db<<EOF
 .separator "|"
-.import nutsrelations-2016.psv relations2016
+.import --skip 1 nutsrelations-2016.psv relations2016
 EOF

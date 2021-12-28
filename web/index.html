@@ -38,6 +38,7 @@
     <div class="container" id="general_info">
       <div class="row">
         <h2 class="emptiable" id="nametitle"></h2>
+        <h4 class="emptiable" id="subnametitle"></h4>
       </div>
 
       <div class="row">
@@ -443,11 +444,31 @@ function setup_autocomplete() {
 
   // in order to make search easier, we translate the letters with diacritics
   // e.g. you can search for "Gottingen" instead of "Göttingen"
-  // TODO more mapping required
   var accentMap = {
-    "á": "a",
-    "ö": "o","ä": "a","ü": "u",
-    "ø": "o"
+    "Ç": "C", "Č": "C",
+    "ç": "c", "č": "c",
+    "ñ": "n",
+    "Á": "A", "Å": "A",
+    "É": "E",
+    "Í": "I",
+    "Ö": "O", "Ø": "O",
+    "Ú": "U",
+    "ð": "d", "đ": "d",
+    "ß": "b",
+    "ğ": "g",
+    "ħ": "h",
+    "Ł": "L", "ł": "l",
+    "ń": "n", "ň": "n",
+    "ř": "r",
+    "Ś": "s", "ś": "s", "Ş": "s", "ş": "s", "Š": "s", "š": "s",
+    "ţ": "t",
+    "ź": "z", "Ż": "z", "ż": "z", "Ž": "z", "ž": "z",
+    "á": "a", "â": "a", "å": "a", "ä": "a", "ã": "a", "æ": "a", "ă": "a", "ą": "a",
+    "é": "e", "è": "e", "ë": "e", "ė": "e", "ę": "e", "ě": "e",
+    "í": "i", "ì": "i", "ī": "i", "İ": "i", "ı": "i",
+    "ó": "o", "ô": "o", "ö": "o", "õ": "o", "ø": "o", "ő": "o",
+    "ú": "u", "ü": "u", "ų": "u",
+    "ý": "y"
   };
   var normalize = function( term ) {
     var ret = "";
@@ -505,6 +526,7 @@ function fillData()
 
   // General information
   $('#nametitle').html(window.similarity['name']);
+  $('#subnametitle').html(window.similarity['nuts0name'] + ", " + window.similarity['nuts1name'] + ", " + window.similarity['nuts2name']);
   $('#span_nuts3').html(window.similarity['code']);
   $('#span_nuts0').html(window.similarity['nuts0']);
   // TODO this will depend on level!
@@ -531,12 +553,19 @@ function fillData()
 
     for (itemindex in [0,1,2]) {
 
-      // svgitem = 'svg_'+itemtype+"_"+itemindex;
       chartitem = 'chart_'+itemtype+"_"+itemindex;
       textitem = '#text_'+itemtype+"_"+itemindex;
       similarityitemname = 'similarity_'+itemtype;
       similarityobject = window.similarity[similarityitemname][itemindex];
-      targetcode = window.similarity[similarityitemname][itemindex]['code'];
+      var targetcode;
+      try {
+        targetcode = window.similarity[similarityitemname][itemindex]['code'];
+      }
+      catch (exc) {
+        continue;
+      }
+
+
 
       drawChart(document.getElementById(chartitem), similarityobject['similarity']);
       $(textitem).html("<a class='linktonuts' data-code='" + targetcode + "' href='#'>" + similarityobject['name'] +" </a>" + "<br/>" + (100*similarityobject['similarity']).toFixed(2) + "%");

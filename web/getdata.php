@@ -40,12 +40,19 @@ $stm = $db->prepare("SELECT * FROM nuts WHERE code = ?");
 $res = $stm->execute(array($code));
 $data = $stm->fetchAll();
 
+$nuts0 = "";
+$nuts2 = "";
+$nuts1 = "";
+
 foreach ($data as $row) {
   $ret['name'] = $row['name'];
   $ret['level'] = $row['level'];
   $ret['nuts0'] = $row['nuts0'];
+  $nuts0 = $row['nuts0'];
   $ret['nuts1'] = $row['nuts1'];
+  $nuts1 = $row['nuts1'];
   $ret['nuts2'] = $row['nuts2'];
+  $nuts2 = $row['nuts2'];
   $ret['population'] = $row['pop3'];
   $ret['population0'] = $row['pop0'];
   $ret['population1'] = $row['pop1'];
