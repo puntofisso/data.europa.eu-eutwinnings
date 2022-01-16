@@ -108,6 +108,7 @@ def generateallsimilarities():
 
             # Insert similarity into DB
             curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code1, code2, simresult))
+            curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code2, code1, simresult))
             conWRITE.commit()
     except sqlite3.Error:
         print("failed insert!")
@@ -125,6 +126,7 @@ def generateallsimilarities():
 
             # Insert similarity into DB
             curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code1, code2, simresult))
+            curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code2, code1, simresult))
             conWRITE.commit()
     except sqlite3.Error:
         print("failed insert!")
@@ -135,13 +137,14 @@ def generateallsimilarities():
     all_nuts1 = cur.fetchall()
     curWRITE.execute("begin")
     try:
-        for nuts in all_nuts2:
+        for nuts in all_nuts1:
             code1 = nuts['code1']
             code2 = nuts['code2']
             simresult = similarity(code1, code2, fieldlist1)
 
             # Insert similarity into DB
             curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code1, code2, simresult))
+            curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code2, code1, simresult))
             conWRITE.commit()
     except sqlite3.Error:
         print("failed insert!")
@@ -152,13 +155,14 @@ def generateallsimilarities():
     all_nuts0 = cur.fetchall()
     curWRITE.execute("begin")
     try:
-        for nuts in all_nuts2:
+        for nuts in all_nuts0:
             code1 = nuts['code1']
             code2 = nuts['code2']
             simresult = similarity(code1, code2, fieldlist0)
 
             # Insert similarity into DB
             curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code1, code2, simresult))
+            curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code2, code1, simresult))
             conWRITE.commit()
     except sqlite3.Error:
         print("failed insert!")

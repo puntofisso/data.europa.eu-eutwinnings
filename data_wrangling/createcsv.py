@@ -39,7 +39,6 @@ def createCSV(year):
         nuts2=fields[5]
 
         if (level == "0"):
-
             try:
                 # get dictionaries for this area and its ancestors
                 try:
@@ -101,15 +100,12 @@ def createCSV(year):
             print(pop1)
 
         elif (level == "1"):
-            pass
             try:
-
                 # get dictionaries for this area and its ancestors
                 try:
                     dictionary0 = globaldict[nuts0]
                 except Exception:
                     dictionary0 = dict()
-
                 try:
                     dictionary1 = globaldict[code]
                 except Exception:
@@ -171,7 +167,6 @@ def createCSV(year):
             csvfile.write(thisline)
 
         elif (level == "2"):
-            pass
             try:
                 # get dictionaries for this area and its ancestors
                 try:
@@ -247,7 +242,6 @@ def createCSV(year):
             csvfile.write(thisline)
 
         elif (level=="3"):
-            pass
             try:
                 # get dictionaries for this area and its ancestors, if available
                 try:

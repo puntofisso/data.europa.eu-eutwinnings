@@ -12,11 +12,12 @@ with open(filename, mode="r", encoding="utf-8") as csv_file:
     next(csv_reader, None)
 
     for row in csv_reader:
-        # if (row['level']=='3'):
-        x=dict()
-        x['label'] = row['label']
-        x['code'] = row['code']
-        x['country'] = row['country']
-        globallist.append(x)
+        # select which level you want, or remove the if for all levels
+        if (row['level']=='3'):
+            x=dict()
+            x['label'] = row['label']
+            x['code'] = row['code']
+            x['country'] = row['country']
+            globallist.append(x)
 
 print(json.dumps(globallist))

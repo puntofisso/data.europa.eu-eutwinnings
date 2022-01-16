@@ -497,7 +497,7 @@ function setup_autocomplete() {
         if (matcher.test(value.label) && $.inArray(value.label, results) < 0) {
             // note: the below code isn't very well documented
             // label and value need to be the value of the label
-            obj = { 'label': value.label, 'code': value.code }
+            obj = { 'label': value.label + " [" + value.code.substring(0, 2) +"]", 'code': value.code }
             results.push(obj);
         }
     });
@@ -652,11 +652,11 @@ function drawChart(canvasElement, similarity) {
 
   fill = 'rgba(0, 0, 0, 1)'; // black
   if (similarity > 0.9) {
-    fill = 'rgba(0, 255, 0, 1)'; // green
+    fill = 'rgba(153,193,64, 1)'; // green
   } else if (similarity > 0.4) {
-    fill = 'rgba(255, 255, 0, 1)'; // yellow
+    fill = 'rgba(231,180,22, 1)'; // yellow
   } else if (similarity < 0.4)  {
-    fill = 'rgba(255, 0, 0, 1)'; // red
+    fill = 'rgba(204, 50, 50, 1)'; // red
   }
 
   var ctx = canvasElement.getContext('2d');
@@ -667,11 +667,13 @@ function drawChart(canvasElement, similarity) {
               data: [similarity, reciprocal],
               backgroundColor: [
                   fill,
-                  'rgba(0, 0, 0, 0)',
+                  'rgba(200, 200, 200, 1)',
               ]
           }]
       },
       options: {
+          cutout: '70%',
+          rotation: '90',
           scales: {
               x: {
                 grid: {
