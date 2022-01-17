@@ -1,0 +1,705 @@
+<!doctype html>
+<html>
+<head>
+  <title>EU Twinnings</title>
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico">
+  <link rel="icon" type="image/png" href="favicon.ico">
+
+  <link href="css/eutwinnings.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/jquery-ui.min.css" rel="stylesheet">
+  <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/rough.js"></script>
+
+  <script src="js/chart.min.js"> </script>
+
+</head>
+<body>
+<div class="container">
+
+  <div class="container">
+    <form>
+      <div class="mb-3">
+        <!--label for="inputRegion" class="form-label">Enter a NUTS area name</label-->
+        <input type="text" class="form-control" id="inputRegion" aria-describedby="emailHelp" placeholder="Start typing a NUTS area name...">
+      </div>
+
+    </form>
+  </div>
+
+
+  <div class="container" id="all_data">
+    <!-- General information and QGIS png -->
+
+    <div class="container" id="general_info">
+      <div class="row">
+        <h2 class="emptiable" id="nametitle"></h2>
+        <h4 class="emptiable" id="subnametitle"></h4>
+      </div>
+
+      <div class="row">
+        <div class="col-6"><img class="img-fluid" src="#" id="qgis_image"/></div>
+
+        <div class="col-6">
+            <span class="badge bg-primary">Code</span><span id="span_nuts3" class="general_info emptiable"></span><br>
+            <!--span id="span_nuts2" class="badge bg-primary emptiable"></span><br/>
+            <span id="span_nuts1" class="badge bg-primary emptiable"></span><br/-->
+            <span class="badge bg-primary">NUTS 0</span><span id="span_nuts0" class="general_info emptiable"></span><br>
+            <span class="badge bg-secondary">Density</span><span id="span_density" class="general_info emptiable"></span><br>
+            <span class="badge bg-secondary">Population change</span><span id="span_popchange" class="general_info emptiable"></span><br>
+            <span class="badge bg-secondary">Women:Men</span><span id="span_womenratio" class="general_info emptiable"></span><br>
+            <span class="badge bg-secondary">Fertility</span><span id="span_fertility" class="general_info emptiable"></span><br>
+            <span class="badge bg-danger">GDP PPS</span><span id="span_gdppps" class="general_info emptiable"></span><br>
+            <span class="badge bg-danger">GVA</span><span id="span_gva" class="general_info emptiable"></span><br>
+            <span class="badge bg-warning">Population</span><span id="span_pop3" class="general_info emptiable"></span><br>
+            <span class="badge bg-warning">Population of NUTS0</span><span id="span_pop0" class="general_info emptiable"></span><br>
+          </div>
+
+
+
+      </div>
+
+    </div>
+
+    <!-- General Similarity -->
+    <div class="row" id="similarity_all">
+      <h3>Overall similarity</h3>
+      <div class="col" id="similarity_all_top">
+
+        <h4>Most similar</h4>
+
+        <div id="all_top_0" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_all_top_0" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_all_top_0" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="all_top_1" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_all_top_1" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_all_top_1" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="all_top_2" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_all_top_2" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_all_top_2" class="emptyable"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col" id="similarity_all_bottom">
+        <h4>Least similar</h4>
+
+        <div id="all_bottom_0" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_all_bottom_0" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_all_bottom_0" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="all_bottom_1" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_all_bottom_1" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_all_bottom_1" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="all_bottom_2" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_all_bottom_2" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_all_bottom_2" class="emptyable"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Different country similarity -->
+    <div class="row" id="similarity_diff_country">
+      <h3>In a different country</h3>
+
+      <div class="col" id="similarity_diff_country_top">
+        <h4>Most similar</h4>
+
+        <div id="diff_country_top_0" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_diff_country_top_0" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_diff_country_top_0" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="diff_country_top_1" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_diff_country_top_1" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_diff_country_top_1" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="diff_country_top_2" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_diff_country_top_2" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_diff_country_top_2" class="emptyable"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col" id="similarity_diff_country_bottom">
+        <h4>Least similar</h4>
+
+        <div id="diff_country_bottom_0" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_diff_country_bottom_0" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_diff_country_bottom_0" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="diff_country_bottom_1" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_diff_country_bottom_1" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_diff_country_bottom_1" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="diff_country_bottom_2" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_diff_country_bottom_2" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_diff_country_bottom_2" class="emptyable"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Same country similarity -->
+    <div class="row" id="similarity_same_country">
+      <h3>In the same country</h3>
+
+      <div class="col" id="similarity_same_country_top">
+        <h4>Most similar</h4>
+
+        <div id="same_country_top_0" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_same_country_top_0" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_same_country_top_0" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="same_country_top_1" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_same_country_top_1" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_same_country_top_1" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="same_country_top_2" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_same_country_top_2" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_same_country_top_2" class="emptyable"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col" id="similarity_same_country_bottom">
+        <h4>Least similar</h4>
+
+        <div id="same_country_bottom_0" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_same_country_bottom_0" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_same_country_bottom_0" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="same_country_bottom_1" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_same_country_bottom_1" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_same_country_bottom_1" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="same_country_bottom_2" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_same_country_bottom_2" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_same_country_bottom_2" class="emptyable"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Higher GVA similarity -->
+    <div class="row" id="similarity_higher_gdppps">
+      <h3>Areas with higher GDPPPS</h3>
+
+      <div class="col" id="similarity_higher_gdppps_top">
+        <h4>Most similar</h4>
+
+        <div id="higher_gdppps_top_0" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_higher_gdppps_top_0" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_higher_gdppps_top_0" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="higher_gdppps_top_1" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_higher_gdppps_top_1" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_higher_gdppps_top_1" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="higher_gdppps_top_2" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_higher_gdppps_top_2" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_higher_gdppps_top_2" class="emptyable"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col" id="similarity_higher_gdppps_bottom">
+        <h4>Least similar</h4>
+
+        <div id="higher_gdppps_bottom_0" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_higher_gdppps_bottom_0" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_higher_gdppps_bottom_0" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="higher_gdppps_bottom_1" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_higher_gdppps_bottom_1" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_higher_gdppps_bottom_1" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="higher_gdppps_bottom_2" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_higher_gdppps_bottom_2" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_higher_gdppps_bottom_2" class="emptyable"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Higher GVA similarity -->
+    <div class="row" id="similarity_higher_gva">
+      <h3>Areas with higher GVA</h3>
+
+      <div class="col" id="similarity_higher_gva_top">
+        <h4>Most similar</h4>
+
+        <div id="higher_gva_top_0" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_higher_gva_top_0" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_higher_gva_top_0" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="higher_gva_top_1" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_higher_gva_top_1" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_higher_gva_top_1" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="higher_gva_top_2" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_higher_gva_top_2" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_higher_gva_top_2" class="emptyable"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col" id="similarity_higher_gva_bottom">
+        <h4>Least similar</h4>
+
+        <div id="higher_gva_bottom_0" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_higher_gva_bottom_0" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_higher_gva_bottom_0" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="higher_gva_bottom_1" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_higher_gva_bottom_1" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_higher_gva_bottom_1" class="emptyable"></span>
+          </div>
+        </div>
+
+        <div id="higher_gva_bottom_2" class="row similaritytop3">
+          <div class="col-2">
+            <canvas id="chart_higher_gva_bottom_2" style="width:100%;"></canvas>
+          </div>
+          <div class="col-10">
+            <span id="text_higher_gva_bottom_2" class="emptyable"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+</div>
+  </div>
+
+
+<script>
+/**
+  * Initialise the autocomplete function with the nuts.json file
+  */
+$(document).ready( function() {
+
+  $('#all_data').hide();
+  $( "span" ).click(function( eventObject ) {
+      eventObject.preventDefault();
+      code = $(this)[0].children[0].attributes['data-code'].value;
+      navigateToNUTS(code);
+  });
+
+  // get json, and set it as global variable
+  $.getJSON("data/nuts-autocomplete.json", function(data){
+    window.nuts = data;
+  }).fail(function(){
+    console.log("An error has occurred.");
+  }).done(function() {
+    setup_autocomplete();
+  });
+});
+
+// Autocomplete setup
+function setup_autocomplete() {
+  var nuts = window.nuts
+
+  // in order to make search easier, we translate the letters with diacritics
+  // e.g. you can search for "Gottingen" instead of "Göttingen"
+  var accentMap = {
+    "Ç": "C", "Č": "C",
+    "ç": "c", "č": "c",
+    "ñ": "n",
+    "Á": "A", "Å": "A",
+    "É": "E",
+    "Í": "I",
+    "Ö": "O", "Ø": "O",
+    "Ú": "U",
+    "ð": "d", "đ": "d",
+    "ß": "b",
+    "ğ": "g",
+    "ħ": "h",
+    "Ł": "L", "ł": "l",
+    "ń": "n", "ň": "n",
+    "ř": "r",
+    "Ś": "s", "ś": "s", "Ş": "s", "ş": "s", "Š": "s", "š": "s",
+    "ţ": "t",
+    "ź": "z", "Ż": "z", "ż": "z", "Ž": "z", "ž": "z",
+    "á": "a", "â": "a", "å": "a", "ä": "a", "ã": "a", "æ": "a", "ă": "a", "ą": "a",
+    "é": "e", "è": "e", "ë": "e", "ė": "e", "ę": "e", "ě": "e",
+    "í": "i", "ì": "i", "ī": "i", "İ": "i", "ı": "i",
+    "ó": "o", "ô": "o", "ö": "o", "õ": "o", "ø": "o", "ő": "o",
+    "ú": "u", "ü": "u", "ų": "u",
+    "ý": "y"
+  };
+  var normalize = function( term ) {
+    var ret = "";
+    for ( var i = 0; i < term.length; i++ ) {
+      ret += accentMap[ term.charAt(i) ] || term.charAt(i);
+    }
+    return ret;
+  };
+
+  // if you click inside the input field, empty it
+  $('#inputRegion').click(function() {
+    $(this).val('');
+  });
+
+  // set up autocomplete
+  $("#inputRegion").autocomplete({
+    minLength: 3,
+    width: 300,
+    max: 10,
+    source: function( request, response ) {
+
+    var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i") , results = [];
+
+    /* Make sure each entry is only in the suggestions list once: */
+    $.each(nuts, function (i, value) {
+        if (matcher.test(value.label) && $.inArray(value.label, results) < 0) {
+            // note: the below code isn't very well documented
+            // label and value need to be the value of the label
+            obj = { 'label': value.label + " [" + value.code.substring(0, 2) +"]", 'code': value.code }
+            results.push(obj);
+        }
+    });
+    response(results);
+  },
+  select: function (event, ui) {
+    // get json, and set it as global variable
+    navigateToNUTS(ui.item.code);
+  }
+});
+}
+
+function navigateToNUTS(code) {
+  $('#all_data').hide();
+  emptyData();
+  $.getJSON("getdata.php?code="+code, function(data){
+      window.similarity = data;
+      fillData();
+  }).fail(function(){
+      alert("Sorry, an error has occurred. Please try again later.");
+  });
+}
+
+function fillData()
+{
+
+  // General information
+  $('#nametitle').html(window.similarity['name']);
+  $('#subnametitle').html(window.similarity['nuts0name'] + ", " + window.similarity['nuts1name'] + ", " + window.similarity['nuts2name']);
+  $('#span_nuts3').html(window.similarity['code']);
+  $('#span_nuts0').html(window.similarity['nuts0']);
+  // TODO this will depend on level!
+  // $('#span_nuts1').html('NUTS1' + window.similarity['nuts1']);
+  // $('#span_nuts2').html('NUTS2' + window.similarity['nuts2']);
+  $('#span_density').html(window.similarity['density']);
+  $('#span_fertility').html(window.similarity['fertility']);
+  $('#span_popchange').html(window.similarity['popchange']);
+  $('#span_womenratio').html(window.similarity['womenratio']);
+  $('#span_gdppps').html(window.similarity['gdppps']);
+  $('#span_gva').html(window.similarity['gva']);
+  $('#span_pop3').html(window.similarity['population']);
+  $('#span_pop0').html(window.similarity['population0']);
+
+  // Image
+  filename = 'images/' + window.similarity['code'] + ".png";
+  // filename = 'images/0placeholder.png';
+  $('#qgis_image').attr("src",filename);
+
+  var similarities = ['all_top', 'all_bottom', 'diff_country_top', 'diff_country_bottom', 'same_country_top', 'same_country_bottom', 'higher_gdppps_top', 'higher_gdppps_bottom','higher_gva_top', 'higher_gva_bottom'];
+  for (var i = 0; i < similarities.length; i++) {
+
+    itemtype = similarities[i];
+
+    for (itemindex in [0,1,2]) {
+
+      chartitem = 'chart_'+itemtype+"_"+itemindex;
+      textitem = '#text_'+itemtype+"_"+itemindex;
+      similarityitemname = 'similarity_'+itemtype;
+      similarityobject = window.similarity[similarityitemname][itemindex];
+      var targetcode;
+      try {
+        targetcode = window.similarity[similarityitemname][itemindex]['code'];
+      }
+      catch (exc) {
+        continue;
+      }
+
+
+
+      drawChart(document.getElementById(chartitem), similarityobject['similarity']);
+      $(textitem).html("<a class='linktonuts' data-code='" + targetcode + "' href='#'>" + similarityobject['name'] +" </a>" + "<br/>" + (100*similarityobject['similarity']).toFixed(2) + "%");
+    }
+  }
+
+
+
+  $('#all_data').show();
+}
+
+
+
+function emptyData()
+{
+  $('.emptyable').empty();
+
+$('#chart_all_top_0').remove();
+$('#chart_all_top_1').remove();
+$('#chart_all_top_2').remove();
+$('#chart_all_bottom_0').remove();
+$('#chart_all_bottom_1').remove();
+$('#chart_all_bottom_2').remove();
+$('#chart_diff_country_top_0').remove();
+$('#chart_diff_country_top_1').remove();
+$('#chart_diff_country_top_2').remove();
+$('#chart_diff_country_bottom_0').remove();
+$('#chart_diff_country_bottom_1').remove();
+$('#chart_diff_country_bottom_2').remove();
+$('#chart_same_country_top_0').remove();
+$('#chart_same_country_top_1').remove();
+$('#chart_same_country_top_2').remove();
+$('#chart_same_country_bottom_0').remove();
+$('#chart_same_country_bottom_1').remove();
+$('#chart_same_country_bottom_2').remove();
+$('#chart_higher_gdppps_top_0').remove();
+$('#chart_higher_gdppps_top_1').remove();
+$('#chart_higher_gdppps_top_2').remove();
+$('#chart_higher_gdppps_bottom_0').remove();
+$('#chart_higher_gdppps_bottom_1').remove();
+$('#chart_higher_gdppps_bottom_2').remove();
+$('#chart_higher_gva_top_0').remove();
+$('#chart_higher_gva_top_1').remove();
+$('#chart_higher_gva_top_2').remove();
+$('#chart_higher_gva_bottom_0').remove();
+$('#chart_higher_gva_bottom_1').remove();
+$('#chart_higher_gva_bottom_2').remove();
+
+$('#all_top_0 > div.col-2').append('<canvas id="chart_all_top_0" style="width:100%;"></canvas>');
+$('#all_top_1 > div.col-2').append('<canvas id="chart_all_top_1" style="width:100%;"></canvas>');
+$('#all_top_2 > div.col-2').append('<canvas id="chart_all_top_2" style="width:100%;"></canvas>');
+$('#all_bottom_0 > div.col-2').append('<canvas id="chart_all_bottom_0" style="width:100%;"></canvas>');
+$('#all_bottom_1 > div.col-2').append('<canvas id="chart_all_bottom_1" style="width:100%;"></canvas>');
+$('#all_bottom_2 > div.col-2').append('<canvas id="chart_all_bottom_2" style="width:100%;"></canvas>');
+$('#diff_country_top_0 > div.col-2').append('<canvas id="chart_diff_country_top_0" style="width:100%;"></canvas>');
+$('#diff_country_top_1 > div.col-2').append('<canvas id="chart_diff_country_top_1" style="width:100%;"></canvas>');
+$('#diff_country_top_2 > div.col-2').append('<canvas id="chart_diff_country_top_2" style="width:100%;"></canvas>');
+$('#diff_country_bottom_0 > div.col-2').append('<canvas id="chart_diff_country_bottom_0" style="width:100%;"></canvas>');
+$('#diff_country_bottom_1 > div.col-2').append('<canvas id="chart_diff_country_bottom_1" style="width:100%;"></canvas>');
+$('#diff_country_bottom_2 > div.col-2').append('<canvas id="chart_diff_country_bottom_2" style="width:100%;"></canvas>');
+$('#same_country_top_0 > div.col-2').append('<canvas id="chart_same_country_top_0" style="width:100%;"></canvas>');
+$('#same_country_top_1 > div.col-2').append('<canvas id="chart_same_country_top_1" style="width:100%;"></canvas>');
+$('#same_country_top_2 > div.col-2').append('<canvas id="chart_same_country_top_2" style="width:100%;"></canvas>');
+$('#same_country_bottom_0 > div.col-2').append('<canvas id="chart_same_country_bottom_0" style="width:100%;"></canvas>');
+$('#same_country_bottom_1 > div.col-2').append('<canvas id="chart_same_country_bottom_1" style="width:100%;"></canvas>');
+$('#same_country_bottom_2 > div.col-2').append('<canvas id="chart_same_country_bottom_2" style="width:100%;"></canvas>');
+$('#higher_gdppps_top_0 > div.col-2').append('<canvas id="chart_higher_gdppps_top_0" style="width:100%;"></canvas>');
+$('#higher_gdppps_top_1 > div.col-2').append('<canvas id="chart_higher_gdppps_top_1" style="width:100%;"></canvas>');
+$('#higher_gdppps_top_2 > div.col-2').append('<canvas id="chart_higher_gdppps_top_2" style="width:100%;"></canvas>');
+$('#higher_gdppps_bottom_0 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_0" style="width:100%;"></canvas>');
+$('#higher_gdppps_bottom_1 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_1" style="width:100%;"></canvas>');
+$('#higher_gdppps_bottom_2 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_2" style="width:100%;"></canvas>');
+$('#higher_gva_top_0 > div.col-2').append('<canvas id="chart_higher_gva_top_0" style="width:100%;"></canvas>');
+$('#higher_gva_top_1 > div.col-2').append('<canvas id="chart_higher_gva_top_1" style="width:100%;"></canvas>');
+$('#higher_gva_top_2 > div.col-2').append('<canvas id="chart_higher_gva_top_2" style="width:100%;"></canvas>');
+$('#higher_gva_bottom_0 > div.col-2').append('<canvas id="chart_higher_gva_bottom_0" style="width:100%;"></canvas>');
+$('#higher_gva_bottom_1 > div.col-2').append('<canvas id="chart_higher_gva_bottom_1" style="width:100%;"></canvas>');
+$('#higher_gva_bottom_2 > div.col-2').append('<canvas id="chart_higher_gva_bottom_2" style="width:100%;"></canvas>');
+
+}
+
+function drawChart(canvasElement, similarity) {
+  reciprocal = 1-similarity;
+
+  fill = 'rgba(0, 0, 0, 1)'; // black
+  if (similarity > 0.9) {
+    fill = 'rgba(153,193,64, 1)'; // green
+  } else if (similarity > 0.4) {
+    fill = 'rgba(231,180,22, 1)'; // yellow
+  } else if (similarity < 0.4)  {
+    fill = 'rgba(204, 50, 50, 1)'; // red
+  }
+
+  var ctx = canvasElement.getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+          datasets: [{
+              data: [similarity, reciprocal],
+              backgroundColor: [
+                  fill,
+                  'rgba(200, 200, 200, 1)',
+              ]
+          }]
+      },
+      options: {
+          cutout: '70%',
+          rotation: '90',
+          scales: {
+              x: {
+                grid: {
+                display: false,
+                drawBorder: false,
+                drawOnChartArea: false,
+                drawTicks: false
+                }
+              },
+              ticks: {
+                display: false
+              },
+            }
+        ,
+      plugins: {
+        legend: {
+                display: false
+              },
+              tooltip: {
+                enabled: false
+              }
+            }
+          }
+        }
+      );
+}
+
+</script>
+
+</body>
+</html>
