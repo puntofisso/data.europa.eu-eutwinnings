@@ -2,13 +2,21 @@
 
 date
 
-echo "1. Converting shapefile to nuts0123.csv"
+echo "1a. Converting shapefile to nuts0123.csv"
 # 2021
 rm -f nuts0123-2021.csv
 ogr2ogr -f "CSV" -lco SEPARATOR=SEMICOLON -lco STRING_QUOTING=ALWAYS nuts0123-2021.csv NUTS_RG_20M_2021_3035.shp/NUTS_RG_20M_2021_3035.shp
 #2016
 rm -f nuts0123-2016.csv
 ogr2ogr -f "CSV" -lco SEPARATOR=SEMICOLON -lco STRING_QUOTING=ALWAYS nuts0123-2016.csv NUTS_RG_20M_2016_3035.shp/NUTS_RG_20M_2016_3035.shp
+
+echo "1b. Converting 2021 shapefile (NUTS3) to nuts3.geojson"
+
+rm -f forgeojson.shp
+ogr2ogr -where LEVL_CODE="3" forgeojson.shp NUTS_RG_20M_2021_3035.shp/NUTS_RG_20M_2021_3035.shp
+rm -f nuts3.geojson
+ogr2ogr -f "GeoJSON" -t_srs crs:84 nuts3.geojson forgeojson.shp
+rm -f forgeojson.shp
 
 date
 

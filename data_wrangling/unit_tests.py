@@ -3,6 +3,33 @@ import sqlite3
 
 class TestEUTwinningsMethods(unittest.TestCase):
 
+    def test_SQLdata_NUTS_official_number(self):
+        # tests that the count corresponds to the official
+        # count from https://ec.europa.eu/eurostat/web/nuts/background
+        conn = sqlite3.connect('nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        # NUTS3 must be 1166
+        line1 = cur.execute("SELECT count (*) as count from NUTS where level=3 and nuts0 NOT IN ('IS', 'LI', 'NO', 'CH', 'ME', 'MK', 'AL', 'RS', 'TR', 'BA', 'XK', 'UK');")
+        row1 = cur.fetchone()
+        count = row1['count']
+        self.assertEqual(count, 1166)
+        # NUTS2 must be 242
+        line1 = cur.execute("SELECT count (*) as count from NUTS where level=2 and nuts0 NOT IN ('IS', 'LI', 'NO', 'CH', 'ME', 'MK', 'AL', 'RS', 'TR', 'BA', 'XK', 'UK');")
+        row1 = cur.fetchone()
+        count = row1['count']
+        self.assertEqual(count, 242)
+        # NUTS1 must be 92
+        line1 = cur.execute("SELECT count (*) as count from NUTS where level=1 and nuts0 NOT IN ('IS', 'LI', 'NO', 'CH', 'ME', 'MK', 'AL', 'RS', 'TR', 'BA', 'XK', 'UK');")
+        row1 = cur.fetchone()
+        count = row1['count']
+        self.assertEqual(count, 92)
+        # NUTS0 must be 27
+        line1 = cur.execute("SELECT count (*) as count from NUTS where level=0 and nuts0 NOT IN ('IS', 'LI', 'NO', 'CH', 'ME', 'MK', 'AL', 'RS', 'TR', 'BA', 'XK', 'UK');")
+        row1 = cur.fetchone()
+        count = row1['count']
+        self.assertEqual(count, 27)
+
     def test_SQLdata_NUTS(self):
         conn = sqlite3.connect('nuts.db')
         conn.row_factory = sqlite3.Row
