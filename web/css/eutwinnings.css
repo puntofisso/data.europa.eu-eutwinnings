@@ -12,10 +12,15 @@ ul.ui-autocomplete  {
 }
 
 
-span.general_info {
+/* span.general_info {
   padding-left: 10px !important;
 }
 
 div.similaritytop3 > div {
   margin: auto;
+} */
+
+div.card-header > div > h6 {
+  color: #ffffff;
+  padding-left: 1em;
 }

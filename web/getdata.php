@@ -250,6 +250,21 @@ foreach ($data as $row) {
   $index++;
 }
 
+// ALL similarities for map
+$stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and s.code1 = ?  ORDER by s.similarity DESC ;");
+$res = $stm->execute(array($code));
+$ret['similarity_all'] = array();
+$data = $stm->fetchAll();
+$index=0;
+foreach ($data as $row) {
+  $code2 = $row['code'];
+  $ret['similarity_all'][$index]['code'] = $code2;
+  $ret['similarity_all'][$index]['name'] = $row['name'];
+  $ret['similarity_all'][$index]['country'] = $row['country'];
+  $ret['similarity_all'][$index]['similarity'] = $row['similarity'];
+  $index++;
+}
+
 echo json_encode($ret, true);
 
 ?>

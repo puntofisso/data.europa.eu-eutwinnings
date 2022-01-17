@@ -20,6 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="./MD-assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="favicon.ico">
+  <link href="css/eutwinnings.css" rel="stylesheet">
   <link href="css/jquery-ui.min.css" rel="stylesheet">
   <script src="js/external/jquery/jquery.js"></script>
   <script src="js/jquery-ui.min.js"></script>
@@ -147,32 +148,81 @@
     <!-- End Navbar -->
     <div class="container-fluid py-4">
 
-      <h1 class="mb-0 "> Name of NUTS area </h1>
-      <h6 class="mb-0 "> Country </h6>
+      <h1 class="mb-0 emptiable"  id="nametitle"> Name of NUTS area </h1>
+      <h6 class="mb-0 emptiable" id="subnametitle"> Country </h6>
 
 
       <div class="row mt-4">
+
         <div class="col-lg-4 col-md-6 mt-4 mb-4">
           <div class="card z-index-2 ">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+
               <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
-                <div class="chart">
+              <h6 class="mb-0 ">Map of the area</h6>
+                <!--div class="chart">
                   <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
                 </div>
-              </div>
+              </div-->
             </div>
             <div class="card-body">
-              <h6 class="mb-0 ">Map of the area</h6>
-              <p class="text-sm ">Whatever</p>
+              <img class="img-fluid" src="#" id="qgis_image"/>
+              <!--h6 class="mb-0 ">Map of the area</h6-->
+              <!--p class="text-sm ">Whatever</p-->
               <hr class="dark horizontal">
-              <div class="d-flex ">
+              <!--div class="d-flex ">
                 <i class="material-icons text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm"> campaign sent 2 days ago </p>
+              </div-->
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-4 mb-4">
+          <div class="card z-index-2 ">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+
+              <div class="bg-gradient-success shadow-primary border-radius-lg py-3 pe-1">
+                <h6 class="mb-0 ">General info</h6>
+
+              </div>
+              <div class="card-body">
+                <span class="badge bg-dark">Code</span><span id="span_nuts3" class="general_info emptiable"></span><br>
+                <!--span id="span_nuts2" class="badge bg-primary emptiable"></span><br/>
+                <span id="span_nuts1" class="badge bg-primary emptiable"></span><br/-->
+                <span class="badge bg-dark">NUTS 0</span><span id="span_nuts0" class="general_info emptiable"></span><br>
+                <span class="badge bg-secondary">Density</span><span id="span_density" class="general_info emptiable"></span><br>
+                <span class="badge bg-secondary">Population change</span><span id="span_popchange" class="general_info emptiable"></span><br>
+                <span class="badge bg-secondary">Women:Men</span><span id="span_womenratio" class="general_info emptiable"></span><br>
+                <span class="badge bg-secondary">Fertility</span><span id="span_fertility" class="general_info emptiable"></span><br>
+                <span class="badge bg-danger">GDP PPS</span><span id="span_gdppps" class="general_info emptiable"></span><br>
+                <span class="badge bg-danger">GVA</span><span id="span_gva" class="general_info emptiable"></span><br>
+                <span class="badge bg-warning">Population</span><span id="span_pop3" class="general_info emptiable"></span><br>
+                <span class="badge bg-warning">Population of NUTS0</span><span id="span_pop0" class="general_info emptiable"></span><br>
+                <hr class="dark horizontal">
               </div>
             </div>
           </div>
         </div>
+
         <div class="col-lg-4 col-md-6 mt-4 mb-4">
+          <div class="card z-index-2 ">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+
+              <div class="bg-gradient-dark shadow-primary border-radius-lg py-3 pe-1">
+                <h6 class="mb-0 ">Similarity map</h6>
+
+              </div>
+              <div class="card-body">
+                <img class="img-fluid" src="#" id="qgis_image"/>
+                <hr class="dark horizontal">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--div class="col-lg-4 col-md-6 mt-4 mb-4">
           <div class="card z-index-2  ">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
               <div class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1">
@@ -191,8 +241,9 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4 mt-4 mb-3">
+        </div-->
+
+        <!--div class="col-lg-4 mt-4 mb-3">
           <div class="card z-index-2 ">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
               <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
@@ -211,7 +262,8 @@
               </div>
             </div>
           </div>
-        </div>
+        </div-->
+
       </div>
 
       <div class="row mt-4">
@@ -1219,13 +1271,18 @@
   {
 
     // General information
-    $('#nametitle').html(window.similarity['name']);
-    $('#subnametitle').html(window.similarity['nuts0name'] + ", " + window.similarity['nuts1name'] + ", " + window.similarity['nuts2name']);
-    $('#span_nuts3').html(window.similarity['code']);
-    $('#span_nuts0').html(window.similarity['nuts0']);
     // TODO this will depend on level!
     // $('#span_nuts1').html('NUTS1' + window.similarity['nuts1']);
     // $('#span_nuts2').html('NUTS2' + window.similarity['nuts2']);
+    $('#nametitle').html(window.similarity['name']);
+    $('#subnametitle').html(window.similarity['nuts0name'] + ", " + window.similarity['nuts1name'] + ", " + window.similarity['nuts2name']);
+    filename = 'images/' + window.similarity['code'] + ".png";
+    // filename = 'images/0placeholder.png';
+    $('#qgis_image').attr("src",filename);
+
+    $('#span_nuts3').html(window.similarity['code']);
+    $('#span_nuts0').html(window.similarity['nuts0']);
+
     $('#span_density').html(window.similarity['density']);
     $('#span_fertility').html(window.similarity['fertility']);
     $('#span_popchange').html(window.similarity['popchange']);
@@ -1236,9 +1293,8 @@
     $('#span_pop0').html(window.similarity['population0']);
 
     // Image
-    filename = 'images/' + window.similarity['code'] + ".png";
-    // filename = 'images/0placeholder.png';
-    $('#qgis_image').attr("src",filename);
+
+
 
     var similarities = ['all_top', 'all_bottom', 'diff_country_top', 'diff_country_bottom', 'same_country_top', 'same_country_bottom', 'higher_gdppps_top', 'higher_gdppps_bottom','higher_gva_top', 'higher_gva_bottom'];
     for (var i = 0; i < similarities.length; i++) {
@@ -1277,67 +1333,67 @@
   {
     $('.emptyable').empty();
 
-  $('#chart_all_top_0').remove();
-  $('#chart_all_top_1').remove();
-  $('#chart_all_top_2').remove();
-  $('#chart_all_bottom_0').remove();
-  $('#chart_all_bottom_1').remove();
-  $('#chart_all_bottom_2').remove();
-  $('#chart_diff_country_top_0').remove();
-  $('#chart_diff_country_top_1').remove();
-  $('#chart_diff_country_top_2').remove();
-  $('#chart_diff_country_bottom_0').remove();
-  $('#chart_diff_country_bottom_1').remove();
-  $('#chart_diff_country_bottom_2').remove();
-  $('#chart_same_country_top_0').remove();
-  $('#chart_same_country_top_1').remove();
-  $('#chart_same_country_top_2').remove();
-  $('#chart_same_country_bottom_0').remove();
-  $('#chart_same_country_bottom_1').remove();
-  $('#chart_same_country_bottom_2').remove();
-  $('#chart_higher_gdppps_top_0').remove();
-  $('#chart_higher_gdppps_top_1').remove();
-  $('#chart_higher_gdppps_top_2').remove();
-  $('#chart_higher_gdppps_bottom_0').remove();
-  $('#chart_higher_gdppps_bottom_1').remove();
-  $('#chart_higher_gdppps_bottom_2').remove();
-  $('#chart_higher_gva_top_0').remove();
-  $('#chart_higher_gva_top_1').remove();
-  $('#chart_higher_gva_top_2').remove();
-  $('#chart_higher_gva_bottom_0').remove();
-  $('#chart_higher_gva_bottom_1').remove();
-  $('#chart_higher_gva_bottom_2').remove();
-
-  $('#all_top_0 > div.col-2').append('<canvas id="chart_all_top_0" style="width:100%;"></canvas>');
-  $('#all_top_1 > div.col-2').append('<canvas id="chart_all_top_1" style="width:100%;"></canvas>');
-  $('#all_top_2 > div.col-2').append('<canvas id="chart_all_top_2" style="width:100%;"></canvas>');
-  $('#all_bottom_0 > div.col-2').append('<canvas id="chart_all_bottom_0" style="width:100%;"></canvas>');
-  $('#all_bottom_1 > div.col-2').append('<canvas id="chart_all_bottom_1" style="width:100%;"></canvas>');
-  $('#all_bottom_2 > div.col-2').append('<canvas id="chart_all_bottom_2" style="width:100%;"></canvas>');
-  $('#diff_country_top_0 > div.col-2').append('<canvas id="chart_diff_country_top_0" style="width:100%;"></canvas>');
-  $('#diff_country_top_1 > div.col-2').append('<canvas id="chart_diff_country_top_1" style="width:100%;"></canvas>');
-  $('#diff_country_top_2 > div.col-2').append('<canvas id="chart_diff_country_top_2" style="width:100%;"></canvas>');
-  $('#diff_country_bottom_0 > div.col-2').append('<canvas id="chart_diff_country_bottom_0" style="width:100%;"></canvas>');
-  $('#diff_country_bottom_1 > div.col-2').append('<canvas id="chart_diff_country_bottom_1" style="width:100%;"></canvas>');
-  $('#diff_country_bottom_2 > div.col-2').append('<canvas id="chart_diff_country_bottom_2" style="width:100%;"></canvas>');
-  $('#same_country_top_0 > div.col-2').append('<canvas id="chart_same_country_top_0" style="width:100%;"></canvas>');
-  $('#same_country_top_1 > div.col-2').append('<canvas id="chart_same_country_top_1" style="width:100%;"></canvas>');
-  $('#same_country_top_2 > div.col-2').append('<canvas id="chart_same_country_top_2" style="width:100%;"></canvas>');
-  $('#same_country_bottom_0 > div.col-2').append('<canvas id="chart_same_country_bottom_0" style="width:100%;"></canvas>');
-  $('#same_country_bottom_1 > div.col-2').append('<canvas id="chart_same_country_bottom_1" style="width:100%;"></canvas>');
-  $('#same_country_bottom_2 > div.col-2').append('<canvas id="chart_same_country_bottom_2" style="width:100%;"></canvas>');
-  $('#higher_gdppps_top_0 > div.col-2').append('<canvas id="chart_higher_gdppps_top_0" style="width:100%;"></canvas>');
-  $('#higher_gdppps_top_1 > div.col-2').append('<canvas id="chart_higher_gdppps_top_1" style="width:100%;"></canvas>');
-  $('#higher_gdppps_top_2 > div.col-2').append('<canvas id="chart_higher_gdppps_top_2" style="width:100%;"></canvas>');
-  $('#higher_gdppps_bottom_0 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_0" style="width:100%;"></canvas>');
-  $('#higher_gdppps_bottom_1 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_1" style="width:100%;"></canvas>');
-  $('#higher_gdppps_bottom_2 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_2" style="width:100%;"></canvas>');
-  $('#higher_gva_top_0 > div.col-2').append('<canvas id="chart_higher_gva_top_0" style="width:100%;"></canvas>');
-  $('#higher_gva_top_1 > div.col-2').append('<canvas id="chart_higher_gva_top_1" style="width:100%;"></canvas>');
-  $('#higher_gva_top_2 > div.col-2').append('<canvas id="chart_higher_gva_top_2" style="width:100%;"></canvas>');
-  $('#higher_gva_bottom_0 > div.col-2').append('<canvas id="chart_higher_gva_bottom_0" style="width:100%;"></canvas>');
-  $('#higher_gva_bottom_1 > div.col-2').append('<canvas id="chart_higher_gva_bottom_1" style="width:100%;"></canvas>');
-  $('#higher_gva_bottom_2 > div.col-2').append('<canvas id="chart_higher_gva_bottom_2" style="width:100%;"></canvas>');
+  // $('#chart_all_top_0').remove();
+  // $('#chart_all_top_1').remove();
+  // $('#chart_all_top_2').remove();
+  // $('#chart_all_bottom_0').remove();
+  // $('#chart_all_bottom_1').remove();
+  // $('#chart_all_bottom_2').remove();
+  // $('#chart_diff_country_top_0').remove();
+  // $('#chart_diff_country_top_1').remove();
+  // $('#chart_diff_country_top_2').remove();
+  // $('#chart_diff_country_bottom_0').remove();
+  // $('#chart_diff_country_bottom_1').remove();
+  // $('#chart_diff_country_bottom_2').remove();
+  // $('#chart_same_country_top_0').remove();
+  // $('#chart_same_country_top_1').remove();
+  // $('#chart_same_country_top_2').remove();
+  // $('#chart_same_country_bottom_0').remove();
+  // $('#chart_same_country_bottom_1').remove();
+  // $('#chart_same_country_bottom_2').remove();
+  // $('#chart_higher_gdppps_top_0').remove();
+  // $('#chart_higher_gdppps_top_1').remove();
+  // $('#chart_higher_gdppps_top_2').remove();
+  // $('#chart_higher_gdppps_bottom_0').remove();
+  // $('#chart_higher_gdppps_bottom_1').remove();
+  // $('#chart_higher_gdppps_bottom_2').remove();
+  // $('#chart_higher_gva_top_0').remove();
+  // $('#chart_higher_gva_top_1').remove();
+  // $('#chart_higher_gva_top_2').remove();
+  // $('#chart_higher_gva_bottom_0').remove();
+  // $('#chart_higher_gva_bottom_1').remove();
+  // $('#chart_higher_gva_bottom_2').remove();
+  //
+  // $('#all_top_0 > div.col-2').append('<canvas id="chart_all_top_0" style="width:100%;"></canvas>');
+  // $('#all_top_1 > div.col-2').append('<canvas id="chart_all_top_1" style="width:100%;"></canvas>');
+  // $('#all_top_2 > div.col-2').append('<canvas id="chart_all_top_2" style="width:100%;"></canvas>');
+  // $('#all_bottom_0 > div.col-2').append('<canvas id="chart_all_bottom_0" style="width:100%;"></canvas>');
+  // $('#all_bottom_1 > div.col-2').append('<canvas id="chart_all_bottom_1" style="width:100%;"></canvas>');
+  // $('#all_bottom_2 > div.col-2').append('<canvas id="chart_all_bottom_2" style="width:100%;"></canvas>');
+  // $('#diff_country_top_0 > div.col-2').append('<canvas id="chart_diff_country_top_0" style="width:100%;"></canvas>');
+  // $('#diff_country_top_1 > div.col-2').append('<canvas id="chart_diff_country_top_1" style="width:100%;"></canvas>');
+  // $('#diff_country_top_2 > div.col-2').append('<canvas id="chart_diff_country_top_2" style="width:100%;"></canvas>');
+  // $('#diff_country_bottom_0 > div.col-2').append('<canvas id="chart_diff_country_bottom_0" style="width:100%;"></canvas>');
+  // $('#diff_country_bottom_1 > div.col-2').append('<canvas id="chart_diff_country_bottom_1" style="width:100%;"></canvas>');
+  // $('#diff_country_bottom_2 > div.col-2').append('<canvas id="chart_diff_country_bottom_2" style="width:100%;"></canvas>');
+  // $('#same_country_top_0 > div.col-2').append('<canvas id="chart_same_country_top_0" style="width:100%;"></canvas>');
+  // $('#same_country_top_1 > div.col-2').append('<canvas id="chart_same_country_top_1" style="width:100%;"></canvas>');
+  // $('#same_country_top_2 > div.col-2').append('<canvas id="chart_same_country_top_2" style="width:100%;"></canvas>');
+  // $('#same_country_bottom_0 > div.col-2').append('<canvas id="chart_same_country_bottom_0" style="width:100%;"></canvas>');
+  // $('#same_country_bottom_1 > div.col-2').append('<canvas id="chart_same_country_bottom_1" style="width:100%;"></canvas>');
+  // $('#same_country_bottom_2 > div.col-2').append('<canvas id="chart_same_country_bottom_2" style="width:100%;"></canvas>');
+  // $('#higher_gdppps_top_0 > div.col-2').append('<canvas id="chart_higher_gdppps_top_0" style="width:100%;"></canvas>');
+  // $('#higher_gdppps_top_1 > div.col-2').append('<canvas id="chart_higher_gdppps_top_1" style="width:100%;"></canvas>');
+  // $('#higher_gdppps_top_2 > div.col-2').append('<canvas id="chart_higher_gdppps_top_2" style="width:100%;"></canvas>');
+  // $('#higher_gdppps_bottom_0 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_0" style="width:100%;"></canvas>');
+  // $('#higher_gdppps_bottom_1 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_1" style="width:100%;"></canvas>');
+  // $('#higher_gdppps_bottom_2 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_2" style="width:100%;"></canvas>');
+  // $('#higher_gva_top_0 > div.col-2').append('<canvas id="chart_higher_gva_top_0" style="width:100%;"></canvas>');
+  // $('#higher_gva_top_1 > div.col-2').append('<canvas id="chart_higher_gva_top_1" style="width:100%;"></canvas>');
+  // $('#higher_gva_top_2 > div.col-2').append('<canvas id="chart_higher_gva_top_2" style="width:100%;"></canvas>');
+  // $('#higher_gva_bottom_0 > div.col-2').append('<canvas id="chart_higher_gva_bottom_0" style="width:100%;"></canvas>');
+  // $('#higher_gva_bottom_1 > div.col-2').append('<canvas id="chart_higher_gva_bottom_1" style="width:100%;"></canvas>');
+  // $('#higher_gva_bottom_2 > div.col-2').append('<canvas id="chart_higher_gva_bottom_2" style="width:100%;"></canvas>');
 
   }
 
