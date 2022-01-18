@@ -12,15 +12,15 @@ ul.ui-autocomplete  {
 }
 
 
-/* span.general_info {
-  padding-left: 10px !important;
-}
-
-div.similaritytop3 > div {
-  margin: auto;
-} */
-
 div.card-header > div > h6 {
   color: #ffffff;
   padding-left: 1em;
+}
+
+.fa-rotate-45 {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
 }

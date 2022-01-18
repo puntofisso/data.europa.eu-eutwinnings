@@ -227,7 +227,7 @@
           <div class="card container">
             <div class="card-header p-3 pt-2">
               <div class="icon icon-lg icon-shape bg-gradient-danger shadow-danger text-center border-radius-xl mt-n4 position-absolute">
-                <i class="material-icons opacity-10">show_chart</i>
+                <i class="material-icons opacity-10 fa-rotate-90">show_chart</i>
               </div>
               <div class="text-end pt-1">
                 <p class="text-sm mb-0 text-capitalize">Least similar </p>
@@ -280,7 +280,7 @@
     <div class="card container">
       <div class="card-header p-3 pt-2">
         <div class="icon icon-lg icon-shape bg-gradient-danger shadow-danger text-center border-radius-xl mt-n4 position-absolute">
-          <i class="material-icons opacity-10">show_chart</i>
+          <i class="material-icons opacity-10 fa-rotate-90">show_chart</i>
         </div>
         <div class="text-end pt-1">
           <p class="text-sm mb-0 text-capitalize">Least similar </p>
@@ -600,7 +600,7 @@
 
 
 
-    $('.all_data_container').show();
+     $('.all_data_container').show();
   }
 
 
@@ -736,6 +736,11 @@ function generate_d3_map() {
   // var svg = d3.select("svg"),
   //   width = +svg.attr("width"),
   //   height = +svg.attr("height");
+
+  d3
+  .select("#my_dataviz")
+  .attr("width", "100%");
+
   const svg = d3
   .select("#my_dataviz")
   .append("svg")
@@ -750,6 +755,7 @@ function generate_d3_map() {
   .center([25,54])
   .scale(600);
   //translate([width / 2, height / 2]);
+
 
 
   // Data and color scale
@@ -770,37 +776,6 @@ function generate_d3_map() {
       d3data.set(mykey, value['similarity']);
     });
 
-    // let mouseOver = function(d) {
-    //   d3.select(this)
-    //     // .transition()
-    //     // .duration(10)
-    //     //.style("opacity", 1)
-    //     .style("stroke", "black")
-    //
-    //
-    //     var NUTS_ID = (d.properties.NUTS_ID).trim();
-    //     d.similarity = d3data.get(d.properties.NUTS_ID) || 0;
-    //
-    //
-    //   div.transition()
-    //     // .duration(200)
-    //     .style("opacity", .9);
-    //
-    //     div	.html(d.properties.NUTS_NAME + "<br/>" + Math.round(d.similarity *100)  + "%")
-    //           .style("left", (d3.event.pageX) + "px")
-    //           .style("top", (d3.event.pageY - 28) + "px");
-    //
-    // }
-    //
-    // let mouseLeave = function(d) {
-    //   d3.select(this)
-    //     .transition()
-    //     // .duration(10)
-    //     .style("stroke", "transparent")
-    //
-    //     div	.html("")
-    //     .style("opacity", 0.0);
-    // }
 
 
 
@@ -827,6 +802,9 @@ function generate_d3_map() {
         .style("stroke", "transparent")
         .attr("class", function(d){ return "Country" } )
         .style("opacity", .8);
+
+      d3.select("g").attr("transform", "scale(" + $("#my_dataviz").width()/900 + ")");
+      $("svg").height($("#my_dataviz").width()*0.618);
 
       }
 
