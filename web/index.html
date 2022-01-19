@@ -123,6 +123,11 @@
       <h1 class="mb-0 emptyable"  id="nametitle"> Name of NUTS area </h1>
       <h6 class="mb-0 emptyable" id="subnametitle"> Country </h6>
 
+      <div class="container mt-4">
+        This area is identified by <span class="badge bg-dark">Code</span> <span id="span_nuts3" class="general_info emptyable"></span>. Its country (<span class="badge bg-dark">NUTS 0</span>) code is <span id="span_nuts0" class="general_info emptyable"></span>. <br/>
+        Demographically, its <span class="badge bg-secondary">Population</span> is <span id="span_population" class="general_info emptyable"></span>, with a <span class="badge bg-secondary">Density</span> of <span id="span_density" class="general_info emptyable"></span> per sqm. For context, the <span class="badge bg-warning">NUTS0-level population</span> is <span id="span_pop0" class="general_info emptyable"></span>. Since the previous data collection, the <span class="badge bg-secondary">Population change</span> amounts to <span id="span_popchange" class="general_info emptyable"></span>. There is a <span class="badge bg-secondary">Women:Men</span> ratio of <span id="span_womenratio" class="general_info emptyable"></span>. The <span class="badge bg-secondary">Fertility</span> rate is <span id="span_fertility" class="general_info emptyable"></span> live births per woman.<br/>
+        From an economic point of view, the <span class="badge bg-danger">GDP per capita in Purchasing Power Standards (PPS)</span> is <span id="span_gdppps" class="general_info emptyable"></span> (vs the EU average of 100). The regional <span class="badge bg-danger">Gross Value Added</span> is <span id="span_gva" class="general_info emptyable"></span>.
+      </div>
 
       <div class="row mt-4">
 
@@ -141,7 +146,7 @@
               <img class="img-fluid" src="#" id="qgis_image"/>
               <!--h6 class="mb-0 ">Map of the area</h6-->
               <!--p class="text-sm ">Whatever</p-->
-              <hr class="dark horizontal">
+              <!--hr class="dark horizontal"-->
               <!--div class="d-flex ">
                 <i class="material-icons text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm"> campaign sent 2 days ago </p>
@@ -156,22 +161,10 @@
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
 
               <div class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1">
-                <h6 class="mb-0 ">General info</h6>
-
+                <h6 class="mb-0 ">Other info</h6>
               </div>
               <div class="card-body">
-                <span class="badge bg-dark">Code</span><span id="span_nuts3" class="general_info emptyable"></span><br>
-                <!--span id="span_nuts2" class="badge bg-primary emptyable"></span><br/>
-                <span id="span_nuts1" class="badge bg-primary emptyable"></span><br/-->
-                <span class="badge bg-dark">NUTS 0</span><span id="span_nuts0" class="general_info emptyable"></span>
-                <span class="badge bg-secondary">Density</span><span id="span_density" class="general_info emptyable"></span>
-                <span class="badge bg-secondary">Population change</span><span id="span_popchange" class="general_info emptyable"></span>
-                <span class="badge bg-secondary">Women:Men</span><span id="span_womenratio" class="general_info emptyable"></span>
-                <span class="badge bg-secondary">Fertility</span><span id="span_fertility" class="general_info emptyable"></span>
-                <span class="badge bg-danger">GDP PPS</span><span id="span_gdppps" class="general_info emptyable"></span>
-                <span class="badge bg-danger">GVA</span><span id="span_gva" class="general_info emptyable"></span>
-                <span class="badge bg-warning">Population of NUTS0</span><span id="span_pop0" class="general_info emptyable"></span>
-                <hr class="dark horizontal">
+                To be added in the next phase of the project.
               </div>
             </div>
           </div>
@@ -560,6 +553,7 @@
     $('#span_nuts0').html(window.similarity['nuts0']);
 
     $('#span_density').html(window.similarity['density']);
+    $('#span_population').html(window.similarity['population']);
     $('#span_fertility').html(window.similarity['fertility']);
     $('#span_popchange').html(window.similarity['popchange']);
     $('#span_womenratio').html(window.similarity['womenratio']);
