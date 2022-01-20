@@ -134,7 +134,7 @@
       <h6 class="mb-0 emptyable" id="subnametitle"> Country </h6>
 
       <div class="container mt-4">
-        This area is identified by <span class="badge bg-dark">Code</span> <span id="span_nuts3" class="general_info emptyable"></span>. Its country (<span class="badge bg-dark">NUTS 0</span>) code is <span id="span_nuts0" class="general_info emptyable"></span>. <br/>
+        This area is identified by <span class="badge bg-dark">Code</span> <span id="span_nuts3" class="general_info emptyable"></span>. Its country (<span class="badge bg-dark">NUTS 0</span>) region code is <span id="span_nuts0" class="general_info emptyable"></span>. Its <span class="badge bg-dark">NUTS 2</span> region code  is <span id="span_nuts2" class="general_info emptyable"></span>, while its <span class="badge bg-dark">NUTS 1</span> region code  is <span id="span_nuts1" class="general_info emptyable"></span>.<br/>
         Demographically, its <span class="badge bg-secondary">Population</span> is <span id="span_population" class="general_info emptyable"></span>, with a <span class="badge bg-secondary">Density</span> of <span id="span_density" class="general_info emptyable"></span> per sqm. For context, the <span class="badge bg-warning">NUTS0-level population</span> is <span id="span_pop0" class="general_info emptyable"></span>. Since the previous data collection, the <span class="badge bg-secondary">Population change</span> amounts to <span id="span_popchange" class="general_info emptyable"></span>. There is a <span class="badge bg-secondary">Women:Men</span> ratio of <span id="span_womenratio" class="general_info emptyable"></span>. The <span class="badge bg-secondary">Fertility</span> rate is <span id="span_fertility" class="general_info emptyable"></span> live births per woman.<br/>
         From an economic point of view, the <span class="badge bg-danger">GDP per capita in Purchasing Power Standards (PPS)</span> is <span id="span_gdppps" class="general_info emptyable"></span> (vs the EU average of 100). The regional <span class="badge bg-danger">Gross Value Added</span> is <span id="span_gva" class="general_info emptyable"></span>.
       </div>
@@ -525,10 +525,10 @@
 
     // General information
     // TODO this will depend on level!
-    // $('#span_nuts1').html('NUTS1' + window.similarity['nuts1']);
-    // $('#span_nuts2').html('NUTS2' + window.similarity['nuts2']);
+    $('#span_nuts1').html(window.similarity['nuts1']);
+    $('#span_nuts2').html(window.similarity['nuts2']);
     $('#nametitle').html(window.similarity['name']);
-    $('#subnametitle').html(window.similarity['nuts0name'] + " (" + window.similarity['nuts1name'] + " region, " + window.similarity['nuts2name'] +" region)");
+    $('#subnametitle').html(window.similarity['nuts0name']);
     filename = 'images/' + window.similarity['code'] + ".png";
     // filename = 'images/0placeholder.png';
     $('#qgis_image').attr("src",filename);
