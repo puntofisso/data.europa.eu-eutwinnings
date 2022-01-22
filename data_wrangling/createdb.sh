@@ -8,6 +8,7 @@ sqlite3 -batch nuts.db "create table nutsNORM2016 (code text PRIMARY KEY, level 
 sqlite3 -batch nuts.db "CREATE TABLE similarity (code1 text, code2 text, similarity real, PRIMARY KEY (code1, code2));"
 sqlite3 -batch nuts.db "create table relations(code text PRIMARY KEY, name text, level text, nuts0 text, nuts1 text, nuts2 text, nuts3 text);"
 sqlite3 -batch nuts.db "create table relations2016(code text PRIMARY KEY, name text, level text, nuts0 text, nuts1 text, nuts2 text, nuts3 text);"
+sqlite3 -batch nuts.db "create table nutsextra (code text PRIMARY KEY, urbanrural text, metropolitan text, coastal text, mountain text, border text, island text, remoteness text);"
 
 # Populate
 sqlite3 -batch nuts.db <<EOF
@@ -38,4 +39,9 @@ EOF
 sqlite3 -batch nuts.db<<EOF
 .separator "|"
 .import --skip 1 nutsrelations-2016.psv relations2016
+EOF
+
+sqlite3 -batch nuts.db <<EOF
+.separator "|"
+.import --skip 1 NUTS2021-extra.csv nutsextra
 EOF

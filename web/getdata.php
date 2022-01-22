@@ -90,6 +90,17 @@ foreach ($data as $row) {
   $ret['nuts2name'] = $row['name'];
 }
 
+// Extra data
+$stm = $db->prepare("SELECT * from nutsextra WHERE code = ?");
+$res = $stm->execute(array($code));
+$ret['extra'] = array();
+$data = $stm->fetch(PDO::FETCH_ASSOC);
+
+
+foreach ($data as $key => $value) {
+   $ret['extra'][$key] = $value;
+ }
+
 // General similarity
 // Most similar
 $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and s.code1 = ?  ORDER by s.similarity DESC LIMIT 5 ;");

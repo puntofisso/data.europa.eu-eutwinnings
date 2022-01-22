@@ -115,12 +115,16 @@
     <!-- End Navbar -->
     <div class="container-fluid py-4" id="all_content_placeholder">
 
-      <h2>Explore the similarity between European NUTS regions level 3. Start by typing the name of a region in the search bar.</h2>
-      <p>If you don't know where to start, the full list of NUTS3 region is available <a href="nutslist.html">here</a>. For example, these are NUTS3 regions:
+      <h2>What is your area's twin?</h2>
+      <h6>Explore the similarity between European NUTS regions level 3. Start by typing the name of a region in the search bar.</h6>
+      <p>If you don't know where to start, these are a few suggestions:
         <ul>
+          <li>Paris</li>
+          <li>Northumberland</li>
           <li>Berlin</li>
           <li>Tunceli</li>
           <li>Rīga</li>
+          <li>Bari</li>
           </ul>
       </p>
 
@@ -147,20 +151,9 @@
 
               <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
               <h6 class="mb-0 ">Map</h6>
-                <!--div class="chart">
-                  <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
-                </div>
-              </div-->
             </div>
             <div class="card-body">
               <img class="img-fluid" src="#" id="qgis_image"/>
-              <!--h6 class="mb-0 ">Map of the area</h6-->
-              <!--p class="text-sm ">Whatever</p-->
-              <!--hr class="dark horizontal"-->
-              <!--div class="d-flex ">
-                <i class="material-icons text-sm my-auto me-1">schedule</i>
-                <p class="mb-0 text-sm"> campaign sent 2 days ago </p>
-              </div-->
             </div>
           </div>
           </div>
@@ -174,7 +167,13 @@
                 <h6 class="mb-0 ">Other info</h6>
               </div>
               <div class="card-body">
-                <i>To be added in the next phase of the project.</i>
+                <span class="badge bg-dark">Urban-rural</span><span id="span_urbanrural" class="general_info emptyable"></span>
+                <span class="badge bg-dark">Metropolitan</span><span id="span_metropolitan" class="general_info emptyable"></span>
+                <span class="badge bg-dark">Coastal</span><span id="span_coastal" class="general_info emptyable"></span>
+                <span class="badge bg-dark">Mountain</span><span id="span_mountain" class="general_info emptyable"></span>
+                <span class="badge bg-dark">Border</span><span id="span_border" class="general_info emptyable"></span>
+                <span class="badge bg-dark">Island</span><span id="span_island" class="general_info emptyable"></span>
+                <span class="badge bg-dark">Remoteness</span><span id="span_remoteness" class="general_info emptyable"></span>
               </div>
             </div>
           </div>
@@ -595,8 +594,7 @@
     // in order to make search easier, we translate the letters with diacritics
     // e.g. you can search for "Gottingen" instead of "Göttingen"
     var accentMap = {
-      "Ç": "C", "Č": "C",
-      "ç": "c", "č": "c",
+      "Ç": "C", "Č": "C", "ç": "c", "č": "c",
       "ñ": "n",
       "Á": "A", "Å": "A",
       "É": "E",
@@ -607,6 +605,7 @@
       "ß": "b",
       "ğ": "g",
       "ħ": "h",
+      "í": "i", "ì": "i", "ī": "i", "İ": "i", "ı": "i",
       "Ł": "L", "ł": "l",
       "ń": "n", "ň": "n",
       "ř": "r",
@@ -615,7 +614,6 @@
       "ź": "z", "Ż": "z", "ż": "z", "Ž": "z", "ž": "z",
       "á": "a", "â": "a", "å": "a", "ä": "a", "ã": "a", "æ": "a", "ă": "a", "ą": "a",
       "é": "e", "è": "e", "ë": "e", "ė": "e", "ę": "e", "ě": "e",
-      "í": "i", "ì": "i", "ī": "i", "İ": "i", "ı": "i",
       "ó": "o", "ô": "o", "ö": "o", "õ": "o", "ø": "o", "ő": "o",
       "ú": "u", "ü": "u", "ų": "u",
       "ý": "y"
@@ -644,7 +642,7 @@
 
       /* Make sure each entry is only in the suggestions list once: */
       $.each(nuts, function (i, value) {
-          if (matcher.test(value.label) && $.inArray(value.label, results) < 0) {
+          if (matcher.test(normalize(value.label)) && $.inArray(value.label, results) < 0) {
               // note: the below code isn't very well documented
               // label and value need to be the value of the label
               obj = { 'label': value.label + " [" + value.code.substring(0, 2) +"]", 'code': value.code }
@@ -677,13 +675,11 @@
   {
 
     // General information
-    // TODO this will depend on level!
     $('#span_nuts1').html(window.similarity['nuts1']);
     $('#span_nuts2').html(window.similarity['nuts2']);
     $('#nametitle').html(window.similarity['name']);
     $('#subnametitle').html(window.similarity['nuts0name']);
     filename = 'images/' + window.similarity['code'] + ".png";
-    // filename = 'images/0placeholder.png';
     $('#qgis_image').attr("src",filename);
 
     $('#span_nuts3').html(window.similarity['code']);
@@ -699,16 +695,50 @@
     $('#span_pop3').html(window.similarity['population']);
     $('#span_pop0').html(window.similarity['population0']);
 
+    // Other extra info
+    $('#span_urbanrural').html(window.similarity.extra['urbanrural']);
+
+    if (window.similarity.extra['metropolitan'] == 'Y') {
+      $('#span_metropolitan').html('Yes');
+    } else if (window.similarity.extra['metropolitan'] == 'N') {
+      $('#span_metropolitan').html('No');
+    } else {
+      $('#span_metropolitan').html(window.similarity.extra['metropolitan']);
+    }
+
+    $('#span_coastal').html(window.similarity.extra['coastal']);
+
+
+    if (window.similarity.extra['mountain'] == 'Other regions') {
+      $('#span_mountain').html('No');
+    } else {
+      $('#span_mountain').html(window.similarity.extra['mountain']);
+    }
+
+    if (window.similarity.extra['border'] == 'Other regions') {
+      $('#span_border').html('No');
+    } else if (window.similarity.extra['border'] == 'Border regions') {
+      $('#span_border').html('Yes');
+    } else {
+      $('#span_border').html(window.similarity.extra['border']);
+    }
+
+    if (window.similarity.extra['island'] == '1') {
+      $('#span_island').html('Yes');
+    } else {
+      $('#span_island').html('No');
+    }
+
+    $('#span_remoteness').html(window.similarity.extra['remoteness']);
+
     generate_d3_map() ;
 
-    // var similarities = ['all_top', 'all_bottom', 'diff_country_top', 'diff_country_bottom', 'same_country_top', 'same_country_bottom', 'higher_gdppps_top', 'higher_gdppps_bottom','higher_gva_top', 'higher_gva_bottom'];
     var similarities = ['all_top', 'all_bottom', 'same_country_top', 'same_country_bottom', 'diff_country_top', 'diff_country_bottom', 'higher_gdppps_top', 'higher_gdppps_bottom', 'higher_gva_top', 'higher_gva_bottom'];
 
     for (var i = 0; i < similarities.length; i++) {
 
       itemtype = similarities[i];
 
-      //for (itemindex in [0,1,2]) {
       for (itemindex in [0]) {
 
         chartitem = 'chart_'+itemtype+"_"+itemindex;
