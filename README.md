@@ -56,6 +56,8 @@ What happens when your execute `run.sh`:
 8. The similarity metric is then calculated by `similarity-db.py`. Note that this is a time-consuming and computationally intensive step which might last hours according to which browser you use. You can adjust the variable `fieldlist` to match your own idea of similarity metric. By default, `fieldlist = ['pop3','pop0','density','fertility','popchange','womenratio','gdppps','gva']`. Note that `similarity-db.py` has options to run and test the similarity on a smaller number of NUTS3 regions.
 9. Move `nuts.db` into `web/data`. At this point, the `web/data` folder should contain three files:
 
+|        File list          |
+| ------------------------- |
 |  `nuts-autocomplete.json` |
 |         `nuts.db`         |
 |       `nuts.geojson`      |
