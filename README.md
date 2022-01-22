@@ -42,22 +42,23 @@ What happens when your execute `run.sh`:
 5. the API download happens via `download.py`, which creates a JSON dictionary file with all data `globaldict.json`
 6. `globaldict.json` is turned into `basicdata-2021.tsv` and `basicdata-2016.tsv` and their normalised counterparts by `createcsv.py`
 7. `createdb.sh` is then called to create the database and its tables, using the following relationships:
-  |       File               |       Table       |
-  | ------------------------ | ----------------- |
-  |    `basicdata-2021.tsv`  |       `nuts`      |
-  | `basicdataNORM-2021.tsv` |     `nutsNORM`    |
-  |    `basicdata-2016.tsv`  |     `nuts2016`    |
-  | `basicdataNORM-2016.tsv` |   `nutsNORM2016`  |
-  | `nutsrelations-2021.psv` |     `relations`   |
-  | `nutsrelations-2016.psv` |   `relations2016` |
-  |    `NUTS2021-extra.csv`  |     `nutsextra`   |
+
+|       File               |       Table       |
+| ------------------------ | ----------------- |
+|    `basicdata-2021.tsv`  |       `nuts`      |  
+| `basicdataNORM-2021.tsv` |     `nutsNORM`    |
+|    `basicdata-2016.tsv`  |     `nuts2016`    |
+| `basicdataNORM-2016.tsv` |   `nutsNORM2016`  |
+| `nutsrelations-2021.psv` |     `relations`   |
+| `nutsrelations-2016.psv` |   `relations2016` |
+|    `NUTS2021-extra.csv`  |     `nutsextra`   |
 
 8. The similarity metric is then calculated by `similarity-db.py`. Note that this is a time-consuming and computationally intensive step which might last hours according to which browser you use. You can adjust the variable `fieldlist` to match your own idea of similarity metric. By default, `fieldlist = ['pop3','pop0','density','fertility','popchange','womenratio','gdppps','gva']`. Note that `similarity-db.py` has options to run and test the similarity on a smaller number of NUTS3 regions.
 9. Move `nuts.db` into `web/data`. At this point, the `web/data` folder should contain three files:
 
-  |  `nuts-autocomplete.json` |
-  |         `nuts.db`         |
-  |       `nuts.geojson`      |
+|  `nuts-autocomplete.json` |
+|         `nuts.db`         |
+|       `nuts.geojson`      |
 
 
 ### Install on a server
