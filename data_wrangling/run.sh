@@ -20,6 +20,11 @@ rm -f forgeojson.*
 jq -c . < nuts3.geojson-temp > nuts3.geojson
 rm -f nuts3.geojson-temp
 
+echo "1c. Creating centroids file"
+
+rm -f nuts_centroids.tsv
+python centroids.py > nuts_centroids.tsv
+
 date
 
 
