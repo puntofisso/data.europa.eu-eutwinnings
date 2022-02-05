@@ -755,7 +755,7 @@
 
 
         drawDonutChart(document.getElementById(chartitem), similarityobject['similarity']);
-        $(textitem).html("<a class='linktonuts' data-code='" + targetcode + "' href='#'>" + similarityobject['name'] +" </a>" + "<br/>" + (100*similarityobject['similarity']).toFixed(2) + "%");
+        $(textitem).html("<a class='linktonuts' data-code='" + targetcode + "' href='#'>" + similarityobject['name'] + " [" + similarityobject['country'] + "]" +" </a>" + "<br/>" + (100*similarityobject['similarity']).toFixed(2) + "%");
       }
     }
 
