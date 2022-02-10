@@ -29,6 +29,7 @@ date
 
 
 # TODO move to python
+# TODO NUTS_ID|NAME_LATN|LEVL_CODE|NONE|NONE|NONE|NONE is wrong as a header?
 echo "2. Linking NUTS and generating nutsrelations.psv"
 rm -f nutsrelations-2021.psv
 rm -f nutsrelations-2016.psv
