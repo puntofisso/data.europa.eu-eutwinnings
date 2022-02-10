@@ -24,3 +24,7 @@ div.card-header > div > h6 {
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+.all_data_container {
+  display: none;
+}

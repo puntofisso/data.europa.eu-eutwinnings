@@ -14,10 +14,11 @@ points.to_crs(epsg=4326, inplace=True)
 # same crs #points.crs =poly.crs
 # print(points['geometry'])
 #print(points.head())
-print("nuts_id|nuts_name|longitude|latitude")
+print("nuts_id|nuts_name|longitude|latitude|level")
 for index, row in points.iterrows():
     nutsid = row['NUTS_ID']
     name = row['NUTS_NAME']
+    level = row['LEVL_CODE']
     centroid_lat = row['geometry'].x
     centroid_lon = row['geometry'].y
-    print(nutsid + "|" + name + "|" + str(centroid_lat) + "|" + str(centroid_lon))
+    print(nutsid + "|" + name + "|" + str(centroid_lat) + "|" + str(centroid_lon) + "|" + str(level)) 
