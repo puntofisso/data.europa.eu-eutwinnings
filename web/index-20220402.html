@@ -21,10 +21,13 @@
   <link rel="apple-touch-icon" sizes="76x76" href="./MD-assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="favicon.ico">
 
-  <!--link href="css/jquery-ui.min.css" rel="stylesheet"-->
-<!--script src="js/jquery-ui.min.js"></script-->
+  <link href="css/jquery-ui.min.css" rel="stylesheet">
   <script src="js/external/jquery/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
 
+    <script src="js/d3.v4.js"></script>
+            <script src="js/d3-scale-chromatic.v1.min.js"></script>
+            <script src="js/d3-geo-projection.v2.min.js"></script>
   <title>
     EU Twinnings
   </title>
@@ -46,162 +49,68 @@
   <link href="css/eutwinnings.css" rel="stylesheet">
 </head>
 
-<body class="bg-white-200">
+<body class="g-sidenav-show  bg-gray-200">
+  <!--aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href="/">
+        <img src="./MD-assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white">EU Twinnings</span>
+      </a>
+    </div>
+    <hr class="horizontal light mt-0 mb-2">
+    <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white active bg-gradient-primary" href="index.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">dashboard</i>
+            </div>
+            <span class="nav-link-text ms-1">Similarity</span>
+          </a>
+        </li>
 
-  <main class="main-content  mt-0">
-    <!--div class="page-header align-items-start min-vh-100" style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');"-->
-    <div class="page-header align-items-start min-vh-100" >
-      <!--span class="mask bg-gradient-dark opacity-6"></span-->
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-8 col-md-8 col-12 mx-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white " href=" help.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">help</i>
+            </div>
+            <span class="nav-link-text ms-1">Help</span>
+          </a>
+        </li>
 
-            <div class="card z-index-0 fadeIn3 fadeInBottom">
-              <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                <center><img src="images/EUTwinningsLogo2.png" height="100" alt="CoolBrand"></center>
-                <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
+      </ul>
+    </div>
+  </aside-->
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
 
-                  <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">EU Twinnings</h4>
-                  <h6 class="text-white font-weight-bolder text-center mt-2 mb-0">What is your area's twin?</h6>
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
 
-                </div>
-              </div>
-              <div class="card-body">
-                <!--form role="form" class="text-start"-->
-                <!-- <div class="input-group input-group-outline mb-3">
-                  <label class="form-label">Type NUTS...</label>
-                  <input id="inputRegion" type="text" class="form-control">
-                </div> -->
+      <div class="container-fluid py-1 px-3">
 
-                <div class="input-group input-group-outline mb-3">
-                <label for="exampleDataList" class="form-label">Type to search NUTS</label>
-                  <input class="form-control" list="datalistOptions" id="exampleDataList" >
-                  <datalist id="datalistOptions">
-                    <optgroup label="France">
-                    <option value="FRI11">Dordogne</option>
-                    <option value="FRI12">Gironde</option>
-                    <option value="FRI13">Landes</option>
-                    <option value="FRI14">Lot-et-Garonne</option>
-                    <option value="FRI15">Pyrénées-Atlantiques</option>
-                    <option value="FRI21">Corrèze</option>
-                    <option value="FRI22">Creuse</option>
-                    <option value="FRI23">Haute-Vienne</option>
-                    <option value="FRI31">Charente</option>
-                    <option value="FRI32">Charente-Maritime</option>
-                    <option value="FRI33">Deux-Sèvres</option>
-                    <option value="FRI34">Vienne</option>
-                    <option value="FRJ13">Hérault</option>
-                    <option value="FRJ14">Lozère</option>
-                    <option value="FRJ15">Pyrénées-Orientales</option>
-                    <option value="FRJ11">Aude</option>
-                    <option value="FRJ12">Gard</option>
-                    <option value="FRJ21">Ariège</option>
-                    <option value="FRJ22">Aveyron</option>
-                    <option value="FRJ23">Haute-Garonne</option>
-                    <option value="FRJ24">Gers</option>
-                    <option value="FRJ25">Lot</option>
-                    <option value="FRJ26">Hautes-Pyrénées</option>
-                    <option value="FRJ27">Tarn</option>
-                    <option value="FRJ28">Tarn-et-Garonne</option>
-                    <option value="FRK11">Allier</option>
-                    <option value="FRK12">Cantal</option>
-                    <option value="FRK13">Haute-Loire</option>
-                    <option value="FRK14">Puy-de-Dôme</option>
-                    <option value="FRK24">Isère</option>
-                    <option value="FRK25">Loire</option>
-                    <option value="FRK26">Rhône</option>
-                    <option value="FRK27">Savoie</option>
-                    <option value="FRK28">Haute-Savoie</option>
-                    <option value="FRK21">Ain</option>
-                    <option value="FRK22">Ardèche</option>
-                    <option value="FRK23">Drôme</option>
-                    <option value="FRL01">Alpes-de-Haute-Provence</option>
-                    <option value="FRL02">Hautes-Alpes</option>
-                    <option value="FRL03">Alpes-Maritimes</option>
-                    <option value="FRL04">Bouches-du-Rhône</option>
-                    <option value="FRL05">Var</option>
-                    <option value="FRL06">Vaucluse</option>
-                    <option value="FRM01">Corse-du-Sud</option>
-                    <option value="FRM02">Haute-Corse</option>
-                    <option value="FRY10">Guadeloupe</option>
-                    <option value="FRY20">Martinique</option>
-                    <option value="FRY30">Guyane</option>
-                    <option value="FRY40">La Réunion</option>
-                    <option value="FRY50">Mayotte</option>
-                    <option value="FR101">Paris</option>
-                    <option value="FR102">Seine-et-Marne</option>
-                    <option value="FR103">Yvelines</option>
-                    <option value="FR104">Essonne</option>
-                    <option value="FR105">Hauts-de-Seine</option>
-                    <option value="FR106">Seine-Saint-Denis</option>
-                    <option value="FR107">Val-de-Marne</option>
-                    <option value="FR108">Val-d’Oise</option>
-                    <option value="FRB01">Cher</option>
-                    <option value="FRB02">Eure-et-Loir</option>
-                    <option value="FRB03">Indre</option>
-                    <option value="FRB04">Indre-et-Loire</option>
-                    <option value="FRB05">Loir-et-Cher</option>
-                    <option value="FRB06">Loiret</option>
-                    <option value="FRC11">Côte-d’Or</option>
-                    <option value="FRC12">Nièvre</option>
-                    <option value="FRC13">Saône-et-Loire</option>
-                    <option value="FRC14">Yonne</option>
-                    <option value="FRC21">Doubs</option>
-                    <option value="FRC22">Jura</option>
-                    <option value="FRC23">Haute-Saône</option>
-                    <option value="FRC24">Territoire de Belfort</option>
-                    <option value="FRD11">Calvados</option>
-                    <option value="FRD12">Manche</option>
-                    <option value="FRD13">Orne</option>
-                    <option value="FRD21">Eure</option>
-                    <option value="FRD22">Seine-Maritime</option>
-                    <option value="FRE11">Nord</option>
-                    <option value="FRE12">Pas-de-Calais</option>
-                    <option value="FRE21">Aisne</option>
-                    <option value="FRE22">Oise</option>
-                    <option value="FRE23">Somme</option>
-                    <option value="FRF11">Bas-Rhin</option>
-                    <option value="FRF12">Haut-Rhin</option>
-                    <option value="FRF21">Ardennes</option>
-                    <option value="FRF22">Aube</option>
-                    <option value="FRF23">Marne</option>
-                    <option value="FRF24">Haute-Marne</option>
-                    <option value="FRF31">Meurthe-et-Moselle</option>
-                    <option value="FRF32">Meuse</option>
-                    <option value="FRF33">Moselle</option>
-                    <option value="FRF34">Vosges</option>
-                    <option value="FRG01">Loire-Atlantique</option>
-                    <option value="FRG02">Maine-et-Loire</option>
-                    <option value="FRG03">Mayenne</option>
-                    <option value="FRG04">Sarthe</option>
-                    <option value="FRG05">Vendée</option>
-                    <option value="FRH01">Côtes-d’Armor</option>
-                    <option value="FRH02">Finistère</option>
-                    <option value="FRH03">Ille-et-Vilaine</option>
-                    <option value="FRH04">Morbihan</option>
-                    </optgroup>
-                    <optgroup label="Hrvatska">
-                    <option value="HR031">Primorsko-goranska županija</option>
-                    <option value="HR032">Ličko-senjska županija</option>
-                    <option value="HR033">Zadarska županija</option>
-                    <option value="HR034">Šibensko-kninska županija</option>
-                    <option value="HR035">Splitsko-dalmatinska županija</option>
-                    <option value="HR036">Istarska županija</option>
-                    <option value="HR037">Dubrovačko-neretvanska županija</option>
-                    <option value="HR021">Bjelovarsko-bilogorska županija</option>
-                    <option value="HR022">Virovitičko-podravska županija</option>
-                    <option value="HR023">Požeško-slavonska županija</option>
-                    <option value="HR024">Brodsko-posavska županija</option>
-                    <option value="HR025">Osječko-baranjska županija</option>
-                    <option value="HR026">Vukovarsko-srijemska županija</option>
-                    <option value="HR027">Karlovačka županija</option>
-                    <option value="HR028">Sisačko-moslavačka županija</option>
-                    </optgroup>
-                  </datalist>
-               </div>
 
-                <div class="input-group input-group-outline mb-3">
-                  <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg" id="selectArea">
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <!--div class="ms-md-auto pe-md-3 d-flex align-items-center"-->
+            <a href="/" class="navbar-brand">
+                <img src="images/EUTwinningsLogo2.png" height="28" alt="CoolBrand">
+            </a>
+            <div class="input-group input-group-outline">
+              <label class="form-label">Type NUTS...</label>
+              <input id="inputRegion" type="text" class="form-control">
+            </div>
+
+
+
+
+        </div>
+
+      </div>
+
+    </nav>
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" navbar-scroll="true">
+
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg" id="selectArea">
                 <optgroup label="France">
                 <option value="FRI11">Dordogne</option>
                 <option value="FRI12">Gironde</option>
@@ -1772,68 +1681,495 @@
                 <option value="NL422">Midden-Limburg</option>
                 <option value="NL423">Zuid-Limburg</option>
                 </optgroup>
-                  </select>
-                </div>
-
+                </select>
                 <script>
-                $('#datalist').on('change', function() {
-                  window.location.href="region.php?nutsid="+this.value;
+                $('#selectArea').on('change', function() {
+                  navigateToNUTS(this.value);
                 });
                 </script>
+      </nav>
 
-                  <p class="mt-4 text-sm text-center">
+    <!-- End Navbar -->
+    <div class="container-fluid py-4" id="all_content_placeholder">
 
-                <!--/form-->
-              <!--  Explore the similarity between European NUTS regions level 3. Start by typing the name of a region in the search bar.
-                Are you looking to visit a European city similar to your own current city, or even planning to move to a place that feels like home to a certain degree?
-          EU Twinnings is an experimental project that has created a measure of similarity between each pair of European areas<sup>1</sup>, using a number of parametres including demographic and economic data.
-              If you don't know where to start, these are a few suggestions: TODO TODO TODO or select from the drop down box.
-                  <br/>[1] This website uses data from <a href="https://ec.europa.eu/eurostat">Eurostat</a> based on the <a href="https://ec.europa.eu/eurostat/web/nuts/background">Nomenclature of Territorial Units for Statistics (NUTS) 2021</a>. The data is available via <a href="http://data.europa.eu">data.europa.eu</a>. See the <a href="credits.html">credits</a> page for full details.
--->
+      <h2>EU Twinnings – What is your area's twin?</h2>
+      <h6>Explore the similarity between European NUTS regions level 3. Start by typing the name of a region in the search bar.</h6>
+      <p>Are you looking to visit a European city similar to your own current city, or even planning to move to a place that feels like home to a certain degree?
+EU Twinnings is an experimental project that has created a measure of similarity between each pair of European areas<sup>1</sup>, using a number of parametres including demographic and economic data.
+</p>
+      <p>If you don't know where to start, these are a few suggestions:
+        <ul>
+          <li>Paris</li>
+          <li>Northumberland</li>
+          <li>Berlin</li>
+          <li>Tunceli</li>
+          <li>Rīga</li>
+          <li>Bari</li>
+          </ul>
+
+        </p>
+        <p>or select from the drop down box. </p>
+        <p>[1] This website uses data from <a href="https://ec.europa.eu/eurostat">Eurostat</a> based on the <a href="https://ec.europa.eu/eurostat/web/nuts/background">Nomenclature of Territorial Units for Statistics (NUTS) 2021</a>. The data is available via <a href="http://data.europa.eu">data.europa.eu</a>. See the <a href="credits.html">credits</a> page for full details.
+
+
+
+    </div>
+
+
+    <div class="container-fluid py-4 all_data_container">
+
+      <h1 class="mb-0 emptyable"  id="nametitle"> Name of NUTS area </h1>
+      <h6 class="mb-0 emptyable" id="subnametitle"> Country </h6>
+
+      <div class="container mt-4">
+        This area is identified by <span class="badge bg-dark">Code</span> <span id="span_nuts3" class="general_info emptyable"></span>. Its country (<span class="badge bg-dark">NUTS 0</span>) region code is <span id="span_nuts0" class="general_info emptyable"></span>. Its <span class="badge bg-dark">NUTS 2</span> region code  is <span id="span_nuts2" class="general_info emptyable"></span>, while its <span class="badge bg-dark">NUTS 1</span> region code  is <span id="span_nuts1" class="general_info emptyable"></span>.<br/>
+        Demographically, its <span class="badge bg-secondary">Population</span> is <span id="span_population" class="general_info emptyable"></span>, with a <span class="badge bg-secondary">Density</span> of <span id="span_density" class="general_info emptyable"></span> per sqm. For context, the <span class="badge bg-warning">NUTS0-level population</span> is <span id="span_pop0" class="general_info emptyable"></span>. Since the previous data collection, the <span class="badge bg-secondary">Population change</span> amounts to <span id="span_popchange" class="general_info emptyable"></span>. There is a <span class="badge bg-secondary">Women:Men</span> ratio of <span id="span_womenratio" class="general_info emptyable"></span>. The <span class="badge bg-secondary">Fertility</span> rate is <span id="span_fertility" class="general_info emptyable"></span> live births per woman.<br/>
+        From an economic point of view, the <span class="badge bg-danger">GDP per capita in Purchasing Power Standards (PPS)</span> is <span id="span_gdppps" class="general_info emptyable"></span> (vs the EU average of 100). The regional <span class="badge bg-danger">Gross Value Added</span> is <span id="span_gva" class="general_info emptyable"></span>.
+      </div>
+
+      <div class="row mt-4">
+
+        <div class="col-lg-4 col-md-6 mt-4 mb-4">
+          <div class="card z-index-2 ">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+
+              <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
+              <h6 class="mb-0 ">Map</h6>
+            </div>
+            <div class="card-body">
+              <img class="img-fluid" src="#" id="qgis_image"/>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-4 mb-4">
+          <div class="card z-index-2 ">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+
+              <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
+                <h6 class="mb-0 ">Other info</h6>
+              </div>
+              <div class="card-body">
+                <span class="badge bg-dark">Urban-rural</span><span id="span_urbanrural" class="general_info emptyable"></span>
+                <span class="badge bg-dark">Metropolitan</span><span id="span_metropolitan" class="general_info emptyable"></span>
+                <span class="badge bg-dark">Coastal</span><span id="span_coastal" class="general_info emptyable"></span>
+                <span class="badge bg-dark">Mountain</span><span id="span_mountain" class="general_info emptyable"></span>
+                <span class="badge bg-dark">Border</span><span id="span_border" class="general_info emptyable"></span>
+                <span class="badge bg-dark">Island</span><span id="span_island" class="general_info emptyable"></span>
+                <span class="badge bg-dark">Remoteness</span><span id="span_remoteness" class="general_info emptyable"></span>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-4 mb-4">
+          <div class="card z-index-2 ">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+
+              <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
+                <h6 class="mb-0 ">Similarity at a glance</h6>
+              </div>
+              <div class="card-body m-0">
+                <div id="my_dataviz" class="emptyable"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+      <div class="container-fluid py-4 all_data_container">
+
+        <h3>Similarity highlights</h3>
+
+
+      </div>
+
+      <div class="row mt-4">
+
+        <div class="col-xl-6 col-sm-6 mb-xl-0 mb-4">
+          <div class="card container">
+              <div class="card-header p-3 pt-2">
+                <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary  text-center border-radius-xl mt-n4 position-absolute">
+                  <i class="material-icons opacity-10">arrow_circle_up</i>
+                </div>
+                <div class="text-end pt-1">
+                  <p class="text-sm mb-0 text-capitalize">Most similar</p>
+                  <h4 class="mb-0">Overall</h4>
+                </div>
+              </div>
+
+              <div id="all_top_0" class="row p-3 align-items-center">
+                <div class="col-7 1stcol">
+                  <span id="text_all_top_0" class="emptyable"></span>
+                </div>
+
+                <div class="col-5 2ndcol">
+                  <canvas id="chart_all_top_0"></canvas>
+                </div>
+
+              </div>
+
+              <!-- Button trigger modal + modal -->
+<!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  More...
+</button>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div-->
+
+          </div>
+        </div>
+
+        <div class="col-xl-6 col-sm-6 mb-xl-0 mb-4">
+          <div class="card container">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary  text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10 fa-rotate-180">arrow_circle_up</i>
+              </div>
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize">Least similar </p>
+                <h4 class="mb-0">Overall</h4>
+              </div>
+            </div>
+            <div id="all_bottom_0" class="row p-3 align-items-center">
+              <div class="col-7 1stcol">
+                <span id="text_all_bottom_0" class="emptyable"></span>
+              </div>
+              <div class="col-5 2ndcol">
+                <canvas id="chart_all_bottom_0"></canvas>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+</div>
+
+<div class="row mt-4">
+
+  <div class="col-xl-6 col-sm-6 mb-xl-0 mb-4">
+    <div class="card container">
+        <div class="card-header p-3 pt-2">
+          <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
+            <i class="material-icons opacity-10">arrow_circle_up</i>
+          </div>
+          <div class="text-end pt-1">
+            <p class="text-sm mb-0 text-capitalize">Most similar</p>
+            <h4 class="mb-0">Same country</h4>
+          </div>
+        </div>
+
+        <div id="same_country_top_0" class="row p-3 align-items-center">
+          <div class="col-7 1stcol">
+            <span id="text_same_country_top_0" class="emptyable"></span>
+          </div>
+
+          <div class="col-5 2ndcol">
+            <canvas id="chart_same_country_top_0"></canvas>
+          </div>
+
+        </div>
+
+    </div>
+  </div>
+
+  <div class="col-xl-6 col-sm-6 mb-xl-0 mb-4">
+    <div class="card container">
+      <div class="card-header p-3 pt-2">
+        <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary  text-center border-radius-xl mt-n4 position-absolute">
+          <i class="material-icons opacity-10 fa-rotate-180">arrow_circle_up</i>
+        </div>
+        <div class="text-end pt-1">
+          <p class="text-sm mb-0 text-capitalize">Least similar </p>
+          <h4 class="mb-0">Same country</h4>
+        </div>
+      </div>
+      <div id="same_country_bottom_0" class="row p-3 align-items-center">
+        <div class="col-7 1stcol">
+          <span id="text_same_country_bottom_0" class="emptyable"></span>
+        </div>
+        <div class="col-5 2ndcol">
+          <canvas id="chart_same_country_bottom_0"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<div class="row mt-4">
+
+  <div class="col-xl-6 col-sm-6 mb-xl-0 mb-4">
+    <div class="card container">
+        <div class="card-header p-3 pt-2">
+          <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary  text-center border-radius-xl mt-n4 position-absolute">
+            <i class="material-icons opacity-10">arrow_circle_up</i>
+          </div>
+          <div class="text-end pt-1">
+            <p class="text-sm mb-0 text-capitalize">Most similar</p>
+            <h4 class="mb-0">Different country</h4>
+          </div>
+        </div>
+
+        <div id="diff_country_top_0" class="row p-3 align-items-center">
+          <div class="col-7 1stcol">
+            <span id="text_diff_country_top_0" class="emptyable"></span>
+          </div>
+
+          <div class="col-5 2ndcol">
+            <canvas id="chart_diff_country_top_0"></canvas>
+          </div>
+
+        </div>
+
+    </div>
+  </div>
+
+  <div class="col-xl-6 col-sm-6 mb-xl-0 mb-4">
+    <div class="card container">
+      <div class="card-header p-3 pt-2">
+        <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary  text-center border-radius-xl mt-n4 position-absolute">
+          <i class="material-icons opacity-10 fa-rotate-180">arrow_circle_up</i>
+        </div>
+        <div class="text-end pt-1">
+          <p class="text-sm mb-0 text-capitalize">Least similar </p>
+          <h4 class="mb-0">Different country</h4>
+        </div>
+      </div>
+      <div id="diff_country_bottom_0" class="row p-3 align-items-center">
+        <div class="col-7 1stcol">
+          <span id="text_diff_country_bottom_0" class="emptyable"></span>
+        </div>
+        <div class="col-5 2ndcol">
+          <canvas id="chart_diff_country_bottom_0"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<div class="row mt-4">
+
+  <div class="col-xl-6 col-sm-6 mb-xl-0 mb-4">
+    <div class="card container">
+        <div class="card-header p-3 pt-2">
+          <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary  text-center border-radius-xl mt-n4 position-absolute">
+            <i class="material-icons opacity-10">arrow_circle_up</i>
+          </div>
+          <div class="text-end pt-1">
+            <p class="text-sm mb-0 text-capitalize">Most similar</p>
+            <h4 class="mb-0">Regions with higher GDPPPS</h4>
+          </div>
+        </div>
+
+        <div id="higher_gdppps_top_0" class="row p-3 align-items-center">
+          <div class="col-7 1stcol">
+            <span id="text_higher_gdppps_top_0" class="emptyable"></span>
+          </div>
+
+          <div class="col-5 2ndcol">
+            <canvas id="chart_higher_gdppps_top_0"></canvas>
+          </div>
+
+        </div>
+
+    </div>
+  </div>
+
+  <div class="col-xl-6 col-sm-6 mb-xl-0 mb-4">
+    <div class="card container">
+      <div class="card-header p-3 pt-2">
+        <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary  text-center border-radius-xl mt-n4 position-absolute">
+          <i class="material-icons opacity-10 fa-rotate-180">arrow_circle_up</i>
+        </div>
+        <div class="text-end pt-1">
+          <p class="text-sm mb-0 text-capitalize">Least similar </p>
+          <h4 class="mb-0">Regions with higher GDPPPS</h4>
+        </div>
+      </div>
+      <div id="higher_gdppps_bottom_0" class="row p-3 align-items-center">
+        <div class="col-7 1stcol">
+          <span id="text_higher_gdppps_bottom_0" class="emptyable"></span>
+        </div>
+        <div class="col-5 2ndcol">
+          <canvas id="chart_higher_gdppps_bottom_0"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<div class="row mt-4">
+
+  <div class="col-xl-6 col-sm-6 mb-xl-0 mb-4">
+    <div class="card container">
+        <div class="card-header p-3 pt-2">
+          <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary  text-center border-radius-xl mt-n4 position-absolute">
+            <i class="material-icons opacity-10">arrow_circle_up</i>
+          </div>
+          <div class="text-end pt-1">
+            <p class="text-sm mb-0 text-capitalize">Most similar</p>
+            <h4 class="mb-0">Regions with higher GVA</h4>
+          </div>
+        </div>
+
+        <div id="higher_gva_top_0" class="row p-3 align-items-center">
+          <div class="col-7 1stcol">
+            <span id="text_higher_gva_top_0" class="emptyable"></span>
+          </div>
+
+          <div class="col-5 2ndcol">
+            <canvas id="chart_higher_gva_top_0"></canvas>
+          </div>
+
+        </div>
+
+    </div>
+  </div>
+
+  <div class="col-xl-6 col-sm-6 mb-xl-0 mb-4">
+    <div class="card container">
+      <div class="card-header p-3 pt-2">
+        <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary  text-center border-radius-xl mt-n4 position-absolute">
+          <i class="material-icons opacity-10 fa-rotate-180">arrow_circle_up</i>
+        </div>
+        <div class="text-end pt-1">
+          <p class="text-sm mb-0 text-capitalize">Least similar </p>
+          <h4 class="mb-0">Regions with higher GVA</h4>
+        </div>
+      </div>
+      <div id="higher_gva_bottom_0" class="row p-3 align-items-center">
+        <div class="col-7 1stcol">
+          <span id="text_higher_gva_bottom_0" class="emptyable"></span>
+        </div>
+        <div class="col-5 2ndcol">
+          <canvas id="chart_higher_gva_bottom_0"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+    </div>
+
+    <footer class="footer py-4  ">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6 mb-lg-0 mb-4">
+            <!--a data-v-1d0f3be0="" href="https://op.europa.eu/en/web/about-us/who-we-are" class="partners__item d-flex align-items-center"><span data-v-1d0f3be0="" class="
+                  d-inline-block
+                  partners__img-container
+                  partners__img-container--managedby"><img data-v-1d0f3be0="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAABmCAYAAAAAuFU5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ4IDc5LjE2NDAzNiwgMjAxOS8wOC8xMy0wMTowNjo1NyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIxLjEgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkE4NjBBMjg2NjlEQTExRUFBMEMyRjM3Njg0NUE0QTEwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkE4NjBBMjg3NjlEQTExRUFBMEMyRjM3Njg0NUE0QTEwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QTg2MEEyODQ2OURBMTFFQUEwQzJGMzc2ODQ1QTRBMTAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QTg2MEEyODU2OURBMTFFQUEwQzJGMzc2ODQ1QTRBMTAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4H44UZAAARbElEQVR42uydCXhUVZbH/7UnVQkVshOTEJawCwkIYWskoOyL2yjIaCvR5pOhxenGhcVpbbXpYLeN0y5Nj/2p44L2R9sqDSIEcJqAYAPNEhIJa0LIvlVlrapU1ZzzXhUUUAWxs1WFe77vfqnlvXtf7u+dc885975biuc3ROCXGALASsVGRQEvcgeV8VSq4F0qqcyh8iMqLRDSFlFR2UllB5VIH8dEUNlHJeuab5xKQNcEBDWiZu8MqDOJmRK5eEGCDF+QY6kMpVLso8EQKqlUegs+7SIpVE65+t2bxFE56xNucANq9sxCbd5IqAfR5y8TZAXy8AsM9gW5kUo1FZOPBuuoVAgu7SYVrj4N9vF9kIuJF80luNkzUZt7GzRGUl6dSzVfIiv7EkEGtFQ0fIbo5kARD82t3UtwT4yW4CpUdigd9L0b8osCcmDDJc2t9oALp4KGXxIBuTto7gzUEFytB1wWpftYT8gvEORXJMg6ATlQ4OaMuUJz3aL0PMcT8n9dgtwqTRZ3QAcg9P2NwgW3nkKh6T7hsqivPtfhctEY8i9cjvFqDKY4V1cD2Cu9NmhHGQz1TTDwIRqBpi2iIK52ZSOVMqKl8nqMuoW1rpI1tzYnzSdcN+DJVKKpNF0NmSJj53pUNJbD8lA09GlAS6O39rQ90FxxIiXB9P09ToKsEJTaIHalc3aoJXWewRZTa1cEeT1GY9Pb68J61RcMUGuM1XqCq/AC10CliAHfLrOU4tyrNdnZm2Kyj2GeZYU52tc16fVAaUEYsH22A1HnBeC2iFXpdMbV95kXU9+n1qr2Of4qVLYItcFcSBofRXC99TnzOsA1VLoyVCYv5prHgWqCXOY6wasE25myrbk0ulSL8CoBqS1iUyI2rLEZIY1BGpvqekeWSeycCge855c5W1WtFD3avUUAFoC7y39KlsymkYuUv7s5RH3T/KcO5WWwDqXQ4MBLCyiujQM5pmSYzRQPFPRGxqS/45GJ2fQ6Uf6Mv1M4b1yPANzFwkF+UzBg0cmv3dKiRpC+EfGxpQTSjv+cmoWnqIAcT/6Mv+NjrqiH62jUX1mPANyFwhpYG4YRA/KRnFgI1IVeAVhHsNbM/wLFWx7E0MRijEgqkl6vmrsZ2gbDlYDrQ9Av4QJupbpgMl6r3QJwJztNbGKLbgHyB+N39/8ZiyfsBfJGUnQYKcMJboKJTPFzbz+B7Nx+wABI5f9y+mPlhiUws7bSMdKxfE7uKDw2IRvrqS6cHCLX7Tl2CyerE4U0M6JnDZ544h1YbcFIH3gS/cIr0LxyLaocFryzfRqaGU5IPWpPDkSTWYuysyFQEswGUxBMFwkenQOrFkEE8LEFnyBCqcPCUf9A7+gqPLMmE1pNE97ekY6qmp5AULPQ4M4ed5vJjCptamQu/gQIAxKHVGP5gj/DRNrYwk4UayaNzTGp/4Sd/tXBi9diSMavoKD/OjrliDxu0zF8LJ/D5/YeWiXVxXVy3dxGII/HgQtYZ0GDugW/fHk13t50O0AWmJeoLX4tAx/8KQMtpLmg76Gxod6uwuK3lqKmJgqVVTHIIJNdz9pN3/ExfCyf8+hrj8nL3KgurpPr5ja4LWGiO8OZIlBwg+G/ZF5jJ+xB+pCTeGxZBgYkXsTSO77BV/smwcIJDdY8Kg3sTDEkhs5C3zXyZ+4pNnbGkk9h2R278er66ThZGI+fz9iK2PHZKCUHThqDuX13ksTH1JwA3B6xLkNWt1yCruthxj2kkXn7xgKGeoxJOwhtrxJYzD0un8NQuLihuM/3gMTnrPliPg7sHw00hODbggQEGU2AZz3cdoB51oFhorljSZNSks7j0cm7ZY+XwxvSygJylvLyyTXufxaIqsZ3x4ajjsKdSxBbdZu3SOccOJIi1cF15ZJjdp4dMdZ8bqsqAo9PyZKuga9FuiYBuO0aq6TOD2IPtigO0wbl4r8XfQpYqHNtWgTz5wyStPhSOMOvWct+iAnlY/kc1lh3+MX1UN16DqOoLVhVeP2hT3HnoDzgYhyC6XO+Nn831f4NmDpaUReKZVN24dhnP8aKWTsQEtqMg/+7DNue/xXiGTCPpR0YisVprfjbqkwcev+nBNWGp2dvx5FNjyBjYjYUbL79PK/t31dHzgwHKB9RTHuwKBpRA+skLzcpvAZvfD4Xp9iE6hs7rn2q+3RxHH7/17lINNYC1Bxfw75zcfgk6w7Y3Q6XANwGIc+3hMbDD3ZPkNYomM06FJ3vib9tmy5noTqygxkgWYmvd6ejvDgUFeUh0sq1TftGo/IMxVKGBjEGt1nIwdHElmJh2nd4fN1D6Df3LRTXh2HsjG1y3rkjx0Cum5yv8dO243RVtNT2I68+gn+77ZB0TVfksUWY1AaJqsDyTxagqaQX9zpmrXsGMTFlnaNBZEHyS2Mx/9WnCagW72+eg40x5UBkpTzlKAC33UzayNmxcZKBO5XNpkWHMgpbpBCmo50cjQ2V1eEUKFuB0DqpPSs7dq4smL970YGhwVat3JnuEIY71+Vld4Ynf0V77qSJ+5rEGNyG8Y8Lac/s0d9hWO8COavUlRrDbdeGYWT/05gz5oCccPHzFSD+CVjhlJMIbIZLo/CHhz/CzGE5wMlBUj5Y0QWaI7XJw8Spgbg39TDeWrQRKI4GanpC6dZwYaJbKeS59o4rxtqf/AnaYDviY2qwLH030gcXYGd+PF7//C60cHjUWaDJW1bRuL/8rs8x9ek3kXpLPmKjzPjs3SelsG31xwtwkT364Cahwa0Scp6KymKw+1Aq5qQck+d6h1dDb6xG1v6xaPGccOgUNWiR2sz6dhwMxirEDjWTZw9MG5qLHQfGoJRNNTthwkS33nO1EeQN72Qg+1CyvMULMV39wX04uneCnCfubKE2j2ZPxLpNs+V9cHTANwcH4qMPF8HO2TQ/dbj8EzA7LWTybp21FQa9Bal3r8PK1+/Gf0zdDe0tF2UPtgs8eV3SeTw88VssXbsIw+5Zh/AeDRg8/WtpSPFXR8t/w6SgZpibgzAh81m0FCbgyNm+iOt/BgpOcPCy1q7w/aIqsOzjB1FxLklyuCauewZxPWv8esWHXwMuKI6T5117F0qOTjG/5xmkrlhRwWvASFObeSVmZJX03kE3WhG/52vy01kl/wXMHeZ2XBiy22vmhXKcUepswDxfzKlJDon4Wvj63Cst/XjKMHAW3VHnJsSWIm1ojpzw6MylM9wWtZlGsXgCDxEBkIMOHMCsLQz0+AikD8jHe4vfAwrjgQvxHb8onetm60E+AC7cgvcz3sWk5FPStUjXFADLaf07F02dqybvdck9n2FYZCPS+h7DoKRSrHvpZRjJfP92653IP5/UcbNK5MkP6nMOP1v8AUwtGgxMKsPyKTsxsW8pjlcYsOGrmXSJdr8G7efrTRywk7eaf7o/0sd+i9SxF6T48+n7dqCuTo/yspjLEwEdFI+XlcairiEYK+7NknaTGj3+PG4fcwD5Z/pJ1+bvj7X4N2Aa+5w9zNixZTbuemW5vDVnX2DXnoFY8fwLqGXz2ZGPlFDdNeS9/3zNC9iTnSy1zTfYfLqWrK2zLi/wE4DbIJwHji7Hqjlf4f2N4zDvgeeQFFmNW2dvlT1q9zO+vLqireuW3YvruS6PZ4tHUFu9epow7/6V+HBTGlbP3Qolz02LFR3t5GfFFWP9zqk4fHwYUBGJg1XhCONx1x1GteeUHUP1rIva4CTkpN+sQMnBkdh8dBhGDsuVrslh8/9N3/xfg0mTrNSRh08MJWeqERiUjxJe7H6ujzx7w1pU0gv/PjEbM/mBMh6X+bMfui6az6FzZ6X+E4t+tAfgpAp/Rm2cONtXahODT9J7i3QttgB5yiFw4mBObnCigzudnzEiB0ins0AlhVF6vDjvSywev5cgRSKIoKg5fegJ2b0LABdPr5c0lo/lc1AWhccn7sGLczYDJgNU1B63ITly3Ca3za+7ItHS7QFfLRYdwqjDNy59C8e/+DH6xlRifspR5G1ZiBfv+hxqngDwHCMp5OmTcAF94ovkyQGPMV7TYMBLFIrlbVmA2cOPo19sBY5/+TA+XLIBRjbDnI4MUAlcwKRxZSYjfr1xIRx2MpUUDmuS7civCMObf7kXza5nlyRNY7OdNwJrZm3BqlnknOWmAOXR8nfkKTcRxDc23Sedy3WArL/NpkAm1V3OCQ0/nMjvVk7W9cz24X3jcfrMp+iXXAEDmc89Rwah8NhwYMRRadYpjEKZJY++izpTNO5POQQ7meQjT/4ehh4V+CM5brWszVRPAZ2z71gy5k3KQQPdHPlnYnFk/1iAlwoF8LZLgb0JC8FJIudKqXGg/8LfYMKTKzGqTwFCh56QzarSIT1GqiZgbz75PwiJs8CY0IQ36LWKtLaZl9m4luH2oHNGJl3AuJ+uQjLVFRxsleq+wpwLDe5kIRNssmpx9/qnCIQBpSXx2HeuL/TsELkeIW0ib/eVtathIcv7auZfpNOeWvEAXv/ts8DIg5fyzbwq44ENS6RVnLzN0vzXfoaeEVUB/XR/4AMmgDXuJ/Ajqy45X40M1z2lR/AMQ3LwQNpBZGbOhIJCm0XjDuAd+qzBHerwLgBupyzK9etAdONIdbPXHMAbowU2YO74q5/W90x+uMKgkLhiPEuO166sdAnolKnfwNCrBA0VUZeP5ZuEz3Wf585xB/iud91/r0oysfyYSxknRuJLpI92HUiT88ieQLupdH/Abu0Mq738mfu1s/tvTi/2ixaAhQS6ieZALwzef6fHSR9aNYDxesZMyytnrPU61JHnqmuPCfj2SuIHoAm2KRUhTdYgWC2I9vmjHE5YVSpjtVYTonQ6e/j4R5mpgWu4CHmtfr2XbnYGAbXNwBkbEglyk9eg0NFit7eE9tIiXheKMEPbe1XBmw1KF+28AT3FDe4TXl/rCCjSLSpnSbjSXBqqsl1sUXndq8mpUukiGxrPJDU2FhXq9fUqp1dnooZKiWLUBt86xKpdixh8j8/mWxE5TQFTifej7eVOqO+HQjmZ7i5nm9VOoVC0g3oqJLhOBNZWsfTfK53YRpr5pcPXL91oNL3irNbtf/1m7xe3VVajMKwHVD66Xe0LLm9OZKL6c7CDeqgvaUKB3Qmjw4enaofaqoDaovL1Y12d7z1LnaUMRD/DQQrpkKyPj5vT6bQXhRntk++cjH1f78LwmloUGr1DVvuCW0dwj0twE+ndcS3fNpB/yNDbXaeTtnOVplm7x07pXSyux9vg6yEsDWpN2gaCOm7GFOzfthO31pi8QlZ6hxuFY/ia4CbRuzzIP04pxL/iH0JnMqMxOBjjpk9BTpgRibVm2K8a3ZTXwo10weUlhLkCbgBAbtDrJcgnehJk05WQlZ5w6y/B7SfgBhjkeoMeYwlyLjlcEmSl6weiL2tuhAtufwE3oCFPlSG7zLVS1txwcqi2k3vkE64Kl38p2lcJEj3dbqK7QV9rXUyugVxnYHM9FXlGWZOVZnKkjmErwU1ui+Y6IdKe7aqT+FfSeS7IZtbkaek4HBkBhWHDH9GAx+nb/deDa3TlPXxtRMH5yQgqPX3Gbq3M40D+1YTNaJ+ZrteovOfSiECCW+XKRPkCooaceTR5D6QJQVQERp0tgFohJYSqbqS5Jp+VXZbq9oz126meIxzE35RjcrMFKgJNL/1uzVEc2i93HHEz2/kgBiyGu+4/mAsRgIUIwEIEYHHjiY50x3gqcaO0X2f6m3BQvtQVmHubXHZneJ6jknCDupoFYP8T3hPp7VYc92ArAFtudsCBbMKChYkWHSCcLNEFArAQAViIACxEAP6B0rcVx5hvdsCB/HzwH6jw8k9fiwP4Uf/hkFejXE++p/J3Adj/ZGUrjtlGZdUNjtnSnQF39zHY1IpjSsUYHLjSmqU/TgFYiAAsRAAWIgALEYB/mES24pjw7twB3X0jNH6yIR7yozXehFeNnOjOHfD/AgwAEzCj3WsuGtUAAAAASUVORK5CYII=" alt="Sponsored by the Publications Office of the European Union" width="60" height="40.6" class="partners__img img-publications-office"></span><span data-v-1d0f3be0="" class="partners__img-description"> Sponsored by the Publications Office of the European Union </span></a-->
+            <div class="copyright text-center text-sm text-muted text-lg-start">
+              © <script>
+                document.write(new Date().getFullYear())
+              </script>,
+              made with <i class="fa fa-heart"></i> by
+              <a href="https://puntofisso.net" class="font-weight-bold" target="_blank">Puntofisso</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+              <li class="nav-item">
+                <a href="https://www.puntofisso.net" class="nav-link text-muted" target="_blank">Giuseppe Sollazzo</a>
+              </li>
+              <li class="nav-item">
+                <a href="credits.html" class="nav-link text-muted" target="_blank">Credits</a>
+              </li>
+              <li class="nav-item">
+                <a href="https://github.com/puntofisso" class="nav-link text-muted" target="_blank">GitHub</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <footer class="footer position-absolute bottom-2 py-2 w-100">
-        <div class="container">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-12 col-md-6 my-auto">
-              <div class="copyright text-center text-sm text-white text-lg-start">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa fa-heart" aria-hidden="true"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold text-white" target="_blank">Creative Tim</a>
-                for a better web.
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-white" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-white" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-white" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-white" target="_blank">License</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </footer>
+
   </main>
+
+  <!-- Fixed HELP plugin -->
+  <div class="fixed-plugin">
+    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+      <i class="material-icons py-2">help</i>
+    </a>
+    <div class="card shadow-lg">
+      <div class="card-header pb-0 pt-3">
+        <div class="float-start">
+          <h5 class="mt-3 mb-0">EU Twinnings</h5>
+          <p>How does it all work?</p>
+        </div>
+        <div class="float-end mt-4">
+          <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
+            <i class="material-icons">clear</i>
+          </button>
+        </div>
+        <!-- End Toggle Button -->
+      </div>
+      <hr class="horizontal dark my-1">
+      <div class="card-body pt-sm-3 pt-0">
+        <!-- Sidebar Backgrounds -->
+        <div>
+          <h6 class="mb-0">Similarity</h6>
+        </div>
+        The similarity between areas is calculated using the formula known as <a href="https://en.wikipedia.org/wiki/Cosine_similarity">cosine similarity</a> over a number of selected Eurostat statistics at either the NUTS3 area level, or at the level of one of its containers.
+<br/><br/>
+The list of fields on which we currently calculate similarity is: population of the NUTS3 area, population of the containing NUTS0 area, population density, fertility rate, population change since the last census, ratio of women to men, GDP per PPS, and GVA.
+<br/><br/>
+Although every similarity measure is, to a certain extent, arbitrary, we believe that this choice gives some food for thought.
+<a href="images/similarity.png"><img src="images/similaritysmall.png"></img></a>
+        <hr class="horizontal dark my-sm-4">
+        <a class="btn btn-outline-dark w-100" href="https://github.com/puntofisso/data.europa.eu-eutwinnings">View documentation</a>
+        <div class="w-100 text-center">
+          <a class="github-button" href="https://github.com/puntofisso/data.europa.eu-eutwinnings" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="EU Twinnings on GitHub">Star</a>
+          <h6 class="mt-3">Thank you for sharing!</h6>
+          <a href="https://twitter.com/intent/tweet?text=Check%20EU%20Twinnings%20made%20by%20%40puntofisso&amp;url=https%3A%2F%2Feu-twinnings.site" class="btn btn-dark mb-0 me-2" target="_blank">
+            <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://eu-twinnings.site" class="btn btn-dark mb-0 me-2" target="_blank">
+            <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!--   Core JS Files   -->
-  <!--script src="../MD-assets/js/core/popper.min.js"></script>
-  <script src="../MD-assets/js/core/bootstrap.min.js"></script>
-  <script src="../MD-assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../MD-assets/js/plugins/smooth-scrollbar.min.js"></script-->
+  <script src="./MD-assets/js/core/popper.min.js"></script>
+  <script src="./MD-assets/js/core/bootstrap.min.js"></script>
+  <script src="./MD-assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="./MD-assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="./MD-assets/js/plugins/chartjs.min.js"></script>
+
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -1844,10 +2180,429 @@
     }
   </script>
 
+  <script>
+  /**
+    * Initialise the autocomplete function with the nuts.json file
+    */
+
+  $(document).ready( function() {
+
+    $('.all_data_container').hide();
+    $( "span" ).click(function( eventObject ) {
+        eventObject.preventDefault();
+        code = $(this)[0].children[0].attributes['data-code'].value;
+        navigateToNUTS(code);
+    });
+
+    // get json, and set it as global variable
+    $.getJSON("data/nuts-autocomplete.json", function(data){
+      window.nuts = data;
+    }).fail(function(){
+      console.log("An error has occurred.");
+    }).done(function() {
+      setup_autocomplete();
+    });
+  });
+
+  // Autocomplete setup
+  function setup_autocomplete() {
+    var nuts = window.nuts
+
+    // in order to make search easier, we translate the letters with diacritics
+    // e.g. you can search for "Gottingen" instead of "Göttingen"
+    var accentMap = {
+      "Ç": "C", "Č": "C", "ç": "c", "č": "c",
+      "ñ": "n",
+      "Á": "A", "Å": "A",
+      "É": "E",
+      "Í": "I",
+      "Ö": "O", "Ø": "O",
+      "Ú": "U",
+      "ð": "d", "đ": "d",
+      "ß": "b",
+      "ğ": "g",
+      "ħ": "h",
+      "í": "i", "ì": "i", "ī": "i", "İ": "i", "ı": "i",
+      "Ł": "L", "ł": "l",
+      "ń": "n", "ň": "n",
+      "ř": "r",
+      "Ś": "s", "ś": "s", "Ş": "s", "ş": "s", "Š": "s", "š": "s",
+      "ţ": "t",
+      "ź": "z", "Ż": "z", "ż": "z", "Ž": "z", "ž": "z",
+      "á": "a", "â": "a", "å": "a", "ä": "a", "ã": "a", "æ": "a", "ă": "a", "ą": "a",
+      "é": "e", "è": "e", "ë": "e", "ė": "e", "ę": "e", "ě": "e",
+      "ó": "o", "ô": "o", "ö": "o", "õ": "o", "ø": "o", "ő": "o",
+      "ú": "u", "ü": "u", "ų": "u",
+      "ý": "y"
+    };
+    var normalize = function( term ) {
+      var ret = "";
+      for ( var i = 0; i < term.length; i++ ) {
+        ret += accentMap[ term.charAt(i) ] || term.charAt(i);
+      }
+      return ret;
+    };
+
+    // if you click inside the input field, empty it
+    $('#inputRegion').click(function() {
+      $(this).val('');
+    });
+
+    // set up autocomplete
+    $("#inputRegion").autocomplete({
+      minLength: 3,
+      width: 300,
+      max: 10,
+      source: function( request, response ) {
+
+      var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i") , results = [];
+
+      /* Make sure each entry is only in the suggestions list once: */
+      $.each(nuts, function (i, value) {
+          if (matcher.test(normalize(value.label)) && $.inArray(value.label, results) < 0) {
+              // note: the below code isn't very well documented
+              // label and value need to be the value of the label
+              obj = { 'label': value.label + " [" + value.code.substring(0, 2) +"]", 'code': value.code }
+              results.push(obj);
+
+          }
+      });
+      response(results.slice(0, 10));
+    },
+    select: function (event, ui) {
+      // get json, and set it as global variable
+      navigateToNUTS(ui.item.code);
+    }
+  });
+  }
+
+  function navigateToNUTS(code) {
+    $('.all_data_container').hide();
+    $('#all_content_placeholder').hide();
+    emptyData();
+    $.getJSON("getdata.php?code="+code, function(data){
+        window.similarity = data;
+        fillData();
+    }).fail(function(){
+        alert("Sorry, an error has occurred. Please try again later.");
+    });
+  }
+
+  function fillData()
+  {
+
+    // General information
+    $('#span_nuts1').html(window.similarity['nuts1']);
+    $('#span_nuts2').html(window.similarity['nuts2']);
+    $('#nametitle').html(window.similarity['name']);
+    $('#subnametitle').html(window.similarity['nuts0name']);
+    filename = 'images/' + window.similarity['code'] + ".png";
+    $('#qgis_image').attr("src",filename);
+
+    $('#span_nuts3').html(window.similarity['code']);
+    $('#span_nuts0').html(window.similarity['nuts0']);
+
+    $('#span_density').html(window.similarity['density']);
+    $('#span_population').html(window.similarity['population']);
+    $('#span_fertility').html(window.similarity['fertility']);
+    $('#span_popchange').html(window.similarity['popchange']);
+    $('#span_womenratio').html(window.similarity['womenratio']);
+    $('#span_gdppps').html(window.similarity['gdppps']);
+    $('#span_gva').html(window.similarity['gva']);
+    $('#span_pop3').html(window.similarity['population']);
+    $('#span_pop0').html(window.similarity['population0']);
+
+    // Other extra info
+    $('#span_urbanrural').html(window.similarity.extra['urbanrural']);
+
+    if (window.similarity.extra['metropolitan'] == 'Y') {
+      $('#span_metropolitan').html('Yes');
+    } else if (window.similarity.extra['metropolitan'] == 'N') {
+      $('#span_metropolitan').html('No');
+    } else {
+      $('#span_metropolitan').html(window.similarity.extra['metropolitan']);
+    }
+
+    $('#span_coastal').html(window.similarity.extra['coastal']);
+
+
+    if (window.similarity.extra['mountain'] == 'Other regions') {
+      $('#span_mountain').html('No');
+    } else {
+      $('#span_mountain').html(window.similarity.extra['mountain']);
+    }
+
+    if (window.similarity.extra['border'] == 'Other regions') {
+      $('#span_border').html('No');
+    } else if (window.similarity.extra['border'] == 'Border regions') {
+      $('#span_border').html('Yes');
+    } else {
+      $('#span_border').html(window.similarity.extra['border']);
+    }
+
+    if (window.similarity.extra['island'] == '1') {
+      $('#span_island').html('Yes');
+    } else {
+      $('#span_island').html('No');
+    }
+
+    $('#span_remoteness').html(window.similarity.extra['remoteness']);
+
+    generate_d3_map() ;
+
+    var similarities = ['all_top', 'all_bottom', 'same_country_top', 'same_country_bottom', 'diff_country_top', 'diff_country_bottom', 'higher_gdppps_top', 'higher_gdppps_bottom', 'higher_gva_top', 'higher_gva_bottom'];
+
+    for (var i = 0; i < similarities.length; i++) {
+
+      itemtype = similarities[i];
+
+      for (itemindex in [0]) {
+
+        chartitem = 'chart_'+itemtype+"_"+itemindex;
+        textitem = '#text_'+itemtype+"_"+itemindex;
+        similarityitemname = 'similarity_'+itemtype;
+        similarityobject = window.similarity[similarityitemname][itemindex];
+        var targetcode;
+        try {
+          targetcode = window.similarity[similarityitemname][itemindex]['code'];
+        }
+        catch (exc) {
+          continue;
+        }
+
+
+        drawDonutChart(document.getElementById(chartitem), similarityobject['similarity']);
+        $(textitem).html("<a class='linktonuts' data-code='" + targetcode + "' href='#'>" + similarityobject['name'] + " [" + similarityobject['country'] + "]" +" </a>" + "<br/>" + (100*similarityobject['similarity']).toFixed(2) + "%");
+      }
+    }
+
+
+
+     $('.all_data_container').show();
+  }
+
+
+
+  function emptyData()
+  {
+  $('.emptyable').empty();
+
+  $('#chart_all_top_0').remove();
+  // $('#chart_all_top_1').remove();
+  // $('#chart_all_top_2').remove();
+  $('#chart_all_bottom_0').remove();
+  // $('#chart_all_bottom_1').remove();
+  // $('#chart_all_bottom_2').remove();
+  $('#chart_diff_country_top_0').remove();
+  // $('#chart_diff_country_top_1').remove();
+  // $('#chart_diff_country_top_2').remove();
+  $('#chart_diff_country_bottom_0').remove();
+  // $('#chart_diff_country_bottom_1').remove();
+  // $('#chart_diff_country_bottom_2').remove();
+  $('#chart_same_country_top_0').remove();
+  // $('#chart_same_country_top_1').remove();
+  // $('#chart_same_country_top_2').remove();
+  $('#chart_same_country_bottom_0').remove();
+  // $('#chart_same_country_bottom_1').remove();
+  // $('#chart_same_country_bottom_2').remove();
+  $('#chart_higher_gdppps_top_0').remove();
+  // $('#chart_higher_gdppps_top_1').remove();
+  // $('#chart_higher_gdppps_top_2').remove();
+  $('#chart_higher_gdppps_bottom_0').remove();
+  // $('#chart_higher_gdppps_bottom_1').remove();
+  // $('#chart_higher_gdppps_bottom_2').remove();
+  $('#chart_higher_gva_top_0').remove();
+  // $('#chart_higher_gva_top_1').remove();
+  // $('#chart_higher_gva_top_2').remove();
+  $('#chart_higher_gva_bottom_0').remove();
+  // $('#chart_higher_gva_bottom_1').remove();
+  // $('#chart_higher_gva_bottom_2').remove();
+  //
+  $('#all_top_0 > div.2ndcol').append('<canvas id="chart_all_top_0"></canvas>');
+  // $('#all_top_1 > div.col-2').append('<canvas id="chart_all_top_1" "></canvas>');
+  // $('#all_top_2 > div.col-2').append('<canvas id="chart_all_top_2" "></canvas>');
+  $('#all_bottom_0 > div.2ndcol').append('<canvas id="chart_all_bottom_0" "></canvas>');
+  // $('#all_bottom_1 > div.col-2').append('<canvas id="chart_all_bottom_1" "></canvas>');
+  // $('#all_bottom_2 > div.col-2').append('<canvas id="chart_all_bottom_2" "></canvas>');
+  $('#diff_country_top_0 > div.2ndcol').append('<canvas id="chart_diff_country_top_0" "></canvas>');
+  // $('#diff_country_top_1 > div.col-2').append('<canvas id="chart_diff_country_top_1" "></canvas>');
+  // $('#diff_country_top_2 > div.col-2').append('<canvas id="chart_diff_country_top_2" "></canvas>');
+  $('#diff_country_bottom_0 > div.2ndcol').append('<canvas id="chart_diff_country_bottom_0" "></canvas>');
+  // $('#diff_country_bottom_1 > div.col-2').append('<canvas id="chart_diff_country_bottom_1" "></canvas>');
+  // $('#diff_country_bottom_2 > div.col-2').append('<canvas id="chart_diff_country_bottom_2" "></canvas>');
+  $('#same_country_top_0 > div.2ndcol').append('<canvas id="chart_same_country_top_0" "></canvas>');
+  // $('#same_country_top_1 > div.col-2').append('<canvas id="chart_same_country_top_1" "></canvas>');
+  // $('#same_country_top_2 > div.col-2').append('<canvas id="chart_same_country_top_2" "></canvas>');
+  $('#same_country_bottom_0 > div.2ndcol').append('<canvas id="chart_same_country_bottom_0" "></canvas>');
+  // $('#same_country_bottom_1 > div.col-2').append('<canvas id="chart_same_country_bottom_1" "></canvas>');
+  // $('#same_country_bottom_2 > div.col-2').append('<canvas id="chart_same_country_bottom_2" "></canvas>');
+  $('#higher_gdppps_top_0 > div.2ndcol').append('<canvas id="chart_higher_gdppps_top_0" "></canvas>');
+  // $('#higher_gdppps_top_1 > div.col-2').append('<canvas id="chart_higher_gdppps_top_1" "></canvas>');
+  // $('#higher_gdppps_top_2 > div.col-2').append('<canvas id="chart_higher_gdppps_top_2" "></canvas>');
+  $('#higher_gdppps_bottom_0 > div.2ndcol').append('<canvas id="chart_higher_gdppps_bottom_0" "></canvas>');
+  // $('#higher_gdppps_bottom_1 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_1" "></canvas>');
+  // $('#higher_gdppps_bottom_2 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_2" "></canvas>');
+  $('#higher_gva_top_0 > div.2ndcol').append('<canvas id="chart_higher_gva_top_0" "></canvas>');
+  // $('#higher_gva_top_1 > div.col-2').append('<canvas id="chart_higher_gva_top_1" "></canvas>');
+  // $('#higher_gva_top_2 > div.col-2').append('<canvas id="chart_higher_gva_top_2" "></canvas>');
+  $('#higher_gva_bottom_0 > div.2ndcol').append('<canvas id="chart_higher_gva_bottom_0" "></canvas>');
+  // $('#higher_gva_bottom_1 > div.col-2').append('<canvas id="chart_higher_gva_bottom_1" "></canvas>');
+  // $('#higher_gva_bottom_2 > div.col-2').append('<canvas id="chart_higher_gva_bottom_2" "></canvas>');
+
+  }
+
+  function drawDonutChart(canvasElement, similarity) {
+    reciprocal = 1-similarity;
+
+    fill = 'rgba(0, 0, 0, 1)'; // black
+    if (similarity > 0.9) {
+      fill = 'rgba(153,193,64, 1)'; // green
+    } else if (similarity > 0.4) {
+      fill = 'rgba(231,180,22, 1)'; // yellow
+    } else if (similarity < 0.4)  {
+      fill = 'rgba(204, 50, 50, 1)'; // red
+    }
+
+    var ctx = canvasElement.getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: [similarity, reciprocal],
+                backgroundColor: [
+                    fill,
+                    'rgba(200, 200, 200, 1)',
+                ]
+            }]
+        },
+        options: {
+            cutout: '70%',
+            rotation: '90',
+            scales: {
+                x: {
+                  grid: {
+                  display: false,
+                  drawBorder: false,
+                  drawOnChartArea: false,
+                  drawTicks: false
+                  }
+                },
+                ticks: {
+                  display: false
+                },
+              }
+          ,
+        plugins: {
+          legend: {
+                  display: false
+                },
+                tooltip: {
+                  enabled: false
+                }
+              }
+            }
+          }
+        );
+  }
+</script>
+
+<script>
+
+function generate_d3_map() {
+    // const width = window.innerWidth;
+    // const height = window.innerHeight;
+
+    // const projection = d3.geoMercator()
+    //   .translate([width / 2, height / 2])
+    //   .scale((width - 1) / 2 / Math.PI);
+
+    d3
+    .select("#my_dataviz")
+    .attr("width", "100%");
+
+
+
+      const projection = d3.geoMercator()
+      .center([25,54])
+      .scale(600);
+
+    const path = d3.geoPath()
+      .projection(projection);
+
+    const zoom = d3.zoom()
+      .scaleExtent([1, 8])
+      .on('zoom', zoomed);
+
+      const svg = d3
+      .select("#my_dataviz")
+      .append("svg")
+      .attr("width", "100%");
+
+    const g = svg.append('g');
+
+    svg.call(zoom);
+    var d3data = d3.map();
+
+    var colorScale = d3.scaleThreshold()
+      .domain([0.0, 0.3, 0.6, 0.7, 0.8, 0.9, 0.95, 0.99, 1])
+      .range(d3.schemeBlues[8]);
+    jQuery.each(window.similarity.similarity_all, function(key, value) {
+        mykey = value['code'];
+        d3data.set(mykey, value['similarity']);
+      });
+    d3.json('data/nuts3-simplified.geojson',
+
+    function (error,data) {
+
+      g
+        .selectAll("path")
+        .data(data.features)
+        .enter()
+        .append("path")
+          // draw each country
+          .attr("d", d3.geoPath()
+            .projection(projection)
+          )
+          // set the color of each country
+          .attr("fill", function (d) {
+            if (window.similarity['code'] != d.properties.NUTS_ID) {
+              d.similarity = d3data.get(d.properties.NUTS_ID) || 0;
+              return colorScale(d.similarity);
+            } else {
+              return '#ff0000';
+            }
+          })
+          .style("stroke", "transparent")
+          .style("opacity", .8);
+
+          // g.attr("transform", "scale(" + $("#my_dataviz").width()/900 + ")");
+          // $("svg").height($("#my_dataviz").width()*0.618);
+
+       });
+
+    function zoomed() {
+      g
+        .selectAll('path') // To prevent stroke width from scaling
+        .attr('transform', d3.event.transform);
+    }
+
+
+
+    // d3.select(window).on("resize", sizeChange);
+    // function sizeChange() {
+    //   d3.select("g").attr("transform", "scale(" + $("#my_dataviz").width()/900 + ")");
+    //   $("svg").height($("#my_dataviz").width()*0.618);
+    // }
+}
+
+
+</script>
+
+
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../MD-assets/js/material-dashboard.min.js?v=3.0.0"></script>
+  <script src="./MD-assets/js/material-dashboard.min.js?v=3.0.0"></script>
 </body>
 
 </html>
