@@ -2511,6 +2511,8 @@ function generate_d3_map() {
 
     function (error,data) {
 
+
+
       g
         .selectAll("path")
         .data(data.features)
@@ -2530,12 +2532,43 @@ function generate_d3_map() {
             }
           })
           .style("stroke", "transparent")
-          .style("opacity", .8);
-          // .on("click", function (d) {
-          //   alert(d);
-          // });
+          .style("opacity", .8)
+          .on("click", function (d) {
+             nutsid=(d.properties.NUTS_ID).trim();
+             window.location.href="region.php?nutsid="+nutsid;
+          })
+          .on("mouseover", function (d) {
 
+              var NUTS_ID = (d.properties.NUTS_ID).trim();
 
+              var similarity = 1;
+              if (d.hasOwnProperty('similarity')) {
+                similarity = Math.round( (Number(d.similarity)+Number.EPSILON) * 100) /100 ;
+              }
+
+              if (!NUTS_ID) {
+                alert(d);
+                            }
+
+                            var div = d3.select("body").append("div")
+                            .attr("class", "tooltip")
+                            .attr("id", "tooltipdiv")
+                            .style("opacity", 0);
+
+              div.transition()
+                .duration(100)
+                .style("opacity", .9);
+
+                div.html(d.properties.NUTS_NAME + "<br/>" + similarity*100   + "%")
+                  .style("left", (d3.event.pageX) + "px")
+                  .style("top", (d3.event.pageY - 28) + "px");
+          })
+          .on("mouseleave", function(d) {
+
+              var div = d3.select("#tooltipdiv");
+              div.remove();
+
+          });
        });
 
     function zoomed() {
@@ -2555,11 +2588,7 @@ d3.select('#zoom-out').on('click', function() {
 });
 
 
-    // d3.select(window).on("resize", sizeChange);
-    // function sizeChange() {
-    //   d3.select("g").attr("transform", "scale(" + $("#my_dataviz").width()/900 + ")");
-    //   $("svg").height($("#my_dataviz").width()*0.618);
-    // }
+
 }
 
 
