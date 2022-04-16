@@ -13,9 +13,9 @@ ogr2ogr -f "CSV" -lco SEPARATOR=SEMICOLON -lco STRING_QUOTING=ALWAYS nuts0123-20
 echo "1b. Converting 2021 shapefile (NUTS3) to nuts3.geojson"
 
 rm -f forgeojson.shp
-ogr2ogr -where LEVL_CODE="3" forgeojson.shp NUTS_RG_20M_2021_3035.shp/NUTS_RG_20M_2021_3035.shp
+ogr2ogr -where LEVL_CODE="3" forgeojson.shp NUTS_RG_20M_2021_3035.shp/NUTS_RG_20M_2021_3035.shp -lco ENCODING=UTF-8
 rm -f nuts3.geojson
-ogr2ogr -f "GeoJSON" -lco COORDINATE_PRECISION=2 -t_srs crs:84 nuts3.geojson-temp forgeojson.shp
+ogr2ogr -f "GeoJSON" -lco COORDINATE_PRECISION=2 -t_srs crs:84 nuts3.geojson-temp forgeojson.shp 
 rm -f forgeojson.*
 jq -c . < nuts3.geojson-temp > nuts3.geojson
 rm -f nuts3.geojson-temp
