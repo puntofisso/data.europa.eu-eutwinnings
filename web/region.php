@@ -1743,6 +1743,7 @@
       <div class="row mt-4">
 
         <div class="col-xl-6 col-sm-6 mb-xl-0 mb-4">
+
           <div class="card container">
               <div class="card-header p-3 pt-2">
                 <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary  text-center border-radius-xl mt-n4 position-absolute">
@@ -1755,39 +1756,86 @@
               </div>
 
               <div id="all_top_0" class="row p-3 align-items-center">
+
+                <div class="col-2 2ndcol">
+                  <canvas id="chart_all_top_0"></canvas>
+                </div>
+
                 <div class="col-7 1stcol">
                   <span id="text_all_top_0" class="emptyable"></span>
                 </div>
 
-                <div class="col-5 2ndcol">
-                  <canvas id="chart_all_top_0"></canvas>
+                <div class="col-3 3rdcol">
+                  <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    More...
+                  </button>
                 </div>
 
               </div>
 
-              <!-- Button trigger modal + modal -->
-<!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-  More...
-</button>
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div-->
+              <!-- modal -->
+
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title font-weight-normal" id="exampleModalLabel">More...</h5>
+                        <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <h4>Data</h4>
+                        <table class="table">
+                          <thead>
+                              <tr>
+                                  <th class="text-left">Parametre</th>
+                                  <th class="text-center">Value</th>
+                                  <th class="text-center">Rank</th>
+                                  <th class="text-center">Value</th>
+                                  <th class="text-center">Rank</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td class="text-left">Population</td>
+                                  <td>&nbsp</td>
+                                  <td>&nbsp</td>
+                                  <td>&nbsp</td>
+                                  <td>&nbsp</td>
+                                  <td>&nbsp</td>
+                              </tr>
+                              <tr>
+                                  <td class="text-left">Population NUTS 0</td>
+                                  <td>&nbsp</td>
+                                  <td>&nbsp</td>
+                                  <td>&nbsp</td>
+                                  <td>&nbsp</td>
+                                  <td>&nbsp</td>
+                              </tr>
+
+                                  <!--td class="text-left">Density</td>
+                                  <td class="text-left">Fertility</td>
+                                  <td class="text-left">Population change</td>
+                                  <td class="text-left">Women:Men</td>
+                                  <td class="text-left">GDPPPS</td>
+                                  <td class="text-left">GVA</td-->
+                              </tr>
+                          </tbody>
+                      </table>
+
+                        <h4>Rank comparison</h4>
+                        <canvas id="spider_all_top_0"></canvas>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
 
           </div>
         </div>
@@ -2342,6 +2390,7 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
      $('.all_data_container').show();
      generate_d3_map() ;
 
+     drawSpiderChart(document.getElementById("spider_all_top_0"), "similarity_all_top", 0);
   }
 
 
@@ -2351,67 +2400,88 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
   $('.emptyable').empty();
 
   $('#chart_all_top_0').remove();
-  // $('#chart_all_top_1').remove();
-  // $('#chart_all_top_2').remove();
   $('#chart_all_bottom_0').remove();
-  // $('#chart_all_bottom_1').remove();
-  // $('#chart_all_bottom_2').remove();
   $('#chart_diff_country_top_0').remove();
-  // $('#chart_diff_country_top_1').remove();
-  // $('#chart_diff_country_top_2').remove();
   $('#chart_diff_country_bottom_0').remove();
-  // $('#chart_diff_country_bottom_1').remove();
-  // $('#chart_diff_country_bottom_2').remove();
   $('#chart_same_country_top_0').remove();
-  // $('#chart_same_country_top_1').remove();
-  // $('#chart_same_country_top_2').remove();
   $('#chart_same_country_bottom_0').remove();
-  // $('#chart_same_country_bottom_1').remove();
-  // $('#chart_same_country_bottom_2').remove();
   $('#chart_higher_gdppps_top_0').remove();
-  // $('#chart_higher_gdppps_top_1').remove();
-  // $('#chart_higher_gdppps_top_2').remove();
   $('#chart_higher_gdppps_bottom_0').remove();
-  // $('#chart_higher_gdppps_bottom_1').remove();
-  // $('#chart_higher_gdppps_bottom_2').remove();
   $('#chart_higher_gva_top_0').remove();
-  // $('#chart_higher_gva_top_1').remove();
-  // $('#chart_higher_gva_top_2').remove();
   $('#chart_higher_gva_bottom_0').remove();
-  // $('#chart_higher_gva_bottom_1').remove();
-  // $('#chart_higher_gva_bottom_2').remove();
-  //
-  $('#all_top_0 > div.2ndcol').append('<canvas id="chart_all_top_0"></canvas>');
-  // $('#all_top_1 > div.col-2').append('<canvas id="chart_all_top_1" "></canvas>');
-  // $('#all_top_2 > div.col-2').append('<canvas id="chart_all_top_2" "></canvas>');
-  $('#all_bottom_0 > div.2ndcol').append('<canvas id="chart_all_bottom_0" "></canvas>');
-  // $('#all_bottom_1 > div.col-2').append('<canvas id="chart_all_bottom_1" "></canvas>');
-  // $('#all_bottom_2 > div.col-2').append('<canvas id="chart_all_bottom_2" "></canvas>');
-  $('#diff_country_top_0 > div.2ndcol').append('<canvas id="chart_diff_country_top_0" "></canvas>');
-  // $('#diff_country_top_1 > div.col-2').append('<canvas id="chart_diff_country_top_1" "></canvas>');
-  // $('#diff_country_top_2 > div.col-2').append('<canvas id="chart_diff_country_top_2" "></canvas>');
-  $('#diff_country_bottom_0 > div.2ndcol').append('<canvas id="chart_diff_country_bottom_0" "></canvas>');
-  // $('#diff_country_bottom_1 > div.col-2').append('<canvas id="chart_diff_country_bottom_1" "></canvas>');
-  // $('#diff_country_bottom_2 > div.col-2').append('<canvas id="chart_diff_country_bottom_2" "></canvas>');
-  $('#same_country_top_0 > div.2ndcol').append('<canvas id="chart_same_country_top_0" "></canvas>');
-  // $('#same_country_top_1 > div.col-2').append('<canvas id="chart_same_country_top_1" "></canvas>');
-  // $('#same_country_top_2 > div.col-2').append('<canvas id="chart_same_country_top_2" "></canvas>');
-  $('#same_country_bottom_0 > div.2ndcol').append('<canvas id="chart_same_country_bottom_0" "></canvas>');
-  // $('#same_country_bottom_1 > div.col-2').append('<canvas id="chart_same_country_bottom_1" "></canvas>');
-  // $('#same_country_bottom_2 > div.col-2').append('<canvas id="chart_same_country_bottom_2" "></canvas>');
-  $('#higher_gdppps_top_0 > div.2ndcol').append('<canvas id="chart_higher_gdppps_top_0" "></canvas>');
-  // $('#higher_gdppps_top_1 > div.col-2').append('<canvas id="chart_higher_gdppps_top_1" "></canvas>');
-  // $('#higher_gdppps_top_2 > div.col-2').append('<canvas id="chart_higher_gdppps_top_2" "></canvas>');
-  $('#higher_gdppps_bottom_0 > div.2ndcol').append('<canvas id="chart_higher_gdppps_bottom_0" "></canvas>');
-  // $('#higher_gdppps_bottom_1 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_1" "></canvas>');
-  // $('#higher_gdppps_bottom_2 > div.col-2').append('<canvas id="chart_higher_gdppps_bottom_2" "></canvas>');
-  $('#higher_gva_top_0 > div.2ndcol').append('<canvas id="chart_higher_gva_top_0" "></canvas>');
-  // $('#higher_gva_top_1 > div.col-2').append('<canvas id="chart_higher_gva_top_1" "></canvas>');
-  // $('#higher_gva_top_2 > div.col-2').append('<canvas id="chart_higher_gva_top_2" "></canvas>');
-  $('#higher_gva_bottom_0 > div.2ndcol').append('<canvas id="chart_higher_gva_bottom_0" "></canvas>');
-  // $('#higher_gva_bottom_1 > div.col-2').append('<canvas id="chart_higher_gva_bottom_1" "></canvas>');
-  // $('#higher_gva_bottom_2 > div.col-2').append('<canvas id="chart_higher_gva_bottom_2" "></canvas>');
 
+  $('#all_top_0 > div.2ndcol').append('<canvas id="chart_all_top_0"></canvas>');
+  $('#all_bottom_0 > div.2ndcol').append('<canvas id="chart_all_bottom_0" "></canvas>');
+
+  $('#diff_country_top_0 > div.2ndcol').append('<canvas id="chart_diff_country_top_0" "></canvas>');
+  $('#diff_country_bottom_0 > div.2ndcol').append('<canvas id="chart_diff_country_bottom_0" "></canvas>');
+  $('#same_country_top_0 > div.2ndcol').append('<canvas id="chart_same_country_top_0" "></canvas>');
+  $('#same_country_bottom_0 > div.2ndcol').append('<canvas id="chart_same_country_bottom_0" "></canvas>');
+  $('#higher_gdppps_top_0 > div.2ndcol').append('<canvas id="chart_higher_gdppps_top_0" "></canvas>');
+  $('#higher_gdppps_bottom_0 > div.2ndcol').append('<canvas id="chart_higher_gdppps_bottom_0" "></canvas>');
+  $('#higher_gva_top_0 > div.2ndcol').append('<canvas id="chart_higher_gva_top_0" "></canvas>');
+  $('#higher_gva_bottom_0 > div.2ndcol').append('<canvas id="chart_higher_gva_bottom_0" "></canvas>');
+
+  }
+
+  function drawSpiderChart(canvasElement, comparison, index) {
+
+    var ctx = canvasElement.getContext('2d');
+
+    var sm = window.similarity;
+    var code = sm['code'];
+    var comparisoncode = sm[comparison][index]['code'];
+
+    const data = {
+        labels: [
+          'Population',
+          'Population NUTS0',
+          'Density',
+          'Fertility',
+          'Population change',
+          'Women:Men Ratio',
+          'GDPPPS',
+          'GVA'
+        ],
+        datasets: [{
+          label: code,
+           // data: [650, 59, 90, 81, 56, 55, 40, 32],
+          // data: [ sm['population'], sm['population0'], sm['density'], sm['fertility'], sm['popchange'], sm['womenratio'], sm['gdppps'], sm['gva'] ],
+          data: [ sm['populationrank'], sm['population0rank'], sm['densityrank'], sm['fertilityrank'], sm['popchangerank'], sm['womenratiorank'], sm['gdpppsrank'], sm['gvarank'] ],
+          fill: true,
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgb(255, 99, 132)',
+          pointBackgroundColor: 'rgb(255, 99, 132)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgb(255, 99, 132)'
+        }, {
+          label: sm[comparison][index]['code'],
+          //data: [28, 48, 40, 190, 96, 27, 100, 32],
+          data: [ sm['ranks'][comparisoncode]['pop3rank'], sm['ranks'][comparisoncode]['pop0rank'], sm['ranks'][comparisoncode]['densityrank'], sm['ranks'][comparisoncode]['fertilityrank'], sm['ranks'][comparisoncode]['popchangerank'], sm['ranks'][comparisoncode]['womenratiorank'], sm['ranks'][comparisoncode]['gdpppsrank'], sm['ranks'][comparisoncode]['gvarank'] ],
+          fill: true,
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgb(54, 162, 235)',
+          pointBackgroundColor: 'rgb(54, 162, 235)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgb(54, 162, 235)'
+        }]
+      };
+
+    var myChart = new Chart(ctx, {
+        type: 'radar',
+        data: data,
+        options: {
+          scales: {
+              r: {
+
+                  suggestedMin: 1,
+                  suggestedMax: 1900
+              }
+          }
+        }
+      });
   }
 
   function drawDonutChart(canvasElement, similarity) {

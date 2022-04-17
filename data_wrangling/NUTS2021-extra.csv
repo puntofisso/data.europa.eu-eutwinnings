@@ -9,7 +9,7 @@ AL014|predominantly rural|N|coastal (on coast)|> 50 % of population and 50 % of 
 AL015|intermediate|N|coastal (on coast)|Other regions|Border regions|N/A|N/A
 AL02|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 AL021|predominantly rural|N|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|N/A
-AL022|perdominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
+AL022|predominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
 AL03|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 AL031|predominantly rural|N|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 AL032|predominantly rural|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
@@ -31,10 +31,10 @@ AT122|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in
 AT123|predominantly rural|N|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, close to a city
 AT124|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, remote
 AT125|predominantly rural|Y|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
-AT126|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+AT126|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 AT127|intermediate|Y|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 AT13|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-AT130|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+AT130|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 AT2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 AT21|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 AT211|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
@@ -60,44 +60,44 @@ AT322|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface
 AT323|intermediate|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 AT33|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 AT331|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, close to a city
-AT332|perdominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+AT332|predominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
 AT333|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, remote
 AT334|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, close to a city
 AT335|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, close to a city
 AT34|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 AT341|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, close to a city
-AT342|perdominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+AT342|predominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
 ATZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ATZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ATZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 BE|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 BE1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 BE10|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-BE100|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+BE100|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 BE2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 BE21|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-BE211|perdominantly urban|Y|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
-BE212|perdominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+BE211|predominantly urban|Y|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
+BE212|predominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
 BE213|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 BE22|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 BE223|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
-BE224|perdominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
+BE224|predominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
 BE225|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 BE23|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-BE231|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-BE232|perdominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Border regions|N/A|predominantly urban
+BE231|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+BE232|predominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Border regions|N/A|predominantly urban
 BE233|intermediate|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Border regions|N/A|intermediate, close to a city
 BE234|intermediate|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Border regions|N/A|intermediate, close to a city
 BE235|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-BE236|perdominantly urban|N|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
+BE236|predominantly urban|N|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
 BE24|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-BE241|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+BE241|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 BE242|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 BE25|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 BE251|intermediate|N|coastal (on coast)|Other regions|Border regions|N/A|intermediate, close to a city
 BE252|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Border regions|N/A|intermediate, close to a city
 BE253|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Border regions|N/A|intermediate, close to a city
-BE254|perdominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
+BE254|predominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
 BE255|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 BE256|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Border regions|N/A|intermediate, close to a city
 BE257|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Border regions|N/A|intermediate, close to a city
@@ -106,16 +106,16 @@ BE3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 BE31|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 BE310|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 BE32|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-BE323|perdominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
+BE323|predominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
 BE328|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
-BE329|perdominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
+BE329|predominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
 BE32A|predominantly rural|Y|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
-BE32B|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+BE32B|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 BE32C|intermediate|Y|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 BE32D|predominantly rural|Y|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
 BE33|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 BE331|predominantly rural|Y|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
-BE332|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+BE332|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 BE334|predominantly rural|Y|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 BE335|intermediate|N|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 BE336|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
@@ -158,7 +158,7 @@ BG343|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, 
 BG344|intermediate|N|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 BG4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 BG41|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-BG411|perdominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+BG411|predominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 BG412|predominantly rural|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, close to a city
 BG413|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, remote
 BG414|intermediate|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
@@ -177,19 +177,19 @@ CH0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 CH01|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 CH011|intermediate|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 CH012|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, remote
-CH013|perdominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+CH013|predominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
 CH02|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 CH021|intermediate|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 CH022|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
-CH023|perdominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+CH023|predominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
 CH024|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 CH025|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, close to a city
 CH03|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-CH031|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
-CH032|perdominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
-CH033|perdominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+CH031|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+CH032|predominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+CH033|predominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
 CH04|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-CH040|perdominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+CH040|predominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
 CH05|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 CH051|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 CH052|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
@@ -204,9 +204,9 @@ CH062|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in
 CH063|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 CH064|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 CH065|intermediate|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
-CH066|perdominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+CH066|predominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 CH07|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-CH070|perdominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+CH070|predominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
 CHZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 CHZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 CHZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -220,9 +220,9 @@ CYZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 CZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 CZ0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 CZ01|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-CZ010|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+CZ010|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 CZ02|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-CZ020|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+CZ020|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 CZ03|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 CZ031|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
 CZ032|predominantly rural|Y|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
@@ -247,12 +247,12 @@ CZZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DE|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DE1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DE11|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DE111|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE112|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE113|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE114|perdominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
-DE115|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE116|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE111|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE112|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE113|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE114|predominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+DE115|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE116|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE117|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DE118|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DE119|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
@@ -261,14 +261,14 @@ DE11B|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predomin
 DE11C|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DE11D|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DE12|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DE121|perdominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
-DE122|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
-DE123|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE124|perdominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
-DE125|perdominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
-DE126|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE121|predominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+DE122|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+DE123|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE124|predominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
+DE125|predominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+DE126|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE127|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
-DE128|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE128|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE129|intermediate|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 DE12A|predominantly rural|N|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, close to a city
 DE12B|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
@@ -297,7 +297,7 @@ DE149|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predomin
 DE2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DE21|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DE211|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-DE212|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE212|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE213|intermediate|Y|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 DE214|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, remote
 DE215|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
@@ -312,7 +312,7 @@ DE21D|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in
 DE21E|predominantly rural|Y|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DE21F|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 DE21G|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
-DE21H|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE21H|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE21I|predominantly rural|Y|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DE21J|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DE21K|intermediate|Y|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
@@ -359,22 +359,22 @@ DE24C|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predomin
 DE24D|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
 DE25|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DE251|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
-DE252|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE253|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE254|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE255|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE252|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE253|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE254|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE255|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE256|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
-DE257|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE258|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE257|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE258|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE259|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DE25A|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DE25B|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DE25C|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DE26|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DE261|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE261|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE262|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DE263|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-DE264|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE264|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE265|predominantly rural|Y|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DE266|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DE267|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
@@ -384,12 +384,12 @@ DE26A|predominantly rural|Y|non-coastal|Other regions|Other regions|N/A|predomin
 DE26B|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DE26C|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DE27|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DE271|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE271|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE272|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DE273|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 DE274|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DE275|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-DE276|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE276|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE277|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DE278|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DE279|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
@@ -400,7 +400,7 @@ DE27D|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predomin
 DE27E|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 DE3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DE30|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DE300|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE300|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DE40|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DE401|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
@@ -423,25 +423,25 @@ DE40H|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, c
 DE40I|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
 DE5|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DE50|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DE501|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+DE501|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 DE502|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 DE6|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DE60|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DE600|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+DE600|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 DE7|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DE71|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DE711|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE712|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE713|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE714|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE715|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE716|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE717|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DE718|perdominantly urban|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+DE711|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE712|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE713|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE714|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE715|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE716|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE717|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE718|predominantly urban|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 DE719|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-DE71A|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE71A|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE71B|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, close to a city
-DE71C|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE71C|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE71D|intermediate|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 DE71E|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DE72|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -487,7 +487,7 @@ DE925|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, c
 DE926|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, remote
 DE927|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DE928|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-DE929|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DE929|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DE93|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DE931|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DE932|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
@@ -501,7 +501,7 @@ DE939|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermed
 DE93A|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DE93B|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DE94|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DE941|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+DE941|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
 DE942|intermediate|N|coastal (on coast)|Other regions|Border regions|N/A|intermediate, close to a city
 DE943|intermediate|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|intermediate, close to a city
 DE944|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
@@ -520,63 +520,63 @@ DE94G|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermed
 DE94H|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly rural, close to a city
 DEA|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DEA1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DEA11|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA12|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA13|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA14|perdominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA15|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
-DEA16|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA17|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA18|perdominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA19|perdominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA1A|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA11|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA12|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA13|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA14|predominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA15|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+DEA16|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA17|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA18|predominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA19|predominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA1A|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DEA1B|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
-DEA1C|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA1D|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA1E|perdominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
-DEA1F|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA1C|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA1D|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA1E|predominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
+DEA1F|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DEA2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DEA22|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA23|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA24|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA22|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA23|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA24|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DEA26|intermediate|Y|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
-DEA27|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA27|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DEA28|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 DEA29|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 DEA2A|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-DEA2B|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA2C|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA2D|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+DEA2B|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA2C|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA2D|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 DEA3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DEA31|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA32|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA33|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA31|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA32|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA33|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DEA34|intermediate|Y|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
-DEA35|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA36|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA35|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA36|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DEA37|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DEA38|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DEA4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DEA41|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA42|perdominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA43|perdominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA41|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA42|predominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA43|predominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DEA44|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DEA45|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DEA46|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DEA47|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DEA5|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DEA51|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA52|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA53|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA54|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA55|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEA56|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA51|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA52|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA53|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA54|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA55|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA56|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DEA57|intermediate|N|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
-DEA58|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA58|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DEA59|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DEA5A|intermediate|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 DEA5B|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-DEA5C|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEA5C|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DEB|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DEB1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DEB11|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
@@ -597,41 +597,41 @@ DEB23|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predomi
 DEB24|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DEB25|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 DEB3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DEB31|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEB31|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DEB32|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-DEB33|perdominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
-DEB34|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEB35|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEB33|predominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
+DEB34|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEB35|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DEB36|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DEB37|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
-DEB38|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DEB39|perdominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEB38|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEB39|predominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DEB3A|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 DEB3B|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DEB3C|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DEB3D|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
-DEB3E|perdominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
+DEB3E|predominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
 DEB3F|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DEB3G|predominantly rural|Y|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DEB3H|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
-DEB3I|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DEB3I|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DEB3J|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DEB3K|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
 DEC|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DEC0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DEC01|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+DEC01|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 DEC02|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 DEC03|intermediate|Y|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
-DEC04|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
-DEC05|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+DEC04|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+DEC05|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 DEC06|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DED|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DED2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DED21|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DED21|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DED2C|predominantly rural|Y|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
 DED2D|intermediate|Y|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 DED2E|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-DED2F|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+DED2F|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 DED4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DED41|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DED42|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
@@ -639,8 +639,8 @@ DED43|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, 
 DED44|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 DED45|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DED5|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DED51|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-DED52|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DED51|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+DED52|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 DED53|predominantly rural|Y|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 DEE|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DEE0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -661,15 +661,15 @@ DEE0E|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predomin
 DEF|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DEF0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DEF01|intermediate|Y|coastal (on coast)|Other regions|Border regions|N/A|intermediate, close to a city
-DEF02|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+DEF02|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 DEF03|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 DEF04|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|intermediate, close to a city
 DEF05|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly rural, remote
 DEF06|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 DEF07|predominantly rural|N|coastal (on coast)|Other regions|Border regions|N/A|predominantly rural, close to a city
 DEF08|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
-DEF09|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-DEF0A|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+DEF09|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+DEF0A|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 DEF0B|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 DEF0C|intermediate|Y|coastal (on coast)|Other regions|Border regions|N/A|intermediate, close to a city
 DEF0D|intermediate|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|intermediate, close to a city
@@ -706,8 +706,8 @@ DEZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DK|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DK0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 DK01|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-DK011|perdominantly urban|Y|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
-DK012|perdominantly urban|Y|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
+DK011|predominantly urban|Y|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
+DK012|predominantly urban|Y|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
 DK013|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 DK014|predominantly rural|N|coastal (on coast)|Other regions|Other regions|1|predominantly rural, remote
 DK02|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -727,24 +727,24 @@ DKZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 EE|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 EE0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 EE00|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-EE001|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+EE001|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 EE004|predominantly rural|N|coastal (on coast)|Other regions|Border regions|N/A|predominantly rural, remote
 EE008|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
 EE009|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly rural, remote
-EE00A|perdominantly urban|N|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
+EE00A|predominantly urban|N|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
 EEZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 EEZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 EEZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 EL|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 EL3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 EL30|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-EL301|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-EL302|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-EL303|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-EL304|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-EL305|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
-EL306|perdominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
-EL307|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+EL301|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+EL302|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+EL303|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+EL304|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+EL305|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+EL306|predominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+EL307|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 EL4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 EL41|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 EL411|predominantly rural|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|predominantly rural, remote
@@ -767,7 +767,7 @@ EL514|intermediate|N|coastal (>= 50% of population living within 50km of the coa
 EL515|predominantly rural|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, close to a city
 EL52|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 EL521|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
-EL522|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+EL522|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 EL523|predominantly rural|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Border regions|N/A|predominantly rural, close to a city
 EL524|predominantly rural|N|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, remote
 EL525|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
@@ -821,9 +821,9 @@ ES13|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ES130|intermediate|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 ES2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ES21|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-ES211|perdominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
-ES212|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
-ES213|perdominantly urban|Y|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ES211|predominantly urban|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ES212|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+ES213|predominantly urban|Y|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 ES22|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ES220|intermediate|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 ES23|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -831,10 +831,10 @@ ES230|intermediate|N|non-coastal|> 50 % of surface are in mountain areas|Other r
 ES24|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ES241|intermediate|N|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 ES242|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, remote
-ES243|perdominantly urban|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ES243|predominantly urban|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 ES3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ES30|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-ES300|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+ES300|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 ES4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ES41|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ES411|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, remote
@@ -857,43 +857,43 @@ ES431|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, 
 ES432|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, remote
 ES5|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ES51|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-ES511|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ES511|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 ES512|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 ES513|intermediate|N|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 ES514|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 ES52|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-ES521|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ES521|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 ES522|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
-ES523|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ES523|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 ES53|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ES531|intermediate|N|coastal (on coast)|Other regions|Other regions|1|intermediate, remote
-ES532|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|1|predominantly urban
+ES532|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|1|predominantly urban
 ES533|intermediate|N|coastal (on coast)|Other regions|Other regions|1|intermediate, remote
 ES6|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ES61|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ES611|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
-ES612|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-ES613|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+ES612|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+ES613|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 ES614|intermediate|Y|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 ES615|intermediate|N|coastal (on coast)|Other regions|Border regions|N/A|intermediate, close to a city
 ES616|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
-ES617|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
-ES618|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+ES617|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ES618|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 ES62|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-ES620|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ES620|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 ES63|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-ES630|perdominantly urban|N|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
+ES630|predominantly urban|N|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
 ES64|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ES640|intermediate|N|coastal (on coast)|Other regions|Border regions|N/A|intermediate, close to a city
 ES7|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ES70|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ES703|predominantly rural|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|predominantly rural, remote
 ES704|intermediate|N|coastal (on coast)|Other regions|Other regions|1|intermediate, remote
-ES705|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|1|predominantly urban
+ES705|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|1|predominantly urban
 ES706|predominantly rural|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|predominantly rural, remote
 ES707|intermediate|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|intermediate, remote
 ES708|intermediate|N|coastal (on coast)|Other regions|Other regions|1|intermediate, close to a city
-ES709|perdominantly urban|Y|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|predominantly urban
+ES709|predominantly urban|Y|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|predominantly urban
 ESZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ESZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ESZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -906,7 +906,7 @@ FI195|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|p
 FI196|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly rural, remote
 FI197|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 FI1B|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-FI1B1|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+FI1B1|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 FI1C|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FI1C1|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 FI1C2|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
@@ -930,14 +930,14 @@ FIZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FR|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FR1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FR10|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-FR101|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+FR101|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 FR102|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-FR103|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-FR104|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-FR105|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-FR106|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-FR107|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-FR108|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+FR103|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+FR104|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+FR105|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+FR106|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+FR107|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+FR108|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 FRB|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FRB0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FRB01|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
@@ -967,7 +967,7 @@ FRD21|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|p
 FRD22|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 FRE|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FRE1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-FRE11|perdominantly urban|Y|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
+FRE11|predominantly urban|Y|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
 FRE12|intermediate|N|coastal (on coast)|Other regions|Border regions|N/A|intermediate, close to a city
 FRE2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FRE21|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
@@ -989,7 +989,7 @@ FRF33|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, 
 FRF34|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, remote
 FRG|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FRG0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-FRG01|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+FRG01|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 FRG02|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 FRG03|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, remote
 FRG04|predominantly rural|Y|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
@@ -1003,7 +1003,7 @@ FRH04|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|p
 FRI|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FRI1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FRI11|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, remote
-FRI12|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+FRI12|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 FRI13|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly rural, close to a city
 FRI14|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, remote
 FRI15|intermediate|Y|coastal (on coast)|Other regions|Border regions|N/A|intermediate, close to a city
@@ -1026,7 +1026,7 @@ FRJ15|intermediate|Y|coastal (on coast)|> 50 % of surface are in mountain areas|
 FRJ2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FRJ21|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, remote
 FRJ22|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, remote
-FRJ23|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+FRJ23|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 FRJ24|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, remote
 FRJ25|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, remote
 FRJ26|predominantly rural|N|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, close to a city
@@ -1044,15 +1044,15 @@ FRK22|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface
 FRK23|predominantly rural|N|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, close to a city
 FRK24|intermediate|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 FRK25|intermediate|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
-FRK26|perdominantly urban|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+FRK26|predominantly urban|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 FRK27|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 FRK28|intermediate|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 FRL|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FRL0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FRL01|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, remote
 FRL02|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, remote
-FRL03|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
-FRL04|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+FRL03|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+FRL04|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 FRL05|intermediate|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 FRL06|intermediate|N|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 FRM|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -1067,7 +1067,7 @@ FRY20|intermediate|Y|coastal (on coast)|Other regions|Other regions|1|intermedia
 FRY3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FRY30|intermediate|N|coastal (on coast)|Other regions|Border regions|N/A|intermediate, remote
 FRY4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-FRY40|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|1|predominantly urban
+FRY40|predominantly urban|N|coastal (on coast)|Other regions|Other regions|1|predominantly urban
 FRY5|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 FRY50|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|1|intermediate, remote
 FRZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -1093,7 +1093,7 @@ HR035|intermediate|Y|coastal (on coast)|> 50 % of population and 50 % of surface
 HR036|predominantly rural|N|coastal (on coast)|Other regions|Border regions|N/A|predominantly rural, remote
 HR037|intermediate|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, remote
 HR05|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-HR050|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+HR050|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 HR06|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 HR061|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, remote
 HR062|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, remote
@@ -1106,7 +1106,7 @@ HRZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 HU|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 HU1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 HU11|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-HU110|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+HU110|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 HU12|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 HU120|intermediate|Y|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 HU2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -1148,7 +1148,7 @@ IE051|predominantly rural|N|coastal (on coast)|Other regions|Other regions|1|pre
 IE052|predominantly rural|N|coastal (on coast)|Other regions|Other regions|1|predominantly rural, close to a city
 IE053|predominantly rural|Y|coastal (on coast)|Other regions|Other regions|1|predominantly rural, close to a city
 IE06|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-IE061|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|1|predominantly urban
+IE061|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|1|predominantly urban
 IE062|intermediate|Y|coastal (on coast)|Other regions|Border regions|1|intermediate, close to a city
 IE063|predominantly rural|N|non-coastal|Other regions|Other regions|1|predominantly rural, remote
 IEZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -1157,7 +1157,7 @@ IEZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 IS|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 IS0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 IS00|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-IS001|perdominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+IS001|predominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 IS002|predominantly rural|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, remote
 ISZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ISZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -1165,7 +1165,7 @@ ISZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 IT|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITC|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITC1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-ITC11|perdominantly urban|Y|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+ITC11|predominantly urban|Y|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
 ITC12|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 ITC13|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 ITC14|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, remote
@@ -1176,23 +1176,23 @@ ITC18|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predomin
 ITC2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITC20|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, remote
 ITC3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-ITC31|perdominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+ITC31|predominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
 ITC32|intermediate|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
-ITC33|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
-ITC34|perdominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ITC33|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ITC34|predominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 ITC4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-ITC41|perdominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
-ITC42|perdominantly urban|N|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
-ITC43|perdominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ITC41|predominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
+ITC42|predominantly urban|N|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+ITC43|predominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 ITC44|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, remote
-ITC46|perdominantly urban|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ITC46|predominantly urban|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 ITC47|intermediate|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 ITC48|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 ITC49|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 ITC4A|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 ITC4B|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
-ITC4C|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-ITC4D|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+ITC4C|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+ITC4D|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 ITF|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITF1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITF11|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, remote
@@ -1203,18 +1203,18 @@ ITF2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITF21|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, close to a city
 ITF22|predominantly rural|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, close to a city
 ITF3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-ITF31|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+ITF31|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 ITF32|predominantly rural|N|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, close to a city
-ITF33|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+ITF33|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 ITF34|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 ITF35|intermediate|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 ITF4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-ITF43|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-ITF44|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-ITF45|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+ITF43|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+ITF44|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+ITF45|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 ITF46|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly rural, close to a city
-ITF47|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-ITF48|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+ITF47|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+ITF48|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 ITF5|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITF51|predominantly rural|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, close to a city
 ITF52|intermediate|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
@@ -1227,18 +1227,18 @@ ITF65|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|
 ITG|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITG1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITG11|intermediate|N|coastal (on coast)|Other regions|Other regions|1|intermediate, remote
-ITG12|perdominantly urban|Y|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|predominantly urban
+ITG12|predominantly urban|Y|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|predominantly urban
 ITG13|intermediate|Y|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|intermediate, close to a city
 ITG14|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|1|intermediate, remote
-ITG15|perdominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|predominantly urban
+ITG15|predominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|predominantly urban
 ITG16|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|intermediate, remote
-ITG17|perdominantly urban|Y|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|predominantly urban
+ITG17|predominantly urban|Y|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|predominantly urban
 ITG18|intermediate|N|coastal (on coast)|Other regions|Other regions|1|intermediate, remote
-ITG19|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|1|predominantly urban
+ITG19|predominantly urban|N|coastal (on coast)|Other regions|Other regions|1|predominantly urban
 ITG2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITG2D|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|1|intermediate, close to a city
 ITG2E|predominantly rural|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|predominantly rural, remote
-ITG2F|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|1|predominantly urban
+ITG2F|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|1|predominantly urban
 ITG2G|predominantly rural|N|coastal (on coast)|Other regions|Other regions|1|predominantly rural, remote
 ITG2H|predominantly rural|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|1|predominantly rural, remote
 ITH|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -1251,14 +1251,14 @@ ITH31|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, c
 ITH32|intermediate|N|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 ITH33|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, remote
 ITH34|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|intermediate, close to a city
-ITH35|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+ITH35|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 ITH36|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 ITH37|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly rural, close to a city
 ITH4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITH41|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|intermediate, close to a city
 ITH42|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
-ITH43|perdominantly urban|N|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
-ITH44|perdominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+ITH43|predominantly urban|N|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
+ITH44|predominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
 ITH5|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITH51|intermediate|N|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 ITH52|intermediate|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
@@ -1268,14 +1268,14 @@ ITH55|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, c
 ITH56|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 ITH57|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 ITH58|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
-ITH59|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+ITH59|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 ITI|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITI1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITI11|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 ITI12|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
-ITI13|perdominantly urban|N|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
-ITI14|perdominantly urban|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
-ITI15|perdominantly urban|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ITI13|predominantly urban|N|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ITI14|predominantly urban|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+ITI15|predominantly urban|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 ITI16|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 ITI17|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 ITI18|intermediate|N|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, remote
@@ -1293,7 +1293,7 @@ ITI35|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermed
 ITI4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 ITI41|predominantly rural|N|coastal (on coast)|> 50 % of population live in mountain areas|Other regions|N/A|predominantly rural, close to a city
 ITI42|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, close to a city
-ITI43|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+ITI43|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 ITI44|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 ITI45|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, remote
 ITZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -1302,14 +1302,14 @@ ITZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 LI|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 LI0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 LI00|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-LI000|perdominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
+LI000|predominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly urban
 LIZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 LIZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 LIZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 LT|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 LT0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 LT01|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-LT011|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+LT011|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 LT02|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 LT021|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 LT022|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
@@ -1335,7 +1335,7 @@ LV0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 LV00|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 LV003|intermediate|N|coastal (on coast)|Other regions|Border regions|N/A|intermediate, remote
 LV005|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, remote
-LV006|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+LV006|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 LV007|intermediate|Y|coastal (on coast)|Other regions|Border regions|N/A|intermediate, close to a city
 LV008|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, remote
 LV009|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
@@ -1353,21 +1353,21 @@ MK|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 MK0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 MK00|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 MK001|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|N/A
-MK002|perdominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|N/A
+MK002|predominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|N/A
 MK003|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|N/A
 MK004|intermediate|N|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|N/A
 MK005|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|N/A
-MK006|perdominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|N/A
-MK007|perdominantly urban|N|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|N/A
-MK008|perdominantly urban|N|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|N/A
+MK006|predominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|N/A
+MK007|predominantly urban|N|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|N/A
+MK008|predominantly urban|N|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|N/A
 MKZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 MKZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 MKZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 MT|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 MT0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 MT00|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-MT001|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|1|predominantly urban
-MT002|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|1|predominantly urban
+MT001|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|1|predominantly urban
+MT002|predominantly urban|N|coastal (on coast)|Other regions|Other regions|1|predominantly urban
 MTZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 MTZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 MTZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -1389,45 +1389,45 @@ NL2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 NL21|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 NL211|intermediate|Y|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 NL212|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-NL213|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+NL213|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 NL22|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-NL221|perdominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
+NL221|predominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
 NL224|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 NL225|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
-NL226|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+NL226|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 NL23|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-NL230|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+NL230|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
 NL3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 NL31|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-NL310|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+NL310|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 NL32|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-NL321|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-NL323|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-NL324|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-NL325|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-NL327|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-NL328|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-NL329|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+NL321|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+NL323|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+NL324|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+NL325|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+NL327|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+NL328|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+NL329|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
 NL33|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-NL332|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-NL333|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-NL337|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-NL33A|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-NL33B|perdominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-NL33C|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+NL332|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+NL333|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+NL337|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+NL33A|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+NL33B|predominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+NL33C|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 NL34|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 NL341|predominantly rural|N|coastal (on coast)|Other regions|Border regions|N/A|predominantly rural, close to a city
 NL342|intermediate|N|coastal (on coast)|Other regions|Border regions|N/A|intermediate, close to a city
 NL4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 NL41|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-NL411|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Border regions|N/A|predominantly urban
-NL412|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+NL411|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Border regions|N/A|predominantly urban
+NL412|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 NL413|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-NL414|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+NL414|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 NL42|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 NL421|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 NL422|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
-NL423|perdominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
+NL423|predominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
 NLZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 NLZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 NLZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -1441,7 +1441,7 @@ NO07|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 NO071|predominantly rural|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, remote
 NO074|predominantly rural|N|coastal (on coast)|> 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, remote
 NO08|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-NO081|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+NO081|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
 NO082|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 NO09|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 NO091|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, remote
@@ -1459,7 +1459,7 @@ NOZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PL|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PL2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PL21|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-PL213|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+PL213|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 PL214|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 PL217|predominantly rural|Y|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 PL218|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, close to a city
@@ -1468,17 +1468,17 @@ PL21A|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, c
 PL22|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PL224|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 PL225|intermediate|Y|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
-PL227|perdominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
-PL228|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-PL229|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-PL22A|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-PL22B|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-PL22C|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+PL227|predominantly urban|N|non-coastal|Other regions|Border regions|N/A|predominantly urban
+PL228|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+PL229|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+PL22A|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+PL22B|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+PL22C|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 PL4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PL41|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PL411|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 PL414|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
-PL415|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+PL415|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 PL416|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 PL417|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 PL418|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
@@ -1492,7 +1492,7 @@ PL431|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, 
 PL432|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 PL5|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PL51|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-PL514|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+PL514|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 PL515|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 PL516|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 PL517|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
@@ -1502,7 +1502,7 @@ PL523|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predomi
 PL524|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 PL6|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PL61|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-PL613|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+PL613|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 PL616|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 PL617|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 PL618|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
@@ -1512,15 +1512,15 @@ PL621|intermediate|N|coastal (on coast)|Other regions|Border regions|N/A|interme
 PL622|intermediate|Y|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 PL623|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
 PL63|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-PL633|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+PL633|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 PL634|intermediate|Y|coastal (on coast)|Other regions|Border regions|N/A|intermediate, close to a city
 PL636|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 PL637|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, remote
 PL638|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|intermediate, close to a city
 PL7|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PL71|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-PL711|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-PL712|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+PL711|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+PL712|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 PL713|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 PL714|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
 PL715|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, close to a city
@@ -1544,7 +1544,7 @@ PL842|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predomi
 PL843|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
 PL9|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PL91|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-PL911|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+PL911|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 PL912|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 PL913|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 PL92|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -1563,7 +1563,7 @@ PT11|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PT111|predominantly rural|N|coastal (on coast)|> 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, close to a city
 PT112|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
 PT119|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
-PT11A|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+PT11A|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 PT11B|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, remote
 PT11C|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 PT11D|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, remote
@@ -1580,7 +1580,7 @@ PT16H|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predomi
 PT16I|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predominantly rural, remote
 PT16J|predominantly rural|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|predominantly rural, remote
 PT17|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-PT170|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+PT170|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 PT18|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PT181|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly rural, remote
 PT184|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, remote
@@ -1592,7 +1592,7 @@ PT20|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PT200|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|1|intermediate, close to a city
 PT3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PT30|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-PT300|perdominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|predominantly urban
+PT300|predominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|1|predominantly urban
 PTZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PTZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 PTZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -1637,8 +1637,8 @@ RO315|predominantly rural|N|non-coastal|Other regions|Other regions|N/A|predomin
 RO316|intermediate|Y|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 RO317|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, remote
 RO32|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-RO321|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-RO322|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+RO321|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+RO322|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 RO4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 RO41|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 RO411|intermediate|Y|non-coastal|Other regions|Border regions|N/A|intermediate, close to a city
@@ -1657,7 +1657,7 @@ ROZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 RS|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 RS1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 RS11|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-RS110|perdominantly urban|N|non-coastal|Other regions|Other regions|N/A|N/A
+RS110|predominantly urban|N|non-coastal|Other regions|Other regions|N/A|N/A
 RS12|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 RS121|intermediate|N|non-coastal|Other regions|Border regions|N/A|N/A
 RS122|intermediate|N|non-coastal|Other regions|Border regions|N/A|N/A
@@ -1692,7 +1692,7 @@ RSZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 SE|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 SE1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 SE11|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-SE110|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+SE110|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 SE12|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 SE121|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 SE122|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
@@ -1710,7 +1710,7 @@ SE221|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermed
 SE224|intermediate|Y|coastal (on coast)|Other regions|Border regions|N/A|intermediate, close to a city
 SE23|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 SE231|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
-SE232|perdominantly urban|Y|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
+SE232|predominantly urban|Y|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
 SE3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 SE31|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 SE311|intermediate|N|non-coastal|Other regions|Border regions|N/A|intermediate, remote
@@ -1747,7 +1747,7 @@ SIZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 SK|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 SK0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 SK01|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-SK010|perdominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
+SK010|predominantly urban|Y|non-coastal|Other regions|Border regions|N/A|predominantly urban
 SK02|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 SK021|predominantly rural|N|non-coastal|Other regions|Border regions|N/A|predominantly rural, close to a city
 SK022|intermediate|N|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|intermediate, close to a city
@@ -1765,7 +1765,7 @@ Statistical regions (EFTA countries, candidate countries, potential candidates, 
 TR|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 TR1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 TR10|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-TR100|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|N/A
+TR100|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|N/A
 TR2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 TR21|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 TR211|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|N/A
@@ -1776,7 +1776,7 @@ TR221|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|
 TR222|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 TR31|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-TR310|perdominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
+TR310|predominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR32|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 TR321|intermediate|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR322|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
@@ -1788,47 +1788,47 @@ TR333|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in
 TR334|intermediate|N|non-coastal|Other regions|Other regions|N/A|N/A
 TR4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 TR41|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-TR411|perdominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
+TR411|predominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR412|intermediate|N|non-coastal|Other regions|Other regions|N/A|N/A
 TR413|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR42|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-TR421|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|N/A
-TR422|perdominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
-TR423|perdominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
+TR421|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|N/A
+TR422|predominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
+TR423|predominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR424|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
-TR425|perdominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
+TR425|predominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR5|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 TR51|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-TR510|perdominantly urban|N|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
+TR510|predominantly urban|N|non-coastal|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR52|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 TR521|intermediate|N|non-coastal|Other regions|Other regions|N/A|N/A
 TR522|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR6|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 TR61|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-TR611|perdominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
+TR611|predominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR612|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR613|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR62|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-TR621|perdominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
-TR622|perdominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
+TR621|predominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
+TR622|predominantly urban|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR63|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-TR631|perdominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|N/A
+TR631|predominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|N/A
 TR632|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
-TR633|perdominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
+TR633|predominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR7|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 TR71|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-TR711|perdominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
+TR711|predominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR712|intermediate|N|non-coastal|Other regions|Other regions|N/A|N/A
 TR713|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR714|intermediate|N|non-coastal|> 50 % of population live in mountain areas|Other regions|N/A|N/A
 TR715|intermediate|N|non-coastal|Other regions|Other regions|N/A|N/A
 TR72|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-TR721|perdominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
+TR721|predominantly urban|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR722|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR723|intermediate|N|non-coastal|Other regions|Other regions|N/A|N/A
 TR8|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 TR81|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-TR811|perdominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
+TR811|predominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR812|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR813|intermediate|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR82|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -1842,7 +1842,7 @@ TR833|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in
 TR834|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR9|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 TR90|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-TR901|perdominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
+TR901|predominantly urban|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR902|intermediate|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR903|intermediate|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TR904|intermediate|N|coastal (on coast)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
@@ -1871,7 +1871,7 @@ TRB23|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in
 TRB24|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|N/A
 TRC|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 TRC1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-TRC11|perdominantly urban|N|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|N/A
+TRC11|predominantly urban|N|non-coastal|> 50 % of surface are in mountain areas|Border regions|N/A|N/A
 TRC12|intermediate|N|non-coastal|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|N/A
 TRC13|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of population and 50 % of surface are in mountain areas|Border regions|N/A|N/A
 TRC2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -1888,178 +1888,178 @@ TRZZZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UK|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKC|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKC1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKC11|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKC12|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKC13|perdominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKC14|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKC11|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKC12|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKC13|predominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKC14|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKC2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKC21|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
-UKC22|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKC23|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKC22|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKC23|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKD|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKD1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKD11|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, remote
 UKD12|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 UKD3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKD33|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKD34|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKD35|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKD36|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKD37|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKD33|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKD34|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKD35|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKD36|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKD37|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
 UKD4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKD41|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKD42|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKD44|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKD45|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKD46|perdominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKD47|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKD41|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKD42|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKD44|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKD45|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKD46|predominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKD47|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKD6|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKD61|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKD62|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKD63|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKD61|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKD62|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKD63|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKD7|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKD71|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKD72|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKD73|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKD74|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKD71|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKD72|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKD73|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKD74|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKE|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKE1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKE11|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKE12|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKE11|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKE12|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKE13|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 UKE2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKE21|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|intermediate, close to a city
 UKE22|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 UKE3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKE31|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKE32|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKE31|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKE32|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
 UKE4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKE41|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKE42|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKE44|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKE45|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKE41|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKE42|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKE44|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKE45|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
 UKF|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKF1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKF11|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKF12|perdominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKF13|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKF14|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKF15|perdominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKF16|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKF11|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKF12|predominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKF13|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKF14|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKF15|predominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKF16|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 UKF2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKF21|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKF22|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKF21|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKF22|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 UKF24|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-UKF25|perdominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKF25|predominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
 UKF3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKF30|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 UKG|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKG1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKG11|predominantly rural|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly rural, close to a city
 UKG12|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-UKG13|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKG13|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 UKG2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKG21|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 UKG22|intermediate|N|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
-UKG23|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKG24|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKG23|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKG24|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 UKG3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKG31|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKG32|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKG33|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKG36|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKG37|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKG38|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKG39|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKG31|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKG32|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKG33|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKG36|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKG37|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKG38|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKG39|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 UKH|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKH1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKH11|perdominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKH11|predominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
 UKH12|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 UKH14|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
-UKH15|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKH15|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKH16|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly rural, close to a city
 UKH17|predominantly rural|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly rural, close to a city
 UKH2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKH21|perdominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKH23|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKH24|perdominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
-UKH25|perdominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKH21|predominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKH23|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKH24|predominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKH25|predominantly urban|N|non-coastal|Other regions|Other regions|N/A|predominantly urban
 UKH3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKH31|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKH32|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKH31|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKH32|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKH34|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 UKH35|intermediate|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|intermediate, close to a city
-UKH36|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKH37|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKH36|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKH37|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKI|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKI3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKI31|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKI32|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKI33|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKI34|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKI31|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKI32|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKI33|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKI34|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKI4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKI41|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKI42|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKI43|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKI44|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKI45|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKI41|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKI42|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKI43|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKI44|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKI45|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKI5|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKI51|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKI52|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKI53|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKI54|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKI51|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKI52|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKI53|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKI54|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
 UKI6|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKI61|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKI62|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKI63|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKI61|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKI62|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKI63|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
 UKI7|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKI71|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKI72|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKI73|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKI74|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKI75|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKI71|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKI72|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKI73|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKI74|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKI75|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKJ|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKJ1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKJ11|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKJ12|perdominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
+UKJ11|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKJ12|predominantly urban|Y|non-coastal|Other regions|Other regions|N/A|predominantly urban
 UKJ13|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|intermediate, close to a city
 UKJ14|intermediate|Y|non-coastal|Other regions|Other regions|N/A|intermediate, close to a city
 UKJ2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKJ21|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKJ21|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKJ22|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
-UKJ25|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKJ26|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
-UKJ27|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKJ28|perdominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKJ25|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKJ26|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKJ27|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKJ28|predominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
 UKJ3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKJ31|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKJ32|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKJ31|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKJ32|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKJ34|intermediate|N|coastal (on coast)|Other regions|Other regions|1|intermediate, remote
-UKJ35|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKJ36|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKJ37|perdominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKJ35|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKJ36|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKJ37|predominantly urban|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
 UKJ4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKJ41|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKJ43|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKJ44|perdominantly urban|N|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
+UKJ41|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKJ43|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKJ44|predominantly urban|N|coastal (on coast)|Other regions|Border regions|N/A|predominantly urban
 UKJ45|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|intermediate, close to a city
 UKJ46|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 UKK|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKK1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKK11|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKK12|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKK11|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKK12|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKK13|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 UKK14|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|intermediate, close to a city
 UKK15|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|intermediate, close to a city
 UKK2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKK23|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
-UKK24|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKK24|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKK25|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 UKK3|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKK30|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, remote
 UKK4|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKK41|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKK42|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKK41|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKK42|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKK43|intermediate|Y|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 UKL|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKL1|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -2067,14 +2067,14 @@ UKL11|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|p
 UKL12|predominantly rural|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, remote
 UKL13|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
 UKL14|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly rural, remote
-UKL15|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
-UKL16|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
-UKL17|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
-UKL18|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKL15|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of population and 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+UKL16|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+UKL17|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+UKL18|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKL2|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKL21|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKL22|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKL23|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKL21|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKL22|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKL23|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKL24|predominantly rural|N|coastal (>= 50% of population living within 50km of the coastline)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly rural, remote
 UKM|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKM5|N/A|N/A|N/A|N/A|N/A|N/A|N/A
@@ -2087,30 +2087,30 @@ UKM64|predominantly rural|N|coastal (on coast)|Other regions|Other regions|1|pre
 UKM65|predominantly rural|N|coastal (on coast)|Other regions|Other regions|1|predominantly rural, remote
 UKM66|predominantly rural|N|coastal (on coast)|Other regions|Other regions|1|predominantly rural, remote
 UKM7|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKM71|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKM72|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKM73|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKM75|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKM76|perdominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKM71|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKM72|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKM73|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKM75|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKM76|predominantly urban|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKM77|intermediate|N|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|intermediate, close to a city
-UKM78|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKM78|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
 UKM8|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKM81|perdominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
-UKM82|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKM83|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
-UKM84|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKM81|predominantly urban|Y|coastal (on coast)|> 50 % of surface are in mountain areas|Other regions|N/A|predominantly urban
+UKM82|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKM83|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|N/A|predominantly urban
+UKM84|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
 UKM9|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKM91|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly rural, remote
 UKM92|predominantly rural|N|coastal (on coast)|Other regions|Other regions|N/A|predominantly rural, close to a city
 UKM93|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
 UKM94|intermediate|N|coastal (on coast)|Other regions|Other regions|N/A|intermediate, close to a city
-UKM95|perdominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
+UKM95|predominantly urban|Y|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Other regions|N/A|predominantly urban
 UKN|N/A|N/A|N/A|N/A|N/A|N/A|N/A
 UKN0|N/A|N/A|N/A|N/A|N/A|N/A|N/A
-UKN06|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|1|predominantly urban
+UKN06|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|1|predominantly urban
 UKN07|intermediate|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Border regions|1|intermediate, close to a city
 UKN08|predominantly rural|N|coastal (on coast)|Other regions|Border regions|1|predominantly rural, close to a city
-UKN09|perdominantly urban|Y|coastal (on coast)|Other regions|Other regions|1|predominantly urban
+UKN09|predominantly urban|Y|coastal (on coast)|Other regions|Other regions|1|predominantly urban
 UKN0A|intermediate|N|coastal (on coast)|Other regions|Border regions|1|intermediate, close to a city
 UKN0B|predominantly rural|N|coastal (>= 50% of population living within 50km of the coastline)|Other regions|Border regions|1|predominantly rural, close to a city
 UKN0C|predominantly rural|N|coastal (on coast)|Other regions|Other regions|1|predominantly rural, close to a city
