@@ -24,9 +24,9 @@ div.card-header > div > h6 {
     transform: rotate(45deg);
 }
 
-.all_data_container {
+/* .all_data_container {
   display: none;
-}
+} */
 
 .alert-primary {
   /* background-image: linear-gradient(195deg, #EC407A 0%, #D81B60 100%); */

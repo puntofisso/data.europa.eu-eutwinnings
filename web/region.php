@@ -67,11 +67,10 @@
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <!--div class="ms-md-auto pe-md-3 d-flex align-items-center"-->
             <a href="/" class="navbar-brand">
-                <img src="images/EUTwinningsLogo2.png" height="28" alt="CoolBrand">
+                <img src="images/EUTwinningsLogo2.png" height="28" alt="CoolBrand"><h3>EU Twinnings</h3>
             </a>
             <div class="input-group input-group-outline">
-              <!--label class="form-label">Enter NUTS...</label>
-              <input id="inputRegion" type="text" class="form-control"-->
+
               <select id="select_Nuts" class="js-example-basic-single" name="state">
                 <option></option>
                 <optgroup label="France">
@@ -1645,22 +1644,22 @@
                 <option value="NL423">Zuid-Limburg</option>
                 </optgroup>
               </select>
-              <script>
-              $('.js-example-basic-single').select2({
-                placeholder: 'Select a NUTS region or start typing to search',
-                allowClear: true
-              });
+                  <script>
+                  $('.js-example-basic-single').select2({
+                    placeholder: 'Select a NUTS region or start typing to search',
+                    allowClear: true
+                  });
 
-              $('#select_Nuts').on('select2:select', function (e) {
-                var data = e.params.data;
-                nutsid = data.id;
-                window.location.href="region.php?nutsid="+nutsid;
-              });
+                  $('#select_Nuts').on('select2:select', function (e) {
+                    var data = e.params.data;
+                    nutsid = data.id;
+                    window.location.href="region.php?nutsid="+nutsid;
+                  });
 
-              $(document).on('select2:open', () => {
-              document.querySelector('.select2-search__field').focus();
-            });
-          </script>
+                  $(document).on('select2:open', () => {
+                  document.querySelector('.select2-search__field').focus();
+                });
+              </script>
             </div>
         </div>
 
@@ -1671,13 +1670,13 @@
 
     <div class="container-fluid py-4 all_data_container">
 
-      <h1 class="mb-0 emptyable"  id="nametitle"> Name of NUTS area </h1>
-      <h6 class="mb-0 emptyable" id="subnametitle"> Country </h6>
+      <h1 class="mb-0"  id="nametitle"> Name of NUTS area </h1>
+      <h6 class="mb-0" id="subnametitle"> Country </h6>
 
       <div class="container mt-4">
-        This area is identified by <span class="badge bg-dark">Code</span> <span id="span_nuts3" class="general_info emptyable"></span>. Its country (<span class="badge bg-dark">NUTS 0</span>) region code is <span id="span_nuts0" class="general_info emptyable"></span>. Its <span class="badge bg-dark">NUTS 2</span> region code  is <span id="span_nuts2" class="general_info emptyable"></span>, while its <span class="badge bg-dark">NUTS 1</span> region code  is <span id="span_nuts1" class="general_info emptyable"></span>.<br/>
-        Demographically, its <span class="badge bg-secondary">Population</span> is <span id="span_population" class="general_info emptyable"></span>, with a <span class="badge bg-secondary">Density</span> of <span id="span_density" class="general_info emptyable"></span> per sqm. For context, the <span class="badge bg-warning">NUTS0-level population</span> is <span id="span_pop0" class="general_info emptyable"></span>. Since the previous data collection, the <span class="badge bg-secondary">Population change</span> amounts to <span id="span_popchange" class="general_info emptyable"></span>. There is a <span class="badge bg-secondary">Women:Men</span> ratio of <span id="span_womenratio" class="general_info emptyable"></span>. The <span class="badge bg-secondary">Fertility</span> rate is <span id="span_fertility" class="general_info emptyable"></span> live births per woman.<br/>
-        From an economic point of view, the <span class="badge bg-danger">GDP per capita in Purchasing Power Standards (PPS)</span> is <span id="span_gdppps" class="general_info emptyable"></span> (vs the EU average of 100). The regional <span class="badge bg-danger">Gross Value Added</span> is <span id="span_gva" class="general_info emptyable"></span>.
+        This area is identified by <span class="badge bg-dark">Code</span> <span id="span_nuts3" class="general_info"></span>. Its country (<span class="badge bg-dark">NUTS 0</span>) region code is <span id="span_nuts0" class="general_info"></span>. Its <span class="badge bg-dark">NUTS 2</span> region code  is <span id="span_nuts2" class="general_info"></span>, while its <span class="badge bg-dark">NUTS 1</span> region code  is <span id="span_nuts1" class="general_info"></span>.<br/>
+        Demographically, its <span class="badge bg-secondary">Population</span> is <span id="span_population" class="general_info"></span>, with a <span class="badge bg-secondary">Density</span> of <span id="span_density" class="general_info"></span> per sqm. For context, the <span class="badge bg-warning">NUTS0-level population</span> is <span id="span_pop0" class="general_info"></span>. Since the previous data collection, the <span class="badge bg-secondary">Population change</span> amounts to <span id="span_popchange" class="general_info"></span>. There is a <span class="badge bg-secondary">Women:Men</span> ratio of <span id="span_womenratio" class="general_info"></span>. The <span class="badge bg-secondary">Fertility</span> rate is <span id="span_fertility" class="general_info"></span> live births per woman.<br/>
+        From an economic point of view, the <span class="badge bg-danger">GDP per capita in Purchasing Power Standards (PPS)</span> is <span id="span_gdppps" class="general_info"></span> (vs the EU average of 100). The regional <span class="badge bg-danger">Gross Value Added</span> is <span id="span_gva" class="general_info"></span>.
       </div>
 
       <div class="row mt-4">
@@ -1704,13 +1703,13 @@
                 <h6 class="mb-0 ">Other info</h6>
               </div>
               <div class="card-body">
-                <span class="badge bg-dark">Urban-rural</span><span id="span_urbanrural" class="general_info emptyable"></span>
-                <span class="badge bg-dark">Metropolitan</span><span id="span_metropolitan" class="general_info emptyable"></span>
-                <span class="badge bg-dark">Coastal</span><span id="span_coastal" class="general_info emptyable"></span>
-                <span class="badge bg-dark">Mountain</span><span id="span_mountain" class="general_info emptyable"></span>
-                <span class="badge bg-dark">Border</span><span id="span_border" class="general_info emptyable"></span>
-                <span class="badge bg-dark">Island</span><span id="span_island" class="general_info emptyable"></span>
-                <span class="badge bg-dark">Remoteness</span><span id="span_remoteness" class="general_info emptyable"></span>
+                <span class="badge bg-dark">Urban-rural</span><span id="span_urbanrural" class="general_info"></span>
+                <span class="badge bg-dark">Metropolitan</span><span id="span_metropolitan" class="general_info"></span>
+                <span class="badge bg-dark">Coastal</span><span id="span_coastal" class="general_info"></span>
+                <span class="badge bg-dark">Mountain</span><span id="span_mountain" class="general_info"></span>
+                <span class="badge bg-dark">Border</span><span id="span_border" class="general_info"></span>
+                <span class="badge bg-dark">Island</span><span id="span_island" class="general_info"></span>
+                <span class="badge bg-dark">Remoteness</span><span id="span_remoteness" class="general_info"></span>
               </div>
             </div>
           </div>
@@ -1724,7 +1723,7 @@
                 <h6 class="mb-0 ">Similarity at a glance</h6>
               </div>
               <div class="card-body m-0">
-                <div id="my_dataviz" class="emptyable"></div>
+                <div id="my_dataviz" class=""></div>
                 <button type="button" class="btn btn-primary" id="zoom-in">+</button>
                 <button type="button" class="btn btn-primary"id="zoom-out">-</button>
               </div>
@@ -1762,11 +1761,11 @@
                 </div>
 
                 <div class="col-7 1stcol">
-                  <span id="text_all_top_0" class="emptyable"></span>
+                  <span id="text_all_top_0" class=""></span>
                 </div>
 
                 <div class="col-3 3rdcol">
-                  <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#modal_all_top_0">
                     More...
                   </button>
                 </div>
@@ -1774,9 +1773,7 @@
               </div>
 
               <!-- modal -->
-
-
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="modal_all_top_0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -1790,37 +1787,64 @@
                         <table class="table">
                           <thead>
                               <tr>
-                                  <th class="text-left">Parametre</th>
-                                  <th class="text-center">Value</th>
-                                  <th class="text-center">Rank</th>
-                                  <th class="text-center">Value</th>
-                                  <th class="text-center">Rank</th>
+                                  <th class="text-left">&nbsp;</th>
+                                  <th class="text-center" id="modal_all_top_0_0_code"></th>
+                                  <th class="text-center">#</th>
+                                  <th class="text-center" id="modal_all_top_0_1_code"></th>
+                                  <th class="text-center">#</th>
                               </tr>
                           </thead>
                           <tbody>
                               <tr>
                                   <td class="text-left">Population</td>
-                                  <td>&nbsp</td>
-                                  <td>&nbsp</td>
-                                  <td>&nbsp</td>
-                                  <td>&nbsp</td>
-                                  <td>&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_0_pop">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_0_poprank">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_1_pop">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_1_poprank">&nbsp</td>
                               </tr>
                               <tr>
                                   <td class="text-left">Population NUTS 0</td>
-                                  <td>&nbsp</td>
-                                  <td>&nbsp</td>
-                                  <td>&nbsp</td>
-                                  <td>&nbsp</td>
-                                  <td>&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_0_nuts0pop">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_0_nuts0poprank">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_1_nuts0pop">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_1_nuts0poprank">&nbsp</td>
                               </tr>
 
-                                  <!--td class="text-left">Density</td>
+                              <tr>
+                                  <td class="text-left">Density</td>
+                                  <td class="text-centre" id="modal_all_top_0_0_density">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_0_densityrank">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_1_density">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_1_densityrank">&nbsp</td>
+                              </tr>
+                              <tr>
                                   <td class="text-left">Fertility</td>
-                                  <td class="text-left">Population change</td>
-                                  <td class="text-left">Women:Men</td>
+                                  <td class="text-centre" id="modal_all_top_0_0_fertility">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_0_fertilityrank">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_1_fertility">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_1_fertilityrank">&nbsp</td>
+                              </tr>
+                              <tr>
+                                  <td class="text-left">Women:men</td>
+                                  <td class="text-centre" id="modal_all_top_0_0_womenratio">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_0_womenratiorank">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_1_womenratio">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_1_womenratiorank">&nbsp</td>
+                              </tr>
+                              <tr>
                                   <td class="text-left">GDPPPS</td>
-                                  <td class="text-left">GVA</td-->
+                                  <td class="text-centre" id="modal_all_top_0_0_gdppps">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_0_gdpppsrank">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_1_gdppps">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_1_gdpppsrank">&nbsp</td>
+                              </tr>
+                              <tr>
+                                  <td class="text-left">GVA</td>
+                                  <td class="text-centre" id="modal_all_top_0_0_gva">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_0_gvarank">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_1_gva">&nbsp</td>
+                                  <td class="text-centre" id="modal_all_top_0_1_gvarank">&nbsp</td>
+                              </tr>
                               </tr>
                           </tbody>
                       </table>
@@ -1834,7 +1858,6 @@
                     </div>
                   </div>
                 </div>
-
 
 
           </div>
@@ -1852,13 +1875,105 @@
               </div>
             </div>
             <div id="all_bottom_0" class="row p-3 align-items-center">
-              <div class="col-7 1stcol">
-                <span id="text_all_bottom_0" class="emptyable"></span>
-              </div>
-              <div class="col-5 2ndcol">
+              <div class="col-2 2ndcol">
                 <canvas id="chart_all_bottom_0"></canvas>
               </div>
+              <div class="col-7 1stcol">
+                <span id="text_all_bottom_0" class=""></span>
+              </div>
+              <div class="col-3 3rdcol">
+                <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#modal_all_bottom_0">
+                  More...
+                </button>
+              </div>
             </div>
+            <!-- modal -->
+            <div class="modal fade" id="modal_all_bottom_0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title font-weight-normal" id="exampleModalLabel">More...</h5>
+                    <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h4>Data</h4>
+                    <table class="table">
+                      <thead>
+                          <tr>
+                              <th class="text-left">&nbsp;</th>
+                              <th class="text-center" id="modal_all_bottom_0_0_code"></th>
+                              <th class="text-center">#</th>
+                              <th class="text-center" id="modal_all_bottom_0_1_code"></th>
+                              <th class="text-center">#</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td class="text-left">Population</td>
+                              <td class="text-centre" id="modal_all_bottom_0_0_pop">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_0_poprank">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_1_pop">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_1_poprank">&nbsp</td>
+                          </tr>
+                          <tr>
+                              <td class="text-left">Population NUTS 0</td>
+                              <td class="text-centre" id="modal_all_bottom_0_0_nuts0pop">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_0_nuts0poprank">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_1_nuts0pop">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_1_nuts0poprank">&nbsp</td>
+                          </tr>
+
+                          <tr>
+                              <td class="text-left">Density</td>
+                              <td class="text-centre" id="modal_all_bottom_0_0_density">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_0_densityrank">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_1_density">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_1_densityrank">&nbsp</td>
+                          </tr>
+                          <tr>
+                              <td class="text-left">Fertility</td>
+                              <td class="text-centre" id="modal_all_bottom_0_0_fertility">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_0_fertilityrank">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_1_fertility">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_1_fertilityrank">&nbsp</td>
+                          </tr>
+                          <tr>
+                              <td class="text-left">Women:men</td>
+                              <td class="text-centre" id="modal_all_bottom_0_0_womenratio">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_0_womenratiorank">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_1_womenratio">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_1_womenratiorank">&nbsp</td>
+                          </tr>
+                          <tr>
+                              <td class="text-left">GDPPPS</td>
+                              <td class="text-centre" id="modal_all_bottom_0_0_gdppps">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_0_gdpppsrank">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_1_gdppps">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_1_gdpppsrank">&nbsp</td>
+                          </tr>
+                          <tr>
+                              <td class="text-left">GVA</td>
+                              <td class="text-centre" id="modal_all_bottom_0_0_gva">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_0_gvarank">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_1_gva">&nbsp</td>
+                              <td class="text-centre" id="modal_all_bottom_0_1_gvarank">&nbsp</td>
+                          </tr>
+                          </tr>
+                      </tbody>
+                  </table>
+
+                    <h4>Rank comparison</h4>
+                    <canvas id="spider_all_bottom_0"></canvas>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
 
           </div>
         </div>
@@ -1880,15 +1995,109 @@
         </div>
 
         <div id="same_country_top_0" class="row p-3 align-items-center">
+
+
+          <div class="col-2 2ndcol">
+            <canvas id="chart_same_country_top_0"></canvas>
+          </div>
           <div class="col-7 1stcol">
-            <span id="text_same_country_top_0" class="emptyable"></span>
+            <span id="text_same_country_top_0" class=""></span>
           </div>
 
-          <div class="col-5 2ndcol">
-            <canvas id="chart_same_country_top_0"></canvas>
+          <div class="col-3 3rdcol">
+            <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#modal_same_country_top_0">
+              More...
+            </button>
           </div>
 
         </div>
+        <!-- modal -->
+        <div class="modal fade" id="modal_same_country_top_0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title font-weight-normal" id="exampleModalLabel">More...</h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h4>Data</h4>
+                <table class="table">
+                  <thead>
+                      <tr>
+                          <th class="text-left">&nbsp;</th>
+                          <th class="text-center" id="modal_same_country_top_0_0_code"></th>
+                          <th class="text-center">#</th>
+                          <th class="text-center" id="modal_same_country_top_0_1_code"></th>
+                          <th class="text-center">#</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td class="text-left">Population</td>
+                          <td class="text-centre" id="modal_same_country_top_0_0_pop">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_0_poprank">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_1_pop">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_1_poprank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">Population NUTS 0</td>
+                          <td class="text-centre" id="modal_same_country_top_0_0_nuts0pop">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_0_nuts0poprank">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_1_nuts0pop">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_1_nuts0poprank">&nbsp</td>
+                      </tr>
+
+                      <tr>
+                          <td class="text-left">Density</td>
+                          <td class="text-centre" id="modal_same_country_top_0_0_density">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_0_densityrank">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_1_density">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_1_densityrank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">Fertility</td>
+                          <td class="text-centre" id="modal_same_country_top_0_0_fertility">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_0_fertilityrank">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_1_fertility">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_1_fertilityrank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">Women:men</td>
+                          <td class="text-centre" id="modal_same_country_top_0_0_womenratio">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_0_womenratiorank">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_1_womenratio">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_1_womenratiorank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">GDPPPS</td>
+                          <td class="text-centre" id="modal_same_country_top_0_0_gdppps">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_0_gdpppsrank">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_1_gdppps">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_1_gdpppsrank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">GVA</td>
+                          <td class="text-centre" id="modal_same_country_top_0_0_gva">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_0_gvarank">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_1_gva">&nbsp</td>
+                          <td class="text-centre" id="modal_same_country_top_0_1_gvarank">&nbsp</td>
+                      </tr>
+                      </tr>
+                  </tbody>
+              </table>
+
+                <h4>Rank comparison</h4>
+                <canvas id="spider_same_country_top_0"></canvas>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
     </div>
   </div>
@@ -1905,13 +2114,106 @@
         </div>
       </div>
       <div id="same_country_bottom_0" class="row p-3 align-items-center">
-        <div class="col-7 1stcol">
-          <span id="text_same_country_bottom_0" class="emptyable"></span>
-        </div>
-        <div class="col-5 2ndcol">
+        <div class="col-2 2ndcol">
           <canvas id="chart_same_country_bottom_0"></canvas>
         </div>
+        <div class="col-7 1stcol">
+          <span id="text_same_country_bottom_0" class=""></span>
+        </div>
+
+        <div class="col-3 3rdcol">
+          <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#modal_same_country_bottom_0">
+            More...
+          </button>
+        </div>
       </div>
+      <!-- modal -->
+      <div class="modal fade" id="modal_same_country_bottom_0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title font-weight-normal" id="exampleModalLabel">More...</h5>
+              <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h4>Data</h4>
+              <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-left">&nbsp;</th>
+                        <th class="text-center" id="modal_same_country_bottom_0_0_code"></th>
+                        <th class="text-center">#</th>
+                        <th class="text-center" id="modal_same_country_bottom_0_1_code"></th>
+                        <th class="text-center">#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-left">Population</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_0_pop">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_0_poprank">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_1_pop">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_1_poprank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Population NUTS 0</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_0_nuts0pop">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_0_nuts0poprank">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_1_nuts0pop">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_1_nuts0poprank">&nbsp</td>
+                    </tr>
+
+                    <tr>
+                        <td class="text-left">Density</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_0_density">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_0_densityrank">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_1_density">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_1_densityrank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Fertility</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_0_fertility">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_0_fertilityrank">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_1_fertility">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_1_fertilityrank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Women:men</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_0_womenratio">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_0_womenratiorank">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_1_womenratio">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_1_womenratiorank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">GDPPPS</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_0_gdppps">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_0_gdpppsrank">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_1_gdppps">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_1_gdpppsrank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">GVA</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_0_gva">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_0_gvarank">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_1_gva">&nbsp</td>
+                        <td class="text-centre" id="modal_same_country_bottom_0_1_gvarank">&nbsp</td>
+                    </tr>
+                    </tr>
+                </tbody>
+            </table>
+
+              <h4>Rank comparison</h4>
+              <canvas id="spider_same_country_bottom_0"></canvas>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     </div>
   </div>
@@ -1934,15 +2236,109 @@
         </div>
 
         <div id="diff_country_top_0" class="row p-3 align-items-center">
-          <div class="col-7 1stcol">
-            <span id="text_diff_country_top_0" class="emptyable"></span>
-          </div>
 
-          <div class="col-5 2ndcol">
+          <div class="col-2 2ndcol">
             <canvas id="chart_diff_country_top_0"></canvas>
           </div>
 
+          <div class="col-7 1stcol">
+            <span id="text_diff_country_top_0" class=""></span>
+          </div>
+
+          <div class="col-3 3rdcol">
+            <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#modal_diff_country_top_0">
+              More...
+            </button>
+          </div>
+
         </div>
+        <!--modal-->
+        <div class="modal fade" id="modal_diff_country_top_0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title font-weight-normal" id="exampleModalLabel">More...</h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h4>Data</h4>
+                <table class="table">
+                  <thead>
+                      <tr>
+                          <th class="text-left">&nbsp;</th>
+                          <th class="text-center" id="modal_diff_country_top_0_0_code"></th>
+                          <th class="text-center">#</th>
+                          <th class="text-center" id="modal_diff_country_top_0_1_code"></th>
+                          <th class="text-center">#</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td class="text-left">Population</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_0_pop">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_0_poprank">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_1_pop">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_1_poprank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">Population NUTS 0</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_0_nuts0pop">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_0_nuts0poprank">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_1_nuts0pop">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_1_nuts0poprank">&nbsp</td>
+                      </tr>
+
+                      <tr>
+                          <td class="text-left">Density</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_0_density">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_0_densityrank">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_1_density">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_1_densityrank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">Fertility</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_0_fertility">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_0_fertilityrank">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_1_fertility">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_1_fertilityrank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">Women:men</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_0_womenratio">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_0_womenratiorank">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_1_womenratio">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_1_womenratiorank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">GDPPPS</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_0_gdppps">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_0_gdpppsrank">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_1_gdppps">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_1_gdpppsrank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">GVA</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_0_gva">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_0_gvarank">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_1_gva">&nbsp</td>
+                          <td class="text-centre" id="modal_diff_country_top_0_1_gvarank">&nbsp</td>
+                      </tr>
+                      </tr>
+                  </tbody>
+              </table>
+
+                <h4>Rank comparison</h4>
+                <canvas id="spider_diff_country_top_0"></canvas>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
     </div>
   </div>
@@ -1959,11 +2355,103 @@
         </div>
       </div>
       <div id="diff_country_bottom_0" class="row p-3 align-items-center">
-        <div class="col-7 1stcol">
-          <span id="text_diff_country_bottom_0" class="emptyable"></span>
-        </div>
-        <div class="col-5 2ndcol">
+        <div class="col-2 2ndcol">
           <canvas id="chart_diff_country_bottom_0"></canvas>
+        </div>
+        <div class="col-7 1stcol">
+          <span id="text_diff_country_bottom_0" class=""></span>
+        </div>
+
+      <div class="col-3 3rdcol">
+        <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#modal_diff_country_bottom_0">
+          More...
+        </button>
+      </div>
+      </div>
+      <!--modal-->
+      <div class="modal fade" id="modal_diff_country_bottom_0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title font-weight-normal" id="exampleModalLabel">More...</h5>
+              <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h4>Data</h4>
+              <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-left">&nbsp;</th>
+                        <th class="text-center" id="modal_diff_country_bottom_0_0_code"></th>
+                        <th class="text-center">#</th>
+                        <th class="text-center" id="modal_diff_country_bottom_0_1_code"></th>
+                        <th class="text-center">#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-left">Population</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_0_pop">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_0_poprank">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_1_pop">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_1_poprank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Population NUTS 0</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_0_nuts0pop">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_0_nuts0poprank">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_1_nuts0pop">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_1_nuts0poprank">&nbsp</td>
+                    </tr>
+
+                    <tr>
+                        <td class="text-left">Density</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_0_density">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_0_densityrank">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_1_density">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_1_densityrank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Fertility</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_0_fertility">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_0_fertilityrank">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_1_fertility">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_1_fertilityrank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Women:men</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_0_womenratio">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_0_womenratiorank">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_1_womenratio">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_1_womenratiorank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">GDPPPS</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_0_gdppps">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_0_gdpppsrank">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_1_gdppps">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_1_gdpppsrank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">GVA</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_0_gva">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_0_gvarank">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_1_gva">&nbsp</td>
+                        <td class="text-centre" id="modal_diff_country_bottom_0_1_gvarank">&nbsp</td>
+                    </tr>
+                    </tr>
+                </tbody>
+            </table>
+
+              <h4>Rank comparison</h4>
+              <canvas id="spider_diff_country_bottom_0"></canvas>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1983,20 +2471,114 @@
           </div>
           <div class="text-end pt-1">
             <p class="text-sm mb-0 text-capitalize">Most similar</p>
-            <h4 class="mb-0">Regions with higher GDPPPS</h4>
+            <h4 class="mb-0">Higher GDPPPS</h4>
           </div>
         </div>
 
         <div id="higher_gdppps_top_0" class="row p-3 align-items-center">
-          <div class="col-7 1stcol">
-            <span id="text_higher_gdppps_top_0" class="emptyable"></span>
-          </div>
 
-          <div class="col-5 2ndcol">
+          <div class="col-2 2ndcol">
             <canvas id="chart_higher_gdppps_top_0"></canvas>
           </div>
+          <div class="col-7 1stcol">
+            <span id="text_higher_gdppps_top_0" class=""></span>
+          </div>
 
+
+
+          <div class="col-3 3rdcol">
+            <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#modal_higher_gdppps_top_0">
+              More...
+            </button>
+          </div>
         </div>
+        <!--modal-->
+        <div class="modal fade" id="modal_higher_gdppps_top_0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title font-weight-normal" id="exampleModalLabel">More...</h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h4>Data</h4>
+                <table class="table">
+                  <thead>
+                      <tr>
+                          <th class="text-left">&nbsp;</th>
+                          <th class="text-center" id="modal_higher_gdppps_top_0_0_code"></th>
+                          <th class="text-center">#</th>
+                          <th class="text-center" id="modal_higher_gdppps_top_0_1_code"></th>
+                          <th class="text-center">#</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td class="text-left">Population</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_pop">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_poprank">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_pop">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_poprank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">Population NUTS 0</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_nuts0pop">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_nuts0poprank">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_nuts0pop">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_nuts0poprank">&nbsp</td>
+                      </tr>
+
+                      <tr>
+                          <td class="text-left">Density</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_density">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_densityrank">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_density">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_densityrank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">Fertility</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_fertility">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_fertilityrank">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_fertility">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_fertilityrank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">Women:men</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_womenratio">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_womenratiorank">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_womenratio">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_womenratiorank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">GDPPPS</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_gdppps">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_gdpppsrank">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_gdppps">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_gdpppsrank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">GVA</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_gva">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_gvarank">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_gva">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_gvarank">&nbsp</td>
+                      </tr>
+                      </tr>
+                  </tbody>
+              </table>
+
+                <h4>Rank comparison</h4>
+                <canvas id="spider_higher_gdppps_top_0"></canvas>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
     </div>
   </div>
@@ -2009,15 +2591,109 @@
         </div>
         <div class="text-end pt-1">
           <p class="text-sm mb-0 text-capitalize">Least similar </p>
-          <h4 class="mb-0">Regions with higher GDPPPS</h4>
+          <h4 class="mb-0">Higher GDPPPS</h4>
         </div>
       </div>
       <div id="higher_gdppps_bottom_0" class="row p-3 align-items-center">
-        <div class="col-7 1stcol">
-          <span id="text_higher_gdppps_bottom_0" class="emptyable"></span>
-        </div>
-        <div class="col-5 2ndcol">
+
+        <div class="col-2 2ndcol">
           <canvas id="chart_higher_gdppps_bottom_0"></canvas>
+        </div>
+        <div class="col-7 1stcol">
+          <span id="text_higher_gdppps_bottom_0" class=""></span>
+        </div>
+
+
+        <div class="col-3 3rdcol">
+          <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#modal_higher_gdppps_bottom_0">
+            More...
+          </button>
+        </div>
+      </div>
+      <!-- modal-->
+      <div class="modal fade" id="modal_higher_gdppps_bottom_0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title font-weight-normal" id="exampleModalLabel">More...</h5>
+              <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h4>Data</h4>
+              <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-left">&nbsp;</th>
+                        <th class="text-center" id="modal_higher_gdppps_bottom_0_0_code"></th>
+                        <th class="text-center">#</th>
+                        <th class="text-center" id="modal_higher_gdppps_bottom_0_1_code"></th>
+                        <th class="text-center">#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-left">Population</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_pop">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_poprank">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_pop">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_poprank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Population NUTS 0</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_nuts0pop">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_nuts0poprank">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_nuts0pop">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_nuts0poprank">&nbsp</td>
+                    </tr>
+
+                    <tr>
+                        <td class="text-left">Density</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_density">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_densityrank">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_density">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_densityrank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Fertility</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_fertility">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_fertilityrank">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_fertility">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_fertilityrank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Women:men</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_womenratio">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_womenratiorank">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_womenratio">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_womenratiorank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">GDPPPS</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_gdppps">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_gdpppsrank">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_gdppps">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_gdpppsrank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">GVA</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_gva">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_gvarank">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_gva">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_gvarank">&nbsp</td>
+                    </tr>
+                    </tr>
+                </tbody>
+            </table>
+
+              <h4>Rank comparison</h4>
+              <canvas id="spider_higher_gdppps_bottom_0"></canvas>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -2037,19 +2713,112 @@
           </div>
           <div class="text-end pt-1">
             <p class="text-sm mb-0 text-capitalize">Most similar</p>
-            <h4 class="mb-0">Regions with higher GVA</h4>
+            <h4 class="mb-0">Higher GVA</h4>
           </div>
         </div>
 
         <div id="higher_gva_top_0" class="row p-3 align-items-center">
-          <div class="col-7 1stcol">
-            <span id="text_higher_gva_top_0" class="emptyable"></span>
-          </div>
-
-          <div class="col-5 2ndcol">
+          <div class="col-2 2ndcol">
             <canvas id="chart_higher_gva_top_0"></canvas>
           </div>
+          <div class="col-7 1stcol">
+            <span id="text_higher_gva_top_0" class=""></span>
+          </div>
 
+
+
+          <div class="col-3 3rdcol">
+            <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#modal_higher_gva_top_0">
+              More...
+            </button>
+          </div>
+
+        </div>
+        <!--modal-->
+        <div class="modal fade" id="modal_higher_gva_top_0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title font-weight-normal" id="exampleModalLabel">More...</h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h4>Data</h4>
+                <table class="table">
+                  <thead>
+                      <tr>
+                          <th class="text-left">&nbsp;</th>
+                          <th class="text-center" id="modal_higher_gva_top_0_0_code"></th>
+                          <th class="text-center">#</th>
+                          <th class="text-center" id="modal_higher_gva_top_0_1_code"></th>
+                          <th class="text-center">#</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td class="text-left">Population</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_0_pop">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_0_poprank">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_1_pop">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_1_poprank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">Population NUTS 0</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_0_nuts0pop">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_0_nuts0poprank">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_1_nuts0pop">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_1_nuts0poprank">&nbsp</td>
+                      </tr>
+
+                      <tr>
+                          <td class="text-left">Density</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_0_density">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_0_densityrank">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_1_density">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_1_densityrank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">Fertility</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_0_fertility">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_0_fertilityrank">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_1_fertility">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_1_fertilityrank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">Women:men</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_0_womenratio">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_0_womenratiorank">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_1_womenratio">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_1_womenratiorank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">GDPPPS</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_0_gdppps">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_0_gdpppsrank">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_1_gdppps">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_1_gdpppsrank">&nbsp</td>
+                      </tr>
+                      <tr>
+                          <td class="text-left">GVA</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_0_gva">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_0_gvarank">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_1_gva">&nbsp</td>
+                          <td class="text-centre" id="modal_higher_gva_top_0_1_gvarank">&nbsp</td>
+                      </tr>
+                      </tr>
+                  </tbody>
+              </table>
+
+                <h4>Rank comparison</h4>
+                <canvas id="spider_higher_gva_top_0"></canvas>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
 
     </div>
@@ -2063,17 +2832,110 @@
         </div>
         <div class="text-end pt-1">
           <p class="text-sm mb-0 text-capitalize">Least similar </p>
-          <h4 class="mb-0">Regions with higher GVA</h4>
+          <h4 class="mb-0">Higher GVA</h4>
         </div>
       </div>
       <div id="higher_gva_bottom_0" class="row p-3 align-items-center">
-        <div class="col-7 1stcol">
-          <span id="text_higher_gva_bottom_0" class="emptyable"></span>
-        </div>
-        <div class="col-5 2ndcol">
+        <div class="col-2 2ndcol">
           <canvas id="chart_higher_gva_bottom_0"></canvas>
         </div>
+        <div class="col-7 1stcol">
+          <span id="text_higher_gva_bottom_0" class=""></span>
+        </div>
+
+        <div class="col-3 3rdcol">
+          <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#modal_higher_gva_bottom_0">
+            More...
+          </button>
+        </div>
       </div>
+      <!-- modal -->
+      <div class="modal fade" id="modal_higher_gva_bottom_0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title font-weight-normal" id="exampleModalLabel">More...</h5>
+              <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h4>Data</h4>
+              <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-left">&nbsp;</th>
+                        <th class="text-center" id="modal_higher_gva_bottom_0_0_code"></th>
+                        <th class="text-center">#</th>
+                        <th class="text-center" id="modal_higher_gva_bottom_0_1_code"></th>
+                        <th class="text-center">#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-left">Population</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_pop">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_poprank">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_pop">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_poprank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Population NUTS 0</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_nuts0pop">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_nuts0poprank">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_nuts0pop">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_nuts0poprank">&nbsp</td>
+                    </tr>
+
+                    <tr>
+                        <td class="text-left">Density</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_density">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_densityrank">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_density">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_densityrank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Fertility</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_fertility">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_fertilityrank">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_fertility">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_fertilityrank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Women:men</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_womenratio">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_womenratiorank">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_womenratio">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_womenratiorank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">GDPPPS</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_gdppps">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_gdpppsrank">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_gdppps">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_gdpppsrank">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">GVA</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_gva">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_gvarank">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_gva">&nbsp</td>
+                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_gvarank">&nbsp</td>
+                    </tr>
+                    </tr>
+                </tbody>
+            </table>
+
+              <h4>Rank comparison</h4>
+              <canvas id="spider_higher_gva_bottom_0"></canvas>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     </div>
   </div>
@@ -2183,14 +3045,6 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
 
   $(document).ready( function() {
 
-    $('.all_data_container').hide();
-
-    // $( "span" ).click(function( eventObject ) {
-    //    eventObject.preventDefault();
-    //    window.location.href = '/region.php?nutsid='+code;
-    //    // code = $(this)[0].children[0].attributes['data-code'].value;
-    //    // navigateToNUTS(code);
-    //});
 
     // get json, and set it as global variable
     $.getJSON("data/nuts-autocomplete.json", function(data){
@@ -2287,9 +3141,7 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
   }
 
   function navigateToNUTS(code) {
-    $('.all_data_container').hide();
-    $('#all_content_placeholder').hide();
-    emptyData();
+
     $.getJSON("getdata.php?code="+code, function(data){
         window.similarity = data;
         fillData();
@@ -2379,54 +3231,83 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
         }
 
 
-        drawDonutChart(document.getElementById(chartitem), similarityobject['similarity']);
-        // $(textitem).html("<a class='linktonuts' data-code='" + targetcode + "' href='#'>" + similarityobject['name'] + " [" + similarityobject['country'] + "]" +" </a>" + "<br/>" + (100*similarityobject['similarity']).toFixed(2) + "%");
+        drawDonutChart(chartitem, similarityobject['similarity']);
         $(textitem).html("<a class='linktonuts' href='region.php?nutsid=" + targetcode + "'>" + similarityobject['name'] + " [" + similarityobject['country'] + "]" +" </a>" + "<br/>" + (100*similarityobject['similarity']).toFixed(2) + "%");
+
+        // fillModal(0, "similarity_all_top", 0);
+        // drawSpiderChart("spider_all_top_0", "similarity_all_top", 0);
+        fillModal(itemtype, similarityitemname, 0);
+
+        spidername = 'spider_'+itemtype+"_"+itemindex;
+        drawSpiderChart(spidername, similarityitemname, 0);
+
       }
     }
 
 
-
-     $('.all_data_container').show();
      generate_d3_map() ;
 
-     drawSpiderChart(document.getElementById("spider_all_top_0"), "similarity_all_top", 0);
+
+     // fillModal(0, "similarity_all_top", 0);
+     // drawSpiderChart("spider_all_top_0", "similarity_all_top", 0);
   }
 
 
+  function fillModal(itemname ,comparison, index) {
 
-  function emptyData()
-  {
-  $('.emptyable').empty();
+      //   id="modal_all_top_0_1_value"
+      var modal_id = "modal_"+itemname+"_0";
 
-  $('#chart_all_top_0').remove();
-  $('#chart_all_bottom_0').remove();
-  $('#chart_diff_country_top_0').remove();
-  $('#chart_diff_country_bottom_0').remove();
-  $('#chart_same_country_top_0').remove();
-  $('#chart_same_country_bottom_0').remove();
-  $('#chart_higher_gdppps_top_0').remove();
-  $('#chart_higher_gdppps_bottom_0').remove();
-  $('#chart_higher_gva_top_0').remove();
-  $('#chart_higher_gva_bottom_0').remove();
 
-  $('#all_top_0 > div.2ndcol').append('<canvas id="chart_all_top_0"></canvas>');
-  $('#all_bottom_0 > div.2ndcol').append('<canvas id="chart_all_bottom_0" "></canvas>');
+      var sm = window.similarity;
+      var mycode = sm['code'];
+      var comparisoncode = sm[comparison][index]['code'];
 
-  $('#diff_country_top_0 > div.2ndcol').append('<canvas id="chart_diff_country_top_0" "></canvas>');
-  $('#diff_country_bottom_0 > div.2ndcol').append('<canvas id="chart_diff_country_bottom_0" "></canvas>');
-  $('#same_country_top_0 > div.2ndcol').append('<canvas id="chart_same_country_top_0" "></canvas>');
-  $('#same_country_bottom_0 > div.2ndcol').append('<canvas id="chart_same_country_bottom_0" "></canvas>');
-  $('#higher_gdppps_top_0 > div.2ndcol').append('<canvas id="chart_higher_gdppps_top_0" "></canvas>');
-  $('#higher_gdppps_bottom_0 > div.2ndcol').append('<canvas id="chart_higher_gdppps_bottom_0" "></canvas>');
-  $('#higher_gva_top_0 > div.2ndcol').append('<canvas id="chart_higher_gva_top_0" "></canvas>');
-  $('#higher_gva_bottom_0 > div.2ndcol').append('<canvas id="chart_higher_gva_bottom_0" "></canvas>');
 
+      // table heading
+      $("#"+modal_id+"_0_code").html(mycode);
+      $("#"+modal_id+"_1_code").html(comparisoncode);
+
+      // table contents
+      $("#"+modal_id+"_0_pop").html(sm['population']);
+      $("#"+modal_id+"_1_pop").html(sm[comparison][index]['pop3']);
+      $("#"+modal_id+"_0_poprank").html(sm['populationrank']);
+      $("#"+modal_id+"_1_poprank").html(sm['ranks'][comparisoncode]['pop3rank']);
+
+      $("#"+modal_id+"_0_nuts0pop").html(sm['population0']);
+      $("#"+modal_id+"_1_nuts0pop").html(sm[comparison][index]['pop0']);
+      $("#"+modal_id+"_0_nuts0poprank").html(sm['population0rank']);
+      $("#"+modal_id+"_1_nuts0poprank").html(sm['ranks'][comparisoncode]['pop0rank']);
+
+      $("#"+modal_id+"_0_density").html(sm['density']);
+      $("#"+modal_id+"_1_density").html(sm[comparison][index]['density']);
+      $("#"+modal_id+"_0_densityrank").html(sm['densityrank']);
+      $("#"+modal_id+"_1_densityrank").html(sm['ranks'][comparisoncode]['densityrank']);
+
+      $("#"+modal_id+"_0_fertility").html(sm['fertility']);
+      $("#"+modal_id+"_1_fertility").html(sm[comparison][index]['fertility']);
+      $("#"+modal_id+"_0_fertilityrank").html(sm['fertilityrank']);
+      $("#"+modal_id+"_1_fertilityrank").html(sm['ranks'][comparisoncode]['fertilityrank']);
+
+      $("#"+modal_id+"_0_womenratio").html(sm['womenratio']);
+      $("#"+modal_id+"_1_womenratio").html(sm[comparison][index]['womenratio']);
+      $("#"+modal_id+"_0_womenratiorank").html(sm['womenratiorank']);
+      $("#"+modal_id+"_1_womenratiorank").html(sm['ranks'][comparisoncode]['womenratiorank']);
+
+      $("#"+modal_id+"_0_gdppps").html(sm['gdppps']);
+      $("#"+modal_id+"_1_gdppps").html(sm[comparison][index]['gdppps']);
+      $("#"+modal_id+"_0_gdpppsrank").html(sm['gdpppsrank']);
+      $("#"+modal_id+"_1_gdpppsrank").html(sm['ranks'][comparisoncode]['gdpppsrank']);
+
+      $("#"+modal_id+"_0_gva").html(sm['gva']);
+      $("#"+modal_id+"_1_gva").html(sm[comparison][index]['gva']);
+      $("#"+modal_id+"_0_gvarank").html(sm['gvarank']);
+      $("#"+modal_id+"_1_gvarank").html(sm['ranks'][comparisoncode]['gvarank']);
   }
 
   function drawSpiderChart(canvasElement, comparison, index) {
-
-    var ctx = canvasElement.getContext('2d');
+    var elem = document.getElementById(canvasElement);
+    var ctx = elem.getContext('2d');
 
     var sm = window.similarity;
     var code = sm['code'];
@@ -2477,7 +3358,7 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
               r: {
 
                   suggestedMin: 1,
-                  suggestedMax: 1900
+                  suggestedMax: 1600
               }
           }
         }
@@ -2485,6 +3366,8 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
   }
 
   function drawDonutChart(canvasElement, similarity) {
+
+    var elem = document.getElementById(canvasElement);
     reciprocal = 1-similarity;
 
     fill = 'rgba(0, 0, 0, 1)'; // black
@@ -2496,7 +3379,7 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
       fill = 'rgba(204, 50, 50, 1)'; // red
     }
 
-    var ctx = canvasElement.getContext('2d');
+    var ctx = elem.getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
