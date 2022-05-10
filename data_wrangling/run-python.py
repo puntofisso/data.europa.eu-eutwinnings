@@ -73,9 +73,8 @@ def parseAndLinkNUTS(year, input_file, output_file):
         fh.close()
 
 
-
 def generateNUTS3list(year):
-    output_file='nuts3list-'+str(year)+'.csv'
+    output_file='data/nuts3list-'+str(year)+'.csv'
     #"NUTS_ID";"LEVL_CODE";"CNTR_CODE";"NAME_LATN";"NUTS_NAME";"MOUNT_TYPE";"URBN_TYPE";"COAST_TYPE";"FID"
     myfile = 'nuts0123-' + str(year) + '.csv'
     csv.register_dialect('semicolonsep', delimiter=';')
@@ -92,12 +91,41 @@ def generateNUTS3list(year):
                 fh.write('"{}","{}"\n'.format(code,name))
             else:
                 pass
-
         fh.close()
 
 
-def generate_select_dropdown():
-    pass
+def generate_select_dropdown(db_file,out_file):
+    # initialise select file
+    fh = open(out_file, 'w')
+    fh.write('<select id="select_Nuts" class="js-example-basic-single" name="state">\n')
+    fh.write('<option></option>\n')
+
+    # connect to DB
+    conn = None
+    try:
+        conn = sqlite3.connect(db_file)
+        cur = conn.cursor()
+        cur.execute("SELECT code,name FROM nuts where level='0' ORDER by name ASC")
+        rows = cur.fetchall()
+        for row in rows:
+            codenuts0 = row[0]
+            namenuts0 = row[1]
+
+            fh.write('<optgroup label="{}">\n'.format(namenuts0))
+            cur2 = conn.cursor()
+            cur2.execute("SELECT code,name FROM nuts where level='3' and nuts0='" + codenuts0 + "' ORDER by name ASC")
+            rows2 = cur2.fetchall()
+            for row2 in rows2:
+
+                code = row2[0]
+                name = row2[1]
+                fh.write('<option value="{}">{}</option>\n'.format(code, name))
+    except Error as e:
+        print(e)
+    fh.write('</select>')
+    fh.close()
+
+
 
 def mround(match):
     return "{:.2f}".format(float(match.group()))
@@ -178,30 +206,6 @@ def generate_geojson(shp_file, json_file):
     # Write to file
     gdf_simplified.to_file(json_file, driver="GeoJSON")
 
-#
-# def calculate_centroids():
-#     # GeoDataFrame creation
-#     file = 'NUTS_RG_20M_2021_3035.shp/NUTS_RG_20M_2021_3035.shp'
-#     poly = gpd.read_file(file)
-#     # copy poly to new GeoDataFrame
-#     points = poly.copy()
-#
-#     # change the geometry
-#     points.geometry = points['geometry'].centroid
-#     points.to_crs(epsg=4326, inplace=True)
-#     # same crs #points.crs =poly.crs
-#     # print(points['geometry'])
-#     #print(points.head())
-#     print("nuts_id|nuts_name|longitude|latitude|level")
-#     for index, row in points.iterrows():
-#         nutsid = row['NUTS_ID']
-#         name = row['NUTS_NAME']
-#         level = row['LEVL_CODE']
-#         centroid_lat = row['geometry'].x
-#         centroid_lon = row['geometry'].y
-#         print(nutsid + "|" + name + "|" + str(centroid_lat) + "|" + str(centroid_lon) + "|" + str(level))
-#
-#
 
 def createCSV(year, file_tsv, file_normalised_tsv, relations_filename):
 
@@ -884,31 +888,33 @@ def main():
     # STEP 1a: From shapefile extract the CSV master nuts0123-$year.csv
     file2021 = 'NUTS_RG_20M_2021_3035.shp/NUTS_RG_20M_2021_3035.shp'
     file2016 = 'NUTS_RG_20M_2016_3035.shp/NUTS_RG_20M_2016_3035.shp'
-    shapefileToCSVMaster(file2021, 'data/nuts0123-2021.csv')
-    shapefileToCSVMaster(file2016, 'data/nuts0123-2016.csv')
+    #shapefileToCSVMaster(file2021, 'data/nuts0123-2021.csv')
+    #shapefileToCSVMaster(file2016, 'data/nuts0123-2016.csv')
 
     # STEP 1b: Generate GeoJson to display the "similarity at a glance" map
-    #TODO generate_geojson(file, 'nuts3-TESTING.geojson')
+    #generate_geojson(file2021, 'data/nuts3.geojson')
 
     # STEP 2: Link NUTS of all levels to generate nutsrelations-$year.psv
-    parseAndLinkNUTS(2021, 'data/nuts0123-2021.csv', 'data/nutsrelations-2021.psv')
-    parseAndLinkNUTS(2016, 'data/nuts0123-2016.csv', 'data/nutsrelations-2016.psv')
+    #parseAndLinkNUTS(2021, 'data/nuts0123-2021.csv', 'data/nutsrelations-2021.psv')
+    #parseAndLinkNUTS(2016, 'data/nuts0123-2016.csv', 'data/nutsrelations-2016.psv')
 
     # STEP 3: Download data via API to globaldict.json
-    download('data/globaldict.json')
+    #download('data/globaldict.json')
 
     # STEP 4: Create basic data Files - basicdata-$year.tsv and basicdataNORM-$year.tsv
-    createBasicDataFiles(2021, 'data/globaldict.json', 'data/basicdata-2021.tsv', 'data/basicdataNORM-2021.tsv', 'data/nutsrelations-2021.psv')
-    createBasicDataFiles(2016, 'data/globaldict.json', 'data/basicdata-2016.tsv', 'data/basicdataNORM-2016.tsv', 'data/nutsrelations-2016.psv')
+    #createBasicDataFiles(2021, 'data/globaldict.json', 'data/basicdata-2021.tsv', 'data/basicdataNORM-2021.tsv', 'data/nutsrelations-2021.psv')
+    #createBasicDataFiles(2016, 'data/globaldict.json', 'data/basicdata-2016.tsv', 'data/basicdataNORM-2016.tsv', 'data/nutsrelations-2016.psv')
 
     # STEP 5: Create and populate DB
-    createDB('data/nuts.db', 'data/basicdata-2021.tsv', 'data/basicdataNORM-2021.tsv', 'data/basicdata-2016.tsv', 'data/basicdataNORM-2016.tsv', 'data/nutsrelations-2021.psv', 'data/nutsrelations-2016.psv', 'data/NUTS2021-extra.csv')
+    #createDB('data/nuts.db', 'data/basicdata-2021.tsv', 'data/basicdataNORM-2021.tsv', 'data/basicdata-2016.tsv', 'data/basicdataNORM-2016.tsv', 'data/nutsrelations-2021.psv', 'data/nutsrelations-2016.psv', 'data/NUTS2021-extra.csv')
 
     # STEP 6: Calculate similarity
     # similarity_calculate('nuts.db')
 
-    # TODO
-    # generate_select_dropdown() for autocomplete
+    # STEP 7: Generate select
+    generate_select_dropdown('data/nuts.db','data/select.html')
+
+
     # TODO print instructions on which files to move; QGIS ATLAS Generation
 
 if __name__ == "__main__":
