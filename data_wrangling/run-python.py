@@ -29,9 +29,7 @@ def shapefileToCSVMaster(shp_file, csv_file):
     gdf.to_csv(csv_file, sep=';', encoding='utf-8', index=False, quoting=csv.QUOTE_ALL, columns=["NUTS_ID","LEVL_CODE","CNTR_CODE","NAME_LATN","NUTS_NAME","MOUNT_TYPE","URBN_TYPE","COAST_TYPE","FID"])
 
 def parseAndLinkNUTS(year, input_file, output_file):
-
     #"NUTS_ID";"LEVL_CODE";"CNTR_CODE";"NAME_LATN";"NUTS_NAME";"MOUNT_TYPE";"URBN_TYPE";"COAST_TYPE";"FID"
-
     csv.register_dialect('semicolonsep', delimiter=';')
     with open(input_file, "rt", encoding='utf8') as csvfile:
         fh=open(output_file,'w')
