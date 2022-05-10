@@ -35,7 +35,7 @@ def main():
 
         if level == "1":
             if not nuts0 in finalarray:
-                finalarray[nuts0] = { 'nuts1': {} }
+                finalarray[nuts0] = { 'nuts1': {}, 'level': '0' }
             finalarray[nuts0]['nuts1'][nuts_id] = { 'id':nuts_id, 'name':nuts_name, 'level':level, 'nuts2':{} }
 
         if level == "2":
@@ -57,8 +57,6 @@ def main():
             if not nuts2 in finalarray[nuts0]['nuts1'][nuts1]['nuts2']:
                 finalarray[nuts0]['nuts1'][nuts1]['nuts2'][nuts2] = { 'nuts3': {} }
 
-
-            # finalarray[nuts0]['nuts1'][nuts1]['nuts2'][nuts2]['nuts3'] = {}
             finalarray[nuts0]['nuts1'][nuts1]['nuts2'][nuts2]['nuts3'][nuts_id] = { 'id':nuts_id, 'name':nuts_name, 'level':level }
 
 
@@ -66,8 +64,13 @@ def printSelect():
     global finalarray
     print("<select>")
 
+
+
     for key0, value0 in finalarray.items():
 
+        print('---------')
+        print(key0)
+        print(value0)
 
         if value0['level'] == "0":
             print('<optgroup label="' + value0['name'] +  '">')

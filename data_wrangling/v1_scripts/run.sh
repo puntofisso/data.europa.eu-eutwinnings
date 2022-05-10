@@ -40,7 +40,7 @@ rm -f nutsrelations-2016.psv
 
 date
 
-echo "3. Creting nuts.json for website with csv2json.py"
+echo "3. Creating nuts.json for website with csv2json.py"
 # generates nuts.json, used for the lookup function; only needed for current year
 python csv2json.py 2021 > nuts-autocomplete.json
 
