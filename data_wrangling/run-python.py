@@ -22,6 +22,8 @@ import logger
 import sqlite3
 from sqlite3 import Error
 
+import os
+
 def shapefileToCSVMaster(shp_file, csv_file):
     # Read in data
     gdf = gpd.read_file(shp_file)
@@ -188,6 +190,10 @@ def download(file_json):
     initData(file_json)
 
 def generate_geojson(shp_file, json_file):
+    # Delete existing
+    if os.path.exists(json_file):
+        os.remove(json_file)
+
     # Read in data
     gdf = gpd.read_file(shp_file)
 
@@ -693,6 +699,9 @@ def createDB(db_file_name, nuts_file, nutsNORM_file, nuts2016_file, nutsNORM2016
         if conn:
             conn.close()
 
+    # TODO DB Fixes
+
+
 # calculates the similarity according to a set of features between two areas
 def similarity(code1, code2, fieldlist):
 
@@ -886,35 +895,52 @@ def similarity_calculate(db_file_name):
 def main():
 
     # STEP 1a: From shapefile extract the CSV master nuts0123-$year.csv
+    print("Extracting nuts0123-2021.csv from shapefile")
     file2021 = 'NUTS_RG_20M_2021_3035.shp/NUTS_RG_20M_2021_3035.shp'
     file2016 = 'NUTS_RG_20M_2016_3035.shp/NUTS_RG_20M_2016_3035.shp'
-    #shapefileToCSVMaster(file2021, 'data/nuts0123-2021.csv')
-    #shapefileToCSVMaster(file2016, 'data/nuts0123-2016.csv')
+    print("Extracting nuts0123-2021.csv from shapefile\n")
+    shapefileToCSVMaster(file2021, 'data/nuts0123-2021.csv')
+    print("Extracting nuts0123-2016.csv from shapefile\n")
+    shapefileToCSVMaster(file2016, 'data/nuts0123-2016.csv')
 
     # STEP 1b: Generate GeoJson to display the "similarity at a glance" map
-    #generate_geojson(file2021, 'data/nuts3.geojson')
+    print("Generating nuts3.geojson\n")
+    generate_geojson(file2021, 'data/nuts3.geojson')
 
     # STEP 2: Link NUTS of all levels to generate nutsrelations-$year.psv
-    #parseAndLinkNUTS(2021, 'data/nuts0123-2021.csv', 'data/nutsrelations-2021.psv')
-    #parseAndLinkNUTS(2016, 'data/nuts0123-2016.csv', 'data/nutsrelations-2016.psv')
+    print("Generating nutsrelations-2021.psv\n")
+    parseAndLinkNUTS(2021, 'data/nuts0123-2021.csv', 'data/nutsrelations-2021.psv')
+    print("Generating nutsrelations-2016.psv\n")
+    parseAndLinkNUTS(2016, 'data/nuts0123-2016.csv', 'data/nutsrelations-2016.psv')
 
     # STEP 3: Download data via API to globaldict.json
-    #download('data/globaldict.json')
+    print("Downloading Eurostat data into globaldict.json\n")
+    download('data/globaldict.json')
 
     # STEP 4: Create basic data Files - basicdata-$year.tsv and basicdataNORM-$year.tsv
-    #createBasicDataFiles(2021, 'data/globaldict.json', 'data/basicdata-2021.tsv', 'data/basicdataNORM-2021.tsv', 'data/nutsrelations-2021.psv')
-    #createBasicDataFiles(2016, 'data/globaldict.json', 'data/basicdata-2016.tsv', 'data/basicdataNORM-2016.tsv', 'data/nutsrelations-2016.psv')
+    print("Creating basicdata-2021.tsv and basicdataNORM-2021.tsv\n")
+    createBasicDataFiles(2021, 'data/globaldict.json', 'data/basicdata-2021.tsv', 'data/basicdataNORM-2021.tsv', 'data/nutsrelations-2021.psv')
+    print("Creating basicdata-2021.tsv and basicdataNORM-2016.tsv\n")
+    createBasicDataFiles(2016, 'data/globaldict.json', 'data/basicdata-2016.tsv', 'data/basicdataNORM-2016.tsv', 'data/nutsrelations-2016.psv')
 
     # STEP 5: Create and populate DB
-    #createDB('data/nuts.db', 'data/basicdata-2021.tsv', 'data/basicdataNORM-2021.tsv', 'data/basicdata-2016.tsv', 'data/basicdataNORM-2016.tsv', 'data/nutsrelations-2021.psv', 'data/nutsrelations-2016.psv', 'data/NUTS2021-extra.csv')
+    print("Creating nuts.db\n")
+    createDB('data/nuts.db', 'data/basicdata-2021.tsv', 'data/basicdataNORM-2021.tsv', 'data/basicdata-2016.tsv', 'data/basicdataNORM-2016.tsv', 'data/nutsrelations-2021.psv', 'data/nutsrelations-2016.psv', 'data/NUTS2021-extra.csv')
+
+
 
     # STEP 6: Calculate similarity
+    print("Calculating similarity\n")
     # similarity_calculate('nuts.db')
 
     # STEP 7: Generate select
+    print("Generating select.html\n")
     generate_select_dropdown('data/nuts.db','data/select.html')
 
 
+    print("All files have been generated in data/.\n")
+    print("Move nuts.db, nuts3.geojson to web/data.\n")
+    print("The contents of the <select> for NUTS selection and autocomplete are in data/select.html.\n")
     # TODO print instructions on which files to move; QGIS ATLAS Generation
 
 if __name__ == "__main__":
