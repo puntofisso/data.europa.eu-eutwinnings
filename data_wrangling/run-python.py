@@ -703,9 +703,9 @@ def createDB(db_file_name, nuts_file, nutsNORM_file, nuts2016_file, nutsNORM2016
 
 
 # calculates the similarity according to a set of features between two areas
-def similarity(code1, code2, fieldlist):
+def similarity(code1, code2, fieldlist, curCALCSIM):
 
-    global curCALCSIM, conCALCSIM
+
 
     # Create array for cosine distance
     arr1 = []
@@ -773,10 +773,21 @@ def similarity(code1, code2, fieldlist):
     # print("Similarity: " + str(result))
     return result
 
-def generateallsimilarities(conn, cur, fieldlist3, fieldlist2, fieldlist1, fieldlist0):
+def generateallsimilarities(db_file_name, fieldlist3, fieldlist2, fieldlist1, fieldlist0):
+
+    # General connection for outer generateallsimilarities
+    conn = sqlite3.connect(db_file_name)
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+
+    # Connection for similarity generation
+    conCALCSIM = sqlite3.connect(db_file_name)
+    conCALCSIM.row_factory = sqlite3.Row
+    curCALCSIM = conCALCSIM.cursor()
 
 
-    conWRITE = sqlite3.connect('nuts.db')
+
+    conWRITE = sqlite3.connect(db_file_name)
     conWRITE.isolation_level = None
     curWRITE = conWRITE.cursor()
 
@@ -795,7 +806,7 @@ def generateallsimilarities(conn, cur, fieldlist3, fieldlist2, fieldlist1, field
         for nuts in all_nuts3:
             code1 = nuts['code1']
             code2 = nuts['code2']
-            simresult = similarity(code1, code2, fieldlist3)
+            simresult = similarity(code1, code2, fieldlist3, curCALCSIM)
 
             # Insert similarity into DB
             curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code1, code2, simresult))
@@ -813,7 +824,7 @@ def generateallsimilarities(conn, cur, fieldlist3, fieldlist2, fieldlist1, field
         for nuts in all_nuts2:
             code1 = nuts['code1']
             code2 = nuts['code2']
-            simresult = similarity(code1, code2, fieldlist2)
+            simresult = similarity(code1, code2, fieldlist2, curCALCSIM)
 
             # Insert similarity into DB
             curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code1, code2, simresult))
@@ -831,7 +842,7 @@ def generateallsimilarities(conn, cur, fieldlist3, fieldlist2, fieldlist1, field
         for nuts in all_nuts1:
             code1 = nuts['code1']
             code2 = nuts['code2']
-            simresult = similarity(code1, code2, fieldlist1)
+            simresult = similarity(code1, code2, fieldlist1, curCALCSIM)
 
             # Insert similarity into DB
             curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code1, code2, simresult))
@@ -849,7 +860,7 @@ def generateallsimilarities(conn, cur, fieldlist3, fieldlist2, fieldlist1, field
         for nuts in all_nuts0:
             code1 = nuts['code1']
             code2 = nuts['code2']
-            simresult = similarity(code1, code2, fieldlist0)
+            simresult = similarity(code1, code2, fieldlist0, curCALCSIM)
 
             # Insert similarity into DB
             curWRITE.execute("insert or replace into similarity (code1, code2, similarity) values (?, ?, ?)", (code1, code2, simresult))
@@ -862,17 +873,13 @@ def generateallsimilarities(conn, cur, fieldlist3, fieldlist2, fieldlist1, field
 
     curWRITE.close()
     conWRITE.close()
+    curCALCSIM.close()
+    conCALCSIM.close()
+    cur.close()
+    conn.close()
 
 def similarity_calculate(db_file_name):
-    # General connection for outer generateallsimilarities
-    conn = sqlite3.connect('nuts.db')
-    conn.row_factory = sqlite3.Row
-    cur = conn.cursor()
 
-    # Connection for similarity generation
-    conCALCSIM = sqlite3.connect('nuts.db')
-    conCALCSIM.row_factory = sqlite3.Row
-    curCALCSIM = conCALCSIM.cursor()
 
     # Field list for similarity formula
     fieldlist3 = ['pop3','pop0','density','fertility','popchange','womenratio','gdppps','gva']
@@ -880,17 +887,14 @@ def similarity_calculate(db_file_name):
     fieldlist1 = ['pop0','density','fertility']
     fieldlist0 = ['pop0','density']
 
-    generateallsimilarities(conn, cur, fieldlist3, fieldlist2, fieldlist1, fieldlist0)
+    generateallsimilarities(db_file_name, fieldlist3, fieldlist2, fieldlist1, fieldlist0)
     # TODO to check new areas -> start with this
     #print(similarity('BE32B','HR064',fieldlist3))
     #print(similarity('BG34','DE25',fieldlist2))
     #print(similarity('BG3','DE2',fieldlist1))
     #print(similarity('BG','DE',fieldlist0))
 
-    curCALCSIM.close()
-    conCALCSIM.close()
-    cur.close()
-    conn.close()
+
 
 def main():
 
@@ -931,7 +935,7 @@ def main():
 
     # STEP 6: Calculate similarity
     print("Calculating similarity\n")
-    # similarity_calculate('nuts.db')
+    similarity_calculate('data/nuts.db')
 
     # STEP 7: Generate select
     print("Generating select.html\n")
