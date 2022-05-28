@@ -44,7 +44,7 @@
    // Load data
    // https://data-europa-eu.eu-twinnings.site/getdata.php?code=FRI13
 // The following code will be enclosed within an anonymous function
-var url  = "http://localhost:8888/return-iframe.php?nutsid=FRI13";
+var url  = "/return-iframe.php?nutsid=FRI13";
 
 
 var xmlhttp = new XMLHttpRequest();
@@ -69,33 +69,7 @@ xmlhttp.send();
 })(); // We call our anonymous function immediately
 </script>
 
-<!--
-<div>
-  iframe localhost
-  <iframe src="http://localhost:8888/widget-display.php?nutsid=NO081"
-    scrolling="no"
-    style="width: 336px;
-    height: 280px;
-    margin: 0;
-    padding: 0;
-    border: none;
-    "
-  />
-</div>
 
-
-<div>
-  iframe data
-  <iframe src="https://http://data-europa-eu.eu-twinnings.site/widget-display.php?nutsid=NO081"
-    scrolling="no"
-    style="width: 336px;
-    height: 280px;
-    margin: 0;
-    padding: 0;
-    border: none;
-    "
-  />
-</div> -->
 
 
 

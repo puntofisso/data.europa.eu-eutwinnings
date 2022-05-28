@@ -22,10 +22,11 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
 
         exit(0);
     }
+
 $nutsid=$_GET['nutsid'];
 
 echo "IFRAME localhost<br/>";
-echo "<iframe src='http://localhost:8888/widget-display.php?nutsid=NO081'
+echo "<iframe src='http://localhost:8888/widget-display.php?nutsid=$nutsid'
   scrolling='no'
   style='width: 336px;
   height: 280px;
