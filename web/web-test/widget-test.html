@@ -5,13 +5,15 @@
   <title></title>
 </head>
 <body>
-    <script>
+     <!-- <script>
+
       (function() {
 
         // Load data
         // https://data-europa-eu.eu-twinnings.site/getdata.php?code=FRI13
     // The following code will be enclosed within an anonymous function
-    var url  = "https://data-europa-eu.eu-twinnings.site/widget-getdata.php?code=FRI13";
+    var url  = "https://data-europa-eu.eu-twinnings.site/widget-display.php?nutsid=FRI13";
+    var url  = "http://localhost:8888/widget-display.php?nutsid=FRI13";
 
     var xmlhttp = new XMLHttpRequest();
 
@@ -27,11 +29,76 @@
                alert('something else other than 200 was returned: ' + xmlhttp.status);
            }
         }
+        xmlhttp.close();
     };
     xmlhttp.open("GET", url, true);
     xmlhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
     xmlhttp.send();
 })(); // We call our anonymous function immediately
+</script> -->
+
+<script>
+
+ (function() {
+
+   // Load data
+   // https://data-europa-eu.eu-twinnings.site/getdata.php?code=FRI13
+// The following code will be enclosed within an anonymous function
+var url  = "http://localhost:8888/return-iframe.php?nutsid=FRI13";
+
+
+var xmlhttp = new XMLHttpRequest();
+
+xmlhttp.onreadystatechange = function() {
+   if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
+      if (xmlhttp.status == 200) {
+          document.write(xmlhttp.responseText);
+      }
+      else if (xmlhttp.status == 400) {
+         alert('There was an error 400');
+      }
+      else {
+          alert('something else other than 200 was returned: ' + xmlhttp.status);
+      }
+   }
+
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+xmlhttp.send();
+})(); // We call our anonymous function immediately
 </script>
+
+<!--
+<div>
+  iframe localhost
+  <iframe src="http://localhost:8888/widget-display.php?nutsid=NO081"
+    scrolling="no"
+    style="width: 336px;
+    height: 280px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    "
+  />
+</div>
+
+
+<div>
+  iframe data
+  <iframe src="https://http://data-europa-eu.eu-twinnings.site/widget-display.php?nutsid=NO081"
+    scrolling="no"
+    style="width: 336px;
+    height: 280px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    "
+  />
+</div> -->
+
+
+
+
 </body>
 </html>
