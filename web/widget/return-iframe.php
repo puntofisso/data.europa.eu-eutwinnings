@@ -39,7 +39,13 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
 
 
 if ($widget == 'display') {
-
+  echo "<iframe src='".$server."./widget/widget-display.php?nutsid=NO081'
+    scrolling='no'
+    style='width: 336px;
+    height: 280px;
+    margin: 0;
+    padding: 0;
+    border: none;'></iframe>";
 } else if ($widget == '336x280') {
   echo "<iframe src='".$server."./widget/widget336x280.php?nutsid=NO081'
     scrolling='no'

@@ -4,11 +4,17 @@ $server = 'https://data-europa-eu.eu-twinnings.site/';
 
 if (isset($_GET['forcelocalhost'])) {
   $server = 'http://localhost:8888/web/';
-  $url  = $server."return-iframe.php?nutsid=FRI13&widget=336x280&forcelocalhost";
+  $url  = $server."widget/return-iframe.php?nutsid=FRI13&forcelocalhost";
 } else {
-  $url  = $server."return-iframe.php?nutsid=FRI13&widget=336x280";
+  $url  = $server."widget/return-iframe.php?nutsid=FRI13";
 }
 
+if (isset($_GET['widget'])) {
+  $widget = $_GET['widget'];
+  $url = $url."&widget=$widget";
+} else {
+  $url = $url."&widget=display";
+}
 
 
 ?>
