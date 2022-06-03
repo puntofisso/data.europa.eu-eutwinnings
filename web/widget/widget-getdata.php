@@ -41,7 +41,7 @@ $ret['code'] = $code;
 $db = null;
 if ($method == "sqlite") {
   // SQLITE
-  $db = new PDO('sqlite:data/nuts.db');
+  $db = new PDO('sqlite:../data/nuts.db');
 } else {
   // MYSQL
   $host = '127.0.0.1';

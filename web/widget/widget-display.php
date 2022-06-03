@@ -23,13 +23,13 @@
   <link rel="apple-touch-icon" sizes="76x76" href="./MD-assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="favicon.ico">
 
-  <link href="css/jquery-ui.min.css" rel="stylesheet">
-  <script src="js/external/jquery/jquery.js"></script>
-  <script src="js/jquery-ui.min.js"></script>
+  <link href="../css/jquery-ui.min.css" rel="stylesheet">
+  <script src="../js/external/jquery/jquery.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
 
-  <script src="js/d3.v4.js"></script>
-  <script src="js/d3-scale-chromatic.v1.min.js"></script>
-  <script src="js/d3-geo-projection.v2.min.js"></script>
+  <script src="../js/d3.v4.js"></script>
+  <script src="../js/d3-scale-chromatic.v1.min.js"></script>
+  <script src="../js/d3-geo-projection.v2.min.js"></script>
 
   <title></title>
   <!--     Fonts and icons     -->
@@ -17845,7 +17845,7 @@ function generate_d3_map() {
         mykey = value['code'];
         d3data.set(mykey, value['similarity']);
       });
-    d3.json('data/nuts3.geojson',
+    d3.json('../data/nuts3.geojson',
 
     function (error,data) {
       g

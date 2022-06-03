@@ -1,4 +1,18 @@
 <?php
+
+$server = 'https://data-europa-eu.eu-twinnings.site/';
+if (isset($_GET['forcelocalhost'])) {
+  $server = 'http://localhost:8888/web/';
+}
+
+if ((!isset($_GET['nutsid'])) && (!isset($_GET['widget']))) {
+  die();
+}
+
+$nutsid=$_GET['nutsid'];
+$widget=$_GET['widget'];
+
+
 header('Content-Type: application/json; charset=utf-8');
 
 if (isset($_SERVER['HTTP_ORIGIN'])) {
@@ -23,44 +37,21 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
         exit(0);
     }
 
-$nutsid=$_GET['nutsid'];
 
-// echo "<br/>IFRAME localhost<br/>";
-// echo "<iframe src='http://localhost:8888/widget-display.php?nutsid=$nutsid'
-//   scrolling='no'
-//   style='width: 336px;
-//   height: 280px;
-//   margin: 0;
-//   padding: 0;
-//   border: none;'></iframe>";
-//
-// echo "<br/>IFRAME remote<br/>";
-// echo "<iframe src='https://data-europa-eu.eu-twinnings.site/widget-display.php?nutsid=NO081'
-//   scrolling='no'
-//   style='width: 336px;
-//   height: 280px;
-//   margin: 0;
-//   padding: 0;
-//   border: none;'></iframe>";
+if ($widget == 'display') {
 
-  echo "<br/>IFRAME localhost fixed<br/>";
-  echo "<iframe src='http://localhost:8888/widget/widget336x280.php?nutsid=NO081'
+} else if ($widget == '336x280') {
+  echo "<iframe src='".$server."./widget/widget336x280.php?nutsid=NO081'
     scrolling='no'
     style='width: 336px;
     height: 280px;
     margin: 0;
     padding: 0;
     border: none;'></iframe>";
+} else die();
 
 
-  // echo "<br/>IFRAME remote fixed<br/>";
-  // echo "<iframe src='https://data-europa-eu.eu-twinnings.site/widget/widget336x280.php?nutsid=NO081'
-  //   scrolling='no'
-  //   style='width: 336px;
-  //   height: 280px;
-  //   margin: 0;
-  //   padding: 0;
-  //   border: none;'></iframe>";
+
 
 
 
