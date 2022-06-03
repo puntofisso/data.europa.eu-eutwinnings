@@ -54,7 +54,16 @@ if ($widget == 'display') {
     margin: 0;
     padding: 0;
     border: none;'></iframe>";
-} else die();
+} else if ($widget == '728x90') {
+  echo "<iframe src='".$server."./widget/widget728x90.php?nutsid=NO081'
+    scrolling='no'
+    style='width: 336px;
+    height: 280px;
+    margin: 0;
+    padding: 0;
+    border: none;'></iframe>";
+}
+else die();
 
 
 

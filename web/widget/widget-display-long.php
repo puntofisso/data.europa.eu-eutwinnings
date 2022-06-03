@@ -560,6 +560,11 @@
     margin-right: 0;
     margin-left:0; }
 
+.container, .container-sm {
+  width: 728px !important ;
+  height: 90px !important;
+}
+/*
   @media (min-width: 576px) {
     .container, .container-sm {
       max-width: 540px; } }
@@ -578,7 +583,7 @@
 
   @media (min-width: 1400px) {
     .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
-      max-width: 1320px; } }
+      max-width: 1320px; } } */
 
   .row {
     --bs-gutter-x: 1.5rem;
@@ -4115,7 +4120,7 @@
     padding: 0.55em 0.9em;
     font-size: 0.75em;
     font-weight: 700;
-    line-height: 1;
+    line-height: 0.5;
     color: #fff;
     text-align: center;
     white-space: nowrap;
@@ -17634,6 +17639,11 @@
 .col-sm {
   margin: 0px !important;
   }
+
+
+.general_info {
+    font-size: 0.7em !important;
+}
   </style>
 
 </head>
@@ -17644,18 +17654,18 @@
 
     <div class="container">
       <div class="row">
-
-
-          <h6 class="mb-0"><span id="nametitle"></span> (<span id="subnametitle"></span>)  </h6>
-      </div>
-      <div class="row">
-        <div class="col-sm">
+        <div class="col-md-2">
+          <h4 class="mb-0"><span id="nametitle"></span> (<span id="subnametitle"></span>)  </h4>
+          <span class="badge bg-warning">Code</span> <span id="span_nuts3" class="general_info"></span>
+        </div>
+        <div class="col-md-4">
           <div id="my_dataviz" class=""></div>
         </div>
-        <div class="col-sm">
-          <span class="badge bg-warning">Code</span> <span id="span_nuts3" class="general_info"></span><br/>
-          <span class="badge bg-success">Most similar </span><span id="text_all_top_0" class=""></span><br/>
-          <span class="badge bg-danger">Least similar </span><span id="text_all_bottom_0" class=""></span>
+        <div class="col-md-6">
+          <span class="badge bg-success">Most similar </span>
+          <span id="text_all_top_0" class="general_info"></span><br/>
+          <span class="badge bg-danger">Least similar </span>
+          <span id="text_all_bottom_0" class="general_info"></span>
         </div>
       </div>
       </div>
@@ -17784,7 +17794,7 @@
 
 
         // drawDonutChart(chartitem, similarityobject['similarity']);
-        $(textitem).html("<a class='linktonuts' href='region.php?nutsid=" + targetcode + "'>" + similarityobject['name'] + " [" + similarityobject['country'] + "]" +" </a>" + (100*similarityobject['similarity']).toFixed(2) + "%");
+        $(textitem).html("<a class='linktonuts' href='region.php?nutsid=" + targetcode + "'>" + similarityobject['name'] + " [" + similarityobject['country'] + "]" +" </a>" + (100*similarityobject['similarity']).toFixed(0) + "%");
 
         // fillModal(0, "similarity_all_top", 0);
         // drawSpiderChart("spider_all_top_0", "similarity_all_top", 0);
@@ -17818,8 +17828,8 @@ function generate_d3_map() {
     .attr("width", "100%");
 
     width = svg.style("width").replace(/px/g,'');
-    height = svg.style("height").replace(/px/g,'');;
-
+     height = svg.style("height").replace(/px/g,'');;
+    //height = 90;
     var projection = d3.geoMercator()
       .translate([width / 2, height  ])
       .scale((width - 1) / 2 / Math.PI);

@@ -33,8 +33,8 @@ if (isset($_GET['nutsid'])) {
     margin: 0px;
   }
     .maincontent {
-      width: 334px;
-      height: 278px;
+      width: 726;
+      height: 88px;
       border-style:  solid;
       border-width: 1px;
     }
