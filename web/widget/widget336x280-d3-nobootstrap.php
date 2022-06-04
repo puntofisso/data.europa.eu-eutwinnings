@@ -235,8 +235,8 @@ function generate_d3_map() {
           window.similarity = data;
           $('#areaname').html(data.name + " " + "(" + data.nuts0name + ")");
 
-          $('#mostsimilar').html("<a href='http://localhost:8888/web/region.php?nutsid=" + data.similarity_all_top[0].code + "'>" +(data.similarity_all_top[0]).name + "</a> (" + (data.similarity_all_top[0]).country + ")" + " " + ((data.similarity_all_top[0]).similarity*100).toFixed(0) + "%");
-          $('#leastsimilar').html("<a href='http://localhost:8888/web/region.php?nutsid=" + data.similarity_all_bottom[0].code + "'>" + (data.similarity_all_bottom[0]).name + "</a> (" + (data.similarity_all_bottom[0]).country + ")" + " " + ((data.similarity_all_bottom[0]).similarity*100).toFixed(0) + "%");
+          $('#mostsimilar').html("<a href='https://data-europa-eu.eu-twinnings.site/region.php?nutsid=" + data.similarity_all_top[0].code + "'>" +(data.similarity_all_top[0]).name + "</a> (" + (data.similarity_all_top[0]).country + ")" + " " + ((data.similarity_all_top[0]).similarity*100).toFixed(0) + "%");
+          $('#leastsimilar').html("<a href='https://data-europa-eu.eu-twinnings.site/region.php?nutsid=" + data.similarity_all_bottom[0].code + "'>" + (data.similarity_all_bottom[0]).name + "</a> (" + (data.similarity_all_bottom[0]).country + ")" + " " + ((data.similarity_all_bottom[0]).similarity*100).toFixed(0) + "%");
           generate_d3_map();
       }).fail(function(){
           alert("Sorry, an error has occurred. Please try again later.");
