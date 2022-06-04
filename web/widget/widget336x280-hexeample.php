@@ -42,7 +42,7 @@ if (isset($_GET['nutsid'])) {
   body {
     padding: 0px;
     margin: 0px;
-    background-color: #e6e6e6;
+    background-color: #f0f2f5;
   }
 
   .maincontent {

@@ -45,7 +45,7 @@ if (isset($_GET['nutsid'])) {
   body {
     padding: 0px;
     margin: 0px;
-    background-color: #e6e6e6;
+    background-color: #f0f2f5;
   }
 
   .maincontent {
@@ -88,7 +88,7 @@ if (isset($_GET['nutsid'])) {
 
     .maincontent {
       display: grid;
-      grid-template-columns: 200px 300px 128px;
+      grid-template-columns: 150px 300px 278px;
       grid-template-rows: 90px;
     }
 
@@ -103,8 +103,10 @@ if (isset($_GET['nutsid'])) {
     <div id="my_dataviz" class=""></div>
 
     <div>
-    <span id="mostsimilar" class="badge bg-success"></span>
-    <span id="leastsimilar" class="badge bg-danger"></span>
+      <div>&nbsp;</div>
+      <div><span  class="badge bg-success">Most similar</span><span id="mostsimilar"></span></div>
+      <div><span  class="badge bg-danger">Least similar</span><span id="leastsimilar"></span></div>
+
     </div>
 
 
@@ -249,8 +251,8 @@ function generate_d3_map() {
           window.similarity = data;
           $('#areaname').html(data.name + " " + "(" + data.nuts0name + ")");
 
-          $('#mostsimilar').html("Most similar: " + (data.similarity_all_top[0]).name + "(" + (data.similarity_all_top[0]).country + ")" + " " + ((data.similarity_all_top[0]).similarity*100).toFixed(0) + "%");
-          $('#leastsimilar').html("Least similar: " + (data.similarity_all_bottom[0]).name + "(" + (data.similarity_all_bottom[0]).country + ")" + " " + ((data.similarity_all_bottom[0]).similarity*100).toFixed(0) + "%");
+          $('#mostsimilar').html("<a href='http://localhost:8888/web/region.php?nutsid=" + data.similarity_all_top[0].code + "'>" +(data.similarity_all_top[0]).name + "</a> (" + (data.similarity_all_top[0]).country + ")" + " " + ((data.similarity_all_top[0]).similarity*100).toFixed(0) + "%");
+          $('#leastsimilar').html("<a href='http://localhost:8888/web/region.php?nutsid=" + data.similarity_all_bottom[0].code + "'>" + (data.similarity_all_bottom[0]).name + "</a> (" + (data.similarity_all_bottom[0]).country + ")" + " " + ((data.similarity_all_bottom[0]).similarity*100).toFixed(0) + "%");
           generate_d3_map();
       }).fail(function(){
           alert("Sorry, an error has occurred. Please try again later.");

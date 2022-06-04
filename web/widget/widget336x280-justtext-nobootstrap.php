@@ -30,15 +30,12 @@ if (isset($_GET['nutsid'])) {
 
   <script src="../js/external/jquery/jquery.js"></script>
 
-  <script src="../js/d3.v4.js"></script>
-  <script src="../js/d3-scale-chromatic.v1.min.js"></script>
-  <script src="../js/d3-geo-projection.v2.min.js"></script>
 
 
   <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-  h1 { font-family: 'Ubuntu'; font-size: 40px; color: #001d85; margin-bottom:1px;}
+  h1 { font-family: 'Ubuntu'; font-size: 30px; color: #001d85; margin-bottom:20px;}
 
 
 
@@ -94,8 +91,13 @@ if (isset($_GET['nutsid'])) {
 
     <div><span  class="badge bg-success">Most similar</span><span id="mostsimilar"></span></div>
     <div><span  class="badge bg-danger">Least similar</span><span id="leastsimilar"></span></div>
-
-    <div id="my_dataviz" class=""></div>
+  <hr/>
+    <div><span  class="badge bg-success">Most similar, same country</span><span id="ms-sc"></span></div>
+    <div><span  class="badge bg-danger">Least similar, same country</span><span id="ls-sc"></span></div>
+    <div><span  class="badge bg-success">Most similar, diff country</span><span id="ms-dc"></span></div>
+    <div><span  class="badge bg-danger">Least similar, diff country</span><span id="ls-dc"></span></div>
+    <div><span  class="badge bg-success">Most similar, higher GDP</span><span id="ms-hg"></span></div>
+    <div><span  class="badge bg-danger">Least similar, higher GDP</span><span id="ls-hg"></span></div>
 
 
 
@@ -109,123 +111,6 @@ if (isset($_GET['nutsid'])) {
 <script>
 
 
-function generate_d3_map() {
-
-    d3
-    .select("#my_dataviz")
-    .attr("width", "100%");
-
-    const svg = d3
-    .select("#my_dataviz")
-    .append("svg")
-    .attr("width", "100%");
-
-    width = svg.style("width").replace(/px/g,'');
-    height = svg.style("height").replace(/px/g,'');;
-
-    var projection = d3.geoMercator()
-      .translate([width / 2, height  ])
-      .scale((width - 1) / 2 / Math.PI);
-
-    const path = d3.geoPath()
-      .projection(projection);
-
-    const zoom = d3.zoom()
-      .on('zoom', zoomed);
-
-    const g = svg.append('g');
-
-    svg.call(zoom);
-    var d3data = d3.map();
-
-    var colorScale = d3.scaleThreshold()
-      .domain([0.0, 0.3, 0.6, 0.7, 0.8, 0.9, 0.95, 0.99, 1])
-      .range(d3.schemeBlues[8]);
-    jQuery.each(window.similarity.similarity_all, function(key, value) {
-        mykey = value['code'];
-        d3data.set(mykey, value['similarity']);
-      });
-    d3.json('../data/nuts3.geojson',
-
-    function (error,data) {
-      g
-        .selectAll("path")
-        .data(data.features)
-        .enter()
-        .append("path")
-          // draw each country
-          .attr("d", d3.geoPath()
-            .projection(projection)
-          )
-          // set the color of each country
-          .attr("fill", function (d) {
-            if (window.similarity['code'] != d.properties.NUTS_ID) {
-              d.similarity = d3data.get(d.properties.NUTS_ID) || 0;
-              return colorScale(d.similarity);
-            } else {
-              return '#ff0000';
-            }
-          })
-          .style("stroke", "transparent")
-          .style("opacity", .8)
-          .on("click", function (d) {
-             nutsid=(d.properties.NUTS_ID).trim();
-             window.location.href="region.php?nutsid="+nutsid;
-          })
-          .on("mouseover", function (d) {
-
-              var NUTS_ID = (d.properties.NUTS_ID).trim();
-
-              var similarity = 1;
-              if (d.hasOwnProperty('similarity')) {
-                similarity = Math.round( (Number(d.similarity)+Number.EPSILON) * 100) /100 ;
-              }
-
-              if (!NUTS_ID) {
-                alert(d);
-                            }
-
-                            var div = d3.select("body").append("div")
-                            .attr("class", "tooltip")
-                            .attr("id", "tooltipdiv")
-                            .style("opacity", 0);
-
-              div.transition()
-                .duration(100)
-                .style("opacity", .9);
-
-                div.html(d.properties.NUTS_NAME + "<br/>" + similarity*100   + "%")
-                  .style("left", (d3.event.pageX) + "px")
-                  .style("top", (d3.event.pageY - 28) + "px");
-          })
-          .on("mouseleave", function(d) {
-
-              var div = d3.select("#tooltipdiv");
-              div.remove();
-
-          });
-       });
-
-    function zoomed() {
-      g
-        .selectAll('path') // To prevent stroke width from scaling
-        .attr('transform', d3.event.transform);
-    }
-
-    d3.select('#zoom-in').on('click', function() {
-      // Ordinal zooming
-      zoom.scaleBy(svg,  1.3);
-    });
-
-    d3.select('#zoom-out').on('click', function() {
-      // Ordinal zooming
-      zoom.scaleBy(svg, 1 / 1.3);
-    });
-
-
-
-}
-
 
 
 
@@ -237,7 +122,15 @@ function generate_d3_map() {
 
           $('#mostsimilar').html("<a href='http://localhost:8888/web/region.php?nutsid=" + data.similarity_all_top[0].code + "'>" +(data.similarity_all_top[0]).name + "</a> (" + (data.similarity_all_top[0]).country + ")" + " " + ((data.similarity_all_top[0]).similarity*100).toFixed(0) + "%");
           $('#leastsimilar').html("<a href='http://localhost:8888/web/region.php?nutsid=" + data.similarity_all_bottom[0].code + "'>" + (data.similarity_all_bottom[0]).name + "</a> (" + (data.similarity_all_bottom[0]).country + ")" + " " + ((data.similarity_all_bottom[0]).similarity*100).toFixed(0) + "%");
-          generate_d3_map();
+
+
+          $('#ms-sc').html("<a href='http://localhost:8888/web/region.php?nutsid=" + data.similarity_same_country_top[0].code + "'>" +(data.similarity_same_country_top[0]).name + "</a>");
+          $('#ls-sc').html("<a href='http://localhost:8888/web/region.php?nutsid=" + data.similarity_same_country_bottom[0].code + "'>" + (data.similarity_same_country_bottom[0]).name + "</a>");
+          $('#ms-dc').html("<a href='http://localhost:8888/web/region.php?nutsid=" + data.similarity_diff_country_top[0].code + "'>" +(data.similarity_diff_country_top[0]).name + "</a>");
+          $('#ls-dc').html("<a href='http://localhost:8888/web/region.php?nutsid=" + data.similarity_diff_country_bottom[0].code + "'>" + (data.similarity_diff_country_bottom[0]).name + "</a>");
+          $('#ms-hg').html("<a href='http://localhost:8888/web/region.php?nutsid=" + data.similarity_higher_gdppps_top[0].code + "'>" +(data.similarity_higher_gdppps_top[0]).name + "</a>");
+          $('#ls-hg').html("<a href='http://localhost:8888/web/region.php?nutsid=" + data.similarity_higher_gdppps_bottom[0].code + "'>" + (data.similarity_higher_gdppps_bottom[0]).name + "</a>");
+
       }).fail(function(){
           alert("Sorry, an error has occurred. Please try again later.");
       });
