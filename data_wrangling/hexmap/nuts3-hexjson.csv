@@ -1,16 +1,5 @@
 id,name,q,r
-AL013,"Kukës",8,-11
-AL015,"Shkodër",8,-12
-AL014,"Lezhë",8,-13
-AL011,"Dibër",8,-14
-AL012,"Durrës",5,-15
-AL021,"Elbasan",6,-15
-AL022,"Tiranë",7,-15
-AL034,"Korcë",8,-15
-AL031,"Berat",5,-16
-AL032,"Fier",6,-16
-AL035,"Vlorë",7,-16
-AL033,"Gjirokastër",8,-16
+LI000,"Liechtenstein",0,0
 AT111,"Mittelburgenland",1,0
 AT112,"Nordburgenland",2,0
 AT113,"Südburgenland",3,0
@@ -36,7 +25,7 @@ AT312,"Linz-Wels",0,-3
 AT313,"Mühlviertel",1,-3
 AT314,"Steyr-Kirchdorf",2,-3
 AT315,"Traunviertel",3,-3
-AT321,"Lungau",4,-2
+AT321,"Lungau",4,-3
 AT322,"Pinzgau-Pongau",5,-3
 AT323,"Salzburg und Umgebung",6,-3
 AT331,"Außerfern",1,1
@@ -46,6 +35,134 @@ AT334,"Tiroler Oberland",4,1
 AT335,"Tiroler Unterland",5,1
 AT341,"Bludenz-Bregenzer Wald",6,1
 AT342,"Rheintal-Bodenseegebiet",7,1
+CH011,"Vaud",-5,1
+CH055,"St. Gallen",-4,1
+CH056,"Graubünden",-3,1
+CH057,"Thurgau",-2,1
+CH061,"Luzern",-1,1
+CH062,"Uri",-5,0
+CH063,"Schwyz",-4,0
+CH064,"Obwalden",-3,0
+CH065,"Nidwalden",-2,0
+CH066,"Zug",-1,0
+CH070,"Ticino",-5,-1
+CH012,"Valais",-4,-1
+CH013,"Genève",-3,-1
+CH021,"Bern",-2,-1
+CH022,"Freiburg",-1,-1
+CH023,"Solothurn",-5,-2
+CH024,"Neuchâtel",-4,-2
+CH025,"Jura",-3,-2
+CH031,"Basel-Stadt",-2,-2
+CH032,"Basel-Landschaft",-1,-2
+CH033,"Aargau",-5,-3
+CH040,"Zürich",-4,-3
+CH051,"Glarus",-3,-3
+CH052,"Schaffhausen",-2,-3
+CH053,"Appenzell Ausserrhoden",-1,-3
+CH054,"Appenzell Innerrhoden",-5,-4
+FRJ13,"Hérault",-10,6
+FRJ14,"Lozère",-9,6
+FRJ15,"Pyrénées-Orientales",-8,6
+FRJ21,"Ariège",-7,6
+FRK24,"Isère",-6,6
+FRK25,"Loire",-5,6
+FRK26,"Rhône",-4,6
+FRK27,"Savoie",-3,6
+FRK28,"Haute-Savoie",-2,6
+FRJ22,"Aveyron",-1,6
+FRJ23,"Haute-Garonne",-10,5
+FRJ24,"Gers",-9,5
+FRJ25,"Lot",-8,5
+FRJ26,"Hautes-Pyrénées",-7,5
+FRJ27,"Tarn",-6,5
+FRJ28,"Tarn-et-Garonne",-5,5
+FRK11,"Allier",-4,5
+FRK12,"Cantal",-3,5
+FRK13,"Haute-Loire",-2,5
+FRK14,"Puy-de-Dôme",-1,5
+FRK21,"Ain",-10,4
+FRK22,"Ardèche",-9,4
+FRK23,"Drôme",-8,4
+FRL01,"Alpes-de-Haute-Provence",-7,4
+FRL02,"Hautes-Alpes",-6,4
+FRL03,"Alpes-Maritimes",-5,4
+FRL04,"Bouches-du-Rhône",-4,4
+FRL05,"Var",-3,4
+FRL06,"Vaucluse",-2,4
+FRM01,"Corse-du-Sud",-1,4
+FRM02,"Haute-Corse",-10,3
+FR101,"Paris",-9,3
+FR102,"Seine-et-Marne",-8,3
+FR103,"Yvelines",-7,3
+FR104,"Essonne",-6,3
+FR105,"Hauts-de-Seine",-5,3
+FR106,"Seine-Saint-Denis",-4,3
+FR107,"Val-de-Marne",-3,3
+FR108,"Val-d’Oise",-2,3
+FRB01,"Cher",-1,3
+FRB02,"Eure-et-Loir",-11,2
+FRB03,"Indre",-10,2
+FRB04,"Indre-et-Loire",-9,2
+FRB05,"Loir-et-Cher",-8,2
+FRB06,"Loiret",-7,2
+FRC11,"Côte-d’Or",-6,2
+FRC12,"Nièvre",-5,2
+FRC13,"Saône-et-Loire",-4,2
+FRC14,"Yonne",-3,2
+FRC21,"Doubs",-2,2
+FRC22,"Jura",-1,2
+FRC23,"Haute-Saône",-15,1
+FRC24,"Territoire de Belfort",-14,1
+FRD11,"Calvados",-13,1
+FRD12,"Manche",-12,1
+FRD13,"Orne",-11,1
+FRD21,"Eure",-10,1
+FRD22,"Seine-Maritime",-9,1
+FRE11,"Nord",-8,1
+FRE12,"Pas-de-Calais",-7,1
+FRE21,"Aisne",-6,1
+FRE22,"Oise",-15,0
+FRE23,"Somme",-14,0
+FRF11,"Bas-Rhin",-13,0
+FRF12,"Haut-Rhin",-12,0
+FRF21,"Ardennes",-11,0
+FRF22,"Aube",-10,0
+FRF23,"Marne",-9,0
+FRF24,"Haute-Marne",-8,0
+FRF31,"Meurthe-et-Moselle",-7,0
+FRF32,"Meuse",-6,0
+FRF33,"Moselle",-15,-1
+FRF34,"Vosges",-14,-1
+FRG01,"Loire-Atlantique",-13,-1
+FRG02,"Maine-et-Loire",-12,-1
+FRG03,"Mayenne",-11,-1
+FRG04,"Sarthe",-10,-1
+FRG05,"Vendée",-9,-1
+FRH01,"Côtes-d’Armor",-8,-1
+FRH02,"Finistère",-7,-1
+FRH03,"Ille-et-Vilaine",-6,-1
+FRH04,"Morbihan",-15,-2
+FRI11,"Dordogne",-14,-2
+FRI12,"Gironde",-13,-2
+FRI13,"Landes",-12,-2
+FRI14,"Lot-et-Garonne",-11,-2
+FRI15,"Pyrénées-Atlantiques",-10,-2
+FRI21,"Corrèze",-9,-2
+FRI22,"Creuse",-8,-2
+FRI23,"Haute-Vienne",-7,-2
+FRI31,"Charente",-6,-2
+FRI32,"Charente-Maritime",-15,-3
+FRI33,"Deux-Sèvres",-14,-3
+FRI34,"Vienne",-13,-3
+FRJ11,"Aude",-12,-3
+FRJ12,"Gard",-11,-3
+FRY10,"Guadeloupe",-10,-3
+FRY20,"Martinique",-9,-3
+FRY30,"Guyane",-8,-3
+FRY40,"La Réunion",-7,-3
+FRY50,"Mayotte",-6,-3
+LU000,"Luxembourg",-1,7
 BE100,"Arr. de Bruxelles-Capitale/Arr. Brussel-Hoofdstad",-5,7
 BE211,"Arr. Antwerpen",-4,7
 BE212,"Arr. Mechelen",-3,7
@@ -90,75 +207,46 @@ BE351,"Arr. Dinant",-4,12
 BE352,"Arr. Namur",-3,12
 BE353,"Arr. Philippeville",-2,12
 BE329,"Arr. La Louvière",-1,12
-BG341,"Burgas",12,-11
-BG342,"Sliven",13,-11
-BG343,"Yambol",14,-11
-BG344,"Stara Zagora",15,-11
-BG411,"Sofia (stolitsa)",16,-11
-BG412,"Sofia",17,-11
-BG413,"Blagoevgrad",18,-11
-BG414,"Pernik",12,-12
-BG415,"Kyustendil",13,-12
-BG421,"Plovdiv",14,-12
-BG422,"Haskovo",15,-12
-BG423,"Pazardzhik",16,-12
-BG424,"Smolyan",17,-12
-BG425,"Kardzhali",12,-13
-BG311,"Vidin",13,-13
-BG312,"Montana",14,-13
-BG313,"Vratsa",12,-14
-BG314,"Pleven",13,-14
-BG315,"Lovech",14,-14
-BG321,"Veliko Tarnovo",12,-15
-BG322,"Gabrovo",13,-15
-BG323,"Ruse",14,-15
-BG324,"Razgrad",12,-16
-BG325,"Silistra",13,-16
-BG331,"Varna",14,-16
-BG332,"Dobrich",12,-17
-BG333,"Shumen",13,-17
-BG334,"Targovishte",14,-17
-CH011,"Vaud",-5,1
-CH055,"St. Gallen",-4,1
-CH056,"Graubünden",-3,1
-CH057,"Thurgau",-2,1
-CH061,"Luzern",-1,1
-CH062,"Uri",-5,0
-CH063,"Schwyz",-4,0
-CH064,"Obwalden",-3,0
-CH065,"Nidwalden",-2,0
-CH066,"Zug",-1,0
-CH070,"Ticino",-5,-1
-CH012,"Valais",-4,-1
-CH013,"Genève",-3,-1
-CH021,"Bern",-2,-1
-CH022,"Freiburg",-1,-1
-CH023,"Solothurn",-5,-2
-CH024,"Neuchâtel",-4,-2
-CH025,"Jura",-3,-2
-CH031,"Basel-Stadt",-2,-2
-CH032,"Basel-Landschaft",-1,-2
-CH033,"Aargau",-5,-3
-CH040,"Zürich",-4,-3
-CH051,"Glarus",-3,-3
-CH052,"Schaffhausen",-2,-3
-CH053,"Appenzell Ausserrhoden",-1,-3
-CH054,"Appenzell Innerrhoden",-5,-4
-CY000,"Kýpros",13,-22
-CZ010,"Hlavní město Praha",13,1
-CZ020,"Středočeský kraj",14,1
-CZ031,"Jihočeský kraj",13,0
-CZ032,"Plzeňský kraj",14,0
-CZ041,"Karlovarský kraj",12,-1
-CZ042,"Ústecký kraj",13,-1
-CZ051,"Liberecký kraj",14,-1
-CZ052,"Královéhradecký kraj",12,-2
-CZ053,"Pardubický kraj",13,-2
-CZ063,"Kraj Vysočina",14,-2
-CZ064,"Jihomoravský kraj",12,-3
-CZ071,"Olomoucký kraj",13,-3
-CZ072,"Zlínský kraj",14,-3
-CZ080,"Moravskoslezský kraj",12,-4
+NL324,"Agglomeratie Haarlem",-8,17
+NL325,"Zaanstreek",-7,17
+NL327,"Het Gooi en Vechtstreek",-6,17
+NL328,"Alkmaar en omgeving",-5,17
+NL329,"Groot-Amsterdam",-4,17
+NL332,"Agglomeratie ’s-Gravenhage",-3,17
+NL333,"Delft en Westland",-2,17
+NL337,"Agglomeratie Leiden en Bollenstreek",-1,17
+NL33A,"Zuidoost-Zuid-Holland",-8,16
+NL33B,"Oost-Zuid-Holland",-7,16
+NL33C,"Groot-Rijnmond",-6,16
+NL341,"Zeeuwsch-Vlaanderen",-5,16
+NL342,"Overig Zeeland",-4,16
+NL411,"West-Noord-Brabant",-3,16
+NL412,"Midden-Noord-Brabant",-2,16
+NL413,"Noordoost-Noord-Brabant",-1,16
+NL414,"Zuidoost-Noord-Brabant",-8,15
+NL421,"Noord-Limburg",-7,15
+NL111,"Oost-Groningen",-6,15
+NL112,"Delfzijl en omgeving",-5,15
+NL113,"Overig Groningen",-4,15
+NL124,"Noord-Friesland",-3,15
+NL125,"Zuidwest-Friesland",-2,15
+NL126,"Zuidoost-Friesland",-1,15
+NL131,"Noord-Drenthe",-8,14
+NL132,"Zuidoost-Drenthe",-7,14
+NL133,"Zuidwest-Drenthe",-6,14
+NL211,"Noord-Overijssel",-5,14
+NL212,"Zuidwest-Overijssel",-4,14
+NL213,"Twente",-3,14
+NL221,"Veluwe",-2,14
+NL224,"Zuidwest-Gelderland",-1,14
+NL225,"Achterhoek",-8,13
+NL226,"Arnhem/Nijmegen",-7,13
+NL230,"Flevoland",-6,13
+NL310,"Utrecht",-5,13
+NL321,"Kop van Noord-Holland",-4,13
+NL323,"IJmond",-3,13
+NL422,"Midden-Limburg",-2,13
+NL423,"Zuid-Limburg",-1,13
 DE254,"Nürnberg, Kreisfreie Stadt",0,1
 DE255,"Schwabach, Kreisfreie Stadt",0,2
 DE256,"Ansbach, Landkreis",1,2
@@ -560,74 +648,6 @@ DE939,"Stade",5,19
 DE93A,"Uelzen",6,19
 DE93B,"Verden",7,19
 DE941,"Delmenhorst, Kreisfreie Stadt",8,19
-DK032,"Sydjylland",4,20
-DK041,"Vestjylland",5,20
-DK042,"Østjylland",6,20
-DK050,"Nordjylland",7,20
-DK011,"Byen København",4,21
-DK012,"Københavns omegn",5,21
-DK013,"Nordsjælland",6,21
-DK014,"Bornholm",7,21
-DK021,"Østsjælland",5,22
-DK022,"Vest- og Sydsjælland",6,22
-DK031,"Fyn",7,22
-EE001,"Põhja-Eesti",17,19
-EE004,"Lääne-Eesti",18,19
-EE009,"Kesk-Eesti",19,19
-EE00A,"Kirde-Eesti",17,20
-EE008,"Lõuna-Eesti",18,20
-EL422,"Andros, Thira, Kea, Milos, Mykonos, Naxos, Paros, Syros, Tinos",9,-10
-EL431,"Irakleio",10,-10
-EL432,"Lasithi",11,-10
-EL433,"Rethymni",9,-11
-EL434,"Chania",10,-11
-EL511,"Evros",11,-11
-EL512,"Xanthi",9,-12
-EL513,"Rodopi",10,-12
-EL514,"Drama",11,-12
-EL515,"Thasos, Kavala",9,-13
-EL521,"Imathia",10,-13
-EL421,"Kalymnos, Karpathos, Kasos, Kos, Rodos",11,-13
-EL522,"Thessaloniki",9,-14
-EL523,"Kilkis",10,-14
-EL524,"Pella",11,-14
-EL525,"Pieria",9,-15
-EL526,"Serres",10,-15
-EL527,"Chalkidiki",11,-15
-EL531,"Grevena, Kozani",9,-16
-EL532,"Kastoria",10,-16
-EL533,"Florina",11,-16
-EL541,"Arta, Preveza",5,-17
-EL542,"Thesprotia",6,-17
-EL543,"Ioannina",7,-17
-EL611,"Karditsa, Trikala",8,-17
-EL612,"Larisa",9,-17
-EL613,"Magnisia, Sporades",10,-17
-EL301,"Voreios Tomeas Athinon",11,-17
-EL302,"Dytikos Tomeas Athinon",5,-18
-EL303,"Kentrikos Tomeas Athinon",6,-18
-EL304,"Notios Tomeas Athinon",7,-18
-EL621,"Zakynthos",8,-18
-EL622,"Kerkyra",9,-18
-EL623,"Ithaki, Kefallinia",10,-18
-EL624,"Lefkada",11,-18
-EL631,"Aitoloakarnania",12,-18
-EL632,"Achaia",5,-19
-EL633,"Ileia",6,-19
-EL641,"Voiotia",7,-19
-EL642,"Evvoia",8,-19
-EL643,"Evrytania",9,-19
-EL644,"Fthiotida",10,-19
-EL645,"Fokida",11,-19
-EL651,"Argolida, Arkadia",12,-19
-EL652,"Korinthia",5,-20
-EL653,"Lakonia, Messinia",6,-20
-EL305,"Anatoliki Attiki",7,-20
-EL306,"Dytiki Attiki",8,-20
-EL307,"Peiraias, Nisoi",9,-20
-EL411,"Lesvos, Limnos",10,-20
-EL412,"Ikaria, Samos",11,-20
-EL413,"Chios",12,-20
 ES709,"Tenerife",-17,-4
 ES111,"A Coruña",-16,-4
 ES112,"Lugo",-15,-4
@@ -687,177 +707,31 @@ ES705,"Gran Canaria",-12,-9
 ES706,"La Gomera",-11,-9
 ES707,"La Palma",-10,-9
 ES708,"Lanzarote",-9,-9
-FI193,"Keski-Suomi",13,19
-FI194,"Etelä-Pohjanmaa",14,19
-FI195,"Pohjanmaa",15,19
-FI196,"Satakunta",16,19
-FI197,"Pirkanmaa",13,20
-FI1B1,"Helsinki-Uusimaa",14,20
-FI1D7,"Lappi",15,20
-FI1D8,"Kainuu",16,20
-FI1D9,"Pohjois-Pohjanmaa",13,21
-FI200,"Åland",14,21
-FI1C1,"Varsinais-Suomi",15,21
-FI1C2,"Kanta-Häme",16,21
-FI1C3,"Päijät-Häme",13,22
-FI1C4,"Kymenlaakso",14,22
-FI1C5,"Etelä-Karjala",15,22
-FI1D1,"Etelä-Savo",16,22
-FI1D2,"Pohjois-Savo",13,23
-FI1D3,"Pohjois-Karjala",14,23
-FI1D5,"Keski-Pohjanmaa",15,23
-FRJ13,"Hérault",-10,6
-FRJ14,"Lozère",-9,6
-FRJ15,"Pyrénées-Orientales",-8,6
-FRJ21,"Ariège",-7,6
-FRK24,"Isère",-6,6
-FRK25,"Loire",-5,6
-FRK26,"Rhône",-4,6
-FRK27,"Savoie",-3,6
-FRK28,"Haute-Savoie",-2,6
-FRJ22,"Aveyron",-1,6
-FRJ23,"Haute-Garonne",-10,5
-FRJ24,"Gers",-9,5
-FRJ25,"Lot",-8,5
-FRJ26,"Hautes-Pyrénées",-7,5
-FRJ27,"Tarn",-6,5
-FRJ28,"Tarn-et-Garonne",-5,5
-FRK11,"Allier",-4,5
-FRK12,"Cantal",-3,5
-FRK13,"Haute-Loire",-2,5
-FRK14,"Puy-de-Dôme",-1,5
-FRK21,"Ain",-10,4
-FRK22,"Ardèche",-9,4
-FRK23,"Drôme",-8,4
-FRL01,"Alpes-de-Haute-Provence",-7,4
-FRL02,"Hautes-Alpes",-6,4
-FRL03,"Alpes-Maritimes",-5,4
-FRL04,"Bouches-du-Rhône",-4,4
-FRL05,"Var",-3,4
-FRL06,"Vaucluse",-2,4
-FRM01,"Corse-du-Sud",-1,4
-FRM02,"Haute-Corse",-10,3
-FR101,"Paris",-9,3
-FR102,"Seine-et-Marne",-8,3
-FR103,"Yvelines",-7,3
-FR104,"Essonne",-6,3
-FR105,"Hauts-de-Seine",-5,3
-FR106,"Seine-Saint-Denis",-4,3
-FR107,"Val-de-Marne",-3,3
-FR108,"Val-d’Oise",-2,3
-FRB01,"Cher",-1,3
-FRB02,"Eure-et-Loir",-11,2
-FRB03,"Indre",-10,2
-FRB04,"Indre-et-Loire",-9,2
-FRB05,"Loir-et-Cher",-8,2
-FRB06,"Loiret",-7,2
-FRC11,"Côte-d’Or",-6,2
-FRC12,"Nièvre",-5,2
-FRC13,"Saône-et-Loire",-4,2
-FRC14,"Yonne",-3,2
-FRC21,"Doubs",-2,2
-FRC22,"Jura",-1,2
-FRC23,"Haute-Saône",-15,1
-FRC24,"Territoire de Belfort",-14,1
-FRD11,"Calvados",-13,1
-FRD12,"Manche",-12,1
-FRD13,"Orne",-11,1
-FRD21,"Eure",-10,1
-FRD22,"Seine-Maritime",-9,1
-FRE11,"Nord",-8,1
-FRE12,"Pas-de-Calais",-7,1
-FRE21,"Aisne",-6,1
-FRE22,"Oise",-15,0
-FRE23,"Somme",-14,0
-FRF11,"Bas-Rhin",-13,0
-FRF12,"Haut-Rhin",-12,0
-FRF21,"Ardennes",-11,0
-FRF22,"Aube",-10,0
-FRF23,"Marne",-9,0
-FRF24,"Haute-Marne",-8,0
-FRF31,"Meurthe-et-Moselle",-7,0
-FRF32,"Meuse",-6,0
-FRF33,"Moselle",-15,-1
-FRF34,"Vosges",-14,-1
-FRG01,"Loire-Atlantique",-13,-1
-FRG02,"Maine-et-Loire",-12,-1
-FRG03,"Mayenne",-11,-1
-FRG04,"Sarthe",-10,-1
-FRG05,"Vendée",-9,-1
-FRH01,"Côtes-d’Armor",-8,-1
-FRH02,"Finistère",-7,-1
-FRH03,"Ille-et-Vilaine",-6,-1
-FRH04,"Morbihan",-15,-2
-FRI11,"Dordogne",-14,-2
-FRI12,"Gironde",-13,-2
-FRI13,"Landes",-12,-2
-FRI14,"Lot-et-Garonne",-11,-2
-FRI15,"Pyrénées-Atlantiques",-10,-2
-FRI21,"Corrèze",-9,-2
-FRI22,"Creuse",-8,-2
-FRI23,"Haute-Vienne",-7,-2
-FRI31,"Charente",-6,-2
-FRI32,"Charente-Maritime",-15,-3
-FRI33,"Deux-Sèvres",-14,-3
-FRI34,"Vienne",-13,-3
-FRJ11,"Aude",-12,-3
-FRJ12,"Gard",-11,-3
-FRY10,"Guadeloupe",-10,-3
-FRY20,"Martinique",-9,-3
-FRY30,"Guyane",-8,-3
-FRY40,"La Réunion",-7,-3
-FRY50,"Mayotte",-6,-3
-HR031,"Primorsko-goranska županija",5,-8
-HR032,"Ličko-senjska županija",6,-8
-HR033,"Zadarska županija",7,-8
-HR034,"Šibensko-kninska županija",5,-9
-HR035,"Splitsko-dalmatinska županija",6,-9
-HR036,"Istarska županija",7,-9
-HR037,"Dubrovačko-neretvanska županija",5,-10
-HR050,"Grad Zagreb",6,-10
-HR065,"Zagrebačka županija",7,-10
-HR064,"Krapinsko-zagorska županija",5,-11
-HR062,"Varaždinska županija",6,-11
-HR063,"Koprivničko-križevačka županija",7,-11
-HR061,"Međimurska županija",5,-12
-HR021,"Bjelovarsko-bilogorska županija",6,-12
-HR022,"Virovitičko-podravska županija",7,-12
-HR023,"Požeško-slavonska županija",5,-13
-HR024,"Brodsko-posavska županija",6,-13
-HR025,"Osječko-baranjska županija",7,-13
-HR026,"Vukovarsko-srijemska županija",5,-14
-HR027,"Karlovačka županija",6,-14
-HR028,"Sisačko-moslavačka županija",7,-14
-HU110,"Budapest",8,1
-HU120,"Pest",9,1
-HU211,"Fejér",10,1
-HU212,"Komárom-Esztergom",11,1
-HU213,"Veszprém",12,1
-HU221,"Győr-Moson-Sopron",8,0
-HU222,"Vas",9,0
-HU223,"Zala",10,0
-HU231,"Baranya",11,0
-HU232,"Somogy",12,0
-HU233,"Tolna",7,-1
-HU311,"Borsod-Abaúj-Zemplén",8,-1
-HU312,"Heves",9,-1
-HU313,"Nógrád",10,-1
-HU321,"Hajdú-Bihar",11,-1
-HU322,"Jász-Nagykun-Szolnok",7,-2
-HU323,"Szabolcs-Szatmár-Bereg",8,-2
-HU331,"Bács-Kiskun",9,-2
-HU332,"Békés",10,-2
-HU333,"Csongrád",11,-2
-IE041,"Border",-25,17
-IE042,"West",-24,17
-IE051,"Mid-West",-25,16
-IE052,"South-East",-24,16
-IE053,"South-West",-25,15
-IE061,"Dublin",-24,15
-IE062,"Mid-East",-25,14
-IE063,"Midland",-24,14
-IS001,"Höfuðborgarsvæði",3,22
-IS002,"Landsbyggð",3,23
+PT16D,"Região de Aveiro",-20,-4
+PT16E,"Região de Coimbra",-19,-4
+PT16F,"Região de Leiria",-18,-4
+PT16G,"Viseu Dão Lafões",-20,-5
+PT16H,"Beira Baixa",-19,-5
+PT16I,"Médio Tejo",-18,-5
+PT16J,"Beiras e Serra da Estrela",-20,-6
+PT170,"Área Metropolitana de Lisboa",-19,-6
+PT181,"Alentejo Litoral",-18,-6
+PT184,"Baixo Alentejo",-20,-7
+PT185,"Lezíria do Tejo",-19,-7
+PT186,"Alto Alentejo",-18,-7
+PT187,"Alentejo Central",-17,-7
+PT111,"Alto Minho",-20,-8
+PT112,"Cávado",-19,-8
+PT119,"Ave",-18,-8
+PT11A,"Área Metropolitana do Porto",-17,-8
+PT11B,"Alto Tâmega",-20,-9
+PT11C,"Tâmega e Sousa",-19,-9
+PT11D,"Douro",-18,-9
+PT11E,"Terras de Trás-os-Montes",-17,-9
+PT150,"Algarve",-20,-10
+PT16B,"Oeste",-19,-10
+PT200,"Região Autónoma dos Açores",-18,-10
+PT300,"Região Autónoma da Madeira",-17,-10
 ITF35,"Salerno",-4,-4
 ITF43,"Taranto",-3,-4
 ITF44,"Brindisi",-2,-4
@@ -965,88 +839,8 @@ ITC49,"Lodi",3,-16
 ITC4A,"Cremona",-3,-17
 ITC4B,"Mantova",-2,-17
 ITG2F,"Cagliari",-1,-17
-LI000,"Liechtenstein",0,0
-LT021,"Alytaus apskritis",23,19
-LT022,"Kauno apskritis",24,19
-LT023,"Klaipėdos apskritis",25,19
-LT024,"Marijampolės apskritis",22,20
-LT025,"Panevėžio apskritis",23,20
-LT026,"Šiaulių apskritis",24,20
-LT027,"Tauragės apskritis",25,20
-LT028,"Telšių apskritis",22,21
-LT029,"Utenos apskritis",23,21
-LT011,"Vilniaus apskritis",24,21
-LU000,"Luxembourg",-1,7
-LV003,"Kurzeme",20,19
-LV005,"Latgale",21,19
-LV006,"Rīga",22,19
-LV007,"Pierīga",19,20
-LV008,"Vidzeme",20,20
-LV009,"Zemgale",21,20
-ME000,"Crna Gora",8,-8
-MK001,"Vardarski",9,-8
-MK002,"Istočen",10,-8
-MK003,"Jugozapaden",11,-8
-MK004,"Jugoistočen",8,-9
-MK005,"Pelagoniski",9,-9
-MK006,"Pološki",10,-9
-MK007,"Severoistočen",11,-9
-MK008,"Skopski",8,-10
 MT001,"Malta",-4,-18
 MT002,"Gozo and Comino/Għawdex u Kemmuna",-5,-18
-NL324,"Agglomeratie Haarlem",-8,17
-NL325,"Zaanstreek",-7,17
-NL327,"Het Gooi en Vechtstreek",-6,17
-NL328,"Alkmaar en omgeving",-5,17
-NL329,"Groot-Amsterdam",-4,17
-NL332,"Agglomeratie ’s-Gravenhage",-3,17
-NL333,"Delft en Westland",-2,17
-NL337,"Agglomeratie Leiden en Bollenstreek",-1,17
-NL33A,"Zuidoost-Zuid-Holland",-8,16
-NL33B,"Oost-Zuid-Holland",-7,16
-NL33C,"Groot-Rijnmond",-6,16
-NL341,"Zeeuwsch-Vlaanderen",-5,16
-NL342,"Overig Zeeland",-4,16
-NL411,"West-Noord-Brabant",-3,16
-NL412,"Midden-Noord-Brabant",-2,16
-NL413,"Noordoost-Noord-Brabant",-1,16
-NL414,"Zuidoost-Noord-Brabant",-8,15
-NL421,"Noord-Limburg",-7,15
-NL111,"Oost-Groningen",-6,15
-NL112,"Delfzijl en omgeving",-5,15
-NL113,"Overig Groningen",-4,15
-NL124,"Noord-Friesland",-3,15
-NL125,"Zuidwest-Friesland",-2,15
-NL126,"Zuidoost-Friesland",-1,15
-NL131,"Noord-Drenthe",-8,14
-NL132,"Zuidoost-Drenthe",-7,14
-NL133,"Zuidwest-Drenthe",-6,14
-NL211,"Noord-Overijssel",-5,15
-NL212,"Zuidwest-Overijssel",-4,14
-NL213,"Twente",-3,14
-NL221,"Veluwe",-2,14
-NL224,"Zuidwest-Gelderland",-1,14
-NL225,"Achterhoek",-8,13
-NL226,"Arnhem/Nijmegen",-7,13
-NL230,"Flevoland",-6,13
-NL310,"Utrecht",-5,13
-NL321,"Kop van Noord-Holland",-4,13
-NL323,"IJmond",-3,13
-NL422,"Midden-Limburg",-2,13
-NL423,"Zuid-Limburg",-1,13
-NO020,"Innlandet",8,20
-NO082,"Viken",9,20
-NO091,"Vestfold og Telemark",9,19
-NO092,"Agder",8,21
-NO0A1,"Rogaland",9,21
-NO0A2,"Vestland",8,22
-NO0A3,"Møre og Romsdal",9,22
-NO060,"Trøndelag",8,23
-NO081,"Oslo",9,23
-NO071,"Nordland",8,24
-NO074,"Troms og Finnmark",9,24
-NO0B2,"Svalbard",8,25
-NO0B1,"Jan Mayen",9,25
 PL213,"Miasto Kraków",25,21
 PL214,"Krakowski",26,21
 PL217,"Tarnowski",27,21
@@ -1120,98 +914,32 @@ PL923,"Płocki",26,10
 PL924,"Ostrołęcki",27,10
 PL925,"Siedlecki",28,10
 PL926,"Żyrardowski",29,10
-PT16D,"Região de Aveiro",-20,-4
-PT16E,"Região de Coimbra",-19,-4
-PT16F,"Região de Leiria",-18,-4
-PT16G,"Viseu Dão Lafões",-20,-5
-PT16H,"Beira Baixa",-19,-5
-PT16I,"Médio Tejo",-18,-5
-PT16J,"Beiras e Serra da Estrela",-20,-6
-PT170,"Área Metropolitana de Lisboa",-19,-6
-PT181,"Alentejo Litoral",-18,-6
-PT184,"Baixo Alentejo",-20,-7
-PT185,"Lezíria do Tejo",-19,-7
-PT186,"Alto Alentejo",-18,-7
-PT187,"Alentejo Central",-17,-7
-PT111,"Alto Minho",-20,-8
-PT112,"Cávado",-19,-8
-PT119,"Ave",-18,-8
-PT11A,"Área Metropolitana do Porto",-17,-8
-PT11B,"Alto Tâmega",-20,-9
-PT11C,"Tâmega e Sousa",-19,-9
-PT11D,"Douro",-18,-9
-PT11E,"Terras de Trás-os-Montes",-17,-9
-PT150,"Algarve",-20,-10
-PT16B,"Oeste",-19,-10
-PT200,"Região Autónoma dos Açores",-18,-10
-PT300,"Região Autónoma da Madeira",-17,-10
-RO122,"Braşov",12,-5
-RO123,"Covasna",13,-5
-RO124,"Harghita",14,-5
-RO125,"Mureş",15,-5
-RO126,"Sibiu",16,-5
-RO211,"Bacău",17,-5
-RO212,"Botoşani",18,-5
-RO213,"Iaşi",12,-6
-RO214,"Neamţ",13,-6
-RO215,"Suceava",14,-6
-RO216,"Vaslui",15,-6
-RO221,"Brăila",16,-6
-RO222,"Buzău",17,-6
-RO223,"Constanţa",18,-6
-RO224,"Galaţi",12,-7
-RO225,"Tulcea",13,-7
-RO226,"Vrancea",14,-7
-RO311,"Argeş",15,-7
-RO312,"Călăraşi",16,-7
-RO313,"Dâmboviţa",17,-7
-RO314,"Giurgiu",18,-7
-RO315,"Ialomiţa",12,-8
-RO316,"Prahova",13,-8
-RO317,"Teleorman",14,-8
-RO321,"Bucureşti",15,-8
-RO322,"Ilfov",16,-8
-RO411,"Dolj",17,-8
-RO412,"Gorj",18,-8
-RO413,"Mehedinţi",12,-9
-RO414,"Olt",13,-9
-RO415,"Vâlcea",14,-9
-RO421,"Arad",15,-9
-RO422,"Caraş-Severin",16,-9
-RO423,"Hunedoara",17,-9
-RO424,"Timiş",18,-9
-RO111,"Bihor",12,-10
-RO112,"Bistriţa-Năsăud",13,-10
-RO113,"Cluj",14,-10
-RO114,"Maramureş",15,-10
-RO115,"Satu Mare",16,-10
-RO116,"Sălaj",17,-10
-RO121,"Alba",18,-10
-RS110,"City of Belgrade",7,-3
-RS121,"Zapadnobačka oblast",8,-3
-RS122,"Južnobanatska oblast",9,-3
-RS123,"Južnobačka oblast",10,-3
-RS124,"Severnobanatska oblast",11,-3
-RS125,"Severnobačka oblast",7,-4
-RS126,"Srednjobanatska oblast",8,-4
-RS127,"Sremska oblast",9,-4
-RS211,"Zlatiborska oblast",10,-4
-RS212,"Kolubarska oblast",11,-4
-RS213,"Mačvanska oblast",7,-5
-RS214,"Moravička oblast",8,-5
-RS215,"Pomoravska oblast",9,-5
-RS216,"Rasinska oblast",10,-5
-RS217,"Raška oblast",11,-5
-RS218,"Šumadijska oblast",7,-6
-RS221,"Borska oblast",8,-6
-RS222,"Braničevska oblast",9,-6
-RS223,"Zaječarska oblast",10,-6
-RS224,"Jablanička oblast",11,-6
-RS225,"Nišavska oblast",7,-7
-RS226,"Pirotska oblast",8,-7
-RS227,"Podunavska oblast",9,-7
-RS228,"Pčinjska oblast",10,-7
-RS229,"Toplička oblast",11,-7
+IS001,"Höfuðborgarsvæði",3,22
+IS002,"Landsbyggð",3,23
+DK032,"Sydjylland",4,20
+DK041,"Vestjylland",5,20
+DK042,"Østjylland",6,20
+DK050,"Nordjylland",7,20
+DK011,"Byen København",4,21
+DK012,"Københavns omegn",5,21
+DK013,"Nordsjælland",6,21
+DK014,"Bornholm",7,21
+DK021,"Østsjælland",5,22
+DK022,"Vest- og Sydsjælland",6,22
+DK031,"Fyn",7,22
+NO020,"Innlandet",8,20
+NO082,"Viken",9,20
+NO091,"Vestfold og Telemark",9,19
+NO092,"Agder",8,21
+NO0A1,"Rogaland",9,21
+NO0A2,"Vestland",8,22
+NO0A3,"Møre og Romsdal",9,22
+NO060,"Trøndelag",8,23
+NO081,"Oslo",9,23
+NO071,"Nordland",8,24
+NO074,"Troms og Finnmark",9,24
+NO0B2,"Svalbard",8,25
+NO0B1,"Jan Mayen",9,25
 SE313,"Gävleborgs län",10,19
 SE321,"Västernorrlands län",11,19
 SE322,"Jämtlands län",12,19
@@ -1233,107 +961,46 @@ SE213,"Kalmar län",12,24
 SE214,"Gotlands län",10,25
 SE221,"Blekinge län",11,25
 SE224,"Skåne län",12,25
-SI031,"Pomurska",4,-4
-SI042,"Gorenjska",5,-4
-SI043,"Goriška",6,-4
-SI044,"Obalno-kraška",4,-5
-SI032,"Podravska",5,-5
-SI033,"Koroška",6,-5
-SI034,"Savinjska",4,-6
-SI035,"Zasavska",5,-6
-SI036,"Posavska",6,-6
-SI037,"Jugovzhodna Slovenija",4,-7
-SI038,"Primorsko-notranjska",5,-7
-SI041,"Osrednjeslovenska",6,-7
-SK010,"Bratislavský kraj",15,1
-SK021,"Trnavský kraj",15,0
-SK022,"Trenčiansky kraj",15,-1
-SK023,"Nitriansky kraj",15,-2
-SK031,"Žilinský kraj",15,-3
-SK032,"Banskobystrický kraj",13,-4
-SK041,"Prešovský kraj",14,-4
-SK042,"Košický kraj",15,-4
-TR510,"Ankara",15,-13
-TR521,"Konya",16,-13
-TR522,"Karaman",17,-13
-TR611,"Antalya",18,-13
-TR612,"Isparta",19,-13
-TR613,"Burdur",20,-13
-TR621,"Adana",21,-13
-TR622,"Mersin",22,-13
-TR631,"Hatay",23,-13
-TR632,"Kahramanmaraş",24,-13
-TR222,"Çanakkale",15,-14
-TR310,"İzmir",16,-14
-TR321,"Aydın",17,-14
-TR322,"Denizli",18,-14
-TR323,"Muğla",19,-14
-TR331,"Manisa",20,-14
-TR332,"Afyonkarahisar",21,-14
-TR333,"Kütahya",22,-14
-TR334,"Uşak",23,-14
-TR411,"Bursa",24,-14
-TR412,"Eskişehir",15,-15
-TR413,"Bilecik",16,-15
-TR421,"Kocaeli",17,-15
-TR422,"Sakarya",18,-15
-TR423,"Düzce",19,-15
-TR424,"Bolu",20,-15
-TR425,"Yalova",21,-15
-TRC31,"Mardin",22,-15
-TRC32,"Batman",23,-15
-TRC33,"Şırnak",24,-15
-TRC34,"Siirt",15,-16
-TR100,"İstanbul",16,-16
-TR211,"Tekirdağ",17,-16
-TR212,"Edirne",18,-16
-TR213,"Kırklareli",19,-16
-TR221,"Balıkesir",20,-16
-TR633,"Osmaniye",21,-16
-TR711,"Kırıkkale",22,-16
-TR712,"Aksaray",23,-16
-TR713,"Niğde",24,-16
-TR714,"Nevşehir",15,-17
-TR715,"Kırşehir",16,-17
-TR721,"Kayseri",17,-17
-TR722,"Sivas",18,-17
-TR723,"Yozgat",19,-17
-TR811,"Zonguldak",20,-17
-TR812,"Karabük",21,-17
-TR813,"Bartın",22,-17
-TR821,"Kastamonu",23,-17
-TR822,"Çankırı",24,-17
-TR823,"Sinop",15,-19
-TR831,"Samsun",16,-19
-TR832,"Tokat",20,-19
-TR833,"Çorum",21,-19
-TR834,"Amasya",22,-19
-TR901,"Trabzon",23,-19
-TR902,"Ordu",24,-19
-TR903,"Giresun",17,-19
-TR904,"Rize",18,-19
-TRB24,"Hakkari",19,-19
-TR905,"Artvin",15,-18
-TR906,"Gümüşhane",16,-18
-TRA11,"Erzurum",17,-18
-TRA12,"Erzincan",18,-18
-TRA13,"Bayburt",19,-18
-TRA21,"Ağrı",20,-18
-TRA22,"Kars",21,-18
-TRA23,"Iğdır",22,-18
-TRA24,"Ardahan",23,-18
-TRB11,"Malatya",24,-18
-TRB12,"Elazığ",15,-20
-TRB13,"Bingöl",16,-20
-TRB14,"Tunceli",17,-20
-TRB21,"Van",18,-20
-TRB22,"Muş",19,-20
-TRB23,"Bitlis",20,-20
-TRC11,"Gaziantep",22,-20
-TRC12,"Adıyaman",23,-20
-TRC13,"Kilis",24,-20
-TRC21,"Şanlıurfa",15,-21
-TRC22,"Diyarbakır",15,-22
+FI193,"Keski-Suomi",13,19
+FI194,"Etelä-Pohjanmaa",14,19
+FI195,"Pohjanmaa",15,19
+FI196,"Satakunta",16,19
+FI197,"Pirkanmaa",13,20
+FI1B1,"Helsinki-Uusimaa",14,20
+FI1D7,"Lappi",15,20
+FI1D8,"Kainuu",16,20
+FI1D9,"Pohjois-Pohjanmaa",13,21
+FI200,"Åland",14,21
+FI1C1,"Varsinais-Suomi",15,21
+FI1C2,"Kanta-Häme",16,21
+FI1C3,"Päijät-Häme",13,22
+FI1C4,"Kymenlaakso",14,22
+FI1C5,"Etelä-Karjala",15,22
+FI1D1,"Etelä-Savo",16,22
+FI1D2,"Pohjois-Savo",13,23
+FI1D3,"Pohjois-Karjala",14,23
+FI1D5,"Keski-Pohjanmaa",15,23
+EE001,"Põhja-Eesti",17,19
+EE004,"Lääne-Eesti",18,19
+EE009,"Kesk-Eesti",19,19
+EE00A,"Kirde-Eesti",17,20
+EE008,"Lõuna-Eesti",18,20
+LV003,"Kurzeme",20,19
+LV005,"Latgale",21,19
+LV006,"Rīga",22,19
+LV007,"Pierīga",19,20
+LV008,"Vidzeme",20,20
+LV009,"Zemgale",21,20
+LT021,"Alytaus apskritis",23,19
+LT022,"Kauno apskritis",24,19
+LT023,"Klaipėdos apskritis",25,19
+LT024,"Marijampolės apskritis",22,20
+LT025,"Panevėžio apskritis",23,20
+LT026,"Šiaulių apskritis",24,20
+LT027,"Tauragės apskritis",25,20
+LT028,"Telšių apskritis",22,21
+LT029,"Utenos apskritis",23,21
+LT011,"Vilniaus apskritis",24,21
 UKJ46,"West Kent",-21,20
 UKK11,"Bristol, City of",-20,20
 UKG31,"Birmingham",-19,20
@@ -1513,3 +1180,336 @@ UKI33,"Kensington & Chelsea and Hammersmith & Fulham",-16,3
 UKI34,"Wandsworth",-15,3
 UKI41,"Hackney and Newham",-14,3
 UKI42,"Tower Hamlets",-13,3
+IE041,"Border",-25,17
+IE042,"West",-24,17
+IE051,"Mid-West",-25,16
+IE052,"South-East",-24,16
+IE053,"South-West",-25,15
+IE061,"Dublin",-24,15
+IE062,"Mid-East",-25,14
+IE063,"Midland",-24,14
+HU110,"Budapest",8,1
+HU120,"Pest",9,1
+HU211,"Fejér",10,1
+HU212,"Komárom-Esztergom",11,1
+HU213,"Veszprém",12,1
+HU221,"Győr-Moson-Sopron",8,0
+HU222,"Vas",9,0
+HU223,"Zala",10,0
+HU231,"Baranya",11,0
+HU232,"Somogy",12,0
+HU233,"Tolna",7,-1
+HU311,"Borsod-Abaúj-Zemplén",8,-1
+HU312,"Heves",9,-1
+HU313,"Nógrád",10,-1
+HU321,"Hajdú-Bihar",11,-1
+HU322,"Jász-Nagykun-Szolnok",7,-2
+HU323,"Szabolcs-Szatmár-Bereg",8,-2
+HU331,"Bács-Kiskun",9,-2
+HU332,"Békés",10,-2
+HU333,"Csongrád",11,-2
+CZ010,"Hlavní město Praha",13,1
+CZ020,"Středočeský kraj",14,1
+CZ031,"Jihočeský kraj",13,0
+CZ032,"Plzeňský kraj",14,0
+CZ041,"Karlovarský kraj",12,-1
+CZ042,"Ústecký kraj",13,-1
+CZ051,"Liberecký kraj",14,-1
+CZ052,"Královéhradecký kraj",12,-2
+CZ053,"Pardubický kraj",13,-2
+CZ063,"Kraj Vysočina",14,-2
+CZ064,"Jihomoravský kraj",12,-3
+CZ071,"Olomoucký kraj",13,-3
+CZ072,"Zlínský kraj",14,-3
+CZ080,"Moravskoslezský kraj",12,-4
+SK010,"Bratislavský kraj",15,1
+SK021,"Trnavský kraj",15,0
+SK022,"Trenčiansky kraj",15,-1
+SK023,"Nitriansky kraj",15,-2
+SK031,"Žilinský kraj",15,-3
+SK032,"Banskobystrický kraj",13,-4
+SK041,"Prešovský kraj",14,-4
+SK042,"Košický kraj",15,-4
+SI031,"Pomurska",4,-4
+SI042,"Gorenjska",5,-4
+SI043,"Goriška",6,-4
+SI044,"Obalno-kraška",4,-5
+SI032,"Podravska",5,-5
+SI033,"Koroška",6,-5
+SI034,"Savinjska",4,-6
+SI035,"Zasavska",5,-6
+SI036,"Posavska",6,-6
+SI037,"Jugovzhodna Slovenija",4,-7
+SI038,"Primorsko-notranjska",5,-7
+SI041,"Osrednjeslovenska",6,-7
+RS110,"City of Belgrade",7,-3
+RS121,"Zapadnobačka oblast",8,-3
+RS122,"Južnobanatska oblast",9,-3
+RS123,"Južnobačka oblast",10,-3
+RS124,"Severnobanatska oblast",11,-3
+RS125,"Severnobačka oblast",7,-4
+RS126,"Srednjobanatska oblast",8,-4
+RS127,"Sremska oblast",9,-4
+RS211,"Zlatiborska oblast",10,-4
+RS212,"Kolubarska oblast",11,-4
+RS213,"Mačvanska oblast",7,-5
+RS214,"Moravička oblast",8,-5
+RS215,"Pomoravska oblast",9,-5
+RS216,"Rasinska oblast",10,-5
+RS217,"Raška oblast",11,-5
+RS218,"Šumadijska oblast",7,-6
+RS221,"Borska oblast",8,-6
+RS222,"Braničevska oblast",9,-6
+RS223,"Zaječarska oblast",10,-6
+RS224,"Jablanička oblast",11,-6
+RS225,"Nišavska oblast",7,-7
+RS226,"Pirotska oblast",8,-7
+RS227,"Podunavska oblast",9,-7
+RS228,"Pčinjska oblast",10,-7
+RS229,"Toplička oblast",11,-7
+RO122,"Braşov",12,-5
+RO123,"Covasna",13,-5
+RO124,"Harghita",14,-5
+RO125,"Mureş",15,-5
+RO126,"Sibiu",16,-5
+RO211,"Bacău",17,-5
+RO212,"Botoşani",18,-5
+RO213,"Iaşi",12,-6
+RO214,"Neamţ",13,-6
+RO215,"Suceava",14,-6
+RO216,"Vaslui",15,-6
+RO221,"Brăila",16,-6
+RO222,"Buzău",17,-6
+RO223,"Constanţa",18,-6
+RO224,"Galaţi",12,-7
+RO225,"Tulcea",13,-7
+RO226,"Vrancea",14,-7
+RO311,"Argeş",15,-7
+RO312,"Călăraşi",16,-7
+RO313,"Dâmboviţa",17,-7
+RO314,"Giurgiu",18,-7
+RO315,"Ialomiţa",12,-8
+RO316,"Prahova",13,-8
+RO317,"Teleorman",14,-8
+RO321,"Bucureşti",15,-8
+RO322,"Ilfov",16,-8
+RO411,"Dolj",17,-8
+RO412,"Gorj",18,-8
+RO413,"Mehedinţi",12,-9
+RO414,"Olt",13,-9
+RO415,"Vâlcea",14,-9
+RO421,"Arad",15,-9
+RO422,"Caraş-Severin",16,-9
+RO423,"Hunedoara",17,-9
+RO424,"Timiş",18,-9
+RO111,"Bihor",12,-10
+RO112,"Bistriţa-Năsăud",13,-10
+RO113,"Cluj",14,-10
+RO114,"Maramureş",15,-10
+RO115,"Satu Mare",16,-10
+RO116,"Sălaj",17,-10
+RO121,"Alba",18,-10
+ME000,"Crna Gora",8,-8
+MK001,"Vardarski",9,-8
+MK002,"Istočen",10,-8
+MK003,"Jugozapaden",11,-8
+MK004,"Jugoistočen",8,-9
+MK005,"Pelagoniski",9,-9
+MK006,"Pološki",10,-9
+MK007,"Severoistočen",11,-9
+MK008,"Skopski",8,-10
+HR031,"Primorsko-goranska županija",5,-8
+HR032,"Ličko-senjska županija",6,-8
+HR033,"Zadarska županija",7,-8
+HR034,"Šibensko-kninska županija",5,-9
+HR035,"Splitsko-dalmatinska županija",6,-9
+HR036,"Istarska županija",7,-9
+HR037,"Dubrovačko-neretvanska županija",5,-10
+HR050,"Grad Zagreb",6,-10
+HR065,"Zagrebačka županija",7,-10
+HR064,"Krapinsko-zagorska županija",5,-11
+HR062,"Varaždinska županija",6,-11
+HR063,"Koprivničko-križevačka županija",7,-11
+HR061,"Međimurska županija",5,-12
+HR021,"Bjelovarsko-bilogorska županija",6,-12
+HR022,"Virovitičko-podravska županija",7,-12
+HR023,"Požeško-slavonska županija",5,-13
+HR024,"Brodsko-posavska županija",6,-13
+HR025,"Osječko-baranjska županija",7,-13
+HR026,"Vukovarsko-srijemska županija",5,-14
+HR027,"Karlovačka županija",6,-14
+HR028,"Sisačko-moslavačka županija",7,-14
+AL013,"Kukës",8,-11
+AL015,"Shkodër",8,-12
+AL014,"Lezhë",8,-13
+AL011,"Dibër",8,-14
+AL012,"Durrës",5,-15
+AL021,"Elbasan",6,-15
+AL022,"Tiranë",7,-15
+AL034,"Korcë",8,-15
+AL031,"Berat",5,-16
+AL032,"Fier",6,-16
+AL035,"Vlorë",7,-16
+AL033,"Gjirokastër",8,-16
+EL422,"Andros, Thira, Kea, Milos, Mykonos, Naxos, Paros, Syros, Tinos",9,-10
+EL431,"Irakleio",10,-10
+EL432,"Lasithi",11,-10
+EL433,"Rethymni",9,-11
+EL434,"Chania",10,-11
+EL511,"Evros",11,-11
+EL512,"Xanthi",9,-12
+EL513,"Rodopi",10,-12
+EL514,"Drama",11,-12
+EL515,"Thasos, Kavala",9,-13
+EL521,"Imathia",10,-13
+EL421,"Kalymnos, Karpathos, Kasos, Kos, Rodos",11,-13
+EL522,"Thessaloniki",9,-14
+EL523,"Kilkis",10,-14
+EL524,"Pella",11,-14
+EL525,"Pieria",9,-15
+EL526,"Serres",10,-15
+EL527,"Chalkidiki",11,-15
+EL531,"Grevena, Kozani",9,-16
+EL532,"Kastoria",10,-16
+EL533,"Florina",11,-16
+EL541,"Arta, Preveza",5,-17
+EL542,"Thesprotia",6,-17
+EL543,"Ioannina",7,-17
+EL611,"Karditsa, Trikala",8,-17
+EL612,"Larisa",9,-17
+EL613,"Magnisia, Sporades",10,-17
+EL301,"Voreios Tomeas Athinon",11,-17
+EL302,"Dytikos Tomeas Athinon",5,-18
+EL303,"Kentrikos Tomeas Athinon",6,-18
+EL304,"Notios Tomeas Athinon",7,-18
+EL621,"Zakynthos",8,-18
+EL622,"Kerkyra",9,-18
+EL623,"Ithaki, Kefallinia",10,-18
+EL624,"Lefkada",11,-18
+EL631,"Aitoloakarnania",12,-18
+EL632,"Achaia",5,-19
+EL633,"Ileia",6,-19
+EL641,"Voiotia",7,-19
+EL642,"Evvoia",8,-19
+EL643,"Evrytania",9,-19
+EL644,"Fthiotida",10,-19
+EL645,"Fokida",11,-19
+EL651,"Argolida, Arkadia",12,-19
+EL652,"Korinthia",5,-20
+EL653,"Lakonia, Messinia",6,-20
+EL305,"Anatoliki Attiki",7,-20
+EL306,"Dytiki Attiki",8,-20
+EL307,"Peiraias, Nisoi",9,-20
+EL411,"Lesvos, Limnos",10,-20
+EL412,"Ikaria, Samos",11,-20
+EL413,"Chios",12,-20
+CY000,"Kýpros",13,-22
+BG341,"Burgas",12,-11
+BG342,"Sliven",13,-11
+BG343,"Yambol",14,-11
+BG344,"Stara Zagora",15,-11
+BG411,"Sofia (stolitsa)",16,-11
+BG412,"Sofia",17,-11
+BG413,"Blagoevgrad",18,-11
+BG414,"Pernik",12,-12
+BG415,"Kyustendil",13,-12
+BG421,"Plovdiv",14,-12
+BG422,"Haskovo",15,-12
+BG423,"Pazardzhik",16,-12
+BG424,"Smolyan",17,-12
+BG425,"Kardzhali",12,-13
+BG311,"Vidin",13,-13
+BG312,"Montana",14,-13
+BG313,"Vratsa",12,-14
+BG314,"Pleven",13,-14
+BG315,"Lovech",14,-14
+BG321,"Veliko Tarnovo",12,-15
+BG322,"Gabrovo",13,-15
+BG323,"Ruse",14,-15
+BG324,"Razgrad",12,-16
+BG325,"Silistra",13,-16
+BG331,"Varna",14,-16
+BG332,"Dobrich",12,-17
+BG333,"Shumen",13,-17
+BG334,"Targovishte",14,-17
+TR510,"Ankara",15,-13
+TR521,"Konya",16,-13
+TR522,"Karaman",17,-13
+TR611,"Antalya",18,-13
+TR612,"Isparta",19,-13
+TR613,"Burdur",20,-13
+TR621,"Adana",21,-13
+TR622,"Mersin",22,-13
+TR631,"Hatay",23,-13
+TR632,"Kahramanmaraş",24,-13
+TR222,"Çanakkale",15,-14
+TR310,"İzmir",16,-14
+TR321,"Aydın",17,-14
+TR322,"Denizli",18,-14
+TR323,"Muğla",19,-14
+TR331,"Manisa",20,-14
+TR332,"Afyonkarahisar",21,-14
+TR333,"Kütahya",22,-14
+TR334,"Uşak",23,-14
+TR411,"Bursa",24,-14
+TR412,"Eskişehir",15,-15
+TR413,"Bilecik",16,-15
+TR421,"Kocaeli",17,-15
+TR422,"Sakarya",18,-15
+TR423,"Düzce",19,-15
+TR424,"Bolu",20,-15
+TR425,"Yalova",21,-15
+TRC31,"Mardin",22,-15
+TRC32,"Batman",23,-15
+TRC33,"Şırnak",24,-15
+TRC34,"Siirt",15,-16
+TR100,"İstanbul",16,-16
+TR211,"Tekirdağ",17,-16
+TR212,"Edirne",18,-16
+TR213,"Kırklareli",19,-16
+TR221,"Balıkesir",20,-16
+TR633,"Osmaniye",21,-16
+TR711,"Kırıkkale",22,-16
+TR712,"Aksaray",23,-16
+TR713,"Niğde",24,-16
+TR714,"Nevşehir",15,-17
+TR715,"Kırşehir",16,-17
+TR721,"Kayseri",17,-17
+TR722,"Sivas",18,-17
+TR723,"Yozgat",19,-17
+TR811,"Zonguldak",20,-17
+TR812,"Karabük",21,-17
+TR813,"Bartın",22,-17
+TR821,"Kastamonu",23,-17
+TR822,"Çankırı",24,-17
+TR823,"Sinop",15,-19
+TR831,"Samsun",16,-19
+TR832,"Tokat",20,-19
+TR833,"Çorum",21,-19
+TR834,"Amasya",22,-19
+TR901,"Trabzon",23,-19
+TR902,"Ordu",24,-19
+TR903,"Giresun",17,-19
+TR904,"Rize",18,-19
+TRB24,"Hakkari",19,-19
+TR905,"Artvin",15,-18
+TR906,"Gümüşhane",16,-18
+TRA11,"Erzurum",17,-18
+TRA12,"Erzincan",18,-18
+TRA13,"Bayburt",19,-18
+TRA21,"Ağrı",20,-18
+TRA22,"Kars",21,-18
+TRA23,"Iğdır",22,-18
+TRA24,"Ardahan",23,-18
+TRB11,"Malatya",24,-18
+TRB12,"Elazığ",15,-20
+TRB13,"Bingöl",16,-20
+TRB14,"Tunceli",17,-20
+TRB21,"Van",18,-20
+TRB22,"Muş",19,-20
+TRB23,"Bitlis",20,-20
+TRC22,"Diyarbakır",21,-20
+TRC11,"Gaziantep",22,-20
+TRC12,"Adıyaman",23,-20
+TRC13,"Kilis",24,-20
+TRC21,"Şanlıurfa",15,-21
