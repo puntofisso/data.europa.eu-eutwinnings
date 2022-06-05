@@ -357,6 +357,21 @@ foreach ($data as $row) {
   $index++;
 }
 
+
+// ALL similarities for hex map
+$stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as n2pop3, n2.pop0 as n2pop0, n2.pop1 as n2pop1 FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and s.code1 = ?  ORDER by s.similarity DESC ;");
+$res = $stm->execute(array($code));
+
+$data = $stm->fetchAll();
+
+foreach ($data as $row) {
+  $code2 = $row['code'];
+  $ret['similarity_hexmap'][$code2] = array();
+  $ret['similarity_hexmap'][$code2]['name'] = $row['name'];
+    $ret['similarity_hexmap'][$code2]['similarity'] = $row['similarity'];
+
+}
+
 // MAX data in order to make radar chart
 $stm = $db->prepare("SELECT max(pop3) as pop3, max(pop0) as pop0, max(density) as density, max(fertility) as fertility, max(popchange) as popchange, max(womenratio) as womenratio, max(gdppps) as gdppps, max(gva) as gva FROM nuts;");
 $res = $stm->execute();

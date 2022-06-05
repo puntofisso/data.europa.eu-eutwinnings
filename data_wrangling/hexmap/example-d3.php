@@ -19,7 +19,7 @@
 <script src="d3-hexjson.min.js"></script>
 <script>
 
-d3.json("STARTHERE.hexjson", function(error, hexjson) {
+d3.json("nuts3-bycountry.hexjson", function(error, hexjson) {
 
 	// Set the size and margins of the svg
 	var margin = {top: 10, right: 10, bottom: 10, left: 10},
@@ -61,7 +61,8 @@ d3.json("STARTHERE.hexjson", function(error, hexjson) {
 		.append("text")
 		.append("tspan")
 		.attr("text-anchor", "middle")
-		.text(function(hex) {return hex.key;});
+		.text(function(hex) {return "";});
+		// .text(function(hex) {return hex.key;});
 });
 
 </script>
