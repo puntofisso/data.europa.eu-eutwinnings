@@ -1,0 +1,21 @@
+select count(*) from nuts where "census_age_Y_LT15_2011_nuts3" is not null and level=3;
+select count(*) from nuts where "census_age_Y_LT15_2011_nuts3" is null and level=3;
+select count(*) from nuts where "census_age_Y15-29_2011_nuts3" is not null and level=3;
+select count(*) from nuts where "census_age_Y15-29_2011_nuts3" is null and level=3;
+select count(*) from nuts where "census_age_Y30-49_2011_nuts3" is not null and level=3;
+select count(*) from nuts where "census_age_Y30-49_2011_nuts3" is null and level=3;
+select count(*) from nuts where "census_age_Y50-64_2011_nuts3" is not null and level=3;
+select count(*) from nuts where "census_age_Y50-64_2011_nuts3" is null and level=3;
+select count(*) from nuts where "census_age_Y65-84_2011_nuts3" is not null and level=3;
+select count(*) from nuts where "census_age_Y65-84_2011_nuts3" is null and level=3;
+select count(*) from nuts where "census_age_Y_GE85_2011_nuts3" is not null and level=3;
+select count(*) from nuts where "census_age_Y_GE85_2011_nuts3" is null and level=3;
+
+select count(*) from nuts where "tourism_establishments_2011_nuts3" is not null and level=3;
+select count(*) from nuts where "tourism_establishments_2011_nuts3" is null and level=3;
+select count(*) from nuts where "energy_cooling_degdays_2011_nuts3" is not null and level=3;
+select count(*) from nuts where "energy_cooling_degdays_2011_nuts3" is null and level=3;
+select count(*) from nuts where "energy_heating_degdays_2011_nuts3" is not null and level=3;
+select count(*) from nuts where "energy_heating_degdays_2011_nuts3" is null and level=3;
+select count(*) from nuts where "crime_burglaries_2010_nuts3" is not null and level=3;
+select count(*) from nuts where "crime_burglaries_2010_nuts3" is null and level=3;
