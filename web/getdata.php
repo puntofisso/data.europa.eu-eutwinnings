@@ -69,14 +69,34 @@ foreach ($data as $row) {
 
 
 // Get data about the rank of the NUTS area
-$stm = $db->prepare("SELECT * FROM (SELECT code, rank() over (ORDER by nuts.pop3 DESC) as pop3rank, rank() over (ORDER by nuts.pop0 DESC) as pop0rank, rank() over (ORDER by nuts.density DESC) as densityrank, rank() over (ORDER by nuts.fertility DESC) as fertilityrank, rank() over (ORDER by nuts.popchange DESC) as popchangerank, rank() over (ORDER by nuts.womenratio DESC) as womenratiorank, rank() over (ORDER by nuts.gdppps DESC) as gdpppsrank, rank() over (ORDER by nuts.gva DESC) as gvarank FROM nuts) WHERE code = ?");
+$stm = $db->prepare("SELECT * FROM
+  (SELECT code,
+    level,
+    rank() over (ORDER by nuts.pop3 DESC) as pop3rank,
+    rank() over (ORDER by nuts.pop2 DESC) as pop2rank,
+  rank() over (ORDER by nuts.pop0 DESC) as pop0rank,
+  rank() over (ORDER by nuts.density DESC) as densityrank,
+  rank() over (ORDER by nuts.fertility DESC) as fertilityrank,
+  rank() over (ORDER by nuts.popchange DESC) as popchangerank,
+  rank() over (ORDER by nuts.womenratio DESC) as womenratiorank,
+  rank() over (ORDER by nuts.gdppps DESC) as gdpppsrank,
+  rank() over (ORDER by nuts.gva DESC) as gvarank FROM nuts)
+  WHERE code = ? ");
+
 $res = $stm->execute(array($code));
 $data = $stm->fetchAll();
 
 
 foreach ($data as $row) {
+  $level = $row['level'];
+    if ($level == 3) {
+      $ret['populationrank'] = $row['pop3rank'];
+    } else if ($level == 2) {
+      $ret['populationrank'] = $row['pop2rank'];
+    }
 
-  $ret['populationrank'] = $row['pop3rank'];
+  $ret['population3rank'] = $row['pop3rank'];
+  $ret['population2rank'] = $row['pop2rank'];
   $ret['population0rank'] = $row['pop0rank'];
   $ret['densityrank'] = $row['densityrank'];
   $ret['fertilityrank'] = $row['fertilityrank'];
@@ -392,16 +412,33 @@ foreach ($data as $row) {
 }
 
 // Ranks
-$stm = $db->prepare("SELECT code, rank() over (ORDER by nuts.pop3 DESC) as pop3rank, rank() over (ORDER by nuts.pop0 DESC) as pop0rank, rank() over (ORDER by nuts.density DESC) as densityrank, rank() over (ORDER by nuts.fertility DESC) as fertilityrank, rank() over (ORDER by nuts.popchange DESC) as popchangerank, rank() over (ORDER by nuts.womenratio DESC) as womenratiorank, rank() over (ORDER by nuts.gdppps DESC) as gdpppsrank, rank() over (ORDER by nuts.gva DESC) as gvarank  FROM nuts WHERE level=3;");
+$stm = $db->prepare("SELECT code, level,
+  rank() over (ORDER by nuts.pop3 DESC) as pop3rank,
+  rank() over (ORDER by nuts.pop2 DESC) as pop2rank,
+  rank() over (ORDER by nuts.pop0 DESC) as pop0rank,
+  rank() over (ORDER by nuts.density DESC) as densityrank,
+  rank() over (ORDER by nuts.fertility DESC) as fertilityrank,
+  rank() over (ORDER by nuts.popchange DESC) as popchangerank,
+  rank() over (ORDER by nuts.womenratio DESC) as womenratiorank,
+  rank() over (ORDER by nuts.gdppps DESC) as gdpppsrank,
+  rank() over (ORDER by nuts.gva DESC) as gvarank
+  FROM nuts ;");
 $res = $stm->execute();
 $ret['ranks'] = array();
 $data = $stm->fetchAll();
 
 foreach ($data as $row) {
   $code2 = $row['code'];
+  $level = $row['level'];
   $ret['ranks'][$code2] = array();
   $ret['ranks'][$code2]['pop3rank'] = $row['pop3rank'];
+  $ret['ranks'][$code2]['pop2rank'] = $row['pop2rank'];
   $ret['ranks'][$code2]['pop0rank'] = $row['pop0rank'];
+  if ($level == 3) {
+    $ret['ranks'][$code2]['poprank'] = $row['pop3rank'];
+  } else if ($level == 2) {
+    $ret['ranks'][$code2]['poprank'] = $row['pop2rank'];
+  }
   $ret['ranks'][$code2]['densityrank'] = $row['densityrank'];
   $ret['ranks'][$code2]['fertilityrank'] = $row['fertilityrank'];
   $ret['ranks'][$code2]['popchangerank'] = $row['popchangerank'];

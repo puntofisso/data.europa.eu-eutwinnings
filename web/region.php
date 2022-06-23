@@ -1703,7 +1703,7 @@
               <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
                 <h6 class="mb-0 ">Similarity at a glance</h6>
               </div>
-              <div class="card-body m-0">
+              <div id="card-map" class="card-body m-0">
                 <div id="my_dataviz" class=""></div>
                 <button type="button" class="btn btn-primary" id="zoom-in">+</button>
                 <button type="button" class="btn btn-primary"id="zoom-out">-</button>
@@ -3215,8 +3215,7 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
         drawDonutChart(chartitem, similarityobject['similarity']);
         $(textitem).html("<a class='linktonuts' href='region.php?nutsid=" + targetcode + "'>" + similarityobject['name'] + " [" + similarityobject['country'] + "]" +" </a>" + "<br/>" + (100*similarityobject['similarity']).toFixed(2) + "%");
 
-        // fillModal(0, "similarity_all_top", 0);
-        // drawSpiderChart("spider_all_top_0", "similarity_all_top", 0);
+
         fillModal(itemtype, similarityitemname, 0);
 
         spidername = 'spider_'+itemtype+"_"+itemindex;
@@ -3226,7 +3225,7 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
     }
 
 
-     generate_d3_map() ;
+     generate_d3_map_old() ;
 
 
      // fillModal(0, "similarity_all_top", 0);
@@ -3253,7 +3252,7 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
       $("#"+modal_id+"_0_pop").html(sm['population']);
       $("#"+modal_id+"_1_pop").html(sm[comparison][index]['pop3']);
       $("#"+modal_id+"_0_poprank").html(sm['populationrank']);
-      $("#"+modal_id+"_1_poprank").html(sm['ranks'][comparisoncode]['pop3rank']);
+      $("#"+modal_id+"_1_poprank").html(sm['ranks'][comparisoncode]['poprank']);
 
       $("#"+modal_id+"_0_nuts0pop").html(sm['population0']);
       $("#"+modal_id+"_1_nuts0pop").html(sm[comparison][index]['pop0']);
@@ -3320,7 +3319,7 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
         }, {
           label: sm[comparison][index]['code'],
           //data: [28, 48, 40, 190, 96, 27, 100, 32],
-          data: [ sm['ranks'][comparisoncode]['pop3rank'], sm['ranks'][comparisoncode]['pop0rank'], sm['ranks'][comparisoncode]['densityrank'], sm['ranks'][comparisoncode]['fertilityrank'], sm['ranks'][comparisoncode]['popchangerank'], sm['ranks'][comparisoncode]['womenratiorank'], sm['ranks'][comparisoncode]['gdpppsrank'], sm['ranks'][comparisoncode]['gvarank'] ],
+          data: [ sm['ranks'][comparisoncode]['poprank'], sm['ranks'][comparisoncode]['pop0rank'], sm['ranks'][comparisoncode]['densityrank'], sm['ranks'][comparisoncode]['fertilityrank'], sm['ranks'][comparisoncode]['popchangerank'], sm['ranks'][comparisoncode]['womenratiorank'], sm['ranks'][comparisoncode]['gdpppsrank'], sm['ranks'][comparisoncode]['gvarank'] ],
           fill: true,
           backgroundColor: 'rgba(54, 162, 235, 0.2)',
           borderColor: 'rgb(54, 162, 235)',
@@ -3405,121 +3404,281 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
 
 <script>
 
+
 function generate_d3_map() {
 
-    d3
-    .select("#my_dataviz")
-    .attr("width", "100%");
+  // D3 Setup
+  d3
+  .select("#my_dataviz")
+  .attr("width", "100%");
 
-    const svg = d3
-    .select("#my_dataviz")
-    .append("svg")
-    .attr("width", "100%");
+  const svg = d3
+  .select("#my_dataviz")
+  .append("svg")
+  .attr("width", "100%");
+  width = svg.style("width").replace(/px/g,'');
+  height = svg.style("height").replace(/px/g,'');;
 
-    width = svg.style("width").replace(/px/g,'');
-    height = svg.style("height").replace(/px/g,'');;
+  const g = svg.append('g');
 
-    var projection = d3.geoMercator()
-      .translate([width / 2, height  ])
-      .scale((width - 1) / 2 / Math.PI);
+  // Choose NUTS3/NUTS2
+  if (window.similarity.level == '3') {
+    geojsonfile = 'data/nuts3.geojson';
+  } else if (window.similarity.level == '2') {
+    geojsonfile = 'data/nuts2.geojson';
+  }
 
-    const path = d3.geoPath()
-      .projection(projection);
+  // Download and populate
+  d3.json(geojsonfile,
 
-    const zoom = d3.zoom()
-      .on('zoom', zoomed);
 
-    const g = svg.append('g');
+    function (error,data) {
 
-    svg.call(zoom);
-    var d3data = d3.map();
+      var d3data = d3.map();
 
-    var colorScale = d3.scaleThreshold()
+      var colorScale = d3.scaleThreshold()
       .domain([0.0, 0.3, 0.6, 0.7, 0.8, 0.9, 0.95, 0.99, 1])
       .range(d3.schemeBlues[8]);
-    jQuery.each(window.similarity.similarity_all, function(key, value) {
+      jQuery.each(window.similarity.similarity_all, function(key, value) {
         mykey = value['code'];
         d3data.set(mykey, value['similarity']);
       });
-    d3.json('data/nuts3.geojson',
+
+
+
+      var projection = d3.geoMercator().fitSize([width, height], data);
+      var path = d3.geoPath().projection(projection);
+
+      g
+      .selectAll("path")
+      .data(data.features)
+      .enter()
+      .append("path")
+      // draw each country
+      .attr("d", d3.geoPath().projection(projection))
+    // set the color of each country
+    .attr("fill", function (d) {
+      if (window.similarity['code'] != d.properties.NUTS_ID) {
+        d.similarity = d3data.get(d.properties.NUTS_ID) || 0;
+        return colorScale(d.similarity);
+      } else {
+        return '#ff0000';
+      }
+    })
+    .style("stroke", "transparent")
+    .style("opacity", .8)
+    .on("click", function (d) {
+      nutsid=(d.properties.NUTS_ID).trim();
+      window.location.href="region.php?nutsid="+nutsid;
+    })
+    .on("mouseover", function (d) {
+
+      var NUTS_ID = (d.properties.NUTS_ID).trim();
+
+      var similarity = 1;
+      if (d.hasOwnProperty('similarity')) {
+        similarity = Math.round( (Number(d.similarity)+Number.EPSILON) * 100) /100 ;
+      }
+
+      if (!NUTS_ID) {
+        alert(d);
+      }
+
+      var div = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .attr("id", "tooltipdiv")
+      .style("opacity", 0);
+
+      div.transition()
+      .duration(100)
+      .style("opacity", .9);
+
+      div.html(d.properties.NUTS_NAME + "<br/>" + similarity*100   + "%")
+      .style("left", (d3.event.pageX) + "px")
+      .style("top", (d3.event.pageY - 28) + "px");
+    })
+    .on("mouseleave", function(d) {
+
+      var div = d3.select("#tooltipdiv");
+      div.remove();
+
+    });
+  });
+
+  function zoomed() {
+    g
+    .selectAll('path') // To prevent stroke width from scaling
+    .attr('transform', d3.event.transform);
+  }
+
+  // Zoom Buttons
+  const zoom = d3.zoom()
+  .on('zoom', zoomed);
+  d3.select('#zoom-in').on('click', function() {
+    // Ordinal zooming
+    zoom.scaleBy(svg,  1.3);
+  });
+
+  d3.select('#zoom-out').on('click', function() {
+    // Ordinal zooming
+    zoom.scaleBy(svg, 1 / 1.3);
+  });
+
+  // Deal with window resizing
+
+  function sizeChange() {
+     d3.select("g").attr("transform", "scale(" + $("#card-map").width()/400 + ")");
+    // $("svg").height($("#card-map").width()*0.918);
+  }
+  d3.select(window).on("resize", sizeChange);
+
+
+
+
+
+}
+
+
+
+
+function generate_d3_map_old() {
+
+  if (window.similarity.level == '3') {
+    geojsonfile = 'data/nuts3.geojson';
+  } else if (window.similarity.level == '2') {
+    geojsonfile = 'data/nuts2.geojson';
+  }
+
+
+
+
+
+  d3
+  .select("#my_dataviz")
+  .attr("width", "100%");
+
+  const svg = d3
+  .select("#my_dataviz")
+  .append("svg")
+  .attr("width", "100%");
+
+  width = svg.style("width").replace(/px/g,'');
+  height = svg.style("height").replace(/px/g,'');;
+
+  var projection = d3.geoMercator()
+  .translate([width / 2, height  ])
+  .scale((width - 1) / 2 / Math.PI);
+
+  const path = d3.geoPath()
+  .projection(projection);
+
+  const zoom = d3.zoom()
+  .on('zoom', zoomed);
+
+  const g = svg.append('g');
+
+  svg.call(zoom);
+  var d3data = d3.map();
+
+  var colorScale = d3.scaleThreshold()
+  .domain([0.0, 0.3, 0.6, 0.7, 0.8, 0.9, 0.95, 0.99, 1])
+  .range(d3.schemeBlues[8]);
+  jQuery.each(window.similarity.similarity_all, function(key, value) {
+    mykey = value['code'];
+    d3data.set(mykey, value['similarity']);
+  });
+
+
+  d3.json(geojsonfile,
 
     function (error,data) {
 
 
 
       g
-        .selectAll("path")
-        .data(data.features)
-        .enter()
-        .append("path")
-          // draw each country
-          .attr("d", d3.geoPath()
-            .projection(projection)
-          )
-          // set the color of each country
-          .attr("fill", function (d) {
-            if (window.similarity['code'] != d.properties.NUTS_ID) {
-              d.similarity = d3data.get(d.properties.NUTS_ID) || 0;
-              return colorScale(d.similarity);
-            } else {
-              return '#ff0000';
-            }
-          })
-          .style("stroke", "transparent")
-          .style("opacity", .8)
-          .on("click", function (d) {
-             nutsid=(d.properties.NUTS_ID).trim();
-             window.location.href="region.php?nutsid="+nutsid;
-          })
-          .on("mouseover", function (d) {
+      .selectAll("path")
+      .data(data.features)
+      .enter()
+      .append("path")
+      // draw each country
+      .attr("d", d3.geoPath()
+      .projection(projection)
+    )
+    // set the color of each country
+    .attr("fill", function (d) {
+      if (window.similarity['code'] != d.properties.NUTS_ID) {
+        d.similarity = d3data.get(d.properties.NUTS_ID) || 0;
+        return colorScale(d.similarity);
+      } else {
+        return '#ff0000';
+      }
+    })
+    .style("stroke", "transparent")
+    .style("opacity", .8)
+    .on("click", function (d) {
+      nutsid=(d.properties.NUTS_ID).trim();
+      window.location.href="region.php?nutsid="+nutsid;
+    })
+    .on("mouseover", function (d) {
 
-              var NUTS_ID = (d.properties.NUTS_ID).trim();
+      var NUTS_ID = (d.properties.NUTS_ID).trim();
 
-              var similarity = 1;
-              if (d.hasOwnProperty('similarity')) {
-                similarity = Math.round( (Number(d.similarity)+Number.EPSILON) * 100) /100 ;
-              }
+      var similarity = 1;
+      if (d.hasOwnProperty('similarity')) {
+        similarity = Math.round( (Number(d.similarity)+Number.EPSILON) * 100) /100 ;
+      }
 
-              if (!NUTS_ID) {
-                alert(d);
-                            }
+      if (!NUTS_ID) {
+        alert(d);
+      }
 
-                            var div = d3.select("body").append("div")
-                            .attr("class", "tooltip")
-                            .attr("id", "tooltipdiv")
-                            .style("opacity", 0);
+      var div = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .attr("id", "tooltipdiv")
+      .style("opacity", 0);
 
-              div.transition()
-                .duration(100)
-                .style("opacity", .9);
+      div.transition()
+      .duration(100)
+      .style("opacity", .9);
 
-                div.html(d.properties.NUTS_NAME + "<br/>" + similarity*100   + "%")
-                  .style("left", (d3.event.pageX) + "px")
-                  .style("top", (d3.event.pageY - 28) + "px");
-          })
-          .on("mouseleave", function(d) {
+      div.html(d.properties.NUTS_NAME + "<br/>" + similarity*100   + "%")
+      .style("left", (d3.event.pageX) + "px")
+      .style("top", (d3.event.pageY - 28) + "px");
+    })
+    .on("mouseleave", function(d) {
 
-              var div = d3.select("#tooltipdiv");
-              div.remove();
+      var div = d3.select("#tooltipdiv");
+      div.remove();
 
-          });
-       });
+    });
+  });
 
-    function zoomed() {
-      g
-        .selectAll('path') // To prevent stroke width from scaling
-        .attr('transform', d3.event.transform);
-    }
+  function zoomed() {
+    g
+    .selectAll('path') // To prevent stroke width from scaling
+    .attr('transform', d3.event.transform);
+  }
 
-    d3.select('#zoom-in').on('click', function() {
-  // Ordinal zooming
-  zoom.scaleBy(svg,  1.3);
-});
+  // Zoom Buttons
+  d3.select('#zoom-in').on('click', function() {
+    // Ordinal zooming
+    zoom.scaleBy(svg,  1.3);
+  });
 
-d3.select('#zoom-out').on('click', function() {
-  // Ordinal zooming
-  zoom.scaleBy(svg, 1 / 1.3);
-});
+  d3.select('#zoom-out').on('click', function() {
+    // Ordinal zooming
+    zoom.scaleBy(svg, 1 / 1.3);
+  });
+
+  // Deal with window resizing
+
+  function sizeChange() {
+    d3.select("g").attr("transform", "scale(" + $("#container").width()/400 + ")");
+    // $("svg").height($("#container").width()*0.618);
+  }
+  d3.select(window).on("resize", sizeChange);
+
+
 
 
 
