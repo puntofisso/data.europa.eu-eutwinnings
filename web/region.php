@@ -3250,7 +3250,7 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
 
       // table contents
       $("#"+modal_id+"_0_pop").html(sm['population']);
-      $("#"+modal_id+"_1_pop").html(sm[comparison][index]['pop3']);
+      $("#"+modal_id+"_1_pop").html(sm[comparison][index]['population']);
       $("#"+modal_id+"_0_poprank").html(sm['populationrank']);
       $("#"+modal_id+"_1_poprank").html(sm['ranks'][comparisoncode]['poprank']);
 
@@ -3673,7 +3673,7 @@ function generate_d3_map_old() {
   // Deal with window resizing
 
   function sizeChange() {
-    d3.select("g").attr("transform", "scale(" + $("#container").width()/400 + ")");
+    d3.select("g").attr("transform", "scale(" + $("#card-map").width()/400 + ")");
     // $("svg").height($("#container").width()*0.618);
   }
   d3.select(window).on("resize", sizeChange);
