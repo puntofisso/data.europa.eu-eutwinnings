@@ -1770,61 +1770,61 @@
                               <tr>
                                   <th class="text-left">&nbsp;</th>
                                   <th class="text-center" id="modal_all_top_0_0_code"></th>
-                                  <th class="text-center">#</th>
+                                  <!--th class="text-center">#</th-->
                                   <th class="text-center" id="modal_all_top_0_1_code"></th>
-                                  <th class="text-center">#</th>
+                                  <!--th class="text-center">#</th-->
                               </tr>
                           </thead>
                           <tbody>
                               <tr>
                                   <td class="text-left">Population</td>
                                   <td class="text-centre" id="modal_all_top_0_0_pop">&nbsp</td>
-                                  <td class="text-centre" id="modal_all_top_0_0_poprank">&nbsp</td>
+                                  <!-- <td class="text-centre" id="modal_all_top_0_0_poprank">&nbsp</td> -->
                                   <td class="text-centre" id="modal_all_top_0_1_pop">&nbsp</td>
-                                  <td class="text-centre" id="modal_all_top_0_1_poprank">&nbsp</td>
+                                  <!-- <td class="text-centre" id="modal_all_top_0_1_poprank">&nbsp</td> -->
                               </tr>
                               <tr>
                                   <td class="text-left">Population NUTS 0</td>
                                   <td class="text-centre" id="modal_all_top_0_0_nuts0pop">&nbsp</td>
-                                  <td class="text-centre" id="modal_all_top_0_0_nuts0poprank">&nbsp</td>
+                                  <!-- <td class="text-centre" id="modal_all_top_0_0_nuts0poprank">&nbsp</td> -->
                                   <td class="text-centre" id="modal_all_top_0_1_nuts0pop">&nbsp</td>
-                                  <td class="text-centre" id="modal_all_top_0_1_nuts0poprank">&nbsp</td>
+                                  <!-- <td class="text-centre" id="modal_all_top_0_1_nuts0poprank">&nbsp</td> -->
                               </tr>
 
                               <tr>
                                   <td class="text-left">Density</td>
                                   <td class="text-centre" id="modal_all_top_0_0_density">&nbsp</td>
-                                  <td class="text-centre" id="modal_all_top_0_0_densityrank">&nbsp</td>
+                                  <!-- <td class="text-centre" id="modal_all_top_0_0_densityrank">&nbsp</td> -->
                                   <td class="text-centre" id="modal_all_top_0_1_density">&nbsp</td>
-                                  <td class="text-centre" id="modal_all_top_0_1_densityrank">&nbsp</td>
+                                  <!-- <td class="text-centre" id="modal_all_top_0_1_densityrank">&nbsp</td> -->
                               </tr>
                               <tr>
                                   <td class="text-left">Fertility</td>
                                   <td class="text-centre" id="modal_all_top_0_0_fertility">&nbsp</td>
-                                  <td class="text-centre" id="modal_all_top_0_0_fertilityrank">&nbsp</td>
+                                  <!-- <td class="text-centre" id="modal_all_top_0_0_fertilityrank">&nbsp</td> -->
                                   <td class="text-centre" id="modal_all_top_0_1_fertility">&nbsp</td>
-                                  <td class="text-centre" id="modal_all_top_0_1_fertilityrank">&nbsp</td>
+                                  <!-- <td class="text-centre" id="modal_all_top_0_1_fertilityrank">&nbsp</td> -->
                               </tr>
                               <tr>
                                   <td class="text-left">Women:men</td>
                                   <td class="text-centre" id="modal_all_top_0_0_womenratio">&nbsp</td>
-                                  <td class="text-centre" id="modal_all_top_0_0_womenratiorank">&nbsp</td>
+                                  <!-- <td class="text-centre" id="modal_all_top_0_0_womenratiorank">&nbsp</td> -->
                                   <td class="text-centre" id="modal_all_top_0_1_womenratio">&nbsp</td>
-                                  <td class="text-centre" id="modal_all_top_0_1_womenratiorank">&nbsp</td>
+                                  <!-- <td class="text-centre" id="modal_all_top_0_1_womenratiorank">&nbsp</td> -->
                               </tr>
                               <tr>
                                   <td class="text-left">GDPPPS</td>
                                   <td class="text-centre" id="modal_all_top_0_0_gdppps">&nbsp</td>
-                                  <td class="text-centre" id="modal_all_top_0_0_gdpppsrank">&nbsp</td>
+                                  <!-- <td class="text-centre" id="modal_all_top_0_0_gdpppsrank">&nbsp</td> -->
                                   <td class="text-centre" id="modal_all_top_0_1_gdppps">&nbsp</td>
-                                  <td class="text-centre" id="modal_all_top_0_1_gdpppsrank">&nbsp</td>
+                                  <!-- <td class="text-centre" id="modal_all_top_0_1_gdpppsrank">&nbsp</td> -->
                               </tr>
                               <tr>
                                   <td class="text-left">GVA</td>
                                   <td class="text-centre" id="modal_all_top_0_0_gva">&nbsp</td>
-                                  <td class="text-centre" id="modal_all_top_0_0_gvarank">&nbsp</td>
+                                  <!-- <td class="text-centre" id="modal_all_top_0_0_gvarank">&nbsp</td> -->
                                   <td class="text-centre" id="modal_all_top_0_1_gva">&nbsp</td>
-                                  <td class="text-centre" id="modal_all_top_0_1_gvarank">&nbsp</td>
+                                  <!-- <td class="text-centre" id="modal_all_top_0_1_gvarank">&nbsp</td> -->
                               </tr>
                               </tr>
                           </tbody>
@@ -1885,61 +1885,61 @@
                           <tr>
                               <th class="text-left">&nbsp;</th>
                               <th class="text-center" id="modal_all_bottom_0_0_code"></th>
-                              <th class="text-center">#</th>
+                              <!-- <th class="text-center">#</th> -->
                               <th class="text-center" id="modal_all_bottom_0_1_code"></th>
-                              <th class="text-center">#</th>
+                              <!-- <th class="text-center">#</th> -->
                           </tr>
                       </thead>
                       <tbody>
                           <tr>
                               <td class="text-left">Population</td>
                               <td class="text-centre" id="modal_all_bottom_0_0_pop">&nbsp</td>
-                              <td class="text-centre" id="modal_all_bottom_0_0_poprank">&nbsp</td>
+                              <!-- <td class="text-centre" id="modal_all_bottom_0_0_poprank">&nbsp</td> -->
                               <td class="text-centre" id="modal_all_bottom_0_1_pop">&nbsp</td>
-                              <td class="text-centre" id="modal_all_bottom_0_1_poprank">&nbsp</td>
+                              <!-- <td class="text-centre" id="modal_all_bottom_0_1_poprank">&nbsp</td> -->
                           </tr>
                           <tr>
                               <td class="text-left">Population NUTS 0</td>
                               <td class="text-centre" id="modal_all_bottom_0_0_nuts0pop">&nbsp</td>
-                              <td class="text-centre" id="modal_all_bottom_0_0_nuts0poprank">&nbsp</td>
+                              <!-- <td class="text-centre" id="modal_all_bottom_0_0_nuts0poprank">&nbsp</td> -->
                               <td class="text-centre" id="modal_all_bottom_0_1_nuts0pop">&nbsp</td>
-                              <td class="text-centre" id="modal_all_bottom_0_1_nuts0poprank">&nbsp</td>
+                              <!-- <td class="text-centre" id="modal_all_bottom_0_1_nuts0poprank">&nbsp</td> -->
                           </tr>
 
                           <tr>
                               <td class="text-left">Density</td>
                               <td class="text-centre" id="modal_all_bottom_0_0_density">&nbsp</td>
-                              <td class="text-centre" id="modal_all_bottom_0_0_densityrank">&nbsp</td>
+                              <!-- <td class="text-centre" id="modal_all_bottom_0_0_densityrank">&nbsp</td> -->
                               <td class="text-centre" id="modal_all_bottom_0_1_density">&nbsp</td>
-                              <td class="text-centre" id="modal_all_bottom_0_1_densityrank">&nbsp</td>
+                              <!-- <td class="text-centre" id="modal_all_bottom_0_1_densityrank">&nbsp</td> -->
                           </tr>
                           <tr>
                               <td class="text-left">Fertility</td>
                               <td class="text-centre" id="modal_all_bottom_0_0_fertility">&nbsp</td>
-                              <td class="text-centre" id="modal_all_bottom_0_0_fertilityrank">&nbsp</td>
+                              <!-- <td class="text-centre" id="modal_all_bottom_0_0_fertilityrank">&nbsp</td> -->
                               <td class="text-centre" id="modal_all_bottom_0_1_fertility">&nbsp</td>
-                              <td class="text-centre" id="modal_all_bottom_0_1_fertilityrank">&nbsp</td>
+                              <!-- <td class="text-centre" id="modal_all_bottom_0_1_fertilityrank">&nbsp</td> -->
                           </tr>
                           <tr>
                               <td class="text-left">Women:men</td>
                               <td class="text-centre" id="modal_all_bottom_0_0_womenratio">&nbsp</td>
-                              <td class="text-centre" id="modal_all_bottom_0_0_womenratiorank">&nbsp</td>
+                              <!-- <td class="text-centre" id="modal_all_bottom_0_0_womenratiorank">&nbsp</td> -->
                               <td class="text-centre" id="modal_all_bottom_0_1_womenratio">&nbsp</td>
-                              <td class="text-centre" id="modal_all_bottom_0_1_womenratiorank">&nbsp</td>
+                              <!-- <td class="text-centre" id="modal_all_bottom_0_1_womenratiorank">&nbsp</td> -->
                           </tr>
                           <tr>
                               <td class="text-left">GDPPPS</td>
                               <td class="text-centre" id="modal_all_bottom_0_0_gdppps">&nbsp</td>
-                              <td class="text-centre" id="modal_all_bottom_0_0_gdpppsrank">&nbsp</td>
+                              <!-- <td class="text-centre" id="modal_all_bottom_0_0_gdpppsrank">&nbsp</td> -->
                               <td class="text-centre" id="modal_all_bottom_0_1_gdppps">&nbsp</td>
-                              <td class="text-centre" id="modal_all_bottom_0_1_gdpppsrank">&nbsp</td>
+                              <!-- <td class="text-centre" id="modal_all_bottom_0_1_gdpppsrank">&nbsp</td> -->
                           </tr>
                           <tr>
                               <td class="text-left">GVA</td>
                               <td class="text-centre" id="modal_all_bottom_0_0_gva">&nbsp</td>
-                              <td class="text-centre" id="modal_all_bottom_0_0_gvarank">&nbsp</td>
+                              <!-- <td class="text-centre" id="modal_all_bottom_0_0_gvarank">&nbsp</td> -->
                               <td class="text-centre" id="modal_all_bottom_0_1_gva">&nbsp</td>
-                              <td class="text-centre" id="modal_all_bottom_0_1_gvarank">&nbsp</td>
+                              <!-- <td class="text-centre" id="modal_all_bottom_0_1_gvarank">&nbsp</td> -->
                           </tr>
                           </tr>
                       </tbody>
@@ -2009,61 +2009,61 @@
                       <tr>
                           <th class="text-left">&nbsp;</th>
                           <th class="text-center" id="modal_same_country_top_0_0_code"></th>
-                          <th class="text-center">#</th>
+                          <!-- <th class="text-center">#</th> -->
                           <th class="text-center" id="modal_same_country_top_0_1_code"></th>
-                          <th class="text-center">#</th>
+                          <!-- <th class="text-center">#</th> -->
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
                           <td class="text-left">Population</td>
                           <td class="text-centre" id="modal_same_country_top_0_0_pop">&nbsp</td>
-                          <td class="text-centre" id="modal_same_country_top_0_0_poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_same_country_top_0_0_poprank">&nbsp</td> -->
                           <td class="text-centre" id="modal_same_country_top_0_1_pop">&nbsp</td>
-                          <td class="text-centre" id="modal_same_country_top_0_1_poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_same_country_top_0_1_poprank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">Population NUTS 0</td>
                           <td class="text-centre" id="modal_same_country_top_0_0_nuts0pop">&nbsp</td>
-                          <td class="text-centre" id="modal_same_country_top_0_0_nuts0poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_same_country_top_0_0_nuts0poprank">&nbsp</td> -->
                           <td class="text-centre" id="modal_same_country_top_0_1_nuts0pop">&nbsp</td>
-                          <td class="text-centre" id="modal_same_country_top_0_1_nuts0poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_same_country_top_0_1_nuts0poprank">&nbsp</td> -->
                       </tr>
 
                       <tr>
                           <td class="text-left">Density</td>
                           <td class="text-centre" id="modal_same_country_top_0_0_density">&nbsp</td>
-                          <td class="text-centre" id="modal_same_country_top_0_0_densityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_same_country_top_0_0_densityrank">&nbsp</td> -->
                           <td class="text-centre" id="modal_same_country_top_0_1_density">&nbsp</td>
-                          <td class="text-centre" id="modal_same_country_top_0_1_densityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_same_country_top_0_1_densityrank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">Fertility</td>
                           <td class="text-centre" id="modal_same_country_top_0_0_fertility">&nbsp</td>
-                          <td class="text-centre" id="modal_same_country_top_0_0_fertilityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_same_country_top_0_0_fertilityrank">&nbsp</td> -->
                           <td class="text-centre" id="modal_same_country_top_0_1_fertility">&nbsp</td>
-                          <td class="text-centre" id="modal_same_country_top_0_1_fertilityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_same_country_top_0_1_fertilityrank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">Women:men</td>
                           <td class="text-centre" id="modal_same_country_top_0_0_womenratio">&nbsp</td>
-                          <td class="text-centre" id="modal_same_country_top_0_0_womenratiorank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_same_country_top_0_0_womenratiorank">&nbsp</td> -->
                           <td class="text-centre" id="modal_same_country_top_0_1_womenratio">&nbsp</td>
-                          <td class="text-centre" id="modal_same_country_top_0_1_womenratiorank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_same_country_top_0_1_womenratiorank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">GDPPPS</td>
                           <td class="text-centre" id="modal_same_country_top_0_0_gdppps">&nbsp</td>
-                          <td class="text-centre" id="modal_same_country_top_0_0_gdpppsrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_same_country_top_0_0_gdpppsrank">&nbsp</td> -->
                           <td class="text-centre" id="modal_same_country_top_0_1_gdppps">&nbsp</td>
-                          <td class="text-centre" id="modal_same_country_top_0_1_gdpppsrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_same_country_top_0_1_gdpppsrank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">GVA</td>
                           <td class="text-centre" id="modal_same_country_top_0_0_gva">&nbsp</td>
-                          <td class="text-centre" id="modal_same_country_top_0_0_gvarank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_same_country_top_0_0_gvarank">&nbsp</td> -->
                           <td class="text-centre" id="modal_same_country_top_0_1_gva">&nbsp</td>
-                          <td class="text-centre" id="modal_same_country_top_0_1_gvarank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_same_country_top_0_1_gvarank">&nbsp</td> -->
                       </tr>
                       </tr>
                   </tbody>
@@ -2125,61 +2125,61 @@
                     <tr>
                         <th class="text-left">&nbsp;</th>
                         <th class="text-center" id="modal_same_country_bottom_0_0_code"></th>
-                        <th class="text-center">#</th>
+                        <!-- <th class="text-center">#</th> -->
                         <th class="text-center" id="modal_same_country_bottom_0_1_code"></th>
-                        <th class="text-center">#</th>
+                        <!-- <th class="text-center">#</th> -->
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="text-left">Population</td>
                         <td class="text-centre" id="modal_same_country_bottom_0_0_pop">&nbsp</td>
-                        <td class="text-centre" id="modal_same_country_bottom_0_0_poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_same_country_bottom_0_0_poprank">&nbsp</td> -->
                         <td class="text-centre" id="modal_same_country_bottom_0_1_pop">&nbsp</td>
-                        <td class="text-centre" id="modal_same_country_bottom_0_1_poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_same_country_bottom_0_1_poprank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">Population NUTS 0</td>
                         <td class="text-centre" id="modal_same_country_bottom_0_0_nuts0pop">&nbsp</td>
-                        <td class="text-centre" id="modal_same_country_bottom_0_0_nuts0poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_same_country_bottom_0_0_nuts0poprank">&nbsp</td> -->
                         <td class="text-centre" id="modal_same_country_bottom_0_1_nuts0pop">&nbsp</td>
-                        <td class="text-centre" id="modal_same_country_bottom_0_1_nuts0poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_same_country_bottom_0_1_nuts0poprank">&nbsp</td> -->
                     </tr>
 
                     <tr>
                         <td class="text-left">Density</td>
                         <td class="text-centre" id="modal_same_country_bottom_0_0_density">&nbsp</td>
-                        <td class="text-centre" id="modal_same_country_bottom_0_0_densityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_same_country_bottom_0_0_densityrank">&nbsp</td> -->
                         <td class="text-centre" id="modal_same_country_bottom_0_1_density">&nbsp</td>
-                        <td class="text-centre" id="modal_same_country_bottom_0_1_densityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_same_country_bottom_0_1_densityrank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">Fertility</td>
                         <td class="text-centre" id="modal_same_country_bottom_0_0_fertility">&nbsp</td>
-                        <td class="text-centre" id="modal_same_country_bottom_0_0_fertilityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_same_country_bottom_0_0_fertilityrank">&nbsp</td> -->
                         <td class="text-centre" id="modal_same_country_bottom_0_1_fertility">&nbsp</td>
-                        <td class="text-centre" id="modal_same_country_bottom_0_1_fertilityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_same_country_bottom_0_1_fertilityrank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">Women:men</td>
                         <td class="text-centre" id="modal_same_country_bottom_0_0_womenratio">&nbsp</td>
-                        <td class="text-centre" id="modal_same_country_bottom_0_0_womenratiorank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_same_country_bottom_0_0_womenratiorank">&nbsp</td> -->
                         <td class="text-centre" id="modal_same_country_bottom_0_1_womenratio">&nbsp</td>
-                        <td class="text-centre" id="modal_same_country_bottom_0_1_womenratiorank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_same_country_bottom_0_1_womenratiorank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">GDPPPS</td>
                         <td class="text-centre" id="modal_same_country_bottom_0_0_gdppps">&nbsp</td>
-                        <td class="text-centre" id="modal_same_country_bottom_0_0_gdpppsrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_same_country_bottom_0_0_gdpppsrank">&nbsp</td> -->
                         <td class="text-centre" id="modal_same_country_bottom_0_1_gdppps">&nbsp</td>
-                        <td class="text-centre" id="modal_same_country_bottom_0_1_gdpppsrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_same_country_bottom_0_1_gdpppsrank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">GVA</td>
                         <td class="text-centre" id="modal_same_country_bottom_0_0_gva">&nbsp</td>
-                        <td class="text-centre" id="modal_same_country_bottom_0_0_gvarank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_same_country_bottom_0_0_gvarank">&nbsp</td> -->
                         <td class="text-centre" id="modal_same_country_bottom_0_1_gva">&nbsp</td>
-                        <td class="text-centre" id="modal_same_country_bottom_0_1_gvarank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_same_country_bottom_0_1_gvarank">&nbsp</td> -->
                     </tr>
                     </tr>
                 </tbody>
@@ -2250,61 +2250,61 @@
                       <tr>
                           <th class="text-left">&nbsp;</th>
                           <th class="text-center" id="modal_diff_country_top_0_0_code"></th>
-                          <th class="text-center">#</th>
+                          <!-- <th class="text-center">#</th> -->
                           <th class="text-center" id="modal_diff_country_top_0_1_code"></th>
-                          <th class="text-center">#</th>
+                          <!-- <th class="text-center">#</th> -->
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
                           <td class="text-left">Population</td>
                           <td class="text-centre" id="modal_diff_country_top_0_0_pop">&nbsp</td>
-                          <td class="text-centre" id="modal_diff_country_top_0_0_poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_diff_country_top_0_0_poprank">&nbsp</td> -->
                           <td class="text-centre" id="modal_diff_country_top_0_1_pop">&nbsp</td>
-                          <td class="text-centre" id="modal_diff_country_top_0_1_poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_diff_country_top_0_1_poprank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">Population NUTS 0</td>
                           <td class="text-centre" id="modal_diff_country_top_0_0_nuts0pop">&nbsp</td>
-                          <td class="text-centre" id="modal_diff_country_top_0_0_nuts0poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_diff_country_top_0_0_nuts0poprank">&nbsp</td> -->
                           <td class="text-centre" id="modal_diff_country_top_0_1_nuts0pop">&nbsp</td>
-                          <td class="text-centre" id="modal_diff_country_top_0_1_nuts0poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_diff_country_top_0_1_nuts0poprank">&nbsp</td> -->
                       </tr>
 
                       <tr>
                           <td class="text-left">Density</td>
                           <td class="text-centre" id="modal_diff_country_top_0_0_density">&nbsp</td>
-                          <td class="text-centre" id="modal_diff_country_top_0_0_densityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_diff_country_top_0_0_densityrank">&nbsp</td> -->
                           <td class="text-centre" id="modal_diff_country_top_0_1_density">&nbsp</td>
-                          <td class="text-centre" id="modal_diff_country_top_0_1_densityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_diff_country_top_0_1_densityrank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">Fertility</td>
                           <td class="text-centre" id="modal_diff_country_top_0_0_fertility">&nbsp</td>
-                          <td class="text-centre" id="modal_diff_country_top_0_0_fertilityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_diff_country_top_0_0_fertilityrank">&nbsp</td> -->
                           <td class="text-centre" id="modal_diff_country_top_0_1_fertility">&nbsp</td>
-                          <td class="text-centre" id="modal_diff_country_top_0_1_fertilityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_diff_country_top_0_1_fertilityrank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">Women:men</td>
                           <td class="text-centre" id="modal_diff_country_top_0_0_womenratio">&nbsp</td>
-                          <td class="text-centre" id="modal_diff_country_top_0_0_womenratiorank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_diff_country_top_0_0_womenratiorank">&nbsp</td> -->
                           <td class="text-centre" id="modal_diff_country_top_0_1_womenratio">&nbsp</td>
-                          <td class="text-centre" id="modal_diff_country_top_0_1_womenratiorank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_diff_country_top_0_1_womenratiorank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">GDPPPS</td>
                           <td class="text-centre" id="modal_diff_country_top_0_0_gdppps">&nbsp</td>
-                          <td class="text-centre" id="modal_diff_country_top_0_0_gdpppsrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_diff_country_top_0_0_gdpppsrank">&nbsp</td> -->
                           <td class="text-centre" id="modal_diff_country_top_0_1_gdppps">&nbsp</td>
-                          <td class="text-centre" id="modal_diff_country_top_0_1_gdpppsrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_diff_country_top_0_1_gdpppsrank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">GVA</td>
                           <td class="text-centre" id="modal_diff_country_top_0_0_gva">&nbsp</td>
-                          <td class="text-centre" id="modal_diff_country_top_0_0_gvarank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_diff_country_top_0_0_gvarank">&nbsp</td> -->
                           <td class="text-centre" id="modal_diff_country_top_0_1_gva">&nbsp</td>
-                          <td class="text-centre" id="modal_diff_country_top_0_1_gvarank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_diff_country_top_0_1_gvarank">&nbsp</td> -->
                       </tr>
                       </tr>
                   </tbody>
@@ -2366,61 +2366,61 @@
                     <tr>
                         <th class="text-left">&nbsp;</th>
                         <th class="text-center" id="modal_diff_country_bottom_0_0_code"></th>
-                        <th class="text-center">#</th>
+                        <!-- <th class="text-center">#</th> -->
                         <th class="text-center" id="modal_diff_country_bottom_0_1_code"></th>
-                        <th class="text-center">#</th>
+                        <!-- <th class="text-center">#</th> -->
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="text-left">Population</td>
                         <td class="text-centre" id="modal_diff_country_bottom_0_0_pop">&nbsp</td>
-                        <td class="text-centre" id="modal_diff_country_bottom_0_0_poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_diff_country_bottom_0_0_poprank">&nbsp</td> -->
                         <td class="text-centre" id="modal_diff_country_bottom_0_1_pop">&nbsp</td>
-                        <td class="text-centre" id="modal_diff_country_bottom_0_1_poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_diff_country_bottom_0_1_poprank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">Population NUTS 0</td>
                         <td class="text-centre" id="modal_diff_country_bottom_0_0_nuts0pop">&nbsp</td>
-                        <td class="text-centre" id="modal_diff_country_bottom_0_0_nuts0poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_diff_country_bottom_0_0_nuts0poprank">&nbsp</td> -->
                         <td class="text-centre" id="modal_diff_country_bottom_0_1_nuts0pop">&nbsp</td>
-                        <td class="text-centre" id="modal_diff_country_bottom_0_1_nuts0poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_diff_country_bottom_0_1_nuts0poprank">&nbsp</td> -->
                     </tr>
 
                     <tr>
                         <td class="text-left">Density</td>
                         <td class="text-centre" id="modal_diff_country_bottom_0_0_density">&nbsp</td>
-                        <td class="text-centre" id="modal_diff_country_bottom_0_0_densityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_diff_country_bottom_0_0_densityrank">&nbsp</td> -->
                         <td class="text-centre" id="modal_diff_country_bottom_0_1_density">&nbsp</td>
-                        <td class="text-centre" id="modal_diff_country_bottom_0_1_densityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_diff_country_bottom_0_1_densityrank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">Fertility</td>
                         <td class="text-centre" id="modal_diff_country_bottom_0_0_fertility">&nbsp</td>
-                        <td class="text-centre" id="modal_diff_country_bottom_0_0_fertilityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_diff_country_bottom_0_0_fertilityrank">&nbsp</td> -->
                         <td class="text-centre" id="modal_diff_country_bottom_0_1_fertility">&nbsp</td>
-                        <td class="text-centre" id="modal_diff_country_bottom_0_1_fertilityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_diff_country_bottom_0_1_fertilityrank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">Women:men</td>
                         <td class="text-centre" id="modal_diff_country_bottom_0_0_womenratio">&nbsp</td>
-                        <td class="text-centre" id="modal_diff_country_bottom_0_0_womenratiorank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_diff_country_bottom_0_0_womenratiorank">&nbsp</td> -->
                         <td class="text-centre" id="modal_diff_country_bottom_0_1_womenratio">&nbsp</td>
-                        <td class="text-centre" id="modal_diff_country_bottom_0_1_womenratiorank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_diff_country_bottom_0_1_womenratiorank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">GDPPPS</td>
                         <td class="text-centre" id="modal_diff_country_bottom_0_0_gdppps">&nbsp</td>
-                        <td class="text-centre" id="modal_diff_country_bottom_0_0_gdpppsrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_diff_country_bottom_0_0_gdpppsrank">&nbsp</td> -->
                         <td class="text-centre" id="modal_diff_country_bottom_0_1_gdppps">&nbsp</td>
-                        <td class="text-centre" id="modal_diff_country_bottom_0_1_gdpppsrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_diff_country_bottom_0_1_gdpppsrank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">GVA</td>
                         <td class="text-centre" id="modal_diff_country_bottom_0_0_gva">&nbsp</td>
-                        <td class="text-centre" id="modal_diff_country_bottom_0_0_gvarank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_diff_country_bottom_0_0_gvarank">&nbsp</td> -->
                         <td class="text-centre" id="modal_diff_country_bottom_0_1_gva">&nbsp</td>
-                        <td class="text-centre" id="modal_diff_country_bottom_0_1_gvarank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_diff_country_bottom_0_1_gvarank">&nbsp</td> -->
                     </tr>
                     </tr>
                 </tbody>
@@ -2490,61 +2490,61 @@
                       <tr>
                           <th class="text-left">&nbsp;</th>
                           <th class="text-center" id="modal_higher_gdppps_top_0_0_code"></th>
-                          <th class="text-center">#</th>
+                          <!-- <th class="text-center">#</th> -->
                           <th class="text-center" id="modal_higher_gdppps_top_0_1_code"></th>
-                          <th class="text-center">#</th>
+                          <!-- <th class="text-center">#</th> -->
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
                           <td class="text-left">Population</td>
                           <td class="text-centre" id="modal_higher_gdppps_top_0_0_pop">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gdppps_top_0_0_poprank">&nbsp</td> -->
                           <td class="text-centre" id="modal_higher_gdppps_top_0_1_pop">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gdppps_top_0_1_poprank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">Population NUTS 0</td>
                           <td class="text-centre" id="modal_higher_gdppps_top_0_0_nuts0pop">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_nuts0poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gdppps_top_0_0_nuts0poprank">&nbsp</td> -->
                           <td class="text-centre" id="modal_higher_gdppps_top_0_1_nuts0pop">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_nuts0poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gdppps_top_0_1_nuts0poprank">&nbsp</td> -->
                       </tr>
 
                       <tr>
                           <td class="text-left">Density</td>
                           <td class="text-centre" id="modal_higher_gdppps_top_0_0_density">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_densityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gdppps_top_0_0_densityrank">&nbsp</td> -->
                           <td class="text-centre" id="modal_higher_gdppps_top_0_1_density">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_densityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gdppps_top_0_1_densityrank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">Fertility</td>
                           <td class="text-centre" id="modal_higher_gdppps_top_0_0_fertility">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_fertilityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gdppps_top_0_0_fertilityrank">&nbsp</td> -->
                           <td class="text-centre" id="modal_higher_gdppps_top_0_1_fertility">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_fertilityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gdppps_top_0_1_fertilityrank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">Women:men</td>
                           <td class="text-centre" id="modal_higher_gdppps_top_0_0_womenratio">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_womenratiorank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gdppps_top_0_0_womenratiorank">&nbsp</td> -->
                           <td class="text-centre" id="modal_higher_gdppps_top_0_1_womenratio">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_womenratiorank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gdppps_top_0_1_womenratiorank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">GDPPPS</td>
                           <td class="text-centre" id="modal_higher_gdppps_top_0_0_gdppps">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_gdpppsrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gdppps_top_0_0_gdpppsrank">&nbsp</td> -->
                           <td class="text-centre" id="modal_higher_gdppps_top_0_1_gdppps">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_gdpppsrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gdppps_top_0_1_gdpppsrank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">GVA</td>
                           <td class="text-centre" id="modal_higher_gdppps_top_0_0_gva">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gdppps_top_0_0_gvarank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gdppps_top_0_0_gvarank">&nbsp</td> -->
                           <td class="text-centre" id="modal_higher_gdppps_top_0_1_gva">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gdppps_top_0_1_gvarank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gdppps_top_0_1_gvarank">&nbsp</td> -->
                       </tr>
                       </tr>
                   </tbody>
@@ -2608,61 +2608,61 @@
                     <tr>
                         <th class="text-left">&nbsp;</th>
                         <th class="text-center" id="modal_higher_gdppps_bottom_0_0_code"></th>
-                        <th class="text-center">#</th>
+                        <!-- <th class="text-center">#</th> -->
                         <th class="text-center" id="modal_higher_gdppps_bottom_0_1_code"></th>
-                        <th class="text-center">#</th>
+                        <!-- <th class="text-center">#</th> -->
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="text-left">Population</td>
                         <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_pop">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_poprank">&nbsp</td> -->
                         <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_pop">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_poprank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">Population NUTS 0</td>
                         <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_nuts0pop">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_nuts0poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_nuts0poprank">&nbsp</td> -->
                         <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_nuts0pop">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_nuts0poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_nuts0poprank">&nbsp</td> -->
                     </tr>
 
                     <tr>
                         <td class="text-left">Density</td>
                         <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_density">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_densityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_densityrank">&nbsp</td> -->
                         <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_density">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_densityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_densityrank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">Fertility</td>
                         <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_fertility">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_fertilityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_fertilityrank">&nbsp</td> -->
                         <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_fertility">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_fertilityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_fertilityrank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">Women:men</td>
                         <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_womenratio">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_womenratiorank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_womenratiorank">&nbsp</td> -->
                         <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_womenratio">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_womenratiorank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_womenratiorank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">GDPPPS</td>
                         <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_gdppps">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_gdpppsrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_gdpppsrank">&nbsp</td> -->
                         <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_gdppps">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_gdpppsrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_gdpppsrank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">GVA</td>
                         <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_gva">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_gvarank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gdppps_bottom_0_0_gvarank">&nbsp</td> -->
                         <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_gva">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_gvarank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gdppps_bottom_0_1_gvarank">&nbsp</td> -->
                     </tr>
                     </tr>
                 </tbody>
@@ -2732,61 +2732,61 @@
                       <tr>
                           <th class="text-left">&nbsp;</th>
                           <th class="text-center" id="modal_higher_gva_top_0_0_code"></th>
-                          <th class="text-center">#</th>
+                          <!-- <th class="text-center">#</th> -->
                           <th class="text-center" id="modal_higher_gva_top_0_1_code"></th>
-                          <th class="text-center">#</th>
+                          <!-- <th class="text-center">#</th> -->
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
                           <td class="text-left">Population</td>
                           <td class="text-centre" id="modal_higher_gva_top_0_0_pop">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gva_top_0_0_poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gva_top_0_0_poprank">&nbsp</td> -->
                           <td class="text-centre" id="modal_higher_gva_top_0_1_pop">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gva_top_0_1_poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gva_top_0_1_poprank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">Population NUTS 0</td>
                           <td class="text-centre" id="modal_higher_gva_top_0_0_nuts0pop">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gva_top_0_0_nuts0poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gva_top_0_0_nuts0poprank">&nbsp</td> -->
                           <td class="text-centre" id="modal_higher_gva_top_0_1_nuts0pop">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gva_top_0_1_nuts0poprank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gva_top_0_1_nuts0poprank">&nbsp</td> -->
                       </tr>
 
                       <tr>
                           <td class="text-left">Density</td>
                           <td class="text-centre" id="modal_higher_gva_top_0_0_density">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gva_top_0_0_densityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gva_top_0_0_densityrank">&nbsp</td> -->
                           <td class="text-centre" id="modal_higher_gva_top_0_1_density">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gva_top_0_1_densityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gva_top_0_1_densityrank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">Fertility</td>
                           <td class="text-centre" id="modal_higher_gva_top_0_0_fertility">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gva_top_0_0_fertilityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gva_top_0_0_fertilityrank">&nbsp</td> -->
                           <td class="text-centre" id="modal_higher_gva_top_0_1_fertility">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gva_top_0_1_fertilityrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gva_top_0_1_fertilityrank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">Women:men</td>
                           <td class="text-centre" id="modal_higher_gva_top_0_0_womenratio">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gva_top_0_0_womenratiorank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gva_top_0_0_womenratiorank">&nbsp</td> -->
                           <td class="text-centre" id="modal_higher_gva_top_0_1_womenratio">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gva_top_0_1_womenratiorank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gva_top_0_1_womenratiorank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">GDPPPS</td>
                           <td class="text-centre" id="modal_higher_gva_top_0_0_gdppps">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gva_top_0_0_gdpppsrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gva_top_0_0_gdpppsrank">&nbsp</td> -->
                           <td class="text-centre" id="modal_higher_gva_top_0_1_gdppps">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gva_top_0_1_gdpppsrank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gva_top_0_1_gdpppsrank">&nbsp</td> -->
                       </tr>
                       <tr>
                           <td class="text-left">GVA</td>
                           <td class="text-centre" id="modal_higher_gva_top_0_0_gva">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gva_top_0_0_gvarank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gva_top_0_0_gvarank">&nbsp</td> -->
                           <td class="text-centre" id="modal_higher_gva_top_0_1_gva">&nbsp</td>
-                          <td class="text-centre" id="modal_higher_gva_top_0_1_gvarank">&nbsp</td>
+                          <!-- <td class="text-centre" id="modal_higher_gva_top_0_1_gvarank">&nbsp</td> -->
                       </tr>
                       </tr>
                   </tbody>
@@ -2847,61 +2847,61 @@
                     <tr>
                         <th class="text-left">&nbsp;</th>
                         <th class="text-center" id="modal_higher_gva_bottom_0_0_code"></th>
-                        <th class="text-center">#</th>
+                        <!-- <th class="text-center">#</th> -->
                         <th class="text-center" id="modal_higher_gva_bottom_0_1_code"></th>
-                        <th class="text-center">#</th>
+                        <!-- <th class="text-center">#</th> -->
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="text-left">Population</td>
                         <td class="text-centre" id="modal_higher_gva_bottom_0_0_pop">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gva_bottom_0_0_poprank">&nbsp</td> -->
                         <td class="text-centre" id="modal_higher_gva_bottom_0_1_pop">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gva_bottom_0_1_poprank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">Population NUTS 0</td>
                         <td class="text-centre" id="modal_higher_gva_bottom_0_0_nuts0pop">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_nuts0poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gva_bottom_0_0_nuts0poprank">&nbsp</td> -->
                         <td class="text-centre" id="modal_higher_gva_bottom_0_1_nuts0pop">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_nuts0poprank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gva_bottom_0_1_nuts0poprank">&nbsp</td> -->
                     </tr>
 
                     <tr>
                         <td class="text-left">Density</td>
                         <td class="text-centre" id="modal_higher_gva_bottom_0_0_density">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_densityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gva_bottom_0_0_densityrank">&nbsp</td> -->
                         <td class="text-centre" id="modal_higher_gva_bottom_0_1_density">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_densityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gva_bottom_0_1_densityrank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">Fertility</td>
                         <td class="text-centre" id="modal_higher_gva_bottom_0_0_fertility">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_fertilityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gva_bottom_0_0_fertilityrank">&nbsp</td> -->
                         <td class="text-centre" id="modal_higher_gva_bottom_0_1_fertility">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_fertilityrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gva_bottom_0_1_fertilityrank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">Women:men</td>
                         <td class="text-centre" id="modal_higher_gva_bottom_0_0_womenratio">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_womenratiorank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gva_bottom_0_0_womenratiorank">&nbsp</td> -->
                         <td class="text-centre" id="modal_higher_gva_bottom_0_1_womenratio">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_womenratiorank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gva_bottom_0_1_womenratiorank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">GDPPPS</td>
                         <td class="text-centre" id="modal_higher_gva_bottom_0_0_gdppps">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_gdpppsrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gva_bottom_0_0_gdpppsrank">&nbsp</td> -->
                         <td class="text-centre" id="modal_higher_gva_bottom_0_1_gdppps">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_gdpppsrank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gva_bottom_0_1_gdpppsrank">&nbsp</td> -->
                     </tr>
                     <tr>
                         <td class="text-left">GVA</td>
                         <td class="text-centre" id="modal_higher_gva_bottom_0_0_gva">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gva_bottom_0_0_gvarank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gva_bottom_0_0_gvarank">&nbsp</td> -->
                         <td class="text-centre" id="modal_higher_gva_bottom_0_1_gva">&nbsp</td>
-                        <td class="text-centre" id="modal_higher_gva_bottom_0_1_gvarank">&nbsp</td>
+                        <!-- <td class="text-centre" id="modal_higher_gva_bottom_0_1_gvarank">&nbsp</td> -->
                     </tr>
                     </tr>
                 </tbody>
@@ -3251,38 +3251,38 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
       // table contents
       $("#"+modal_id+"_0_pop").html(sm['population']);
       $("#"+modal_id+"_1_pop").html(sm[comparison][index]['population']);
-      $("#"+modal_id+"_0_poprank").html(sm['populationrank']);
-      $("#"+modal_id+"_1_poprank").html(sm['ranks'][comparisoncode]['poprank']);
+      // $("#"+modal_id+"_0_poprank").html(sm['populationrank']);
+      // $("#"+modal_id+"_1_poprank").html(sm['ranks'][comparisoncode]['poprank']);
 
       $("#"+modal_id+"_0_nuts0pop").html(sm['population0']);
       $("#"+modal_id+"_1_nuts0pop").html(sm[comparison][index]['pop0']);
-      $("#"+modal_id+"_0_nuts0poprank").html(sm['population0rank']);
-      $("#"+modal_id+"_1_nuts0poprank").html(sm['ranks'][comparisoncode]['pop0rank']);
+      // $("#"+modal_id+"_0_nuts0poprank").html(sm['population0rank']);
+      // $("#"+modal_id+"_1_nuts0poprank").html(sm['ranks'][comparisoncode]['pop0rank']);
 
       $("#"+modal_id+"_0_density").html(sm['density']);
       $("#"+modal_id+"_1_density").html(sm[comparison][index]['density']);
-      $("#"+modal_id+"_0_densityrank").html(sm['densityrank']);
-      $("#"+modal_id+"_1_densityrank").html(sm['ranks'][comparisoncode]['densityrank']);
+      // $("#"+modal_id+"_0_densityrank").html(sm['densityrank']);
+      // $("#"+modal_id+"_1_densityrank").html(sm['ranks'][comparisoncode]['densityrank']);
 
       $("#"+modal_id+"_0_fertility").html(sm['fertility']);
       $("#"+modal_id+"_1_fertility").html(sm[comparison][index]['fertility']);
-      $("#"+modal_id+"_0_fertilityrank").html(sm['fertilityrank']);
-      $("#"+modal_id+"_1_fertilityrank").html(sm['ranks'][comparisoncode]['fertilityrank']);
+      // $("#"+modal_id+"_0_fertilityrank").html(sm['fertilityrank']);
+      // $("#"+modal_id+"_1_fertilityrank").html(sm['ranks'][comparisoncode]['fertilityrank']);
 
       $("#"+modal_id+"_0_womenratio").html(sm['womenratio']);
       $("#"+modal_id+"_1_womenratio").html(sm[comparison][index]['womenratio']);
-      $("#"+modal_id+"_0_womenratiorank").html(sm['womenratiorank']);
-      $("#"+modal_id+"_1_womenratiorank").html(sm['ranks'][comparisoncode]['womenratiorank']);
+      // $("#"+modal_id+"_0_womenratiorank").html(sm['womenratiorank']);
+      // $("#"+modal_id+"_1_womenratiorank").html(sm['ranks'][comparisoncode]['womenratiorank']);
 
       $("#"+modal_id+"_0_gdppps").html(sm['gdppps']);
       $("#"+modal_id+"_1_gdppps").html(sm[comparison][index]['gdppps']);
-      $("#"+modal_id+"_0_gdpppsrank").html(sm['gdpppsrank']);
-      $("#"+modal_id+"_1_gdpppsrank").html(sm['ranks'][comparisoncode]['gdpppsrank']);
+      // $("#"+modal_id+"_0_gdpppsrank").html(sm['gdpppsrank']);
+      // $("#"+modal_id+"_1_gdpppsrank").html(sm['ranks'][comparisoncode]['gdpppsrank']);
 
       $("#"+modal_id+"_0_gva").html(sm['gva']);
       $("#"+modal_id+"_1_gva").html(sm[comparison][index]['gva']);
-      $("#"+modal_id+"_0_gvarank").html(sm['gvarank']);
-      $("#"+modal_id+"_1_gvarank").html(sm['ranks'][comparisoncode]['gvarank']);
+      // $("#"+modal_id+"_0_gvarank").html(sm['gvarank']);
+      // $("#"+modal_id+"_1_gvarank").html(sm['ranks'][comparisoncode]['gvarank']);
   }
 
   function drawSpiderChart(canvasElement, comparison, index) {
@@ -3336,9 +3336,13 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
         options: {
           scales: {
               r: {
-
                   suggestedMin: 1,
-                  suggestedMax: 1600
+                  suggestedMax: 2000,
+                   ticks: {
+                     callback: function(val, index) {
+                       return '';
+                     }
+                   }
               }
           }
         }

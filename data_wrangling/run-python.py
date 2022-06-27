@@ -1210,8 +1210,8 @@ def main():
 
     # STEP 7: Generate select
     print("Generating select.html\n")
-    # generate_select_dropdown('data/nuts.db','data/select.html')
-    generate_select_dropdown_with_nuts2('data/nuts.db','data/select.html')
+    generate_select_dropdown('data/nuts.db','data/select-nuts3.html')
+    generate_select_dropdown_with_nuts2('data/nuts.db','data/select-nuts2-nuts3.html')
     #
     print("All files have been generated in data/.\n")
     print("Move nuts.db, nuts3.geojson to web/data.\n")
