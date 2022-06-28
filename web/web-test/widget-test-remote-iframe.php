@@ -71,5 +71,26 @@
                                                         margin: 0;
                                                         padding: 0;
                                                         border: none;"></iframe>
-  </body>
+
+
+        <h4>Example 6: NUTS2 336x280 with hexmap</h4>
+        <pre>&lt;iframe src=&quot;https://data-europa-eu.eu-twinnings.site/widget/widget336x280-hexeample.php?nutsid=BE23&quot;
+          scrolling=&quot;no&quot; style=&quot;width: 336px; height: 280px; margin: 0; padding: 0; border: none;&quot;&gt;
+          &lt;/iframe&gt;</pre>
+        <iframe src="https://data-europa-eu.eu-twinnings.site/widget/widget336x280-hexeample.php?nutsid=BE23" scrolling="no" style="width: 336px;
+                      height: 280px;
+                      margin: 0;
+                      padding: 0;
+                      border: none;"></iframe>
+
+<h4>Example 7: NUTS2 336x280 with map</h4>
+<pre>&lt;iframe src=&quot;https://data-europa-eu.eu-twinnings.site/widget/widget336x280-d3-nobootstrap.php?nutsid=BE23&quot;
+  scrolling=&quot;no&quot; style=&quot;width: 336px; height: 280px; margin: 0; padding: 0; border: none;&quot;&gt;
+  &lt;/iframe&gt;</pre>
+<iframe src="https://data-europa-eu.eu-twinnings.site/widget/widget336x280-d3-nobootstrap.php?nutsid=BE23" scrolling="no" style="width: 336px;
+                            height: 280px;
+                            margin: 0;
+                            padding: 0;
+                            border: none;"></iframe>
+</body>
   </html>

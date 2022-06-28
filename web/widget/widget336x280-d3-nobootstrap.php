@@ -145,7 +145,15 @@ function generate_d3_map() {
         mykey = value['code'];
         d3data.set(mykey, value['similarity']);
       });
-    d3.json('../data/nuts3.geojson',
+
+    // Choose NUTS3/NUTS2
+    if (window.similarity.level == '3') {
+      geojsonfile = '../data/nuts3.geojson';
+    } else if (window.similarity.level == '2') {
+      geojsonfile = '../data/nuts2.geojson';
+    }
+    // d3.json('../data/nuts3.geojson',
+    d3.json(geojsonfile,
 
     function (error,data) {
       g
@@ -185,18 +193,18 @@ function generate_d3_map() {
                 alert(d);
                             }
 
-                            var div = d3.select("body").append("div")
-                            .attr("class", "tooltip")
-                            .attr("id", "tooltipdiv")
-                            .style("opacity", 0);
-
-              div.transition()
-                .duration(100)
-                .style("opacity", .9);
-
-                div.html(d.properties.NUTS_NAME + "<br/>" + similarity*100   + "%")
-                  .style("left", (d3.event.pageX) + "px")
-                  .style("top", (d3.event.pageY - 28) + "px");
+              //               var div = d3.select("body").append("div")
+              //               .attr("class", "tooltip")
+              //               .attr("id", "tooltipdiv")
+              //               .style("opacity", 0);
+              //
+              // div.transition()
+              //   .duration(100)
+              //   .style("opacity", .9);
+              //
+              //   div.html(d.properties.NUTS_NAME + "<br/>" + similarity*100   + "%")
+              //     .style("left", (d3.event.pageX) + "px")
+              //     .style("top", (d3.event.pageY - 28) + "px");
           })
           .on("mouseleave", function(d) {
 

@@ -1705,8 +1705,9 @@
               </div>
               <div id="card-map" class="card-body m-0">
                 <div id="my_dataviz" class=""></div>
-                <button type="button" class="btn btn-primary" id="zoom-in">+</button>
-                <button type="button" class="btn btn-primary"id="zoom-out">-</button>
+                <button type="button" class="btn btn-primary" id="zoom-in"><i class="fas fa-search-plus"></i></button>
+                <button type="button" class="btn btn-primary" id="zoom-out"><i class="fas fa-search-minus"></i></button>
+                <!--button type="button" class="btn btn-primary" id="zoom-centre"><i class="fas fa-expand"></i></button-->
               </div>
             </div>
           </div>
@@ -3528,6 +3529,12 @@ function generate_d3_map() {
     zoom.scaleBy(svg, 1 / 1.3);
   });
 
+  d3.select('#zoom-centre').on('click', function() {
+    // Ordinal zooming
+    sizeChange();
+  });
+
+
   // Deal with window resizing
 
   function sizeChange() {
@@ -3681,9 +3688,6 @@ function generate_d3_map_old() {
     // $("svg").height($("#container").width()*0.618);
   }
   d3.select(window).on("resize", sizeChange);
-
-
-
 
 
 }
