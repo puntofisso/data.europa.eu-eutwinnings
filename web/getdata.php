@@ -154,6 +154,18 @@ foreach ($data as $key => $value) {
    $ret['extra'][$key] = $value;
  }
 
+
+
+// Census and other Eurostat data, if available
+$ret['census'] = array();
+$stm = $db->prepare('SELECT "census_age_Y_LT15_2011_nuts3", "census_age_Y15-29_2011_nuts3", "census_age_Y30-49_2011_nuts3", "census_age_Y50-64_2011_nuts3", "census_age_Y65-84_2011_nuts3", census_age_Y_GE85_2011_nuts3, census_age_TOTAL_2011_nuts3, tourism_establishments_2011_nuts3, energy_cooling_degdays_2011_nuts3, energy_heating_degdays_2011_nuts3, crime_burglaries_2010_nuts3 from nuts WHERE code = ?');
+$res = $stm->execute(array($code));
+
+$data = $stm->fetch(PDO::FETCH_ASSOC);
+foreach ($data as $key => $value) {
+  $ret['census'][$key] = $value;
+}
+
 // General similarity
 // Most similar
 $stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and s.code1 = ?  ORDER by s.similarity DESC LIMIT 5 ;");

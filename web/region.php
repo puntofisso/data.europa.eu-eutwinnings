@@ -1655,8 +1655,9 @@
       <h6 class="mb-0" id="subnametitle"> Country </h6>
 
       <div class="container mt-4">
-        This area is identified by <span class="badge bg-dark">Code</span> <span id="span_nuts3" class="general_info"></span>. Its country (<span class="badge bg-dark">NUTS 0</span>) region code is <span id="span_nuts0" class="general_info"></span>. Its <span class="badge bg-dark">NUTS 2</span> region code  is <span id="span_nuts2" class="general_info"></span>, while its <span class="badge bg-dark">NUTS 1</span> region code  is <span id="span_nuts1" class="general_info"></span>.<br/>
-        Demographically, its <span class="badge bg-secondary">Population</span> is <span id="span_population" class="general_info"></span>, with a <span class="badge bg-secondary">Density</span> of <span id="span_density" class="general_info"></span> per sqm. For context, the <span class="badge bg-warning">NUTS0-level population</span> is <span id="span_pop0" class="general_info"></span>. Since the previous data collection, the <span class="badge bg-secondary">Population change</span> amounts to <span id="span_popchange" class="general_info"></span>. There is a <span class="badge bg-secondary">Women:Men</span> ratio of <span id="span_womenratio" class="general_info"></span>. The <span class="badge bg-secondary">Fertility</span> rate is <span id="span_fertility" class="general_info"></span> live births per woman.<br/>
+        This area is identified by <span class="badge bg-dark">Code</span> <span id="span_nuts3" class="general_info"></span>, with <span class="badge bg-dark">NUTS 0</span> (country) code <span id="span_nuts0" class="general_info"></span>.
+        Its <span class="badge bg-dark">NUTS 2</span> region code is <span id="span_nuts2" class="general_info"></span>, and its <span class="badge bg-dark">NUTS 1</span> region code is <span id="span_nuts1" class="general_info"></span>.<br/>
+        Demographically, its <span class="badge bg-secondary">Population</span> is <span id="span_population" class="general_info"></span>, with a <span class="badge bg-secondary">Density</span> of <span id="span_density" class="general_info"></span> people per sqm. For context, the <span class="badge bg-warning">NUTS0-level population</span> is <span id="span_pop0" class="general_info"></span>. Since the previous data collection, the <span class="badge bg-secondary">Population change</span> amounts to <span id="span_popchange" class="general_info"></span>. There is a <span class="badge bg-secondary">Women:Men ratio</span> of <span id="span_womenratio" class="general_info"></span>. The <span class="badge bg-secondary">Fertility</span> rate is <span id="span_fertility" class="general_info"></span> live births per woman.<br/>
         From an economic point of view, the <span class="badge bg-danger">GDP per capita in Purchasing Power Standards (PPS)</span> is <span id="span_gdppps" class="general_info"></span> (vs the EU average of 100). The regional <span class="badge bg-danger">Gross Value Added</span> is <span id="span_gva" class="general_info"></span>.
       </div>
 
@@ -1684,13 +1685,19 @@
                 <h6 class="mb-0 ">Other info</h6>
               </div>
               <div class="card-body">
-                <span class="badge bg-dark">Urban-rural</span><span id="span_urbanrural" class="general_info"></span>
-                <span class="badge bg-dark">Metropolitan</span><span id="span_metropolitan" class="general_info"></span>
-                <span class="badge bg-dark">Coastal</span><span id="span_coastal" class="general_info"></span>
-                <span class="badge bg-dark">Mountain</span><span id="span_mountain" class="general_info"></span>
-                <span class="badge bg-dark">Border</span><span id="span_border" class="general_info"></span>
-                <span class="badge bg-dark">Island</span><span id="span_island" class="general_info"></span>
-                <span class="badge bg-dark">Remoteness</span><span id="span_remoteness" class="general_info"></span>
+                <span class="badge bg-dark">Urban-rural</span> <span id="span_urbanrural" class="general_info"></span><br/>
+                <span class="badge bg-dark">Metropolitan</span> <span id="span_metropolitan" class="general_info"></span><br/>
+                <span class="badge bg-dark">Coastal</span> <span id="span_coastal" class="general_info"></span><br/>
+                <span class="badge bg-dark">Mountain</span> <span id="span_mountain" class="general_info"></span><br/>
+                <span class="badge bg-dark">Border</span> <span id="span_border" class="general_info"></span><br/>
+                <span class="badge bg-dark">Island</span> <span id="span_island" class="general_info"></span><br/>
+                <span class="badge bg-dark">Remoteness</span> <span id="span_remoteness" class="general_info"></span><br/>
+                <span class="badge bg-dark">Tourism establishments</span> <span id="span_tourism" class="general_info"></span><br/>
+                <span class="badge bg-dark">Heating degree-days</span> <span id="span_heating" class="general_info"></span><br/>
+                <span class="badge bg-dark">Cooling degree-days</span> <span id="span_cooling" class="general_info"></span><br/>
+                <span class="badge bg-dark">Burglaries recorded</span> <span id="span_burglaries" class="general_info"></span><br/>
+
+                <canvas id="populationpyramid"></canvas>
               </div>
             </div>
           </div>
@@ -1712,6 +1719,7 @@
             </div>
           </div>
         </div>
+
 
 
 
@@ -3156,40 +3164,90 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
     $('#span_pop0').html(window.similarity['population0']);
 
     // Other extra info
-    $('#span_urbanrural').html(window.similarity.extra['urbanrural']);
+    if (window.similarity.extra['Urban-rural']) {
+        $('#span_urbanrural').html(window.similarity.extra['Urban-rural']);
+    } else {
+      $('#span_urbanrural').html('n/a');
+    }
 
-    if (window.similarity.extra['metropolitan'] == 'Y') {
+
+    if (window.similarity.extra['Metropolitan'] == 'Y') {
       $('#span_metropolitan').html('Yes');
-    } else if (window.similarity.extra['metropolitan'] == 'N') {
+    } else if (window.similarity.extra['Metropolitan'] == 'N') {
       $('#span_metropolitan').html('No');
+    } else if (window.similarity.extra['Metropolitan']) {
+      $('#span_metropolitan').html(window.similarity.extra['Metropolitan']);
     } else {
-      $('#span_metropolitan').html(window.similarity.extra['metropolitan']);
+      $('#span_metropolitan').html('n/a');
     }
 
-    $('#span_coastal').html(window.similarity.extra['coastal']);
+    if (window.similarity.extra['Coastal'] == 'Y') {
+      $('#span_coastal').html('Yes');
+    } else if (window.similarity.extra['Coastal'] == 'N') {
+      $('#span_coastal').html('No');
+    } else if (window.similarity.extra['Coastal']) {
+      $('#span_coastal').html(window.similarity.extra['Coastal']);
+    } else {
+      $('#span_coastal').html('n/a');
+    }
 
-
-    if (window.similarity.extra['mountain'] == 'Other regions') {
+    if (window.similarity.extra['Mountain'] == 'Other regions') {
       $('#span_mountain').html('No');
+    } else if (window.similarity.extra['Mountain']) {
+      $('#span_mountain').html(window.similarity.extra['Mountain']);
     } else {
-      $('#span_mountain').html(window.similarity.extra['mountain']);
+      $('#span_mountain').html('n/a');
     }
 
-    if (window.similarity.extra['border'] == 'Other regions') {
+    if (window.similarity.extra['Border'] == 'Other regions') {
       $('#span_border').html('No');
-    } else if (window.similarity.extra['border'] == 'Border regions') {
+    } else if (window.similarity.extra['Border'] == 'Border regions') {
       $('#span_border').html('Yes');
+    } else if (window.similarity.extra['Border']) {
+      $('#span_border').html(window.similarity.extra['Border']);
     } else {
-      $('#span_border').html(window.similarity.extra['border']);
+      $('#span_border').html('n/a');
     }
 
-    if (window.similarity.extra['island'] == '1') {
+    if (window.similarity.extra['Island'] == '1') {
       $('#span_island').html('Yes');
-    } else {
+    } else if (window.similarity.extra['Island'] == '0') {
       $('#span_island').html('No');
+    } else {
+      $('#span_island').html('n/a');
     }
 
-    $('#span_remoteness').html(window.similarity.extra['remoteness']);
+    if (window.similarity.extra['Remoteness']) {
+        $('#span_remoteness').html(window.similarity.extra['Remoteness']);
+    } else {
+      $('#span_remoteness').html('n/a');
+    }
+
+
+
+    if (window.similarity.census['tourism_establishments_2011_nuts3']) {
+      $('#span_tourism').html(window.similarity.census['tourism_establishments_2011_nuts3']);
+    } else {
+      $('#span_tourism').html('n/a');
+    }
+
+    if (window.similarity.census['crime_burglaries_2010_nuts3']) {
+      $('#span_burglaries').html(window.similarity.census['crime_burglaries_2010_nuts3']);
+    } else {
+      $('#span_burglaries').html('n/a');
+    }
+
+    if (window.similarity.census['energy_cooling_degdays_2011_nuts3']) {
+      $('#span_cooling').html(window.similarity.census['energy_cooling_degdays_2011_nuts3']);
+    } else {
+      $('#span_cooling').html('n/a');
+    }
+
+    if (window.similarity.census['energy_heating_degdays_2011_nuts3']) {
+      $('#span_heating').html(window.similarity.census['energy_heating_degdays_2011_nuts3']);
+    } else {
+      $('#span_heating').html('n/a');
+    }
 
 
     var similarities = ['all_top', 'all_bottom', 'same_country_top', 'same_country_bottom', 'diff_country_top', 'diff_country_bottom', 'higher_gdppps_top', 'higher_gdppps_bottom', 'higher_gva_top', 'higher_gva_bottom'];
@@ -3228,11 +3286,84 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
 
      generate_d3_map_old() ;
 
+     draw_population_pyramid('populationpyramid');
 
      // fillModal(0, "similarity_all_top", 0);
      // drawSpiderChart("spider_all_top_0", "similarity_all_top", 0);
   }
 
+  function draw_population_pyramid(canvasElement) {
+
+    if (!window.similarity.census['census_age_TOTAL_2011_nuts3']) {
+      return;
+    }
+
+    data1 = window.similarity.census['census_age_Y_LT15_2011_nuts3'] * 100 / window.similarity.census['census_age_TOTAL_2011_nuts3'];
+    data2 = window.similarity.census['census_age_Y15-29_2011_nuts3'] * 100 / window.similarity.census['census_age_TOTAL_2011_nuts3']
+    data3 = window.similarity.census['census_age_Y30-49_2011_nuts3'] * 100 / window.similarity.census['census_age_TOTAL_2011_nuts3']
+    data4 = window.similarity.census['census_age_Y50-64_2011_nuts3'] * 100 / window.similarity.census['census_age_TOTAL_2011_nuts3']
+    data5 = window.similarity.census['census_age_Y65-84_2011_nuts3'] * 100 / window.similarity.census['census_age_TOTAL_2011_nuts3']
+    data6 = window.similarity.census['census_age_Y_GE85_2011_nuts3'] * 100 / window.similarity.census['census_age_TOTAL_2011_nuts3']
+
+    var elem = document.getElementById(canvasElement);
+    var ctx = elem.getContext('2d');
+
+
+
+const data = {
+  labels: ['<15','15-29','30-49','50-64','65-84','85+'],
+  datasets: [{
+    axis: 'y',
+    label: 'Age pyramid',
+    data: [data1, data2, data3, data4, data5, data6],
+
+    fill: false,
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(255, 99, 132, 0.2)',,
+      'rgba(255, 99, 132, 0.2)',
+    ],
+    borderColor: [
+      'rgb(255, 99, 132)',
+      'rgb(255, 99, 132)',
+      'rgb(255, 99, 132)',
+      'rgb(255, 99, 132)',
+      'rgb(255, 99, 132)',
+      'rgb(255, 99, 132)',
+      'rgb(255, 99, 132)',
+    ],
+    borderWidth: 1
+  }]
+};
+
+var myChart = new Chart(ctx, {
+
+
+    type: 'bar',
+    data: data,
+    options: {
+      indexAxis: 'y',
+      scales: {
+        y: {
+          ticks: {
+            autoSkip: false
+          }
+        }
+      }
+    }
+
+
+
+
+
+
+  });
+
+  }
 
   function fillModal(itemname ,comparison, index) {
 
