@@ -3037,13 +3037,13 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
 
 
     // get json, and set it as global variable
-    $.getJSON("data/nuts-autocomplete.json", function(data){
-      window.nuts = data;
-    }).fail(function(){
-      console.log("An error has occurred.");
-    }).done(function() {
-      setup_autocomplete();
-    });
+    // $.getJSON("data/nuts-autocomplete.json", function(data){
+    //   window.nuts = data;
+    // }).fail(function(){
+    //   console.log("An error has occurred.");
+    // }).done(function() {
+    //   setup_autocomplete();
+    // });
 
 
   <?php
@@ -3058,77 +3058,77 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
 );
 
   // Autocomplete setup
-  function setup_autocomplete() {
-    var nuts = window.nuts
-
-    // in order to make search easier, we translate the letters with diacritics
-    // e.g. you can search for "Gottingen" instead of "Göttingen"
-    var accentMap = {
-      "Ç": "C", "Č": "C", "ç": "c", "č": "c",
-      "ñ": "n",
-      "Á": "A", "Å": "A",
-      "É": "E",
-      "Í": "I",
-      "Ö": "O", "Ø": "O",
-      "Ú": "U",
-      "ð": "d", "đ": "d",
-      "ß": "b",
-      "ğ": "g",
-      "ħ": "h",
-      "í": "i", "ì": "i", "ī": "i", "İ": "i", "ı": "i",
-      "Ł": "L", "ł": "l",
-      "ń": "n", "ň": "n",
-      "ř": "r",
-      "Ś": "s", "ś": "s", "Ş": "s", "ş": "s", "Š": "s", "š": "s",
-      "ţ": "t",
-      "ź": "z", "Ż": "z", "ż": "z", "Ž": "z", "ž": "z",
-      "á": "a", "â": "a", "å": "a", "ä": "a", "ã": "a", "æ": "a", "ă": "a", "ą": "a",
-      "é": "e", "è": "e", "ë": "e", "ė": "e", "ę": "e", "ě": "e",
-      "ó": "o", "ô": "o", "ö": "o", "õ": "o", "ø": "o", "ő": "o",
-      "ú": "u", "ü": "u", "ų": "u",
-      "ý": "y"
-    };
-    var normalize = function( term ) {
-      var ret = "";
-      for ( var i = 0; i < term.length; i++ ) {
-        ret += accentMap[ term.charAt(i) ] || term.charAt(i);
-      }
-      return ret;
-    };
-
-    // if you click inside the input field, empty it
-    $('#inputRegion').click(function() {
-      $(this).val('');
-    });
-
-    // set up autocomplete
-    $("#inputRegion").autocomplete({
-      minLength: 3,
-      width: 300,
-      max: 10,
-      source: function( request, response ) {
-
-      var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i") , results = [];
-
-      /* Make sure each entry is only in the suggestions list once: */
-      $.each(nuts, function (i, value) {
-          if (matcher.test(normalize(value.label)) && $.inArray(value.label, results) < 0) {
-              // note: the below code isn't very well documented
-              // label and value need to be the value of the label
-              obj = { 'label': value.label + " [" + value.code.substring(0, 2) +"]", 'code': value.code }
-              results.push(obj);
-
-          }
-      });
-      response(results.slice(0, 10));
-    },
-    select: function (event, ui) {
-      // get json, and set it as global variable
-      window.location.href = '/region.php?nutsid='+ui.item.code;
-      // navigateToNUTS(ui.item.code);
-    }
-  });
-  }
+  // function setup_autocomplete() {
+  //   var nuts = window.nuts
+  //
+  //   // in order to make search easier, we translate the letters with diacritics
+  //   // e.g. you can search for "Gottingen" instead of "Göttingen"
+  //   var accentMap = {
+  //     "Ç": "C", "Č": "C", "ç": "c", "č": "c",
+  //     "ñ": "n",
+  //     "Á": "A", "Å": "A",
+  //     "É": "E",
+  //     "Í": "I",
+  //     "Ö": "O", "Ø": "O",
+  //     "Ú": "U",
+  //     "ð": "d", "đ": "d",
+  //     "ß": "b",
+  //     "ğ": "g",
+  //     "ħ": "h",
+  //     "í": "i", "ì": "i", "ī": "i", "İ": "i", "ı": "i",
+  //     "Ł": "L", "ł": "l",
+  //     "ń": "n", "ň": "n",
+  //     "ř": "r",
+  //     "Ś": "s", "ś": "s", "Ş": "s", "ş": "s", "Š": "s", "š": "s",
+  //     "ţ": "t",
+  //     "ź": "z", "Ż": "z", "ż": "z", "Ž": "z", "ž": "z",
+  //     "á": "a", "â": "a", "å": "a", "ä": "a", "ã": "a", "æ": "a", "ă": "a", "ą": "a",
+  //     "é": "e", "è": "e", "ë": "e", "ė": "e", "ę": "e", "ě": "e",
+  //     "ó": "o", "ô": "o", "ö": "o", "õ": "o", "ø": "o", "ő": "o",
+  //     "ú": "u", "ü": "u", "ų": "u",
+  //     "ý": "y"
+  //   };
+  //   var normalize = function( term ) {
+  //     var ret = "";
+  //     for ( var i = 0; i < term.length; i++ ) {
+  //       ret += accentMap[ term.charAt(i) ] || term.charAt(i);
+  //     }
+  //     return ret;
+  //   };
+  //
+  //   // if you click inside the input field, empty it
+  //   $('#inputRegion').click(function() {
+  //     $(this).val('');
+  //   });
+  //
+  //   // set up autocomplete
+  //   $("#inputRegion").autocomplete({
+  //     minLength: 3,
+  //     width: 300,
+  //     max: 10,
+  //     source: function( request, response ) {
+  //
+  //     var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i") , results = [];
+  //
+  //     /* Make sure each entry is only in the suggestions list once: */
+  //     $.each(nuts, function (i, value) {
+  //         if (matcher.test(normalize(value.label)) && $.inArray(value.label, results) < 0) {
+  //             // note: the below code isn't very well documented
+  //             // label and value need to be the value of the label
+  //             obj = { 'label': value.label + " [" + value.code.substring(0, 2) +"]", 'code': value.code }
+  //             results.push(obj);
+  //
+  //         }
+  //     });
+  //     response(results.slice(0, 10));
+  //   },
+  //   select: function (event, ui) {
+  //     // get json, and set it as global variable
+  //     window.location.href = '/region.php?nutsid='+ui.item.code;
+  //     // navigateToNUTS(ui.item.code);
+  //   }
+  // });
+  // }
 
   function navigateToNUTS(code) {
 

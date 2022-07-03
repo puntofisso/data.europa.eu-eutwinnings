@@ -365,13 +365,35 @@ foreach ($data as $row) {
 }
 
 // Least similar
-$stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 <> n2.nuts0 and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
+// $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 <> n2.nuts0 and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
+$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 <> n2.nuts0 and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
+
 $res = $stm->execute(array($code));
 $ret['similarity_diff_country_bottom'] = array();
 $data = $stm->fetchAll();
 $index=0;
 foreach ($data as $row) {
   $code2 = $row['code'];
+
+  $level = $row['level'];
+      if ($level == 3) {
+        $ret['similarity_diff_country_bottom'][$index]['population'] = $row['pop3'];
+      } else if ($level == 2) {
+        $ret['similarity_diff_country_bottom'][$index]['population'] = $row['pop2'];
+      }
+
+
+    $ret['similarity_diff_country_bottom'][$index]['pop3'] = $row['pop3'];
+    $ret['similarity_diff_country_bottom'][$index]['pop2'] = $row['pop2'];
+    $ret['similarity_diff_country_bottom'][$index]['pop0'] = $row['pop0'];
+
+    $ret['similarity_diff_country_bottom'][$index]['density'] = $row['density'];
+    $ret['similarity_diff_country_bottom'][$index]['fertility'] = $row['fertility'];
+    $ret['similarity_diff_country_bottom'][$index]['popchange'] = $row['popchange'];
+    $ret['similarity_diff_country_bottom'][$index]['womenratio'] = $row['womenratio'];
+    $ret['similarity_diff_country_bottom'][$index]['gdppps'] = $row['gdppps'];
+    $ret['similarity_diff_country_bottom'][$index]['gva'] = $row['gva'];
+
   $ret['similarity_diff_country_bottom'][$index]['code'] = $code2;
   $ret['similarity_diff_country_bottom'][$index]['name'] = $row['name'];
   $ret['similarity_diff_country_bottom'][$index]['country'] = $row['country'];

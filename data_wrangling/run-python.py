@@ -986,7 +986,7 @@ def similarity(code1, code2, fieldlist, curCALCSIM):
 
     # check if you need mapped values
     # TODO this is the simple version with 1-2-1 mapping
-    with open('nutsmap.json') as json_file:
+    with open('data/nutsmap.json') as json_file:
         mapNuts = json.load(json_file)
 
     try:
