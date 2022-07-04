@@ -3132,7 +3132,7 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
 
   function navigateToNUTS(code) {
 
-    $.getJSON("getdata.php?code="+code, function(data){
+    $.getJSON("getdata.php?nutsid="+code, function(data){
         window.similarity = data;
         fillData();
     }).fail(function(){
@@ -3288,8 +3288,6 @@ Although every similarity measure is, to a certain extent, arbitrary, we believe
 
      draw_population_pyramid('populationpyramid');
 
-     // fillModal(0, "similarity_all_top", 0);
-     // drawSpiderChart("spider_all_top_0", "similarity_all_top", 0);
   }
 
   function draw_population_pyramid(canvasElement) {

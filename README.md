@@ -27,7 +27,7 @@ The goal of this app is to bring Eurostat data to a wider, non-specialist audien
 It does so by calculating similarity matrices of Eurostat statistics between NUTS regions, at NUTS2 and NUTS3 level, allowing the user to find which area is the "twin" of their area, i.e. the area with the most similar statistic. The app also shows similarity maps, and allows the user to deep dive into the similarities, exploring the statistical values in a user-friendly, playful way.
 Ultimately, the user is also able to choose a different area or pair of areas, and compare the similarities between them, as well as selecting one or more statistics and display what areas are most similar considering the statistics selected.
 
-### 1 - Data download
+### Data download and processing
 Data download and creation scripts are in the `data_wrangling` directory. The script `run-python.py` will automatically extract the NUTS area indices from the shapefiles, create the database, and call the Eurostat API in order to populate it. The similarity will be then calculated. It is necessary to use the libraries required in `requirements.txt`, ideally by creating a conda environment.
 
 Basic data files required:
@@ -48,7 +48,7 @@ The `run-phython.py` is commented and should be self-explanatory, however here f
 
 5. `globaldict.json` is turned into `basicdata-2021.tsv` and `basicdata-2016.tsv`, basic tab-separated tables that will be imported into the SQLite database in the next process; their normalised counterparts, `basicdataNORM-2021.tsv` and `basicdataNORM-2016.tsv` are also created
 
-6. the SQLite database is created and populatedm, using the following list of files to produce the relevant table
+6. the SQLite database is created and populated, using the following list of files to produce the relevant table
 
 |       File               |       Table       |
 | ------------------------ | ----------------- |

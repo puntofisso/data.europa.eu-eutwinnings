@@ -3,7 +3,7 @@
  * This script returns all the data available for a given NUTS area
  * and the top 10 similarities per category
  */
-$code=$_GET['code'];
+$code=$_GET['nutsid'];
 $method = 'sqlite';
 
 // Set up return dictionary
@@ -136,7 +136,6 @@ foreach ($data as $row) {
 
 // Find nuts2 name
 $stm = $db->prepare("SELECT * FROM relations WHERE code = ?");
-// $stm->bindParam(1, $nuts2, SQLITE3_TEXT) ;
 $res = $stm->execute(array($nuts2));
 $data = $stm->fetchAll();
 foreach ($data as $row) {
@@ -168,7 +167,9 @@ foreach ($data as $key => $value) {
 
 // General similarity
 // Most similar
-$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and s.code1 = ?  ORDER by s.similarity DESC LIMIT 5 ;");
+// $stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and s.code1 = ?  ORDER by s.similarity DESC LIMIT 5 ;");
+$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, n2.pop2 as pop2, n2.pop0 as pop0, n2.density as density, n2.fertility as fertility,  n2.popchange as popchange, n2.womenratio as womenratio, n2.gdppps as gdppps, n2.gva as gva FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and s.code1 = ?  ORDER by s.similarity DESC LIMIT 5");
+
 $res = $stm->execute(array($code));
 $ret['similarity_all_top'] = array();
 $data = $stm->fetchAll();
@@ -198,15 +199,6 @@ foreach ($data as $row) {
   $ret['similarity_all_top'][$index]['gdppps'] = $row['gdppps'];
   $ret['similarity_all_top'][$index]['gva'] = $row['gva'];
 
-  $ret['similarity_all_top'][$index]['pop3rank'] = $row['pop3rank'];
-  $ret['similarity_all_top'][$index]['pop0rank'] = $row['pop0rank'];
-  $ret['similarity_all_top'][$index]['densityrank'] = $row['densityrank'];
-  $ret['similarity_all_top'][$index]['fertilityrank'] = $row['fertilityrank'];
-  $ret['similarity_all_top'][$index]['popchangerank'] = $row['popchangerank'];
-  $ret['similarity_all_top'][$index]['womenratiorank'] = $row['womenratiorank'];
-  $ret['similarity_all_top'][$index]['gdpppsrank'] = $row['gdpppsrank'];
-  $ret['similarity_all_top'][$index]['gvarank'] = $row['gvarank'];
-
   $index++;
 }
 
@@ -216,7 +208,8 @@ foreach ($data as $row) {
 // Least similar
 // $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
 // $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, n2.pop0 as pop0, n2.density as density, n2.fertility as fertility, n2.popchange as popchange, n2.womenratio as womenratio,  n2.gdppps as gdppps, n2.gva as gva FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
-$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
+// $stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
+$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, n2.pop2 as pop2, n2.pop0 as pop0, n2.density as density, n2.fertility as fertility, n2.popchange as popchange, n2.womenratio as womenratio, n2.gdppps as gdppps, n2.gva as gva FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
 $res = $stm->execute(array($code));
 $ret['similarity_all_bottom'] = array();
 $data = $stm->fetchAll();
@@ -254,7 +247,10 @@ foreach ($data as $row) {
 // Same country similarity
 // Most similar
 // $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 == n2.nuts0 and s.code1 = ?  ORDER by s.similarity DESC LIMIT 5 ;");
-$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 == n2.nuts0 and s.code1 = ?  ORDER by s.similarity DESC LIMIT 5 ;");
+// $stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 == n2.nuts0 and s.code1 = ?  ORDER by s.similarity DESC LIMIT 5 ;");
+
+$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, n2.pop2 as pop2, n2.pop0 as pop0, n2.density as density, n2.fertility as fertility, n2.popchange as popchange, n2.womenratio as womenratio, n2.gdppps as gdppps, n2.gva as gva FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 == n2.nuts0 and s.code1 = ?  ORDER by s.similarity DESC LIMIT 5 ;");
+
 $res = $stm->execute(array($code));
 $ret['similarity_same_country_top'] = array();
 $data = $stm->fetchAll();
@@ -291,7 +287,10 @@ foreach ($data as $row) {
 
 // Least similar
 // $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 == n2.nuts0 and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
-$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 == n2.nuts0 and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
+// $stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 == n2.nuts0 and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
+$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, n2.pop2 as pop2, n2.pop0 as pop0, n2.density as density, n2.fertility as fertility, n2.popchange as popchange, n2.womenratio as womenratio, n2.gdppps as gdppps, n2.gva as gva FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 == n2.nuts0 and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
+
+
 $res = $stm->execute(array($code));
 $ret['similarity_same_country_bottom'] = array();
 $data = $stm->fetchAll();
@@ -328,7 +327,11 @@ foreach ($data as $row) {
 // Different country similarity
 // Most similar
 // $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 <> n2.nuts0 and s.code1 = ?  ORDER by s.similarity DESC LIMIT 5 ;");
-$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 <> n2.nuts0 and s.code1 = ?  ORDER by s.similarity DESC LIMIT 5 ;");
+// $stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 <> n2.nuts0 and s.code1 = ?  ORDER by s.similarity DESC LIMIT 5 ;");
+
+
+$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, n2.pop2 as pop2, n2.pop0 as pop0,  n2.density as density, n2.fertility as fertility, n2.popchange as popchange, n2.womenratio as womenratio, n2.gdppps as gdppps, n2.gva as gva FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 <> n2.nuts0 and s.code1 = ?  ORDER by s.similarity DESC LIMIT 5 ;");
+
 
 $res = $stm->execute(array($code));
 $ret['similarity_diff_country_top'] = array();
@@ -366,7 +369,10 @@ foreach ($data as $row) {
 
 // Least similar
 // $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 <> n2.nuts0 and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
-$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 <> n2.nuts0 and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
+// $stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 <> n2.nuts0 and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
+
+$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, n2.pop2 as pop2, n2.pop0 as pop0,  n2.density as density, n2.fertility as fertility, n2.popchange as popchange, n2.womenratio as womenratio, n2.gdppps as gdppps,  n2.gva as gva FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n1.nuts0 <> n2.nuts0 and s.code1 = ?  ORDER by s.similarity ASC LIMIT 5 ;");
+
 
 $res = $stm->execute(array($code));
 $ret['similarity_diff_country_bottom'] = array();
@@ -404,7 +410,11 @@ foreach ($data as $row) {
 // Higher GDP PPS similarity
 // Most similar
 // $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.gdppps as gdppps2 FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gdppps > n1.gdppps and s.code1 = ? ORDER by s.similarity DESC LIMIT 5;");
-$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.gdppps as gdppps2, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gdppps > n1.gdppps and s.code1 = ? ORDER by s.similarity DESC LIMIT 5;");
+// $stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.gdppps as gdppps2, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gdppps > n1.gdppps and s.code1 = ? ORDER by s.similarity DESC LIMIT 5;");
+
+$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.gdppps as gdppps2, n2.pop3 as pop3,n2.pop2 as pop2, n2.pop0 as pop0, n2.density as density, n2.fertility as fertility,  n2.popchange as popchange,  n2.womenratio as womenratio, n2.gdppps as gdppps, n2.gva as gva FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gdppps > n1.gdppps and s.code1 = ? ORDER by s.similarity DESC LIMIT 5;");
+
+
 $res = $stm->execute(array($code));
 $ret['similarity_higher_gdppps_top'] = array();
 $data = $stm->fetchAll();
@@ -441,7 +451,11 @@ foreach ($data as $row) {
 
 // Least similar
 // $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.gdppps as gdppps2 FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gdppps > n1.gdppps and s.code1 = ? ORDER by s.similarity ASC LIMIT 5;");
-$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank, n2.gdppps as gdppps2 FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gdppps > n1.gdppps and s.code1 = ? ORDER by s.similarity ASC LIMIT 5;");
+// $stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank, n2.gdppps as gdppps2 FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gdppps > n1.gdppps and s.code1 = ? ORDER by s.similarity ASC LIMIT 5;");
+//
+
+$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, n2.pop2 as pop2, n2.pop0 as pop0, n2.density as density, n2.fertility as fertility, n2.popchange as popchange, n2.womenratio as womenratio, n2.gdppps as gdppps, n2.gva as gva, n2.gdppps as gdppps2 FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gdppps > n1.gdppps and s.code1 = ? ORDER by s.similarity ASC LIMIT 5;");
+
 $res = $stm->execute(array($code));
 $ret['similarity_higher_gdppps_bottom'] = array();
 $data = $stm->fetchAll();
@@ -479,7 +493,11 @@ foreach ($data as $row) {
 // Higher GVA similarity
 // Most similar
 // $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.gva as gva2 FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gva > n1.gva and s.code1 = ? ORDER by s.similarity DESC LIMIT 5;");
-$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank, n2.gva as gva2 FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gva > n1.gva and s.code1 = ? ORDER by s.similarity DESC LIMIT 5;");
+// $stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank, n2.gva as gva2 FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gva > n1.gva and s.code1 = ? ORDER by s.similarity DESC LIMIT 5;");
+
+
+$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, n2.pop2 as pop2, n2.pop0 as pop0,  n2.density as density, n2.fertility as fertility, n2.popchange as popchange, n2.womenratio as womenratio, n2.gdppps as gdppps, n2.gva as gva, n2.gva as gva2 FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gva > n1.gva and s.code1 = ? ORDER by s.similarity DESC LIMIT 5;");
+
 $res = $stm->execute(array($code));
 $ret['similarity_higher_gva_top'] = array();
 $data = $stm->fetchAll();
@@ -516,7 +534,11 @@ foreach ($data as $row) {
 
 // Least similar
 // $stm = $db->prepare("SELECT s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.gva as gva2 FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gva > n1.gva and s.code1 = ? ORDER by s.similarity ASC LIMIT 5;");
-$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank, n2.gva as gva2 FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gva > n1.gva and s.code1 = ? ORDER by s.similarity ASC LIMIT 5;");
+// $stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3, rank() over (ORDER by n2.pop3 DESC) as pop3rank, n2.pop2 as pop2, rank() over (ORDER by n2.pop2 DESC) as pop2rank, n2.pop0 as pop0, rank() over (ORDER by n2.pop0 DESC) as pop0rank, n2.density as density, rank() over (ORDER by n2.density DESC) as densityrank, n2.fertility as fertility, rank() over (ORDER by n2.fertility DESC) as fertilityrank, n2.popchange as popchange, rank() over (ORDER by n2.popchange DESC) as popchangerank, n2.womenratio as womenratio, rank() over (ORDER by n2.womenratio DESC) as womenratiorank, n2.gdppps as gdppps, rank() over (ORDER by n2.gdppps DESC) as gdpppsrank, n2.gva as gva, rank() over (ORDER by n2.gva DESC) as gvarank, n2.gva as gva2 FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gva > n1.gva and s.code1 = ? ORDER by s.similarity ASC LIMIT 5;");
+
+$stm = $db->prepare("SELECT n1.level as level, s.code2 as code, s.similarity as similarity, n2.name as name, n2.nuts0 as country, n2.pop3 as pop3,n2.pop2 as pop2, n2.pop0 as pop0,  n2.density as density, n2.fertility as fertility, n2.popchange as popchange, n2.womenratio as womenratio, n2.gdppps as gdppps,n2.gva as gva, n2.gva as gva2 FROM similarity s JOIN nuts n1, nuts n2 WHERE s.code1 = n1.code and s.code2=n2.code and n2.gva > n1.gva and s.code1 = ? ORDER by s.similarity ASC LIMIT 5;");
+
+
 $res = $stm->execute(array($code));
 $ret['similarity_higher_gva_bottom'] = array();
 $data = $stm->fetchAll();
