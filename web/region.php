@@ -2955,7 +2955,7 @@
                 <a href="credits.html" class="nav-link text-muted" target="_blank">Credits</a>
               </li>
               <li class="nav-item">
-                <a href="https://github.com/puntofisso" class="nav-link text-muted" target="_blank">GitHub</a>
+                <a href="https://github.com/puntofisso/data.europa.eu-eutwinnings" class="nav-link text-muted" target="_blank">GitHub</a>
               </li>
             </ul>
           </div>
