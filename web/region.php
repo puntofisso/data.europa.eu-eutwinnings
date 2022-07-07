@@ -2986,9 +2986,6 @@
       <hr class="horizontal dark my-1">
       <div class="card-body pt-sm-3 pt-0">
         <!-- Sidebar Backgrounds -->
-        <div>
-          <h6 class="mb-0">Similarity</h6>
-        </div>
         The similarity between areas is calculated using the formula known as <a href="https://en.wikipedia.org/wiki/Cosine_similarity">cosine similarity</a> over a number of selected Eurostat statistics at either the NUTS3 area level, or at the level of one of its containers.
 <br/><br/>
 <a href="images/similarity.png"><img src="images/similaritysmall.png"></img></a>
