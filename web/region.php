@@ -2991,9 +2991,6 @@
         </div>
         The similarity between areas is calculated using the formula known as <a href="https://en.wikipedia.org/wiki/Cosine_similarity">cosine similarity</a> over a number of selected Eurostat statistics at either the NUTS3 area level, or at the level of one of its containers.
 <br/><br/>
-The list of fields on which we currently calculate similarity is: population of the NUTS3 area, population of the containing NUTS0 area, population density, fertility rate, population change since the last census, ratio of women to men, GDP per PPS, and GVA.
-<br/><br/>
-Although every similarity measure is, to a certain extent, arbitrary, we believe that this choice gives some food for thought.
 <a href="images/similarity.png"><img src="images/similaritysmall.png"></img></a>
         <hr class="horizontal dark my-sm-4">
         <a class="btn btn-outline-dark w-100" href="https://github.com/puntofisso/data.europa.eu-eutwinnings">View documentation</a>
