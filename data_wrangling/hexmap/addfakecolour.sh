@@ -1,6 +1,7 @@
 #!/bin/bash
 startingcountry="NONE"
 
+file=nuts2-hexjson.csv
 
 red=0
 green=0
@@ -33,4 +34,4 @@ do
 
 
   echo "$line,\"rgb($red,$green,$blue)\""
-done < nuts3-hexjson.csv
+done < $file
