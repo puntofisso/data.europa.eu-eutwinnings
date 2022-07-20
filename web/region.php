@@ -1739,7 +1739,7 @@
                   <i class="material-icons opacity-10">arrow_circle_up</i>
                 </div>
                 <div class="text-end pt-1">
-                  <p class="text-sm mb-0 text-capitalize">Most similar</p>
+                  <p class="text-sm mb-0">Most similar</p>
                   <h4 class="mb-0">Overall</h4>
                 </div>
               </div>
@@ -1860,7 +1860,7 @@
                 <i class="material-icons opacity-10 fa-rotate-180">arrow_circle_up</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Least similar </p>
+                <p class="text-sm mb-0">Least similar </p>
                 <h4 class="mb-0">Overall</h4>
               </div>
             </div>
@@ -1979,7 +1979,7 @@
             <i class="material-icons opacity-10">arrow_circle_up</i>
           </div>
           <div class="text-end pt-1">
-            <p class="text-sm mb-0 text-capitalize">Most similar</p>
+            <p class="text-sm mb-0">Most similar</p>
             <h4 class="mb-0">Same country</h4>
           </div>
         </div>
@@ -2099,7 +2099,7 @@
           <i class="material-icons opacity-10 fa-rotate-180">arrow_circle_up</i>
         </div>
         <div class="text-end pt-1">
-          <p class="text-sm mb-0 text-capitalize">Least similar </p>
+          <p class="text-sm mb-0">Least similar </p>
           <h4 class="mb-0">Same country</h4>
         </div>
       </div>
@@ -2220,7 +2220,7 @@
             <i class="material-icons opacity-10">arrow_circle_up</i>
           </div>
           <div class="text-end pt-1">
-            <p class="text-sm mb-0 text-capitalize">Most similar</p>
+            <p class="text-sm mb-0">Most similar</p>
             <h4 class="mb-0">Different country</h4>
           </div>
         </div>
@@ -2340,7 +2340,7 @@
           <i class="material-icons opacity-10 fa-rotate-180">arrow_circle_up</i>
         </div>
         <div class="text-end pt-1">
-          <p class="text-sm mb-0 text-capitalize">Least similar </p>
+          <p class="text-sm mb-0">Least similar </p>
           <h4 class="mb-0">Different country</h4>
         </div>
       </div>
@@ -2460,7 +2460,7 @@
             <i class="material-icons opacity-10">arrow_circle_up</i>
           </div>
           <div class="text-end pt-1">
-            <p class="text-sm mb-0 text-capitalize">Most similar</p>
+            <p class="text-sm mb-0">Most similar</p>
             <h4 class="mb-0">Higher GDPPPS</h4>
           </div>
         </div>
@@ -2580,7 +2580,7 @@
           <i class="material-icons opacity-10 fa-rotate-180">arrow_circle_up</i>
         </div>
         <div class="text-end pt-1">
-          <p class="text-sm mb-0 text-capitalize">Least similar </p>
+          <p class="text-sm mb-0">Least similar </p>
           <h4 class="mb-0">Higher GDPPPS</h4>
         </div>
       </div>
@@ -2702,7 +2702,7 @@
             <i class="material-icons opacity-10">arrow_circle_up</i>
           </div>
           <div class="text-end pt-1">
-            <p class="text-sm mb-0 text-capitalize">Most similar</p>
+            <p class="text-sm mb-0">Most similar</p>
             <h4 class="mb-0">Higher GVA</h4>
           </div>
         </div>
@@ -2821,7 +2821,7 @@
           <i class="material-icons opacity-10 fa-rotate-180">arrow_circle_up</i>
         </div>
         <div class="text-end pt-1">
-          <p class="text-sm mb-0 text-capitalize">Least similar </p>
+          <p class="text-sm mb-0">Least similar </p>
           <h4 class="mb-0">Higher GVA</h4>
         </div>
       </div>
@@ -3266,7 +3266,7 @@
 
 
         drawDonutChart(chartitem, similarityobject['similarity']);
-        $(textitem).html("<a class='linktonuts' href='region.php?nutsid=" + targetcode + "'>" + similarityobject['name'] + " [" + similarityobject['country'] + "]" +" </a>" + "<br/>" + (100*similarityobject['similarity']).toFixed(2) + "%");
+        $(textitem).html("<a class='linktonuts' href='region.php?nutsid=" + targetcode + "'>" + similarityobject['name'] + " [" + similarityobject['country'] + "]" +" </a>" + "<br/>" + (100*similarityobject['similarity']).toFixed(2) + " %");
 
 
         fillModal(itemtype, similarityitemname, 0);
@@ -3420,11 +3420,11 @@ var myChart = new Chart(ctx, {
     const data = {
         labels: [
           'Population',
-          'Population NUTS0',
+          'Population NUTS 0',
           'Density',
           'Fertility',
           'Population change',
-          'Women:Men Ratio',
+          'Women:Men ratio',
           'GDPPPS',
           'GVA'
         ],
@@ -3621,7 +3621,7 @@ function generate_d3_map() {
       .duration(100)
       .style("opacity", .9);
 
-      div.html(d.properties.NUTS_NAME + "<br/>" + similarity*100   + "%")
+      div.html(d.properties.NUTS_NAME + "<br/>" + similarity*100   + " %")
       .style("left", (d3.event.pageX) + "px")
       .style("top", (d3.event.pageY - 28) + "px");
     })
@@ -3775,7 +3775,7 @@ function generate_d3_map_old() {
       .duration(100)
       .style("opacity", .9);
 
-      div.html(d.properties.NUTS_NAME + "<br/>" + similarity*100   + "%")
+      div.html(d.properties.NUTS_NAME + "<br/>" + similarity*100   + " %")
       .style("left", (d3.event.pageX) + "px")
       .style("top", (d3.event.pageY - 28) + "px");
     })
