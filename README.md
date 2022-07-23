@@ -87,8 +87,10 @@ Standard unit testing is available in the `unit_tests.py` file. This ensures con
 ## Embeddable widgets
 EU Twinnings similarity data can be embedded using ready iframe widgets. A few examples are available in the [widget-examples.php](https://eu-twinnings.site/widget-examples.php) file on the main server and under `web`. For example, this is a common way to embed a hexmap for the Prov. Oost-Vlaanderen (Belgique/België) region:
 
-`<iframe src="https://eu-twinnings.site/widget/widget336x280-hexeample.php?nutsid=BE23"
-          scrolling="no" style="width: 336px; height: 280px; margin: 0; padding: 0; border: none;">
-</iframe>`.  
+```
+<iframe src="https://eu-twinnings.site/widget/widget336x280-hexeample.php?nutsid=BE23"
+  scrolling="no" style="width: 336px; height: 280px; margin: 0; padding: 0; border: none;">
+</iframe>
+```  
 
 The full list of embeddable widgets in the `web/widget` folder.
