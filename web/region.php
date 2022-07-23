@@ -2986,9 +2986,11 @@
       <hr class="horizontal dark my-1">
       <div class="card-body pt-sm-3 pt-0">
         <!-- Sidebar Backgrounds -->
-        The similarity between areas is calculated using the formula known as <a href="https://en.wikipedia.org/wiki/Cosine_similarity">cosine similarity</a> over a number of selected Eurostat statistics at either the NUTS3 area level, or at the level of one of its containers.
+        The similarity between areas is calculated using the <a href="https://en.wikipedia.org/wiki/Cosine_similarity">cosine similarity</a> over a number of selected Eurostat statistics at either the NUTS3 area level, or at the level of one of its containers.
 <br/><br/>
 <a href="images/similarity.png"><img src="images/similaritysmall.png"></img></a>
+      <hr class="horizontal dark my-sm-4">
+        You can embed widgets with EU Twinnings data. For a few examples, <a href="widget-examples.php">see here</a>.
         <hr class="horizontal dark my-sm-4">
         <a class="btn btn-outline-dark w-100" href="https://github.com/puntofisso/data.europa.eu-eutwinnings">View documentation</a>
         <div class="w-100 text-center">

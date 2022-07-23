@@ -83,3 +83,10 @@ The web site is all contained in the `web` folder. It's basic bootstrap template
 
 ### Unit testing
 Standard unit testing is available in the `unit_tests.py` file. This ensures consistency in the table, making sure that the numbers of NUTS3/2/1/0 regions is correct, that the number of similarity pairs is correct, and that similarity is reflexive (i.e. `similarity(A,B) == similarity(B,A)`). Further unit tests may be developed.
+
+## Embeddable widgets
+EU Twinnings similarity data can be embedded using ready iframe widgets. A few examples are available in the [widget-examples.php](https://eu-twinnings.site/widget-examples.php) file on the main server and under `web`. For example, this is a common way to embed a hexmap for the Prov. Oost-Vlaanderen (Belgique/België) region:
+`<iframe src="https://eu-twinnings.site/widget/widget336x280-hexeample.php?nutsid=BE23"
+          scrolling="no" style="width: 336px; height: 280px; margin: 0; padding: 0; border: none;">
+</iframe>`.  
+The full list of embeddable widgets in the `web/widget` folder.
