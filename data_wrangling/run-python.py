@@ -1157,12 +1157,43 @@ def similarity_calculate(db_file_name):
     fieldlist0 = ['pop0','density']
 
     generateallsimilarities(db_file_name, fieldlist3, fieldlist2, fieldlist1, fieldlist0)
-    # TODO to check new areas -> start with this
-    #print(similarity('BE32B','HR064',fieldlist3))
-    #print(similarity('BG34','DE25',fieldlist2))
-    #print(similarity('BG3','DE2',fieldlist1))
-    #print(similarity('BG','DE',fieldlist0))
 
+
+def fixInDb():
+
+    # General connection for outer generateallsimilarities
+    conn = sqlite3.connect(db_file_name)
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+
+    conWRITE = sqlite3.connect(db_file_name)
+    conWRITE.isolation_level = None
+    curWRITE = conWRITE.cursor()
+
+
+    # pop3 is NULL or 'NONE' for nuts3
+    #   average pop3 of each nuts3 within same nuts2; if n/a same nuts1; if n/a same nuts0
+    myquery = cur.execute("SELECT n1.code, n1.nuts2, t1.average FROM nuts n1 INNER JOIN (SELECT n2.nuts2, avg(n2.pop3) as average FROM nuts n2 group by n2.nuts2 ) as t1 ON n1.nuts2 = t1.nuts2 WHERE n1.level=3")
+    ###
+# SELECT n1.code, n1.pop3, n1.nuts2, t1.average, n1.nuts1, t2.average, n1.nuts0, t3.average FROM nuts n1 
+# INNER JOIN (SELECT n2.nuts2, avg(n2.pop3) as average FROM nuts n2 group by n2.nuts2 ) as t1 ON n1.nuts2 = t1.nuts2
+# INNER JOIN (SELECT n3.nuts1, avg(n3.pop3) as average FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+# INNER JOIN (SELECT n4.nuts0, avg(n4.pop3) as average FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+# WHERE n1.level=3 and (n1.pop3 is NULL or n1.pop3 = 'NONE')
+    # TODO
+    mydata = cur.fetchall()
+
+
+    SELECT avg(pop3) from nuts where level=3 and nuts2='EE00'")
+
+    #
+    # density is NULL for nuts3
+    # density is NULL for nuts2
+    # fertility is NULL for nuts3
+    # fertility is NULL for nuts2
+    # popchange is NULL or 'NONE' for nuts3
+    # popchange is NULL or 'NONE' for nuts2
+    pass
 
 def main():
 
