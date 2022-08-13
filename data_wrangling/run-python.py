@@ -1159,41 +1159,566 @@ def similarity_calculate(db_file_name):
     generateallsimilarities(db_file_name, fieldlist3, fieldlist2, fieldlist1, fieldlist0)
 
 
-def fixInDb():
+def dict_factory(cursor, row):
+    d = {}
+    for idx, col in enumerate(cursor.description):
+        d[col[0]] = row[idx]
+        
+    
+    return d
+    
 
-    # General connection for outer generateallsimilarities
+def fixInDb(db_file_name):
+
+    
+    # General connection for outer 
+    # conn = sqlite3.connect(db_file_name)
+    # conn.row_factory = sqlite3.Row
+    # cur = conn.cursor()
+    
+    # General connection, to use as look-up table for code->average 
     conn = sqlite3.connect(db_file_name)
-    conn.row_factory = sqlite3.Row
+    conn.row_factory = dict_factory
     cur = conn.cursor()
+    
+    # I - if pop3 is NULL or 'NONE' for nuts3, replace with average pop3 of each nuts3 within same nuts2; if n/a same nuts1; if n/a same nuts0
+    # to clarify, this query is just at nuts3 level myquery = cur.execute("SELECT n1.code, n1.nuts2, t1.average FROM nuts n1 INNER JOIN (SELECT n2.nuts2, avg(n2.pop3) as average FROM nuts n2 group by n2.nuts2 ) as t1 ON n1.nuts2 = t1.nuts2 WHERE n1.level=3")
+    
+    find_higher_order_average_query = """SELECT n1.code, n1.pop3, n1.nuts2, t1.average3, n1.nuts1, t2.average2, n1.nuts0, t3.average1 FROM nuts n1 
+    INNER JOIN (SELECT n2.nuts2, avg(n2.pop3) as average3 FROM nuts n2 group by n2.nuts2 ) as t1 ON n1.nuts2 = t1.nuts2
+    INNER JOIN (SELECT n3.nuts1, avg(n3.pop3) as average2 FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+    INNER JOIN (SELECT n4.nuts0, avg(n4.pop3) as average1 FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+    WHERE n1.level=3 and (n1.pop3 is NULL or n1.pop3 = 'NONE')"""
+    
+    # build a lookup table    
+    cur.execute(find_higher_order_average_query)
+    mydatatable_temp = cur.fetchall()
+    mydatatable = {}
+    for elem in mydatatable_temp:
+        mydatatable[elem['code']] = elem
+    
 
-    conWRITE = sqlite3.connect(db_file_name)
-    conWRITE.isolation_level = None
-    curWRITE = conWRITE.cursor()
+    # find the NONE/NULL
+    query="SELECT code FROM nuts WHERE level=3 and (pop3 = 'NONE' or pop3 is NULL);"
+    cur = conn.cursor()
+    cur.execute(query)
+
+    curW = conn.cursor()
+    for row in cur:
+        code = row['code']
+        avg3 = mydatatable[code]['average3']
+        avg2 = mydatatable[code]['average2']
+        avg1 = mydatatable[code]['average1']
+
+        avgtouse = -1
+
+        if avg3 > 0:
+            avgtouse = avg3
+        elif avg2 > 0:
+            avgtouse = avg2
+        elif avg1 > 0:
+            avgtouse = avg1
+        else:
+            avgtouse = 999999999
+        
+        curW.execute("UPDATE nuts SET pop3=? WHERE code=?", (avgtouse, code))
+        conn.commit()
 
 
-    # pop3 is NULL or 'NONE' for nuts3
-    #   average pop3 of each nuts3 within same nuts2; if n/a same nuts1; if n/a same nuts0
-    myquery = cur.execute("SELECT n1.code, n1.nuts2, t1.average FROM nuts n1 INNER JOIN (SELECT n2.nuts2, avg(n2.pop3) as average FROM nuts n2 group by n2.nuts2 ) as t1 ON n1.nuts2 = t1.nuts2 WHERE n1.level=3")
-    ###
-# SELECT n1.code, n1.pop3, n1.nuts2, t1.average, n1.nuts1, t2.average, n1.nuts0, t3.average FROM nuts n1 
-# INNER JOIN (SELECT n2.nuts2, avg(n2.pop3) as average FROM nuts n2 group by n2.nuts2 ) as t1 ON n1.nuts2 = t1.nuts2
-# INNER JOIN (SELECT n3.nuts1, avg(n3.pop3) as average FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
-# INNER JOIN (SELECT n4.nuts0, avg(n4.pop3) as average FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
-# WHERE n1.level=3 and (n1.pop3 is NULL or n1.pop3 = 'NONE')
-    # TODO
-    mydata = cur.fetchall()
+    # II - if density is NULL or NONE for nuts3, replace with...
+    find_higher_order_average_query = """SELECT n1.code, n1.density, n1.nuts2, t1.average3, n1.nuts1, t2.average2, n1.nuts0, t3.average1 FROM nuts n1 
+    INNER JOIN (SELECT n2.nuts2, avg(n2.density) as average3 FROM nuts n2 group by n2.nuts2 ) as t1 ON n1.nuts2 = t1.nuts2
+    INNER JOIN (SELECT n3.nuts1, avg(n3.density) as average2 FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+    INNER JOIN (SELECT n4.nuts0, avg(n4.density) as average1 FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+    WHERE n1.level=3 and (n1.density is NULL or n1.density = 'NONE')"""
+    
+    # build a lookup table    
+    cur.execute(find_higher_order_average_query)
+    mydatatable_temp = cur.fetchall()
+    mydatatable = {}
+    for elem in mydatatable_temp:
+        mydatatable[elem['code']] = elem
+    
+    # find the NONE/NULL
+    query="SELECT code FROM nuts WHERE level=3 and (density = 'NONE' or density is NULL);"
+    cur = conn.cursor()
+    cur.execute(query)
+
+    curW = conn.cursor()
+    for row in cur:
+        code = row['code']
+        avg3 = mydatatable[code]['average3']
+        avg2 = mydatatable[code]['average2']
+        avg1 = mydatatable[code]['average1']
+
+        avgtouse = -1
+
+        if avg3 is not None and avg3 > 0:
+            avgtouse = avg3
+        elif avg2 is not None and avg2 > 0:
+            avgtouse = avg2
+        elif avg1 is not None and avg1 > 0:
+            avgtouse = avg1
+        else:
+            avgtouse = 999999999
+        
+        curW.execute("UPDATE nuts SET density=? WHERE code=?", (avgtouse, code))
+        conn.commit()
+
+    # III - if density is NULL or NONE for nuts2, replace with...
+    find_higher_order_average_query = """SELECT n1.code, n1.density, n1.nuts2, n1.nuts1, t2.average2, n1.nuts0, t3.average1 FROM nuts n1 
+    INNER JOIN (SELECT n3.nuts1, avg(n3.density) as average2 FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+    INNER JOIN (SELECT n4.nuts0, avg(n4.density) as average1 FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+    WHERE n1.level=2 and (n1.density is NULL or n1.density = 'NONE')"""
+    
+    # build a lookup table    
+    cur.execute(find_higher_order_average_query)
+    mydatatable_temp = cur.fetchall()
+    mydatatable = {}
+    for elem in mydatatable_temp:
+        mydatatable[elem['code']] = elem
+    
+    # find the NONE/NULL
+    query="SELECT code FROM nuts WHERE level=2 and (density = 'NONE' or density is NULL);"
+    cur = conn.cursor()
+    cur.execute(query)
+
+    curW = conn.cursor()
+    for row in cur:
+        code = row['code']
+        avg2 = mydatatable[code]['average2']
+        avg1 = mydatatable[code]['average1']
+
+        avgtouse = -1
+
+        if avg2 is not None and avg2 > 0:
+            avgtouse = avg2
+        elif avg1 is not None and avg1 > 0:
+            avgtouse = avg1
+        else:
+            avgtouse = 999999999
+        
+        curW.execute("UPDATE nuts SET density=? WHERE code=?", (avgtouse, code))
+        conn.commit()
+
+    # IV - fertility is NULL or NONE for nuts3, replace with...
+    find_higher_order_average_query = """SELECT n1.code, n1.fertility, n1.nuts2, t1.average3, n1.nuts1, t2.average2, n1.nuts0, t3.average1 FROM nuts n1 
+    INNER JOIN (SELECT n2.nuts2, avg(n2.fertility) as average3 FROM nuts n2 group by n2.nuts2 ) as t1 ON n1.nuts2 = t1.nuts2
+    INNER JOIN (SELECT n3.nuts1, avg(n3.fertility) as average2 FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+    INNER JOIN (SELECT n4.nuts0, avg(n4.fertility) as average1 FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+    WHERE n1.level=3 and (n1.fertility is NULL or n1.fertility = 'NONE')"""
+    
+    # build a lookup table    
+    cur.execute(find_higher_order_average_query)
+    mydatatable_temp = cur.fetchall()
+    mydatatable = {}
+    for elem in mydatatable_temp:
+        mydatatable[elem['code']] = elem
+    
+    # find the NONE/NULL
+    query="SELECT code FROM nuts WHERE level=3 and (fertility = 'NONE' or fertility is NULL);"
+    cur = conn.cursor()
+    cur.execute(query)
+
+    curW = conn.cursor()
+    for row in cur:
+        code = row['code']
+        avg3 = mydatatable[code]['average3']
+        avg2 = mydatatable[code]['average2']
+        avg1 = mydatatable[code]['average1']
+
+        avgtouse = -1
+
+        if avg3 is not None and avg3 > 0:
+            avgtouse = avg3
+        elif avg2 is not None and avg2 > 0:
+            avgtouse = avg2
+        elif avg1 is not None and avg1 > 0:
+            avgtouse = avg1
+        else:
+            avgtouse = 999999999
+        
+        curW.execute("UPDATE nuts SET fertility=? WHERE code=?", (avgtouse, code))
+        conn.commit()
+
+    # V - fertility is NULL for nuts2, replace with...
+    find_higher_order_average_query = """SELECT n1.code, n1.fertility, n1.nuts2, n1.nuts1, t2.average2, n1.nuts0, t3.average1 FROM nuts n1 
+    INNER JOIN (SELECT n3.nuts1, avg(n3.fertility) as average2 FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+    INNER JOIN (SELECT n4.nuts0, avg(n4.fertility) as average1 FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+    WHERE n1.level=2 and (n1.fertility is NULL or n1.fertility = 'NONE')"""
+    
+    # build a lookup table    
+    cur.execute(find_higher_order_average_query)
+    mydatatable_temp = cur.fetchall()
+    mydatatable = {}
+    for elem in mydatatable_temp:
+        mydatatable[elem['code']] = elem
+    
+    # find the NONE/NULL
+    query="SELECT code FROM nuts WHERE level=2 and (fertility = 'NONE' or fertility is NULL);"
+    cur = conn.cursor()
+    cur.execute(query)
+
+    curW = conn.cursor()
+    for row in cur:
+        code = row['code']
+        avg2 = mydatatable[code]['average2']
+        avg1 = mydatatable[code]['average1']
+
+        avgtouse = -1
+
+        if avg2 is not None and avg2 > 0:
+            avgtouse = avg2
+        elif avg1 is not None and avg1 > 0:
+            avgtouse = avg1
+        else:
+            avgtouse = 999999999
+        
+        curW.execute("UPDATE nuts SET fertility=? WHERE code=?", (avgtouse, code))
+        conn.commit()
+    
+    # VI - popchange is NULL or 'NONE' for nuts3, replace with...
+    find_higher_order_average_query = """SELECT n1.code, n1.womenratio, n1.nuts2, t1.average3, n1.nuts1, t2.average2, n1.nuts0, t3.average1 FROM nuts n1 
+    INNER JOIN (SELECT n2.nuts2, avg(n2.womenratio) as average3 FROM nuts n2 group by n2.nuts2 ) as t1 ON n1.nuts2 = t1.nuts2
+    INNER JOIN (SELECT n3.nuts1, avg(n3.womenratio) as average2 FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+    INNER JOIN (SELECT n4.nuts0, avg(n4.womenratio) as average1 FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+    WHERE n1.level=3 and (n1.womenratio is NULL or n1.womenratio = 'NONE')"""
+    
+    # build a lookup table    
+    cur.execute(find_higher_order_average_query)
+    mydatatable_temp = cur.fetchall()
+    mydatatable = {}
+    for elem in mydatatable_temp:
+        mydatatable[elem['code']] = elem
+    
+    # find the NONE/NULL
+    query="SELECT code FROM nuts WHERE level=3 and (womenratio = 'NONE' or womenratio is NULL);"
+    cur = conn.cursor()
+    cur.execute(query)
+
+    curW = conn.cursor()
+    for row in cur:
+        code = row['code']
+        avg3 = mydatatable[code]['average3']
+        avg2 = mydatatable[code]['average2']
+        avg1 = mydatatable[code]['average1']
+
+        avgtouse = -1
+
+        if avg3 is not None and avg3 > 0:
+            avgtouse = avg3
+        elif avg2 is not None and avg2 > 0:
+            avgtouse = avg2
+        elif avg1 is not None and avg1 > 0:
+            avgtouse = avg1
+        else:
+            avgtouse = 999999999
+        
+        curW.execute("UPDATE nuts SET womenratio=? WHERE code=?", (avgtouse, code))
+        conn.commit()
+    
+    # VII - popchange is NULL or 'NONE' for nuts2, replace with...
+    find_higher_order_average_query = """SELECT n1.code, n1.popchange, n1.nuts2, n1.nuts1, t2.average2, n1.nuts0, t3.average1 FROM nuts n1 
+    INNER JOIN (SELECT n3.nuts1, avg(n3.popchange) as average2 FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+    INNER JOIN (SELECT n4.nuts0, avg(n4.popchange) as average1 FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+    WHERE n1.level=2 and (n1.popchange is NULL or n1.popchange = 'NONE')"""
+    
+    # build a lookup table    
+    cur.execute(find_higher_order_average_query)
+    mydatatable_temp = cur.fetchall()
+    mydatatable = {}
+    for elem in mydatatable_temp:
+        mydatatable[elem['code']] = elem
+    
+    # find the NONE/NULL
+    query="SELECT code FROM nuts WHERE level=2 and (popchange = 'NONE' or popchange is NULL);"
+    cur = conn.cursor()
+    cur.execute(query)
+
+    curW = conn.cursor()
+    for row in cur:
+        code = row['code']
+        avg2 = mydatatable[code]['average2']
+        avg1 = mydatatable[code]['average1']
+
+        avgtouse = -1
+
+        if avg2 is not None and avg2 > 0:
+            avgtouse = avg2
+        elif avg1 is not None and avg1 > 0:
+            avgtouse = avg1
+        else:
+            avgtouse = 999999999
+        
+        curW.execute("UPDATE nuts SET popchange=? WHERE code=?", (avgtouse, code))
+        conn.commit()
+
+    # VIII - womenratio is NULL or 'NONE' for nuts3, replace with...
+    find_higher_order_average_query = """SELECT n1.code, n1.popchange, n1.nuts2, t1.average3, n1.nuts1, t2.average2, n1.nuts0, t3.average1 FROM nuts n1 
+    INNER JOIN (SELECT n2.nuts2, avg(n2.popchange) as average3 FROM nuts n2 group by n2.nuts2 ) as t1 ON n1.nuts2 = t1.nuts2
+    INNER JOIN (SELECT n3.nuts1, avg(n3.popchange) as average2 FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+    INNER JOIN (SELECT n4.nuts0, avg(n4.popchange) as average1 FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+    WHERE n1.level=3 and (n1.popchange is NULL or n1.popchange = 'NONE')"""
+    
+    # build a lookup table    
+    cur.execute(find_higher_order_average_query)
+    mydatatable_temp = cur.fetchall()
+    mydatatable = {}
+    for elem in mydatatable_temp:
+        mydatatable[elem['code']] = elem
+    
+    # find the NONE/NULL
+    query="SELECT code FROM nuts WHERE level=3 and (popchange = 'NONE' or popchange is NULL);"
+    cur = conn.cursor()
+    cur.execute(query)
+
+    curW = conn.cursor()
+    for row in cur:
+        code = row['code']
+        avg3 = mydatatable[code]['average3']
+        avg2 = mydatatable[code]['average2']
+        avg1 = mydatatable[code]['average1']
+
+        avgtouse = -1
+
+        if avg3 is not None and avg3 > 0:
+            avgtouse = avg3
+        elif avg2 is not None and avg2 > 0:
+            avgtouse = avg2
+        elif avg1 is not None and avg1 > 0:
+            avgtouse = avg1
+        else:
+            avgtouse = 999999999
+        
+        curW.execute("UPDATE nuts SET popchange=? WHERE code=?", (avgtouse, code))
+        conn.commit()
+    
+    # IX - womenratio for nuts2
+    find_higher_order_average_query = """SELECT n1.code, n1.womenratio, n1.nuts2, n1.nuts1, t2.average2, n1.nuts0, t3.average1 FROM nuts n1 
+    INNER JOIN (SELECT n3.nuts1, avg(n3.womenratio) as average2 FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+    INNER JOIN (SELECT n4.nuts0, avg(n4.womenratio) as average1 FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+    WHERE n1.level=2 and (n1.womenratio is NULL or n1.womenratio = 'NONE')"""
+    
+    # build a lookup table    
+    cur.execute(find_higher_order_average_query)
+    mydatatable_temp = cur.fetchall()
+    mydatatable = {}
+    for elem in mydatatable_temp:
+        mydatatable[elem['code']] = elem
+    
+    # find the NONE/NULL
+    query="SELECT code FROM nuts WHERE level=2 and (womenratio = 'NONE' or womenratio is NULL);"
+    cur = conn.cursor()
+    cur.execute(query)
+
+    curW = conn.cursor()
+    for row in cur:
+        code = row['code']
+        avg2 = mydatatable[code]['average2']
+        avg1 = mydatatable[code]['average1']
+
+        avgtouse = -1
+
+        if avg2 is not None and avg2 > 0:
+            avgtouse = avg2
+        elif avg1 is not None and avg1 > 0:
+            avgtouse = avg1
+        else:
+            avgtouse = 999999999
+        
+        curW.execute("UPDATE nuts SET womenratio=? WHERE code=?", (avgtouse, code))
+        conn.commit()
+
+    # X - gva for nuts3
+    find_higher_order_average_query = """SELECT n1.code, n1.gva, n1.nuts2, t1.average3, n1.nuts1, t2.average2, n1.nuts0, t3.average1 FROM nuts n1 
+    INNER JOIN (SELECT n2.nuts2, avg(n2.gva) as average3 FROM nuts n2 group by n2.nuts2 ) as t1 ON n1.nuts2 = t1.nuts2
+    INNER JOIN (SELECT n3.nuts1, avg(n3.gva) as average2 FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+    INNER JOIN (SELECT n4.nuts0, avg(n4.gva) as average1 FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+    WHERE n1.level=3 and (n1.gva is NULL or n1.gva = 'NONE')"""
+    
+    # build a lookup table    
+    cur.execute(find_higher_order_average_query)
+    mydatatable_temp = cur.fetchall()
+    mydatatable = {}
+    for elem in mydatatable_temp:
+        mydatatable[elem['code']] = elem
+    
+    # find the NONE/NULL
+    query="SELECT code FROM nuts WHERE level=3 and (gva = 'NONE' or gva is NULL);"
+    cur = conn.cursor()
+    cur.execute(query)
+
+    curW = conn.cursor()
+    for row in cur:
+        code = row['code']
+        avg3 = mydatatable[code]['average3']
+        avg2 = mydatatable[code]['average2']
+        avg1 = mydatatable[code]['average1']
+
+        avgtouse = -1
+
+        if avg3 is not None and avg3 > 0:
+            avgtouse = avg3
+        elif avg2 is not None and avg2 > 0:
+            avgtouse = avg2
+        elif avg1 is not None and avg1 > 0:
+            avgtouse = avg1
+        else:
+            avgtouse = 999999999
+        
+        curW.execute("UPDATE nuts SET gva=? WHERE code=?", (avgtouse, code))
+        conn.commit()
+
+    # XI - gva for nuts2
+    find_higher_order_average_query = """SELECT n1.code, n1.gva, n1.nuts2, n1.nuts1, t2.average2, n1.nuts0, t3.average1 FROM nuts n1 
+    INNER JOIN (SELECT n3.nuts1, avg(n3.gva) as average2 FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+    INNER JOIN (SELECT n4.nuts0, avg(n4.gva) as average1 FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+    WHERE n1.level=2 and (n1.gva is NULL or n1.gva = 'NONE')"""
+    
+    # build a lookup table    
+    cur.execute(find_higher_order_average_query)
+    mydatatable_temp = cur.fetchall()
+    mydatatable = {}
+    for elem in mydatatable_temp:
+        mydatatable[elem['code']] = elem
+    
+    # find the NONE/NULL
+    query="SELECT code FROM nuts WHERE level=2 and (gva = 'NONE' or gva is NULL);"
+    cur = conn.cursor()
+    cur.execute(query)
+
+    curW = conn.cursor()
+    for row in cur:
+        code = row['code']
+        avg2 = mydatatable[code]['average2']
+        avg1 = mydatatable[code]['average1']
+
+        avgtouse = -1
+
+        if avg2 is not None and avg2 > 0:
+            avgtouse = avg2
+        elif avg1 is not None and avg1 > 0:
+            avgtouse = avg1
+        else:
+            avgtouse = 999999999
+        
+        curW.execute("UPDATE nuts SET gva=? WHERE code=?", (avgtouse, code))
+        conn.commit()
+
+    # XII - gdppps for nuts3
+    find_higher_order_average_query = """SELECT n1.code, n1.gdppps, n1.nuts2, t1.average3, n1.nuts1, t2.average2, n1.nuts0, t3.average1 FROM nuts n1 
+    INNER JOIN (SELECT n2.nuts2, avg(n2.gdppps) as average3 FROM nuts n2 group by n2.nuts2 ) as t1 ON n1.nuts2 = t1.nuts2
+    INNER JOIN (SELECT n3.nuts1, avg(n3.gdppps) as average2 FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+    INNER JOIN (SELECT n4.nuts0, avg(n4.gdppps) as average1 FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+    WHERE n1.level=3 and (n1.gdppps is NULL or n1.gdppps = 'NONE')"""
+    
+    # build a lookup table    
+    cur.execute(find_higher_order_average_query)
+    mydatatable_temp = cur.fetchall()
+    mydatatable = {}
+    for elem in mydatatable_temp:
+        mydatatable[elem['code']] = elem
+    
+    # find the NONE/NULL
+    query="SELECT code FROM nuts WHERE level=3 and (gdppps = 'NONE' or gdppps is NULL);"
+    cur = conn.cursor()
+    cur.execute(query)
+
+    curW = conn.cursor()
+    for row in cur:
+        code = row['code']
+        avg3 = mydatatable[code]['average3']
+        avg2 = mydatatable[code]['average2']
+        avg1 = mydatatable[code]['average1']
+
+        avgtouse = -1
+
+        if avg3 is not None and avg3 > 0:
+            avgtouse = avg3
+        elif avg2 is not None and avg2 > 0:
+            avgtouse = avg2
+        elif avg1 is not None and avg1 > 0:
+            avgtouse = avg1
+        else:
+            avgtouse = 999999999
+        
+        curW.execute("UPDATE nuts SET gdppps=? WHERE code=?", (avgtouse, code))
+        conn.commit()
+
+    # XIII - gdppps for nuts2
+    find_higher_order_average_query = """SELECT n1.code, n1.gdppps, n1.nuts2, n1.nuts1, t2.average2, n1.nuts0, t3.average1 FROM nuts n1 
+    INNER JOIN (SELECT n3.nuts1, avg(n3.gdppps) as average2 FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+    INNER JOIN (SELECT n4.nuts0, avg(n4.gdppps) as average1 FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+    WHERE n1.level=2 and (n1.gdppps is NULL or n1.gdppps = 'NONE')"""
+    
+    # build a lookup table    
+    cur.execute(find_higher_order_average_query)
+    mydatatable_temp = cur.fetchall()
+    mydatatable = {}
+    for elem in mydatatable_temp:
+        mydatatable[elem['code']] = elem
+    
+    # find the NONE/NULL
+    query="SELECT code FROM nuts WHERE level=2 and (gdppps = 'NONE' or gdppps is NULL);"
+    cur = conn.cursor()
+    cur.execute(query)
+
+    curW = conn.cursor()
+    for row in cur:
+        code = row['code']
+        avg2 = mydatatable[code]['average2']
+        avg1 = mydatatable[code]['average1']
+
+        avgtouse = -1
+
+        if avg2 is not None and avg2 > 0:
+            avgtouse = avg2
+        elif avg1 is not None and avg1 > 0:
+            avgtouse = avg1
+        else:
+            avgtouse = 999999999
+        
+        curW.execute("UPDATE nuts SET gdppps=? WHERE code=?", (avgtouse, code))
+        conn.commit()
+
+    # XIV - pop2 for NUTS2
+    find_higher_order_average_query = """SELECT n1.code, n1.pop2, n1.nuts2, n1.nuts1, t2.average2, n1.nuts0, t3.average1 FROM nuts n1 
+    INNER JOIN (SELECT n3.nuts1, avg(n3.pop2) as average2 FROM nuts n3 group by n3.nuts1 ) as t2 ON n1.nuts1 = t2.nuts1
+    INNER JOIN (SELECT n4.nuts0, avg(n4.pop2) as average1 FROM nuts n4 group by n4.nuts0 ) as t3 ON n1.nuts0 = t3.nuts0
+    WHERE n1.level=2 and (n1.pop2 is NULL or n1.pop2 = 'NONE')"""
+    
+    # build a lookup table    
+    cur.execute(find_higher_order_average_query)
+    mydatatable_temp = cur.fetchall()
+    mydatatable = {}
+    for elem in mydatatable_temp:
+        mydatatable[elem['code']] = elem
+    
+    # find the NONE/NULL
+    query="SELECT code FROM nuts WHERE level=2 and (pop2 = 'NONE' or pop2 is NULL);"
+    cur = conn.cursor()
+    cur.execute(query)
+
+    curW = conn.cursor()
+    for row in cur:
+        code = row['code']
+        avg2 = mydatatable[code]['average2']
+        avg1 = mydatatable[code]['average1']
+
+        avgtouse = -1
+
+        if avg2 is not None and avg2 > 0:
+            avgtouse = avg2
+        elif avg1 is not None and avg1 > 0:
+            avgtouse = avg1
+        else:
+            avgtouse = 999999999
+        
+        curW.execute("UPDATE nuts SET pop2=? WHERE code=?", (avgtouse, code))
+        conn.commit()
 
 
-    SELECT avg(pop3) from nuts where level=3 and nuts2='EE00'")
-
-    #
-    # density is NULL for nuts3
-    # density is NULL for nuts2
-    # fertility is NULL for nuts3
-    # fertility is NULL for nuts2
-    # popchange is NULL or 'NONE' for nuts3
-    # popchange is NULL or 'NONE' for nuts2
-    pass
+    conn.close()
 
 def main():
 
@@ -1250,4 +1775,5 @@ def main():
     # TODO print instructions on which files to move; QGIS ATLAS Generation
 
 if __name__ == "__main__":
-    main()
+    # main()
+    fixInDb('data/nuts.db')

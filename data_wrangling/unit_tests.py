@@ -102,5 +102,132 @@ class TestEUTwinningsMethods(unittest.TestCase):
             sim2=row['sim2']
             self.assertEqual(sim1, sim2)
 
+    def test_SQLdata_NUTS3_pop3(self):
+        # Check simmetry in similarity
+        conn = sqlite3.connect('data/nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        line1 = cur.execute("SELECT count(*) as cnt FROM nuts WHERE level=3 and (pop3 is NULL or pop3='NONE')")
+        row = cur.fetchone()
+        self.assertEqual(row['cnt'], 0)
+
+    def test_SQLdata_NUTS2_pop2(self):
+        # Check simmetry in similarity
+        conn = sqlite3.connect('data/nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        line1 = cur.execute("SELECT count(*) as cnt FROM nuts WHERE level=2 and (pop2 is NULL or pop2='NONE')")
+        row = cur.fetchone()
+        self.assertEqual(row['cnt'], 0)
+
+    def test_SQLdata_NUTS3_density(self):
+        # Check simmetry in similarity
+        conn = sqlite3.connect('data/nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        line1 = cur.execute("SELECT count(*) as cnt FROM nuts WHERE level=3 and (density is NULL or density='NONE')")
+        row = cur.fetchone()
+        self.assertEqual(row['cnt'], 0)
+
+    def test_SQLdata_NUTS2_density(self):
+        # Check simmetry in similarity
+        conn = sqlite3.connect('data/nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        line1 = cur.execute("SELECT count(*) as cnt FROM nuts WHERE level=2 and (density is NULL or density='NONE')")
+        row = cur.fetchone()
+        self.assertEqual(row['cnt'], 0)
+
+    def test_SQLdata_NUTS3_fertility(self):
+        # Check simmetry in similarity
+        conn = sqlite3.connect('data/nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        line1 = cur.execute("SELECT count(*) as cnt FROM nuts WHERE level=3 and (fertility is NULL or fertility='NONE')")
+        row = cur.fetchone()
+        self.assertEqual(row['cnt'], 0)
+
+    def test_SQLdata_NUTS2_fertility(self):
+        # Check simmetry in similarity
+        conn = sqlite3.connect('data/nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        line1 = cur.execute("SELECT count(*) as cnt FROM nuts WHERE level=2 and (fertility is NULL or fertility='NONE')")
+        row = cur.fetchone()
+        self.assertEqual(row['cnt'], 0)
+
+
+    def test_SQLdata_NUTS3_popchange(self):
+        # Check simmetry in similarity
+        conn = sqlite3.connect('data/nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        line1 = cur.execute("SELECT count(*) as cnt FROM nuts WHERE level=3 and (popchange is NULL or popchange='NONE')")
+        row = cur.fetchone()
+        self.assertEqual(row['cnt'], 0)
+
+    def test_SQLdata_NUTS2_popchange(self):
+        # Check simmetry in similarity
+        conn = sqlite3.connect('data/nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        line1 = cur.execute("SELECT count(*) as cnt FROM nuts WHERE level=2 and (popchange is NULL or popchange='NONE')")
+        row = cur.fetchone()
+        self.assertEqual(row['cnt'], 0)
+
+    def test_SQLdata_NUTS3_womenratio(self):
+        # Check simmetry in similarity
+        conn = sqlite3.connect('data/nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        line1 = cur.execute("SELECT count(*) as cnt FROM nuts WHERE level=3 and (womenratio is NULL or womenratio='NONE')")
+        row = cur.fetchone()
+        self.assertEqual(row['cnt'], 0)
+
+    def test_SQLdata_NUTS2_womenratio(self):
+        # Check simmetry in similarity
+        conn = sqlite3.connect('data/nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        line1 = cur.execute("SELECT count(*) as cnt FROM nuts WHERE level=2 and (womenratio is NULL or womenratio='NONE')")
+        row = cur.fetchone()
+        self.assertEqual(row['cnt'], 0)
+
+    def test_SQLdata_NUTS3_gva(self):
+        # Check simmetry in similarity
+        conn = sqlite3.connect('data/nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        line1 = cur.execute("SELECT count(*) as cnt FROM nuts WHERE level=3 and (gva is NULL or gva='NONE')")
+        row = cur.fetchone()
+        self.assertEqual(row['cnt'], 0)
+
+    def test_SQLdata_NUTS2_gva(self):
+        # Check simmetry in similarity
+        conn = sqlite3.connect('data/nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        line1 = cur.execute("SELECT count(*) as cnt FROM nuts WHERE level=2 and (gva is NULL or gva='NONE')")
+        row = cur.fetchone()
+        self.assertEqual(row['cnt'], 0)
+
+    def test_SQLdata_NUTS3_gdppps(self):
+        # Check simmetry in similarity
+        conn = sqlite3.connect('data/nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        line1 = cur.execute("SELECT count(*) as cnt FROM nuts WHERE level=3 and (gdppps is NULL or gdppps='NONE')")
+        row = cur.fetchone()
+        self.assertEqual(row['cnt'], 0)
+
+    def test_SQLdata_NUTS2_gdppps(self):
+        # Check simmetry in similarity
+        conn = sqlite3.connect('data/nuts.db')
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        line1 = cur.execute("SELECT count(*) as cnt FROM nuts WHERE level=2 and (gdppps is NULL or gdppps='NONE')")
+        row = cur.fetchone()
+        self.assertEqual(row['cnt'], 0)
+
 if __name__ == '__main__':
     unittest.main()

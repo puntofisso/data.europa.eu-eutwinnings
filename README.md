@@ -82,7 +82,8 @@ The app is intended to be run from a sqlite3 in order to limit the dependencies 
 The web site is all contained in the `web` folder. It's basic bootstrap template using [Material Kit](https://www.creative-tim.com/product/material-kit) by Creative Tim (see credits.php and LICENSE.md).
 
 ### Unit testing
-Standard unit testing is available in the `unit_tests.py` file. This ensures consistency in the table, making sure that the numbers of NUTS3/2/1/0 regions is correct, that the number of similarity pairs is correct, and that similarity is reflexive (i.e. `similarity(A,B) == similarity(B,A)`). Further unit tests may be developed.
+Standard unit testing is available in the `unit_tests.py` file. This ensures consistency in the table, making sure that the numbers of NUTS3/2/1/0 regions is correct, that the number of similarity pairs is correct, and that similarity is reflexive (i.e. `similarity(A,B) == similarity(B,A)`). Further unit tests may be developed.  
+Ideally, the unit tests should be run after the `fixInDB()` function has been called - at which point the similarities have not been calculated, with the unit testing having 1 distinct failure; then called again with similarities in the DB, by which time all tests should pass.
 
 ## Embeddable widgets
 EU Twinnings similarity data can be embedded using ready iframe widgets. A few examples are available in the [widget-examples.php](https://eu-twinnings.site/widget-examples.php) file on the main server and under `web`. For example, this is a common way to embed a hexmap for the Prov. Oost-Vlaanderen (Belgique/België) region:
