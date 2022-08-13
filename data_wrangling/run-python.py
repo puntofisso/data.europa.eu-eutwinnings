@@ -3404,7 +3404,7 @@ def main():
     
 
 if __name__ == "__main__":
-    # main()
+    main()
     fixInDb('data/nuts.db')
     fixInDbNorm('data/nuts.db')
     fixInDb2016('data/nuts.db')
