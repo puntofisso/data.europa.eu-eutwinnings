@@ -433,7 +433,7 @@ def generate_geojson(shp_file, json_file, level):
     # Write to file
     gdf_simplified.to_file(json_file, driver="GeoJSON")
 
-def createCSV(year, file_tsv, file_normalised_tsv, relations_filename):
+def createCSV(year, file_tsv, relations_filename):
 
     csvfile = open(file_tsv, "w")
 
