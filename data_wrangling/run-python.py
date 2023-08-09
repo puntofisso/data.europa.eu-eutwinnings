@@ -177,12 +177,52 @@ def mround(match):
     return "{:.2f}".format(float(match.group()))
 
 # gets dataset and puts it in global dictionary
+# def getDataSet(table, filter, prefix):
+#     global globaldict
+
+#     euroUrl = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/'
+#     euroUrl = euroUrl+""+table
+#     euroUrl = euroUrl+"?"+filter
+#     print(euroUrl)
+
+#     data = []
+#     try:
+#         headers={
+#             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'
+#         }
+#         req = urllib.request.Request(url=euroUrl,headers=headers)
+#         url = urllib.request.urlopen(req)
+#         data = json.loads(url.read().decode())
+
+#     except Exception as e:
+#         return "HTTPERROR"
+
+#     index = data['dimension']['geo']['category']['index']
+#     values = data['value']
+
+#     for indexCode in index:
+#         indexCode = indexCode
+#         indexToFollow = index[indexCode]
+
+#         try:
+#             val = values[str(indexToFollow)]
+#         except Exception as e:
+#             val = "NONE"
+
+#         if str(indexCode) not in globaldict:
+#             globaldict[str(indexCode)] = dict()
+#         globaldict[str(indexCode)][prefix] = str(val)
+
+
 def getDataSet(table, filter, prefix):
     global globaldict
 
-    euroUrl = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/'
+    # euroUrl = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/'
+    euroUrl = 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/'
+    
     euroUrl = euroUrl+""+table
     euroUrl = euroUrl+"?"+filter
+    print(euroUrl)
 
     data = []
     try:
@@ -214,47 +254,75 @@ def getDataSet(table, filter, prefix):
 
 def initData(file_json):
     global globaldict
-    getDataSet('demo_r_pjanaggr3', 'precision=1&sex=T&unit=NR&time=2019&age=TOTAL', 'population2019_nuts3')
-    getDataSet('demo_r_d2jan','time=2019&precision=1&sex=T&unit=NR&age=TOTAL','population2019')
-    getDataSet('demo_r_d3dens', 'unit=PER_KM2&precision=1&time=2018','density2018_nuts3')
-    getDataSet('demo_r_find3','indic_de=TOTFERRT&precision=1&unit=NR&time=2018', 'fertility2018_nuts3')
-    getDataSet('demo_r_gind3','indic_de=GROW&precision=1&time=2018','populationchange2018_nuts3')
-    getDataSet('demo_r_pjanind3','indic_de=PC_FM&precision=1&unit=PC&time=2019','womenper100men2019_nuts3')
-    getDataSet('nama_10r_3gdp','unit=EUR_HAB_EU27_2020&precision=1&time=2017','gdpPps2017_nuts3')
-    getDataSet('nama_10r_3gva','precision=1&currency=MIO_EUR&time=2017&nace_r2=TOTAL','gva2017basicprices_nuts3')
+    # getDataSet('demo_r_pjanaggr3', 'precision=1&sex=T&unit=NR&time=2019&age=TOTAL', 'population2019_nuts3')
+    # getDataSet('demo_r_d2jan','time=2019&precision=1&sex=T&unit=NR&age=TOTAL','population2019')
+    # getDataSet('demo_r_d3dens', 'unit=PER_KM2&precision=1&time=2018','density2018_nuts3')
+    # getDataSet('demo_r_find3','indic_de=TOTFERRT&precision=1&unit=NR&time=2018', 'fertility2018_nuts3')
+    # getDataSet('demo_r_gind3','indic_de=GROW&precision=1&time=2018','populationchange2018_nuts3')
+    # getDataSet('demo_r_pjanind3','indic_de=PC_FM&precision=1&unit=PC&time=2019','womenper100men2019_nuts3')
+    # getDataSet('nama_10r_3gdp','unit=EUR_HAB_EU27_2020&precision=1&time=2017','gdpPps2017_nuts3')
+    # getDataSet('nama_10r_3gva','precision=1&currency=MIO_EUR&time=2017&nace_r2=TOTAL','gva2017basicprices_nuts3')
+
+
+    # New endpoints as 2023
+    getDataSet('demo_r_pjanaggr3', 'format=JSON&time=2019&unit=NR&sex=T&age=TOTAL&lang=en', 'population2019_nuts3')
+    getDataSet('demo_r_d2jan','time=2019&sex=T&unit=NR&age=TOTAL','population2019')
+    getDataSet('demo_r_d3dens', 'unit=PER_KM2&&time=2018','density2018_nuts3')
+    getDataSet('demo_r_find3','format=JSON&unit=NR&indic_de=TOTFERRT&lang=en&time=2018', 'fertility2018_nuts3')
+    getDataSet('demo_r_gind3','format=JSON&time=2018&indic_de=GROW&lang=en','populationchange2018_nuts3')
+    getDataSet('demo_r_pjanind3','format=JSON&time=2019&unit=PC&indic_de=PC_FM&lang=en','womenper100men2019_nuts3')
+    getDataSet('nama_10r_3gdp','format=JSON&time=2017&unit=EUR_HAB_EU27_2020&lang=en','gdpPps2017_nuts3')
+    getDataSet('nama_10r_3gva','format=JSON&time=2017&currency=MIO_EUR&nace_r2=TOTAL&lang=en','gva2017basicprices_nuts3')
 
     ## New datasets added 15/6
 
     ## CENSUS, age ranges
     # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/cens_11ag_r3?filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y_LT15
-    getDataSet('cens_11ag_r3', 'filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y_LT15', 'census_age_Y_LT15_2011_nuts3')
-    # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/cens_11ag_r3?filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y15-29
-    getDataSet('cens_11ag_r3', 'filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y15-29', 'census_age_Y15-29_2011_nuts3')
-    # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/cens_11ag_r3?filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y30-49
-    getDataSet('cens_11ag_r3', 'filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y30-49', 'census_age_Y30-49_2011_nuts3')
-    # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/cens_11ag_r3?filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y50-64
-    getDataSet('cens_11ag_r3', 'filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y50-64', 'census_age_Y50-64_2011_nuts3')
-    # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/cens_11ag_r3?filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y65-84
-    getDataSet('cens_11ag_r3', 'filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y65-84', 'census_age_Y65-84_2011_nuts3')
-    # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/cens_11ag_r3?filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y_GE85
-    getDataSet('cens_11ag_r3', 'filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y_GE85', 'census_age_Y_GE85_2011_nuts3')
-    # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/cens_11ag_r3?filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=TOTAL
-    getDataSet('cens_11ag_r3', 'filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=TOTAL', 'census_age_TOTAL_2011_nuts3')
+    # getDataSet('cens_11ag_r3', 'filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y_LT15', 'census_age_Y_LT15_2011_nuts3')
+    # # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/cens_11ag_r3?filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y15-29
+    # getDataSet('cens_11ag_r3', 'filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y15-29', 'census_age_Y15-29_2011_nuts3')
+    # # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/cens_11ag_r3?filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y30-49
+    # getDataSet('cens_11ag_r3', 'filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y30-49', 'census_age_Y30-49_2011_nuts3')
+    # # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/cens_11ag_r3?filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y50-64
+    # getDataSet('cens_11ag_r3', 'filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y50-64', 'census_age_Y50-64_2011_nuts3')
+    # # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/cens_11ag_r3?filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y65-84
+    # getDataSet('cens_11ag_r3', 'filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y65-84', 'census_age_Y65-84_2011_nuts3')
+    # # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/cens_11ag_r3?filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y_GE85
+    # getDataSet('cens_11ag_r3', 'filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=Y_GE85', 'census_age_Y_GE85_2011_nuts3')
+    # # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/cens_11ag_r3?filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=TOTAL
+    # getDataSet('cens_11ag_r3', 'filterNonGeo=1&precision=1&sex=T&unit=NR&unitLabel=code&shortLabel=1&time=2011&age=TOTAL', 'census_age_TOTAL_2011_nuts3')
+    
+    # ## TOURISM, number of establishments
+    # # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/tour_cap_nuts3?filterNonGeo=1&precision=1&unit=NR&unitLabel=code&accommod=ESTBL&time=2011&nace_r2=I551-I553
+    # getDataSet('tour_cap_nuts3', 'filterNonGeo=1&precision=1&unit=NR&unitLabel=code&accommod=ESTBL&time=2011&nace_r2=I551-I553', 'tourism_establishments_2011_nuts3')
+
+    # ## ENERGY, Cooling and Heating Degree-days
+    # # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/nrg_chddr2_a?filterNonGeo=1&precision=1&unit=NR&unitLabel=code&time=2011&indic_nrg=CDD
+    # getDataSet('nrg_chddr2_a', 'filterNonGeo=1&precision=1&unit=NR&unitLabel=code&time=2011&indic_nrg=CDD', 'energy_cooling_degdays_2011_nuts3')
+    # # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/nrg_chddr2_a?filterNonGeo=1&precision=1&unit=NR&unitLabel=code&time=2011&indic_nrg=HDD
+    # getDataSet('nrg_chddr2_a', 'filterNonGeo=1&precision=1&unit=NR&unitLabel=code&time=2011&indic_nrg=HDD', 'energy_heating_degdays_2011_nuts3')
+
+    # ## CRIME, burglary only
+    # # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/crim_gen_reg?filterNonGeo=1&precision=1&unit=NR&unitLabel=code&time=2010&iccs=ICCS050211
+    # getDataSet('crim_gen_reg', 'filterNonGeo=1&precision=1&unit=NR&unitLabel=code&time=2010&iccs=ICCS050211', 'crime_burglaries_2010_nuts3')
 
 
-    ## TOURISM, number of establishments
-    # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/tour_cap_nuts3?filterNonGeo=1&precision=1&unit=NR&unitLabel=code&accommod=ESTBL&time=2011&nace_r2=I551-I553
-    getDataSet('tour_cap_nuts3', 'filterNonGeo=1&precision=1&unit=NR&unitLabel=code&accommod=ESTBL&time=2011&nace_r2=I551-I553', 'tourism_establishments_2011_nuts3')
+    # New endpoints 2023
+    getDataSet('cens_11ag_r3', 'format=JSON&sex=T&unit=NR&time=2011&age=Y_LT15', 'census_age_Y_LT15_2011_nuts3')
+    getDataSet('cens_11ag_r3', 'format=JSON&sex=T&unit=NR&time=2011&age=Y15-29', 'census_age_Y15-29_2011_nuts3')
+    getDataSet('cens_11ag_r3', 'format=JSON&sex=T&unit=NR&time=2011&age=Y30-49', 'census_age_Y30-49_2011_nuts3')
+    getDataSet('cens_11ag_r3', 'format=JSON&sex=T&unit=NR&time=2011&age=Y50-64', 'census_age_Y50-64_2011_nuts3')
+    getDataSet('cens_11ag_r3', 'format=JSON&sex=T&unit=NR&time=2011&age=Y65-84', 'census_age_Y65-84_2011_nuts3')
+    getDataSet('cens_11ag_r3', 'format=JSON&sex=T&unit=NR&time=2011&age=Y_GE85', 'census_age_Y_GE85_2011_nuts3')
+    getDataSet('cens_11ag_r3', 'format=JSON&time=2011&unit=NR&sex=T&age=TOTAL&lang=en', 'census_age_TOTAL_2011_nuts3')
 
-    ## ENERGY, Cooling and Heating Degree-days
-    # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/nrg_chddr2_a?filterNonGeo=1&precision=1&unit=NR&unitLabel=code&time=2011&indic_nrg=CDD
-    getDataSet('nrg_chddr2_a', 'filterNonGeo=1&precision=1&unit=NR&unitLabel=code&time=2011&indic_nrg=CDD', 'energy_cooling_degdays_2011_nuts3')
-    # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/nrg_chddr2_a?filterNonGeo=1&precision=1&unit=NR&unitLabel=code&time=2011&indic_nrg=HDD
-    getDataSet('nrg_chddr2_a', 'filterNonGeo=1&precision=1&unit=NR&unitLabel=code&time=2011&indic_nrg=HDD', 'energy_heating_degdays_2011_nuts3')
 
-    ## CRIME, burglary only
-    # - http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/crim_gen_reg?filterNonGeo=1&precision=1&unit=NR&unitLabel=code&time=2010&iccs=ICCS050211
-    getDataSet('crim_gen_reg', 'filterNonGeo=1&precision=1&unit=NR&unitLabel=code&time=2010&iccs=ICCS050211', 'crime_burglaries_2010_nuts3')
+    getDataSet('tour_cap_nuts3', 'format=JSON&time=2011&unit=NR&accommod=ESTBL&nace_r2=I551-I553&lang=en', 'tourism_establishments_2011_nuts3')
+
+    getDataSet('nrg_chddr2_a', 'format=JSON&time=2011&unit=NR&indic_nrg=CDD&lang=en', 'energy_cooling_degdays_2011_nuts3')
+    getDataSet('nrg_chddr2_a', 'format=JSON&time=2011&unit=NR&indic_nrg=HDD&lang=en', 'energy_heating_degdays_2011_nuts3')
+
+    getDataSet('crim_gen_reg', 'format=JSON&time=2010&unit=NR&iccs=ICCS050211&lang=en', 'crime_burglaries_2010_nuts3')
 
     # to file, do this to get proper JSON
     app_json = json.dumps(globaldict, indent=4)
