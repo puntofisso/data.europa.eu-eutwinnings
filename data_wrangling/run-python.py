@@ -267,7 +267,7 @@ def initData(file_json):
     # New endpoints as 2023
     getDataSet('demo_r_pjanaggr3', 'format=JSON&time=2019&unit=NR&sex=T&age=TOTAL&lang=en', 'population2019_nuts3')
     getDataSet('demo_r_d2jan','time=2019&sex=T&unit=NR&age=TOTAL','population2019')
-    getDataSet('demo_r_d3dens', 'unit=PER_KM2&&time=2018','density2018_nuts3')
+    getDataSet('demo_r_d3dens', 'unit=PER_KM2&time=2018','density2018_nuts3')
     getDataSet('demo_r_find3','format=JSON&unit=NR&indic_de=TOTFERRT&lang=en&time=2018', 'fertility2018_nuts3')
     getDataSet('demo_r_gind3','format=JSON&time=2018&indic_de=GROW&lang=en','populationchange2018_nuts3')
     getDataSet('demo_r_pjanind3','format=JSON&time=2019&unit=PC&indic_de=PC_FM&lang=en','womenper100men2019_nuts3')
@@ -334,6 +334,15 @@ def download(file_json):
     global globaldict
     globaldict = dict()
     initData(file_json)
+
+
+# def downloadedFilesToJson(file_json):
+#     # to file, do this to get proper JSON
+#     app_json = json.dumps(globaldict, indent=4)
+#     globaldictfile = open(file_json, "w")
+#     globaldictfile.write(app_json)
+#     globaldictfile.close()
+
 
 def createBasicDataFiles(year, globaldict_file, file_tsv, file_normalised_tsv, relations_filename):
     with open(globaldict_file, "r") as read_file: globaldict = json.load(read_file)
@@ -749,6 +758,7 @@ def createCSV(year, file_tsv, relations_filename):
                 #print(thisline)
                 logger.error('Failed : '+ str(e))
 
+
             csvfile.write(thisline)
 
         elif (level == "2"):
@@ -875,6 +885,7 @@ def createCSV(year, file_tsv, relations_filename):
         elif (level=="3"):
             try:
                 # get dictionaries for this area and its ancestors, if available
+                
                 try:
                     dictionary3 = globaldict[code]
                 except Exception:
@@ -895,6 +906,7 @@ def createCSV(year, file_tsv, relations_filename):
                 except Exception:
                     dictionary2 = dict()
 
+                
                 # data about this nuts
                 try:
                     pop3 = dictionary3.get('population2019_nuts3','N/A')
@@ -3419,43 +3431,44 @@ def fixInDbNorm2016(db_file_name):
     conn.close()
 
 def main():
+    
 
     # # STEP 1a: From shapefile extract the CSV master nuts0123-$year.csv
-    print("Extracting nuts0123-2021.csv from shapefile")
-    file2021 = 'NUTS_RG_20M_2021_3035.shp/NUTS_RG_20M_2021_3035.shp'
-    file2016 = 'NUTS_RG_20M_2016_3035.shp/NUTS_RG_20M_2016_3035.shp'
-    print("Extracting nuts0123-2021.csv from shapefile\n")
-    shapefileToCSVMaster(file2021, 'data/nuts0123-2021.csv')
-    print("Extracting nuts0123-2016.csv from shapefile\n")
-    shapefileToCSVMaster(file2016, 'data/nuts0123-2016.csv')
-    #
-    # # STEP 1b: Generate GeoJson nuts3 to display the "similarity at a glance" map
-    print("Generating nuts3.geojson\n")
-    generate_geojson(file2021, 'data/nuts3.geojson', 3)
+    # print("Extracting nuts0123-2021.csv from shapefile")
+    # file2021 = 'NUTS_RG_20M_2021_3035.shp/NUTS_RG_20M_2021_3035.shp'
+    # file2016 = 'NUTS_RG_20M_2016_3035.shp/NUTS_RG_20M_2016_3035.shp'
+    # print("Extracting nuts0123-2021.csv from shapefile\n")
+    # shapefileToCSVMaster(file2021, 'data/nuts0123-2021.csv')
+    # print("Extracting nuts0123-2016.csv from shapefile\n")
+    # shapefileToCSVMaster(file2016, 'data/nuts0123-2016.csv')
+    # #
+    # # # STEP 1b: Generate GeoJson nuts3 to display the "similarity at a glance" map
+    # print("Generating nuts3.geojson\n")
+    # generate_geojson(file2021, 'data/nuts3.geojson', 3)
 
-    # # STEP 1c: Generate GeoJson nuts2 to display the "similarity at a glance" map
-    print("Generating nuts2.geojson\n")
-    generate_geojson(file2021, 'data/nuts2.geojson', 2)
+    # # # STEP 1c: Generate GeoJson nuts2 to display the "similarity at a glance" map
+    # print("Generating nuts2.geojson\n")
+    # generate_geojson(file2021, 'data/nuts2.geojson', 2)
 
-    # STEP 2: Link NUTS of all levels to generate nutsrelations-$year.psv
-    print("Generating nutsrelations-2021.psv\n")
-    parseAndLinkNUTS(2021, 'data/nuts0123-2021.csv', 'data/nutsrelations-2021.psv')
-    print("Generating nutsrelations-2016.psv\n")
-    parseAndLinkNUTS(2016, 'data/nuts0123-2016.csv', 'data/nutsrelations-2016.psv')
+    # # STEP 2: Link NUTS of all levels to generate nutsrelations-$year.psv
+    # print("Generating nutsrelations-2021.psv\n")
+    # parseAndLinkNUTS(2021, 'data/nuts0123-2021.csv', 'data/nutsrelations-2021.psv')
+    # print("Generating nutsrelations-2016.psv\n")
+    # parseAndLinkNUTS(2016, 'data/nuts0123-2016.csv', 'data/nutsrelations-2016.psv')
 
-    # STEP 3: Download data via API to globaldict.json
-    print("Downloading Eurostat data into globaldict.json\n")
-    download('data/globaldict.json')
+    # # STEP 3: Download data via API to globaldict.json
+    # print("Downloading Eurostat data into globaldict.json\n")
+    # download('data/globaldict.json')
 
-    # STEP 4: Create basic data Files - basicdata-$year.tsv and basicdataNORM-$year.tsv
-    print("Creating basicdata-2021.tsv and basicdataNORM-2021.tsv\n")
-    createBasicDataFiles(2021, 'data/globaldict.json', 'data/basicdata-2021.tsv', 'data/basicdataNORM-2021.tsv', 'data/nutsrelations-2021.psv')
-    print("Creating basicdata-2021.tsv and basicdataNORM-2016.tsv\n")
-    createBasicDataFiles(2016, 'data/globaldict.json', 'data/basicdata-2016.tsv', 'data/basicdataNORM-2016.tsv', 'data/nutsrelations-2016.psv')
+    # # STEP 4: Create basic data Files - basicdata-$year.tsv and basicdataNORM-$year.tsv
+    # print("Creating basicdata-2021.tsv and basicdataNORM-2021.tsv\n")
+    # createBasicDataFiles(2021, 'data/globaldict.json', 'data/basicdata-2021.tsv', 'data/basicdataNORM-2021.tsv', 'data/nutsrelations-2021.psv')
+    # print("Creating basicdata-2021.tsv and basicdataNORM-2016.tsv\n")
+    # createBasicDataFiles(2016, 'data/globaldict.json', 'data/basicdata-2016.tsv', 'data/basicdataNORM-2016.tsv', 'data/nutsrelations-2016.psv')
 
-    # STEP 5: Create and populate DB
-    print("Creating nuts.db\n")
-    createDB('data/nuts.db', 'data/basicdata-2021.tsv', 'data/basicdataNORM-2021.tsv', 'data/basicdata-2016.tsv', 'data/basicdataNORM-2016.tsv', 'data/nutsrelations-2021.psv', 'data/nutsrelations-2016.psv', 'data/NUTS2021-extra.csv')
+    # # STEP 5: Create and populate DB
+    # print("Creating nuts.db\n")
+    # createDB('data/nuts.db', 'data/basicdata-2021.tsv', 'data/basicdataNORM-2021.tsv', 'data/basicdata-2016.tsv', 'data/basicdataNORM-2016.tsv', 'data/nutsrelations-2021.psv', 'data/nutsrelations-2016.psv', 'data/NUTS2021-extra.csv')
 
     # STEP 6: Calculate similarity
     print("Calculating similarity\n")
@@ -3472,7 +3485,8 @@ def main():
     
 
 if __name__ == "__main__":
-    main()
+    #pass
+    #main()
     fixInDb('data/nuts.db')
     fixInDbNorm('data/nuts.db')
     fixInDb2016('data/nuts.db')

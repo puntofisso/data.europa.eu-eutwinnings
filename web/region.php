@@ -4933,13 +4933,19 @@
     // });
 
 
-  <?php
-    if (isset($_GET['nutsid'])) {
-  ?>
+    <?php
+    if (isset($_GET['nutsid']) && (preg_match('/\b([A-Z][A-Z][0-9]?[0-9]?[0-9]?)\b/', $_GET['nutsid'], $output_array)) ) {
+?>
     code = "<?php echo $_GET['nutsid'];?>";
     navigateToNUTS(code);
   <?php
-  }
+    } else {
+
+?>
+window.location.href = "404.html";
+<?php
+
+    }
   ?>
 }
 );
@@ -5016,6 +5022,7 @@
   //   }
   // });
   // }
+
 
   function navigateToNUTS(code) {
 
