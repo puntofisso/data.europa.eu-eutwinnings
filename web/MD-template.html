@@ -37,6 +37,27 @@
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
+
+  <!-- PIWIK analytics -->
+  <script type="text/javascript">
+    (function(window, document, dataLayerName, id) {
+    window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+    function stgCreateCookie(a,b,c){var d="";if(c){var e=new Date;e.setTime(e.getTime()+24*c*60*60*1e3),d="; expires="+e.toUTCString();f="; SameSite=Strict"}document.cookie=a+"="+b+d+f+"; path=/"}
+    var isStgDebug=(window.location.href.match("stg_debug")||document.cookie.match("stg_debug"))&&!window.location.href.match("stg_disable_debug");stgCreateCookie("stg_debug",isStgDebug?1:"",isStgDebug?14:-1);
+    var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName),isStgDebug&&qP.push("stg_debug");var qPString=qP.length>0?("?"+qP.join("&")):"";
+    tags.async=!0,tags.src="https://analytics.webanalytics.op.europa.eu/containers/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+    !function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+    })(window, document, 'dataLayer', '17a3f28e-e00f-4d28-a2eb-0a82687dbc96');
+    </script>
+
+  <!-- cookies banner -->
+  <div id="cookies-eu-banner" style="display: none;">
+    By continuing your visit to this site, you accept the use of cookies for analytics purposes.
+    <!--a href="./read-more.html" id="cookies-eu-more">Read more</a-->
+    <button id="cookies-eu-reject">Reject</button>
+    <button id="cookies-eu-accept">Accept</button>
+  </div>
+
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
@@ -227,5 +248,40 @@
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../MD-assets/js/material-dashboard.min.js?v=3.0.0"></script>
 </body>
+
+ <!-- cookie manager-->
+ <script src="./cookies-eu-banner.js"></script>
+
+ <script>
+   var cookiesBanner = new CookiesEuBanner(function () {
+       
+       console.log("LOAD Analytics");
+       var consentAccepted = {consents: {analytics: {status: 1}}};
+       ppms.cm.api('setComplianceSettings', consentAccepted, function(new_consent){});
+     
+
+   }, true);
+
+   function updateCookiesEuState() {
+     var hasConsent = cookiesBanner.hasConsent()
+     var state = '❔ Nor accepted nor rejected';
+
+     if (hasConsent === true) {
+       state = '✅ Accepted';
+       // var consentAccepted = {consents: {analytics: {status: 1}}};
+       // ppms.cm.api('setComplianceSettings', consentAccepted, function(new_consent){});
+     } else if (hasConsent === false) {
+       state = '❌ Rejected';
+       var consentRejected= {consents: {analytics: {status: 0}}};
+       ppms.cm.api('setComplianceSettings', consentRejected , function(new_consent){});
+     }
+
+    
+   }
+
+   updateCookiesEuState();
+   // setInterval(updateCookiesEuState, 100);
+
+</script>
 
 </html>
